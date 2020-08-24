@@ -1,9 +1,9 @@
 import importlib
 import numpy as np
-from simtax import simtax
-importlib.reload(simtax)
+import srd
+importlib.reload(srd)
 import tools
-importlib.reload(simtax)
+importlib.reload(srd)
 
 
 def compute_after_tax_amount(hh, year, common, prices):
@@ -35,7 +35,7 @@ def file_household(hh, year, common, prices):
 
     p_tax = []  # persons in household (1 or 2)
     for sp in hh.sp:
-        p = simtax.person(othtax=real_2016(sp.othtax), age=sp.age,
+        p = srd.Person(othtax=real_2016(sp.othtax), age=sp.age,
                           earn=real_2016(sp.earn), rpp=real_2016(sp.rpp),
                           cpp=real_2016(sp.cpp), othntax=real_2016(sp.othntax),
                           con_rrsp=real_2016(sp.con_rrsp),
@@ -44,9 +44,9 @@ def file_household(hh, year, common, prices):
         p_tax.append(p)
 
     if hh.couple:
-        hh_tax = simtax.hhold(p_tax[0], second=p_tax[1], prov=hh.prov)
+        hh_tax = srd.Hhold(p_tax[0], second=p_tax[1], prov=hh.prov)
     else:
-        hh_tax = simtax.hhold(p_tax[0], prov=hh.prov)
+        hh_tax = srd.Hhold(p_tax[0], prov=hh.prov)
     common.tax.file(hh_tax)
     return hh_tax
 
@@ -77,14 +77,14 @@ def file_household_split(hh, hh_tax, year, common, prices):
             rpp = real_2016(sp.rpp) + rpp_transfer
             othtax =real_2016(sp.othtax) + othtax_transfer
 
-        p = simtax.person(
+        p = srd.Person(
             rpp=rpp, othtax=othtax, age=sp.age, earn=real_2016(sp.earn),
             cpp=real_2016(sp.cpp), othntax=real_2016(sp.othntax),
             con_rrsp=real_2016(sp.con_rrsp), inc_rrsp=real_2016(sp.inc_rrsp),
             cqppc=real_2016(sp.cpp_contrib))
         p_tax.append(p)
 
-    hh_tax = simtax.hhold(p_tax[0], second=p_tax[1], prov=hh.prov)
+    hh_tax = srd.Hhold(p_tax[0], second=p_tax[1], prov=hh.prov)
     common.tax.file(hh_tax)
     return hh_tax
 
@@ -97,7 +97,7 @@ def file_household_amount_to_tax(hh, year, common, prices):
 
     p_tax = []  # persons in household (1 or 2)
     for sp in hh.sp:
-        p = simtax.person(
+        p = srd.Person(
             othtax=real_2016(sp.othtax + sp.fin_assets['unreg'].amount_to_tax),
             age=sp.age, earn=real_2016(sp.earn), rpp=real_2016(sp.rpp),
             cpp=real_2016(sp.cpp), othntax=real_2016(sp.othntax),
@@ -106,9 +106,9 @@ def file_household_amount_to_tax(hh, year, common, prices):
         p_tax.append(p)
 
     if hh.couple:
-        hh_tax = simtax.hhold(p_tax[0], second=p_tax[1], prov=hh.prov)
+        hh_tax = srd.Hhold(p_tax[0], second=p_tax[1], prov=hh.prov)
     else:
-        hh_tax = simtax.hhold(p_tax[0], prov=hh.prov)
+        hh_tax = srd.Hhold(p_tax[0], prov=hh.prov)
     common.tax.file(hh_tax)
     return hh_tax
 
