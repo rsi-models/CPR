@@ -1,6 +1,6 @@
 import importlib
 import numpy as np
-from cpp import cpp
+import srpp
 import annuities
 import taxes
 import tools
@@ -110,7 +110,7 @@ def prepare_wages(sp, sim, common, prices):
 def initialize_cpp_account(sp, hh, common):
 
     rules = common.rules_qpp if hh.prov == 'qc' else common.rules_cpp
-    sp.cpp_account = cpp.account(sp.byear, rules)
+    sp.cpp_account = srpp.account(sp.byear, rules)
 
     for year in range(sp.byear + common.min_age_cpp, sp.byear + sp.age):
         sp.cpp_account.MakeContrib(year, sp.d_wages[year])
@@ -221,7 +221,7 @@ def tax_unreg_inc(hh, year, common, prices):
 
 def prepare_taxes(hh, year, common, prices):
     """
-    Prepares variables used in simtax (in nominal terms).
+    Prepares variables used in srd (in nominal terms).
     """
     nom = tools.create_nom(year, prices)
 

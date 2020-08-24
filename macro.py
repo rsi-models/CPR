@@ -3,21 +3,15 @@ import pandas as pd
 import numpy as np
 import pickle
 from life import life
-from cpp import cpp
-from simtax import simtax
+import srpp
+import srd
 import tools
 importlib.reload(tools)
-importlib.reload(simtax)
 
 
 class CommonParameters:
     """
-    This class sets the common parameters between households.
-
-    1. Load parameters value from ../data/pars/common_params.csv.
-    2. Create an instance of simtax for a given year.
-    3. Create an instance of the qpp rules.Ou
-    4. Create an instance of the cpp rules.
+    Class setting and containing the parameters common to all households.
     """
     def __init__(self, nsim, non_stochastic, extra_params):
 
@@ -27,11 +21,10 @@ class CommonParameters:
             tools.add_params_as_attr(self, '../data/pars/' + file)
         tools.change_params(self, extra_params)
 
-        self.prepare_simtax(self.year_simtax)
+        self.prepare_srd(self.year_srd)
 
-        self.rules_qpp, self.ympe_qpp = self.prepare_cpp_qpp(qpp=True)
-        self.rules_cpp, self.ympe_cpp = self.prepare_cpp_qpp(qpp=False)
-        # do I need self.ympe_c/qpp?
+        self.rules_cpp = srpp.rules()
+        self.rules_qpp = srpp.rules(qpp=True)  
 
         for args in [('rrsp_limit', 2021), ('tfsa_limit', 2019)]:
             self.prepare_limits(*args)
@@ -45,31 +38,16 @@ class CommonParameters:
         self.d_perc_rrif = tools.get_params(
             '../data/pars/rrif_rates.csv', numerical_key=True)
 
-    def prepare_simtax(self, year):
+    def prepare_srd(self, year):
         """
-        Initializes simtax
+        Initialize SRD
 
-        :type year: integer
-        :param year:
+        Parameters
+        ----------`
+        year: int
+            year
         """
-        self.tax = simtax.tax(year=year)
-
-    def prepare_cpp_qpp(self, qpp):
-        """
-        This function initializes cpp/qpp
-
-        :type qpp: bool
-        :param qpp:
-
-        :rtype: Instance.
-        """
-        if qpp is True:
-            rules = cpp.rules(qpp=True)            
-        else:
-            rules = cpp.rules(qpp=False)
-        
-        rules.wgr = self.gr_ympe
-        rules.lastyear = self.base_year
+        self.tax = srd.tax(year=year)
 
         return rules, rules.ympe(self.base_year)
 
