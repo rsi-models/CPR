@@ -1,0 +1,9 @@
+,bills,bonds,fee,value_2018,
+credit_card,1,0,0.137,0.1536,
+personal_loan,1,0,0.033,0.0401,
+student_loan,1,0,0.017,0.056,federal rate (reduced to prime rate Nov 2019); value for 2018 is 2018 rate on bills + fee
+car_loan,1,0,0.029,0.0406,
+credit_line,1,0,0.028,0.0434,
+other_debt,1,0,0.081,0.0968,
+first_mortgage,0.63,0.37,0.017,0.02885,data from Allen (BofC)
+second_mortgage,0.63,0.37,0.017,0.02885,data from Allen (BofC)

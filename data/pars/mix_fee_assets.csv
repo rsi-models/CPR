@@ -1,0 +1,10 @@
+,bills,bonds,equity,fee,,remarks
+Checking or regular savings account,1,0,0,0.01,,bad data; do some robustness checks
+High interest/premium savings account,1,0,0,0,,bad data; do some robustness checks
+Mutual funds,0,0.4,0.6,0.015,,
+Stocks,0,0,1,0.025,,"alpha = -2.5% seems reasonable. p. 789 Barber and Odean (2000): The own-benchmark abnormal return and the Fama�French intercept provide the most compelling evidence of underperformance. These performance measures indicate significant underperformance of 15 to 31 basis points per month 1.8 percent to 3.7 percent per year, with t-statistics ranging from 22.20 to 210.21!"
+Bonds,0,1,0,0.025,,"bonds are expensive to buy (minimum 50$ per transaction for Disnat), so it seems reasonnable that the fee is as high as for stocks"
+GICs,1,0,0,0.005,,calibrated with 3 year GIC
+Cash value of permanent life policy,0,1,0,0.02,,same return as corporate debt other financial companies and life insurance (canadian insures except intact); AA bonds
+Individual segregated funds,0,0.4,0.6,0.02,,mutual funds with insurance; A seg funds management expense ratio (MER) is generally about 0.5% more than its underlying mutual fund (https://www.moneysense.ca/columns/ask-moneysense/should-i-invest-150000-in-seg-funds/)
+ETFs,0,0,1,0.005,,
