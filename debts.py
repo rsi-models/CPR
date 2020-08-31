@@ -3,35 +3,30 @@ import numpy as np
 
 class Debt():
     """
-    Manages all debts in nominal terms.
-
-    :type name: float
-    :param name: Name of the debt account.
-
-    :type d_params: Dictionnary
-    :param d_params: Dictionnary with all the household informations0.
-
-    :type init_rate: float
-    :param init_rate: Initial interest rate.
-
-    :type max_term: float
-    :param max_term: Maximum term.
+    This class manages all debts.
     """
     def __init__(self, name, d_hh, common, prices):
         self.name = name
         self.init_balance = d_hh[name]
         self.init_m_payment = d_hh[name + '_payment']
-        self.init_term = self.compute_init_term(common, prices)
+        self.init_term = self.estimate_init_term(common, prices)
         self.reset()
 
-    def compute_init_term(self, common, prices):
+    def estimate_init_term(self, common, prices):
         """
-        Computes the initial term in years.
+        Estimate the term of the debt.
 
-        :type max_term: integer
-        :param max_term: Maximum term.
+        Parameters
+        ----------
+        common : Common
+            instance of the class Common
+        prices : Prices
+            instance of the class Prices
 
-        rtype: float
+        Returns
+        -------
+        int
+            term of the debt
         """
         init_rate = prices.d_interest_debt[self.name][0, 0]
         init_monthly_rate = (1 + init_rate)**(1/12) - 1
@@ -46,14 +41,16 @@ class Debt():
 
     def update(self, year, rate, prices):
         """
-        Updates yearly payment, balance using yearly rate
-        and inflation_factor.
+        Updates yearly payment and balance.
 
-        :type common: object
-        :param common: Instance of the Common class.
-
-        :type rate: float
-        :param rate: Interest rate
+        Parameters
+        ----------
+        year : int
+            year
+        rate : float
+            interest rate
+        prices : Prices
+            instance of the class Prices
         """
         self.inflation_factor = prices.d_infl_factors[year]
         if self.term == 0:
@@ -67,8 +64,7 @@ class Debt():
 
     def reset(self):
         """
-        Resets the personal loan and the inflation_factor
-        to its initial values.
+        Reset balance and term to initial values.
         """
         self.balance = self.init_balance
         self.term = self.init_term

@@ -2,109 +2,240 @@ import heapq
 import numpy as np
 
 class ContributionRoom:
+    """
+    This class manages contribution rooms for TFSA and RRSP
+    """
     def __init__(self, init_room_rrsp, init_room_tfsa):
         self.init_room_rrsp = init_room_rrsp
         self.init_room_tfsa = init_room_tfsa
         self.reset()
 
-    def compute_contributions(self, sp, year, common, prices):
-        self.update_rrsp_room(sp, year, common)
-        self.update_tfsa_room(sp, year, common)
+    def compute_contributions(self, p, year, common, prices):
+        """
+        Update contribution room for RRSP and TFSA
+
+        Parameters
+        ----------
+        p : [type]
+            [description]
+        year : int
+            year
+        common : Common
+           instance of the class Common
+        prices : Prices
+            instance of the class Prices
+        """
+        self.update_rrsp_room(p, year, common)
+        self.update_tfsa_room(p, year, common)
         self.extra_contrib_rrsp = 0
-        if (sp.replacement_rate_db > 0) & (year < common.base_year
-                                           +common.max_years_db):
-            self.adjust_db_contributions(sp, year, common)
-        if hasattr(sp, 'rpp_dc'):
-            self.adjust_dc_contributions(sp, year)
-        for acc in set(sp.fin_assets) & set(('rrsp', 'other_reg')):
-            self.adjust_rrsp_contributions(acc, sp, year)
+        if (p.replacement_rate_db > 0) & (year < common.base_year
+                                          + common.max_years_db):
+            self.adjust_db_contributions(p, year, common)
+        if hasattr(p, 'rpp_dc'):
+            self.adjust_dc_contributions(p, year)
+        for acc in set(p.fin_assets) & set(('rrsp', 'other_reg')):
+            self.adjust_rrsp_contributions(acc, p, year)
 
-        self.adjust_tfsa_contributions(sp, year, common, prices)
+        self.adjust_tfsa_contributions(p, year, common, prices)
 
-        self.adjust_unreg_contributions(sp, year)
+        self.adjust_unreg_contributions(p, year)
 
-    def update_rrsp_room(self, sp, year, common):
-        if sp.age > common.max_age_no_rrif:
+    def update_rrsp_room(self, p, year, common):
+        """
+        Update RRSP contribution room.
+
+        Parameters
+        ----------
+        p : [type]
+            [description]
+        year : int
+            year
+        common : Common
+           instance of the class Common
+        """
+        if p.age > common.max_age_no_rrif:
             self.room_rrsp = 0
         else:
-            self.room_rrsp += min(common.perc_rrsp * sp.d_wages[year-1],
+            self.room_rrsp += min(common.perc_rrsp * p.d_wages[year-1],
                                   common.d_rrsp_limit[year])
 
-    def update_tfsa_room(self, sp, year, common):
-        self.room_tfsa += common.d_tfsa_limit[year]
-        self.room_tfsa += sp.fin_assets['tfsa'].withdrawal
+    def update_tfsa_room(self, p, year, common):
+        """
+        Update TFSA contribution room.
 
-    def adjust_db_contributions(self, sp, year, common):
+        Parameters
+        ----------
+        p : [type]
+            [description]
+        year : int
+            year
+        common : Common
+           instance of the class Common
+        """
+        self.room_tfsa += common.d_tfsa_limit[year]
+        self.room_tfsa += p.fin_assets['tfsa'].withdrawal
+
+    def adjust_db_contributions(self, p, year, common):
+        """
+        Adjust contributions room RRSP to DB RPP contribution.
+
+        Parameters
+        ----------
+        p : [type]
+            [description]
+        year : int
+            year
+        common : Common
+           instance of the class Common
+        """
         cpp_offset = (common.perc_cpp_2018
-                      * min(sp.d_wages[year-1], common.d_ympe[year-1])
+                      * min(p.d_wages[year-1], common.d_ympe[year-1])
                       / common.max_years_db)
-        benefits_earned = (sp.replacement_rate_db * sp.d_wages[year-1]
-                            / common.max_years_db - cpp_offset)
-        pension_credit = max(
-            common.db_benefit_multiplier*benefits_earned - common.db_offset, 0)
+        benefits_earned = (p.replacement_rate_db * p.d_wages[year-1]
+                           / common.max_years_db - cpp_offset)
+        pension_credit = max(0,
+            common.db_benefit_multiplier * benefits_earned - common.db_offset)
         self.room_rrsp -= min(pension_credit, self.room_rrsp)
 
-    def adjust_dc_contributions(self, sp, year):
-        # transfer extra rpp_dc and rrsp contributions to tfsa:
-        contrib = sp.rpp_dc.contrib_rate * sp.d_wages[year]
+    def adjust_dc_contributions(self, p, year):
+        """
+        Adjust contribution room RRSP to DC contribution. If insufficent room,
+        extra contribution transferred to TFSA.
+
+        Parameters
+        ----------
+        p : [type]
+            [description]
+        year : int
+            year
+        """
+        contrib = p.rpp_dc.contrib_rate * p.d_wages[year]
         if contrib <= self.room_rrsp:
-            sp.rpp_dc.contribution = contrib
+            p.rpp_dc.contribution = contrib
             self.room_rrsp -= contrib
         else:
-            sp.rpp_dc.contribution = self.room_rrsp
+            p.rpp_dc.contribution = self.room_rrsp
             self.extra_contrib_rrsp += contrib - self.room_rrsp
             self.room_rrsp = 0
-        self.adjust_employees_contributions(sp)
+        self.adjust_employees_contributions(p)
 
-    def adjust_employees_contributions(self, sp):
+    def adjust_employees_contributions(self, p):
         """
-        Computes employee contribution to DC pension
+        Compute employee contribution to DC RPP
         (used later to caculate taxes).
-        """
-        if sp.rpp_dc.contrib_rate == 0:
-            sp.contrib_employee_dc = 0
-        else:
-            sp.contrib_employee_dc = (sp.rate_employee_dc /
-                                        sp.rpp_dc.contrib_rate
-                                        * sp.rpp_dc.contribution)
 
-    def adjust_rrsp_contributions(self, acc, sp, year):
-        contrib = sp.fin_assets[acc].contrib_rate*sp.d_wages[year]
+        Parameters
+        ----------
+        p : [type]
+            [description]
+        """
+        if p.rpp_dc.contrib_rate == 0:
+            p.contrib_employee_dc = 0
+        else:
+            p.contrib_employee_dc = (p.rate_employee_dc /
+                                        p.rpp_dc.contrib_rate
+                                        * p.rpp_dc.contribution)
+
+    def adjust_rrsp_contributions(self, acc, p, year):
+        """
+        Adjust contribution room RRSP for contributions other than RPP. 
+        If insufficent room, extra contribution transferred to TFSA.
+
+        Parameters
+        ----------
+        acc : [type]
+            [description]
+        p : [type]
+            [description]
+        year : int
+            year
+        """
+        contrib = p.fin_assets[acc].contrib_rate*sp.d_wages[year]
         if contrib <= self.room_rrsp:
-            sp.fin_assets[acc].contribution = contrib
+            p.fin_assets[acc].contribution = contrib
             self.room_rrsp -= contrib
         else:
-            sp.fin_assets[acc].contribution = self.room_rrsp
+            p.fin_assets[acc].contribution = self.room_rrsp
             self.extra_contrib_rrsp += contrib - self.room_rrsp
             self.room_rrsp = 0
 
-    def adjust_tfsa_contributions(self, sp, year, common, prices):
+    def adjust_tfsa_contributions(self, p, year, common, prices):
+        """
+        Adjust contribution room TFSA to TFSA contributions
+        and excess RRSP contributions. If insufficent room,
+        extra contribution transferred to TFSA.
+
+        Parameters
+        ----------
+        p : [type]
+            [description]
+        year : int
+            year
+        common : Common
+           instance of the class Common
+        prices : Prices
+            instance of the class Prices
+        """
         self.extra_contrib_tfsa = 0
-        contrib = sp.fin_assets['tfsa'].contrib_rate * sp.d_wages[year]
+        contrib = p.fin_assets['tfsa'].contrib_rate * p.d_wages[year]
         contrib += self.extra_contrib_rrsp
-        if sp.age > common.max_age_no_rrif:
-            contrib += self.adjust_rrif(sp, year, common, prices)
+        if p.age > common.max_age_no_rrif:
+            contrib += self.adjust_rrif(p, year, common, prices)
 
         if contrib <= self.room_tfsa:
-            sp.fin_assets['tfsa'].contribution = contrib
+            p.fin_assets['tfsa'].contribution = contrib
             self.room_tfsa -= contrib
         else:
-            sp.fin_assets['tfsa'].contribution = self.room_tfsa
+            p.fin_assets['tfsa'].contribution = self.room_tfsa
             self.extra_contrib_tfsa += contrib - self.room_tfsa
             self.room_tfsa = 0
 
-    def adjust_rrif(self, sp, year, common, prices):
+    def adjust_rrif(self, p, year, common, prices):
+        """
+        Adjust RPP DC and RRSP to mandatory withdrawals.
+
+        Parameters
+        ----------
+        p : [type]
+            [description]
+        year : int
+            year
+        common : Common
+           instance of the class Common
+        prices : Prices
+            instance of the class Prices
+
+        Returns
+        -------
+        [type]
+            [description]
+        """
         rrif_transfer_real = 0
-        for acc in set(sp.fin_assets) & set(('rpp_dc', 'rrsp', 'other_reg')):
-            rrif_transfer_real += sp.fin_assets[acc].rrif_withdrawal(sp, common)
+        for acc in set(p.fin_assets) & set(('rpp_dc', 'rrsp', 'other_reg')):
+            rrif_transfer_real += p.fin_assets[acc].rrif_withdrawal(p, common)
         return rrif_transfer_real * prices.d_infl_factors[year]
 
-    def adjust_unreg_contributions(self, sp, year):
-        contrib = sp.fin_assets['unreg'].contrib_rate * sp.d_wages[year]
+    def adjust_unreg_contributions(self, p, year):
+        """
+        Adjust contribution to unregistered accounts
+        for excess TFSA contributions.
+
+        Parameters
+        ----------
+        p : [type]
+            [description]
+        year : int
+            year
+        """
+
+        contrib = p.fin_assets['unreg'].contrib_rate * p.d_wages[year]
         contrib += self.extra_contrib_tfsa
-        sp.fin_assets['unreg'].contribution = contrib
+        p.fin_assets['unreg'].contribution = contrib
 
     def reset(self):
+        """
+        Reset contribution rooms RRSP and TFSA to inital values.
+        """
         self.room_rrsp = self.init_room_rrsp
         self.room_tfsa = self.init_room_tfsa
 
@@ -112,34 +243,11 @@ class ContributionRoom:
 class FinAsset:
     """
     This class manages registered accounts.
-
-    :type balance: float
-    :param balance: Initia balance.
-
-    :type contrib_rate: float
-    :param contrib_rate: Annual contribution rate,
-    in term of percentage of the household total wage.
-
-    :type withdrawal: float
-    :param withdrawal: Annual withdrawal
-
-    :type mix_bills: float
-    :param mix_bills: Proportion of assets invested in bills.
-
-    :type mix_bonds: float
-    :param mix_bonds: Proportion of assets invested in bonds.
-
-    :type mix_equity: float
-    :param mix_equity: Proportion of assets invested in equity.
-
-    :type fee: float
-    :param fee: Fee
     """
-
-    def __init__(self, sp, hh, acc):
-        self.init_balance = getattr(sp, f'bal_{acc}')
-        self.contrib_rate = getattr(sp, f'cont_rate_{acc}')
-        self.init_desired_withdrawal_real = getattr(sp, f'withdrawal_{acc}')
+    def __init__(self, p, hh, acc):
+        self.init_balance = getattr(p, f'bal_{acc}')
+        self.contrib_rate = getattr(p, f'cont_rate_{acc}')
+        self.init_desired_withdrawal_real = getattr(p, f'withdrawal_{acc}')
         self.mix_bills = hh.mix_bills
         self.mix_bonds = hh.mix_bonds
         self.mix_equity = hh.mix_equity
@@ -148,19 +256,18 @@ class FinAsset:
 
     def update(self, d_returns, year, common, prices):
         """
-        Updates the balance for contribution, withdrawal and growth.
+        Update the balance for contribution, withdrawal and return.
 
-        :type wage: float
-        :param wage: Household total wage
-
-        :type ret_bills: float
-        :param retbills: Annual return on bills.
-
-        :type ret_bonds: float
-        :param ret_bonds: Annual return on bonds.
-
-        :type ret_equity: float
-        :param ret_equity: Annual return on equity
+        Parameters
+        ----------
+        d_returns : [type]
+            [description]
+        year : int
+            year
+        common : Common
+           instance of the class Common
+        prices : Prices
+            instance of the class Prices
         """
         self.inflation_factor = prices.d_infl_factors[year]
         self.balance *= 1 + self.rate(d_returns, year)
@@ -172,16 +279,39 @@ class FinAsset:
 
     def rate(self, d_returns, year):
         """
-        Computes the rate of return.
+        Compute the rate of return given the composition of assets in account.
+
+        Parameters
+        ----------
+        d_returns : [type]
+            [description]
+        year : int
+            year
+
+        Returns
+        -------
+        [type]
+            [description]
         """
         return (self.mix_bills*d_returns['bills'][year]
                 + self.mix_bonds*d_returns['bonds'][year]
                 + self.mix_equity*d_returns['equity'][year] - self.fee)
 
-    def rrif_withdrawal(self, sp, common):
+    def rrif_withdrawal(self, p, common):
         """
-        Adjusts withdrawals to the mandatory minimum after 71 and returns
-        the extra withdrawal required.
+        Manage mandatory rrif withdrawals.
+
+        Parameters
+        ----------
+        p : [type]
+            [description]
+        common : Common
+           instance of the class Common
+
+        Returns
+        -------
+        [type]
+            [description]
         """
         if self.balance > 0:
             extra_withdrawal_real = max(
@@ -195,10 +325,12 @@ class FinAsset:
 
     def liquidate(self):
         """
-        Liquidates account,
-        adjusts balance and returns liquidation value
+        Liquidate account, set balance, contribution and withdrawal to zero.
 
-        :rtype: float
+        Returns
+        -------
+        float
+            amount from liquidation (before taxes)
         """
         value = self.balance
         self.balance, self.contribution, self.withdrawal = 0, 0, 0
@@ -206,30 +338,35 @@ class FinAsset:
 
     def reset(self):
         """
-        Resets the balance to its initial balance.
+        Reset the balance and withdrawal to its initial balance.
         """
         self.balance = self.init_balance
         self.desired_withdrawal_real = self.init_desired_withdrawal_real
-        self.withdrawal = 0  # to adjust contribution space tfsa
+        # self.withdrawal = 0  # to adjust contribution space tfsa; seems useless
 
     @property
     def balance_real(self):
         """
-        Computes real balance.
+        Compute real balance.
+
+        Returns
+        -------
+        float
+            real balance
         """
         return self.balance / self.inflation_factor
 
 
 class UnregAsset:
     """
-    This class create a financial unregistered account.
+    This class manages unregistered account.
     """
-    def __init__(self, sp, hh, prices):
-        self.init_balance = sp.bal_unreg
-        self.contrib_rate = sp.cont_rate_unreg
-        self.desired_withdrawal = sp.withdrawal_unreg
-        self.init_cap_gains = sp.cap_gains_unreg
-        self.init_realized_losses = sp.realized_losses_unreg
+    def __init__(self, p, hh, prices):
+        self.init_balance = p.bal_unreg
+        self.contrib_rate = p.cont_rate_unreg
+        self.desired_withdrawal = p.withdrawal_unreg
+        self.init_cap_gains = p.cap_gains_unreg
+        self.init_realized_losses = p.realized_losses_unreg
         self.mix_bills = hh.mix_bills
         self.mix_bonds = hh.mix_bonds
         self.mix_equity = hh.mix_equity
@@ -241,19 +378,18 @@ class UnregAsset:
 
     def update(self, d_returns, year, common, prices):
         """
-        Updates the balance for contribution, withdrawal and growth.
+        Update the balance for contribution, withdrawal and return.
 
-        :type wage: float
-        :param wage: Household total wage.
-
-        :type ret_bills: float
-        :param retbills: Annual return on bills.
-
-        :type ret_bonds: float
-        :param ret_bonds: Annual return on bonds.
-
-        :type ret_equity: float
-        :param ret_equity: Annual return on equity
+        Parameters
+        ----------
+        d_returns : [type]
+            [description]
+        year : int
+            year
+        common : Common
+           instance of the class Common
+        prices : Prices
+            instance of the class Prices
         """
         self.inflation_factor = prices.d_infl_factors[year]
         self.compute_income(d_returns, year)
@@ -266,6 +402,16 @@ class UnregAsset:
                               + self.taxable_inc)
 
     def compute_income(self, d_returns, year):
+        """
+        Compute capital gains and taxable income (dividends and interests).
+
+        Parameters
+        ----------
+        d_returns : [type]
+            [description]
+        year : int
+            year
+        """
         self.cap_gains_inc = (
             self.balance * self.mix_equity * (d_returns['equity'][year]
             - self.ret_dividends - self.fee_equity))
@@ -274,24 +420,29 @@ class UnregAsset:
 
     def rate(self, d_returns, year):
         """
-        Computes the rate of return.
+        Compute the rate of return given the composition of assets in account.
 
-        :type ret_bills: float
-        :param retbills: Annual return on bills.
+        Parameters
+        ----------
+        d_returns : [type]
+            [description]
+        year : int
+            year
 
-        :type ret_bonds: float
-        :param ret_bonds: Annual return on bonds.
-
-        :type ret_equity: float
-        :param ret_equity: Annual return on equity
-
-        :rtype: float
+        Returns
+        -------
+        [type]
+            [description]
         """
-        return (self.mix_bills*d_returns['bills'][year]
-                + self.mix_bonds*d_returns['bonds'][year] +
+        return (self.mix_bills*d_returns['bills'][year] +
+                self.mix_bonds*d_returns['bonds'][year] +
                 self.mix_equity*d_returns['equity'][year] - self.fee)
 
     def update_balance(self):
+        """
+        Update balance and divide between non-taxable, capital gains
+        and taxable.
+        """
         self.non_taxable = self.balance - self.cap_gains
         self.non_taxable += self.after_tax_inc
         self.non_taxable += self.contribution
@@ -300,6 +451,10 @@ class UnregAsset:
         self.balance = self.non_taxable + self.cap_gains + self.taxable
 
     def prepare_withdrawal(self):
+        """
+        Divide withdrawal from balance at the end of the period 
+        between non-taxable, taxable and realized capital gains.
+        """
         self.withdrawal = min(self.desired_withdrawal * self.inflation_factor,
                               self.balance)
         self.share_withdrawal = self.withdrawal / (self.balance + 1e-12)
@@ -308,6 +463,10 @@ class UnregAsset:
         self.taxable_withdrawal = self.share_withdrawal * self.taxable
 
     def adjust_withdrawal_and_cap_gains(self):
+        """
+        Adjust realized capital losses, and divide capital gains 
+        from withdrawals between non-taxable and realized capital gains.
+        """
         if self.cap_gains_withdrawal > 0:
             used_cap_losses = min(self.cap_gains_withdrawal,
                                   self.realized_losses)
@@ -320,12 +479,18 @@ class UnregAsset:
             self.cap_gains_withdrawal = 0
 
     def adjust_final_balance(self):
+        """
+        Adjust final balance for withdrawal.
+        """
         self.non_taxable *= (1 - self.share_withdrawal)
         self.cap_gains *= (1 - self.share_withdrawal)
         self.taxable = 0
         self.balance = self.non_taxable + self.cap_gains
 
     def compute_after_tax_inc(self):
+        """
+        Compute after tax income.
+        """
         if self.amount_to_tax == 0:
             self.after_tax_share = 0
         else:
@@ -335,6 +500,14 @@ class UnregAsset:
                               * self.after_tax_share * self.taxable_inc)
 
     def compute_net_withdrawal(self, common):
+        """
+        Compute net proceeds from withdrawal.
+
+        Parameters
+        ----------
+        common : Common
+           instance of the class Common
+        """
         self.net_withdrawal = (
             self.non_taxable_withdrawal
             + self.after_tax_share * self.taxable_withdrawal
@@ -345,7 +518,16 @@ class UnregAsset:
     def prepare_liquidation(self, value_liquidation, cap_gains_liquidation,
                             common):
         """
+        Prepare liquidation
 
+        Parameters
+        ----------
+        value_liquidation : float
+            amount to liquidate
+        cap_gains_liquidation : float
+            capital gains on amount liquidated
+        common : Common
+           instance of the class Common
         """
         self.amount_to_tax += common.frac_cap_gains * self.cap_gains
         self.non_taxable += (1-common.frac_cap_gains) * self.cap_gains
@@ -357,6 +539,14 @@ class UnregAsset:
         self.balance = self.non_taxable
 
     def liquidate(self):
+        """
+        Liquidate account, set balance, contribution and withdrawal to zero.
+
+        Returns
+        -------
+        float
+            amount from liquidation (before taxes)
+        """
         value = self.balance + self.amount_after_tax - self.net_withdrawal
         self.balance, self.contribution, self.withdrawal = 0, 0, 0
         self.amount_to_tax, self.amount_after_tax, self.after_tax_inc = 0, 0, 0
@@ -364,8 +554,7 @@ class UnregAsset:
 
     def reset(self):
         """
-        Resets the nominal balance, capital gains capital losses and after
-        tax income from unregistered account to their initial balances.
+        Reset the balance, cap_gains and withdrawal to its initial balance.
         """
         self.balance = self.init_balance
         self.cap_gains = self.init_cap_gains
@@ -376,9 +565,17 @@ class UnregAsset:
 
 
 class RppDC(FinAsset):
-    def __init__(self, sp, common):
-        self.init_balance = sp.init_dc
-        self.contrib_rate = sp.rate_employee_dc + sp.rate_employer_dc
+    """
+    This class manages DC RPP.
+
+    Parameters
+    ----------
+    FinAsset : object
+        class managing registered accounts
+    """
+    def __init__(self, p, common):
+        self.init_balance = p.init_dc
+        self.contrib_rate = p.rate_employee_dc + p.rate_employer_dc
         self.init_desired_withdrawal_real = 0
         self.mix_bills = common.mix_bills_rpp
         self.mix_bonds = common.mix_bonds_rpp
@@ -389,54 +586,90 @@ class RppDC(FinAsset):
 
 class RppDB:
     """
-    Manages defined benefits rpp.
+    Class manageing DB RPP.
     """
-    def __init__(self, sp):
-        self.init_rate_employee_db = sp.rate_employee_db
-        self.replacement_rate_db = sp.replacement_rate_db
-        self.income_previous_db = sp.income_previous_db
+    def __init__(self, p):
+        self.init_rate_employee_db = p.rate_employee_db
+        self.replacement_rate_db = p.replacement_rate_db
+        self.income_previous_db = p.income_previous_db
         self.reset()
 
-    def compute_benefits(self, sp, common):
+    def compute_benefits(self, p, common):
         """
-        Computes rpp_db benefits and adjusts them for cpp.
-        If rpp_db < cpp_qpp, rpp_db=0 when cpp_qpp starts.
+        Compute RPP DB benefits and adjust them for CPP.
+        If RPP benefits are smaller than CPP benefits, 
+        RPP benefits are zero when cpp_qpp starts.
+
+        Parameters
+        ----------
+        p : [type]
+            [description]
+        common : Common
+           instance of the class Common
         """
         if self.replacement_rate_db > 0:
             n = common.n_best_wages_db
-            l_wages = [wage for wage in sp.d_wages.values()]
+            l_wages = [wage for wage in p.d_wages.values()]
             self.mean_best_wage = sum(heapq.nlargest(n, l_wages)) / n
 
-            years_service = sp.replacement_rate_db / common.perc_year_db
-            if (years_service < common.max_years_db) and (sp.ret_age < common.db_ret_age_no_penalty):
-                years_early_db = common.official_ret_age - sp.ret_age
-            else:
-                years_early_db = 0
+            self.adjust_for_penalty(p, common)
 
-            self.benefits_current_empl = (self.replacement_rate_db * self.mean_best_wage
-                * (1 - years_early_db * common.db_penalty_early_ret))
-            self.benefits += self.benefits_current_empl
-
-            if sp.age >= common.official_ret_age:
-                self.benefits -= min(self.compute_cpp_adjustment(sp, common),
+            if p.age >= common.official_ret_age:
+                self.benefits -= min(self.compute_cpp_adjustment(p, common),
                                      self.benefits_current_empl)
+
         if self.income_previous_db > 0:
             self.benefits += self.income_previous_db
 
-    def compute_cpp_adjustment(self, sp, common):
+    def adjust_for_penalty(self, p, common):
         """
-        Pension from current employer is adjusted for CPP benefits.
-        Start in base year if enough years until retirement, otherwise goes
+        DB RPP benefits lowered when less than 35 years of service and 
+        retirement before age 62.
+
+        Parameters
+        ----------
+        p : [type]
+            [description]
+        common : Common
+           instance of the class Common
+        """
+        years_service = p.replacement_rate_db / common.perc_year_db
+        if (years_service < common.max_years_db) and (p.ret_age < common.db_ret_age_no_penalty):
+            years_early_db = common.official_ret_age - p.ret_age
+        else:
+            years_early_db = 0
+
+        self.benefits_current_empl = (
+            self.replacement_rate_db * self.mean_best_wage
+            * (1 - years_early_db * common.db_penalty_early_ret))
+        self.benefits += self.benefits_current_empl
+
+    def compute_cpp_adjustment(self, p, common):
+        """
+        Compute adjustement to DB RPP for CPP benefits.
+        Start in base year if enough years until retirement, otherwise go
         backward from year before retirement.
+
+        Parameters
+        ----------
+        p : [type]
+            [description]
+        common : Common
+           instance of the class Common
+
+        Returns
+        -------
+        float
+            amount of CPP adjustment
         """
         years_db = int(self.replacement_rate_db / common.perc_year_db)
 
-        if years_db <= sp.ret_year - common.base_year:
-            mean_wage = np.mean([min(sp.d_wages[common.base_year +  t],
+        if years_db <= p.ret_year - common.base_year:
+            mean_wage = np.mean([min(p.d_wages[common.base_year +  t],
                                      common.d_ympe[common.base_year +  t])
                                  for t in range(years_db)])
         else:
-            mean_wage = np.mean([min(sp.d_wages[sp.ret_year - t],
+            mean_wage = np.mean([min(p.d_wages[sp.ret_year - t],
                                      common.d_ympe[sp.ret_year - t])
                                  for t in range(1, years_db + 1)])
 
@@ -444,36 +677,47 @@ class RppDB:
                 * mean_wage)
 
     def reset(self):
+        """
+        Reset the benefits, cap_gains and withdrawal to its initial balance.
+        """
         self.benefits = 0
         self.rate_employee_db = self.init_rate_employee_db
 
 
 class RealAsset:
     """
-    This class updates the balance of a residence
-    given the growth rate in prices
+    This class manages housing.
     """
-
     def __init__(self, d_hh, resid):
         self.init_balance = d_hh[resid]
         self.price = d_hh[f'price_{resid}']
         self.reset()
 
-    def grow(self, growth_rates, year, prices):
+    def update(self, growth_rates, year, prices):
         """
-        Updates housing balance.
+        Update the balance for growth in price.
 
-        :type growth_rate: float
-        :param growth_rate: Groth rate
+        Parameters
+        ----------
+        growth_rates : [type]
+            [description]
+        year : int
+            year
+        prices : Prices
+            instance of the class Prices
         """
+
         self.inflation_factor = prices.d_infl_factors[year]
         self.balance *= 1 + growth_rates[year]
 
     def liquidate(self):
         """
-        Liquidates the account, adjusts balance
-        and returns real liquidation value
-        :rtype: float
+        Liquidate account, compute capital gains, set balance to zero.
+
+        Returns
+        -------
+        float
+            amount from liquidation (before taxes)
         """
         self.sell_value = self.balance
         self.cap_gains = self.balance - self.price
@@ -481,7 +725,7 @@ class RealAsset:
 
     def reset(self):
         """
-        Resets the balance to its initial balance and capital gains to zero.
+        Reset balance to its initial balance and set capital gains to zero.
         """
         self.balance = self.init_balance
         self.cap_gains = 0
@@ -489,42 +733,44 @@ class RealAsset:
 
 class Business:
     """
-    This class creates a business.
-
-    :type balance: float
-    :param balance: Initia balance.
-
-    :type cap_gains: float
-    :param cap_gains: Initial capital gains.
-
-    :type realized_losses: float
-    :param realized_losses: Initial capital losses.
-
-    :type ret_dividends:
-    :param ret_dividends:
+    This class manages a business (as an asset owned by the houshehold).
     """
-
     def __init__(self, d_hh):
         self.init_balance = d_hh['business']
         self.price = d_hh['price_business']
         self.reset()
 
-    def update(self, ret, year, prices):
+    def update(self, d_business_returns, year, prices):
         """
-        Updates housing balance.
+        Update the balance and dividends.
 
-        :type growth_rate: float
-        :param growth_rate: Groth rate
+        Parameters
+        ----------
+        d_business_returns : dict
+            business returns
+        year : int
+            year
+        prices : Prices
+            instance of the class Prices
         """
         self.inflation_factor = prices.d_infl_factors[year]
         self.dividends_business = self.balance * prices.ret_dividends
-        self.balance *= 1 + ret[year] - prices.ret_dividends
+        self.balance *= 1 + d_business_returns[year] - prices.ret_dividends
 
     def liquidate(self, common):
         """
-        Liquidates the account, adjusts balance
-        and returns real liquidation value
-        :rtype: float
+        Liquidate account, compute capital gains, set balance to zero
+        and returns real liquidation value.
+
+        Parameters
+        ----------
+        common : Common
+           instance of the class Common
+
+        Returns
+        -------
+        float
+            selling price
         """
         self.selling_price = self.balance
         business_exempt = common.business_exempt_real * self.inflation_factor
@@ -534,8 +780,7 @@ class Business:
 
     def reset(self):
         """
-        Resets the nominal balance, capital gains capital losses and after
-        tax income from unregistered account to their initial balances.
+        Reset balance and capital gains to initial values.
         """
         self.balance = self.init_balance
         self.cap_gains = self.init_balance - self.price

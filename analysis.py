@@ -2,6 +2,9 @@ import pandas as pd
 import numpy as np
 
 class Results:
+    """
+    This class prepares the results.
+    """
     def __init__(self, input_data, output, common, prices, extra_params):
         self.input = input_data
         self.output = output
@@ -10,6 +13,9 @@ class Results:
         self.extra_params = extra_params
 
     def summarize(self):
+        """
+        Summarize the simulation.
+        """
         if self.common.non_stochastic is True:
             print('\nDeterministic Model')
         else:
@@ -23,7 +29,12 @@ class Results:
 
     def merge(self, add_index=True):
         """
-        Merges input with output and return combined dataframe and adds index
+        Merge input and output variables to create database
+
+        Parameters
+        ----------
+        add_index : bool, optional
+            add index to database, by default True
         """
         self.df_merged = self.input.merge(self.output, how='left',
                                           left_index=True, right_on='hh_index')
@@ -38,8 +49,17 @@ class Results:
                            d_cutoffs={20: 80, 100: 65}):
         """
         Puts a consumption floor, computes RRI 
-        (NaN if cons before and after retirement below cons_floor)
+        (NaN if consumption before and after retirement below cons_floor)
         and checks preparedness for retirement.
+
+        Parameters
+        ----------
+        factor_couple : int, optional
+            factor to normalize income for couple, by default 2
+        cons_floor : int, optional
+            consumption floor, by default 100
+        d_cutoffs : dict, optional
+            cutoffs, by default {20: 80, 100: 65}
         """
         if not hasattr(self, 'df_merged'):
             self.merge()
@@ -56,6 +76,19 @@ class Results:
 
         # compute cutoffs
         def compute_hh_wage(row):
+            """
+            Compute normalized wage for the household.
+
+            Parameters
+            ----------
+            row : pandas.core.series.Series
+                row of pandas.core.frame.DataFrame
+
+            Returns
+            -------
+            float
+                normalized wage
+            """
             if row['couple']:
                 return (row['init_wage'] + row['s_init_wage']) / factor_couple
             return row['init_wage']
@@ -73,6 +106,5 @@ class Results:
         self.df_merged['rri_cutoff'] = \
             self.df_merged.category.replace(d_cutoffs_by_cat)
         self.df_merged.drop(columns='category', inplace=True)
-        
         self.df_merged['prepared'] = \
             self.df_merged.rri >= self.df_merged.rri_cutoff

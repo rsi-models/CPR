@@ -7,7 +7,18 @@ importlib.reload(tools)
 
 def compute_partial_annuities(hh, d_returns, year, prices):
     """
-    Creates annuities with assets and rpp_dc
+    Partially convert assets into annuities when first spouse retires.
+
+    Parameters
+    ----------
+    hh: Hhold
+        household
+    d_returns : dict
+        dictionary of returns
+    year : int
+        year
+    prices : Prices
+        instance of the class Prices
     """
     liquidate_fin_assets(hh.sp[0])
     for acc in ['rrsp', 'rpp_dc', 'tfsa', 'unreg']:
@@ -17,81 +28,120 @@ def compute_partial_annuities(hh, d_returns, year, prices):
     hh.sp[0].retired = True
 
 
-def liquidate_fin_assets(sp):
+def liquidate_fin_assets(p):
+    """
+    Liquidate financial assets.
+
+    Parameters
+    ----------
+    p : Person
+        spouse in household 
+    """
     for acc in ['rrsp', 'rpp_dc', 'tfsa', 'unreg']:
-        setattr(sp, f'val_annuities_{acc}', 0)
-    for acc in sp.fin_assets:
+        setattr(p, f'val_annuities_{acc}', 0)
+    for acc in p.fin_assets:
         if acc in ['rrsp', 'other_reg']:
-            sp.val_annuities_rrsp += sp.fin_assets[acc].liquidate()
+            p.val_annuities_rrsp += p.fin_assets[acc].liquidate()
         elif acc == 'tfsa':
-            sp.val_annuities_tfsa += sp.fin_assets[acc].liquidate()
+            p.val_annuities_tfsa += p.fin_assets[acc].liquidate()
         else:
-            sp.val_annuities_unreg += sp.fin_assets[acc].liquidate()
-    if hasattr(sp, 'rpp_dc'):
-        sp.val_annuities_rpp_dc += sp.rpp_dc.liquidate()
+            p.val_annuities_unreg += p.fin_assets[acc].liquidate()
+    if hasattr(p, 'rpp_dc'):
+        p.val_annuities_rpp_dc += p.rpp_dc.liquidate()
 
 
-def compute_factors(hh, sp, rate, prices):
+def compute_factors(hh, p, rate, prices):
     """
     Compute individual factor for annuities constant in real terms. We use an 
-    adjusted rate to smooth excess factor volatility. The latter is due to the 
-    fact that we take the total return on bonds in the year that the annuity
+    adjusted rate to smooth excess factor volatility. This is because
+    we take the total return on bonds in the year that the annuity
     is purchased. The whole interest structure should be used and mean reversion
     would smooth out annuity prices.
+
+    Parameters
+    ----------
+    hh: Hhold
+        household
+    p : Person
+        spouse in household 
+    rate : float
+        interest rate
+    prices : Prices
+        instance of the class Prices
     """
     rate_real = (1 + rate) / (1 + prices.inflation_rate) - 1
-    adj_rate = rate_real - prices.adj_fact_annuities*(rate_real-prices.mu_bonds)
-    sp.factor = prices.d_factors[sp.sex][hh.prov].ann(
-        sp.byear, agestart=sp.age, rate=adj_rate)
+    adj_rate = rate_real - prices.adj_fact_annuities * (rate_real - prices.mu_bonds)
+    p.factor = prices.d_factors[sp.sex][hh.prov].ann(
+        p.byear, agestart=sp.age, rate=adj_rate)
     real_rate_zero_ret = 1 / (1 + prices.inflation_rate) - 1
-    sp.factor_0 = prices.d_factors[sp.sex][hh.prov].ann(
-        sp.byear, agestart=sp.age, rate=-real_rate_zero_ret)
+    p.factor_0 = prices.d_factors[sp.sex][hh.prov].ann(
+        p.byear, agestart=sp.age, rate=-real_rate_zero_ret)
 
 
-def convert_to_real_annuities(sp, year, prices):
+def convert_to_real_annuities(p, year, prices):
     """
-    Converts assets to annuities constant in real terms 
-    (base year = 2018).
+    Converts assets to annuities in real terms.
+
+    Parameters
+    ----------
+    p : Person
+        spouse in household 
+    year : int
+        year
+    prices : Prices
+        instance of the class Prices
     """
     real = tools.create_real(year, prices)
 
-    sp.annuity_rrsp_real += real(sp.val_annuities_rrsp / sp.factor)
-    sp.annuity_rpp_dc_real += real(sp.val_annuities_rpp_dc / sp.factor)
-    sp.annuity_tfsa_real += real(sp.val_annuities_tfsa / sp.factor)
-    sp.annuity_tfsa_0_real += real(sp.val_annuities_tfsa / sp.factor_0)
-    sp.annuity_unreg_real += real(sp.val_annuities_unreg / sp.factor)
-    sp.annuity_unreg_0_real += real(sp.val_annuities_unreg / sp.factor_0)
+    p.annuity_rrsp_real += real(p.val_annuities_rrsp / p.factor)
+    p.annuity_rpp_dc_real += real(p.val_annuities_rpp_dc / p.factor)
+    p.annuity_tfsa_real += real(p.val_annuities_tfsa / p.factor)
+    p.annuity_tfsa_0_real += real(p.val_annuities_tfsa / p.factor_0)
+    p.annuity_unreg_real += real(p.val_annuities_unreg / p.factor)
+    p.annuity_unreg_0_real += real(p.val_annuities_unreg / p.factor_0)
 
 def compute_annuities(hh, d_returns, year, prices):
     """
-    Creates annuities with common assets and rpp_dc
+    Fully convert assets into annuities when last spouse retires.
 
-    :type hh: object
-    :param hh: Instance of the initialisation.Household class.
-
-    :type common: object
-    :param common: Instance of the macro.Common class
-
-    :type prices: object
-    :param prices: Object of the macro.Prices class
-
-    :type t: integer
-    :param t: Period identification.
-
-    :type rate_annuities: float
-    :param rate_annuities: Rate used for annuities
-
-    :type partial: bool
-    :param partial: True if partial retirement.
+    Parameters
+    ----------
+    hh: Hhold
+        household
+    d_returns : dict
+        dictionary of returns
+    year : int
+        year
+    prices : Prices
+        instance of the class Prices
     """
-    for sp in hh.sp:
-        liquidate_fin_assets(sp)
-        compute_factors(hh, sp, d_returns['bonds'][year], prices)
-        convert_to_real_annuities(sp, year, prices)
-        sp.retired = True
+    for p in hh.sp:
+        liquidate_fin_assets(p)
+        compute_factors(hh, p, d_returns['bonds'][year], prices)
+        convert_to_real_annuities(p, year, prices)
+        p.retired = True
 
 def liquidate_real_assets(hh, year, common, prices):
     """
+    Liquidate real assets (housing and business).
+
+    Parameters
+    ----------
+    hh: Hhold
+        household
+    year : int
+        year
+    common : Common
+        instance of the class Common
+    prices : Prices
+        instance of the class Prices
+
+    Returns
+    -------
+    float
+        liquidation value
+    float
+        realized capital gains
     """
     value_liquidation, cap_gains_liquidation = 0, 0
 
@@ -120,7 +170,16 @@ def liquidate_real_assets(hh, year, common, prices):
 
 def impute_real_rent(hh, year, prices):
     """
-    Imputes rent by dividing value of the house by price/rent ratio
+    Compute imputed rent.
+
+    Parameters
+    ----------
+    hh: Hhold
+        household
+    year : int
+        year
+    prices : Prices
+        instance of the class Prices
     """
     hh.imputed_rent_real = (hh.residences['first_residence'].balance
         / prices.d_price_rent_ratio[year] / prices.d_infl_factors[year])
