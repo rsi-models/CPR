@@ -8,19 +8,7 @@ importlib.reload(debts)
 
 def create_hh(index, d_hh, common, prices):
     """
-    Creates a household with all the data attached to it.
-
-        1. Initialize the the members of the household using the Person class.
-        2. Iinitialize the household using the Household class.
-        3. Initialize registered accounts of financial asset
-        using the assets.FinAsset class.
-        4. Initialize untegistered accounts of financial asset
-        using the assets.UnregAsset class.
-        5. Initialize the the defined contribution RPP accounts
-        with the assets.Rpp_dc class.
-        6. Initialie the residences and business accounts
-        with the assets.RealAsset class.
-        7. Initialize the debts accounts with the debts.Debt class.
+    Create a household with all the data attached to it.
     """
 
     # initialize household and spouses:
@@ -37,38 +25,38 @@ def create_hh(index, d_hh, common, prices):
             'init_dc', 'rate_employee_dc', 'rate_employer_dc']
 
     # create households with 1 or 2 people
-    sp = Person(d_hh, l_sp, common, prices)  # first sp
+    p = Person(d_hh, l_sp, common, prices)  # first p
     if not d_hh['couple']:
-        hh = Household(d_hh, l_hh, index, common, sp)
+        hh = Hhold(d_hh, l_hh, index, common, p)
     else:  # sp0 is first to retire
-        l_s_sp = ['s_' + var for var in l_sp]
-        s_sp = Person(d_hh, l_s_sp, common, prices, s_=True)
-        if sp.ret_year <= s_sp.ret_year:
-            hh = Household(d_hh, l_hh, index, common, sp, s_sp)
+        l_s_p = ['s_' + var for var in l_sp]
+        s_p = Person(d_hh, l_s_p, common, prices, s_=True)
+        if p.ret_year <= s_p.ret_year:
+            hh = Hhold(d_hh, l_hh, index, common, p, s_p)
         else:
-            hh = Household(d_hh, l_hh, index, common, s_sp, sp)
+            hh = Hhold(d_hh, l_hh, index, common, s_p, p)
 
     # initialize financial assets and rpp_dc:
-    for sp in hh.sp:
-        sp.fin_assets = {}
-        if np.isnan(sp.bal_tfsa):  # create tfsa account
-            sp.bal_tfsa, sp.cont_rate_tfsa, sp.withdrawal_tfsa = 0, 0, 0
-        if np.isnan(sp.bal_unreg):  # create unreg account
-            sp.bal_unreg, sp.cont_rate_unreg, sp.withdrawal_unreg = 0, 0, 0
-            sp.cap_gains_unreg, sp.realized_losses_unreg = 0, 0
+    for p in hh.sp:
+        p.fin_assets = {}
+        if np.isnan(p.bal_tfsa):  # create tfsa account
+            p.bal_tfsa, p.cont_rate_tfsa, p.withdrawal_tfsa = 0, 0, 0
+        if np.isnan(p.bal_unreg):  # create unreg account
+            p.bal_unreg, p.cont_rate_unreg, p.withdrawal_unreg = 0, 0, 0
+            p.cap_gains_unreg, p.realized_losses_unreg = 0, 0
 
-        sp.fin_assets['unreg'] = assets.UnregAsset(sp, hh, prices)
+        p.fin_assets['unreg'] = assets.UnregAsset(p, hh, prices)
         for acc in ['rrsp', 'tfsa', 'other_reg']:
-            if getattr(sp, f'bal_{acc}') >= 0:
-                sp.fin_assets[acc] = assets.FinAsset(sp, hh, acc)
+            if getattr(p, f'bal_{acc}') >= 0:
+                p.fin_assets[acc] = assets.FinAsset(p, hh, acc)
 
     # initialize rpp_dc:
-        if sp.init_dc >= 0:
-            sp.rpp_dc = assets.RppDC(sp, common)
+        if p.init_dc >= 0:
+            p.rpp_dc = assets.RppDC(p, common)
 
     # initialize rpp_db:
-        if (sp.replacement_rate_db > 0) | (sp.income_previous_db > 0):
-            sp.rpp_db = assets.RppDB(sp)
+        if (p.replacement_rate_db > 0) | (p.income_previous_db > 0):
+            p.rpp_db = assets.RppDB(p)
 
     # initialize residences and business
     hh.residences = {}
@@ -81,7 +69,8 @@ def create_hh(index, d_hh, common, prices):
     # initialize debts:
     hh.debts = {}
     l_debts = ['credit_card', 'personal_loan', 'student_loan', 'car_loan',
-               'credit_line', 'first_mortgage', 'second_mortgage', 'other_debt']
+               'credit_line', 'first_mortgage', 'second_mortgage',
+               'other_debt']
     for debt in l_debts:
         if d_hh[debt] > 0:
             hh.debts[debt] = debts.Debt(debt, d_hh, common, prices)
@@ -107,21 +96,32 @@ class Person:
         self.ret_age = min(int(self.ret_age), common.max_ret_age)
         self.ret_year = self.byear + self.ret_age
         self.retired = False
-
         # initialize cpp_qpp
         self.cpp = 0
         self.claim_age_cpp = np.clip(self.ret_age, common.min_claim_age_cpp,
                                      common.max_claim_age_cpp)
-        # initialize annuities
         for acc in ['rrsp', 'rpp_dc', 'tfsa', 'tfsa_0', 'unreg', 'unreg_0',
                     'return']:
             setattr(self, f'annuity_{acc}_real', 0)
-
         # create wage_profile
         self.wage_profile = self.create_wage_profile(common, prices)
 
     def create_wage_profile(self, common, prices):
+        """
+        Create wage profiles for each realisation of uncertainty.
 
+        Parameters
+        ----------
+        common: Common
+            instance of the class Common
+        prices: Prices
+            instance of the class Prices
+
+        Returns
+        -------
+        np.array:
+            wage profiles
+        """
         rel_age = self.age - common.min_age_cpp
         rel_ret_age = self.ret_age - common.min_age_cpp
         rel_max_age = common.future_years - common.min_age_cpp
@@ -141,6 +141,23 @@ class Person:
         return np.where(log_wages > 1, np.exp(log_wages), 0)
 
     def create_shocks(self, T, N, prices):
+        """
+        Create time series on shocks to the wage.
+
+        Parameters
+        ----------
+        T: int
+            length of the time series
+        N: int
+            number of realisations
+        prices: Prices
+            instance of the class Prices
+
+        Returns
+        -------
+        np.array:
+            time series on shocks to the wage
+        """
         if T == 0:
             return np.zeros((1, N))
         eps_trans = np.random.normal(0, prices.sig_trans_wage, (T, N))
@@ -153,12 +170,11 @@ class Person:
         return eps_trans + shock_pers
 
 
-class Household():
+class Hhold():
     """
-    This class create a household
+    This class creates a household.
     """
     def __init__(self, d_hh, l_hhold, index, common, sp0, sp1=None):
-
         self.sp = [sp0] if sp1 is None else [sp0, sp1]
         d_hhold = {k: v for k, v in d_hh.items() if k in l_hhold}
         self.__dict__.update(d_hhold)
@@ -167,12 +183,15 @@ class Household():
 
     def set_other_years(self, common):
         """
-        1. Set year to consider consumption before retirement.
-        2. Sets year of partial retirement (for couples).
-        3. Set year of retirement.
-        4. Set year to consider consumption after retirement.
-        """
+        Set years of partial and full retirement as well as
+        years in which pre-retirement and post-retirement consumptions
+        are assessed.
 
+        Parameters
+        ----------
+        common: Common
+            instance of the class Common
+        """
         # consumption before retirement at age_cons_bef_ret but after 2018
         # and before first retirement
         self.cons_bef_ret_year = np.clip(
@@ -184,7 +203,7 @@ class Household():
             self.cons_after_ret_year = max(
                 self.sp[0].byear + common.official_ret_age, self.ret_year)
         else:
-            self.ret_year = self.sp[1].ret_year  # sp[1] is last to retire
+            self.ret_year = self.sp[1].ret_year  # p[1] is last to retire
             if self.sp[0].ret_year < self.sp[1].ret_year:
                 self.partial_ret_year = self.sp[0].ret_year
             self.cons_after_ret_year = max(

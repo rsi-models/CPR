@@ -1,108 +1,108 @@
 import importlib
+import sys
 import numpy as np
+sys.path.insert(1, 'C:/Users/pyann/Dropbox (CEDIA)/srd/Model')
 import srd
-importlib.reload(srd)
 import tools
-importlib.reload(srd)
 
 
 def compute_after_tax_amount(hh, year, common, prices):
     """
-    Computes net nominal return of unreg assets (withdrawal not included)
+    Compute net nominal return and net amount from withdrawal
+    for unregistered assets.
 
-    :type hh: object
-    :param hh: Instance of the initialisation.Household class.
-
-    :type common: object
-    :param common: Instance of the macro.Common class.
+    Parameters
+    ----------
+    hh: Hhold
+        household
+    year : int
+        year
+    common : Common
+        instance of the class Common
+    prices : Prices
+        instance of the class Prices
     """
     hh_tax = file_household_amount_to_tax(hh, year, common, prices)
     hh_tax_0 = file_household(hh, year, common, prices)
     
-    for who, sp in enumerate(hh.sp):
-        sp.fin_assets['unreg'].amount_after_tax_real = (
+    for who, p in enumerate(hh.sp):
+        p.fin_assets['unreg'].amount_after_tax_real = (
             common.tax.paftertax(hh_tax, who)
             - common.tax.paftertax(hh_tax_0, who))
-        sp.fin_assets['unreg'].compute_after_tax_inc()
-        sp.fin_assets['unreg'].compute_net_withdrawal(common)
+        p.fin_assets['unreg'].compute_after_tax_inc()
+        p.fin_assets['unreg'].compute_net_withdrawal(common)
 
 
 def file_household(hh, year, common, prices):
     """
-    Files household.
+    Files household using SRD.
+
+    Parameters
+    ----------
+    hh: Hhold
+        household
+    year : int
+        year
+    common : Common
+        instance of the class Common
+    prices : Prices
+        instance of the class Prices
+
+    Returns
+    -------
+    Hhold
+        instance of class Hhold after tax
     """
-    real_2016 = tools.create_real_2016(year, prices)
+    real_2018 = tools.create_real(year, prices)
 
     p_tax = []  # persons in household (1 or 2)
-    for sp in hh.sp:
-        p = srd.Person(othtax=real_2016(sp.othtax), age=sp.age,
-                          earn=real_2016(sp.earn), rpp=real_2016(sp.rpp),
-                          cpp=real_2016(sp.cpp), othntax=real_2016(sp.othntax),
-                          con_rrsp=real_2016(sp.con_rrsp),
-                          inc_rrsp=real_2016(sp.inc_rrsp),
-                          cqppc=real_2016(sp.cpp_contrib))
+    for p in hh.sp:
+        p = srd.Person(othtax=real_2018(p.othtax), age=p.age,
+                       earn=real_2018(p.earn), rpp=real_2018(p.rpp),
+                       cpp=real_2018(p.cpp), othntax=real_2018(p.othntax),
+                       con_rrsp=real_2018(p.con_rrsp),
+                       inc_rrsp=real_2018(p.inc_rrsp),
+                       div_other_can=p.div_other_can))
         p_tax.append(p)
 
     if hh.couple:
-        hh_tax = srd.Hhold(p_tax[0], second=p_tax[1], prov=hh.prov)
+        hh_tax = srd.Hhold(p_tax[0], p_tax[1], prov=hh.prov)
     else:
         hh_tax = srd.Hhold(p_tax[0], prov=hh.prov)
-    common.tax.file(hh_tax)
-    return hh_tax
-
-def file_household_split(hh, hh_tax, year, common, prices):
-    """
-    Files household splitting taxable pensions.
-    """
-    # compute net transfers from 0 to 1
-    income = []
-    for sp in hh_tax.sp:
-        income.append(sp.inc_oas + sp.inc_cpp + sp.inc_rpp + sp.inc_othtax)
-    transfer = np.clip((income[0] - income[1]) / 2,
-        -common.max_split * (hh_tax.sp[1].inc_rpp + hh_tax.sp[1].inc_othtax),
-        common.max_split * (hh_tax.sp[0].inc_rpp + hh_tax.sp[0].inc_othtax))
-
-    who = 0 if transfer > 0 else 1
-    inc_rpp_othtax = hh_tax.sp[who].inc_rpp + hh_tax.sp[who].inc_othtax + 1e-12
-    rpp_transfer = hh_tax.sp[who].inc_rpp / inc_rpp_othtax * transfer
-    othtax_transfer = hh_tax.sp[who].inc_othtax / inc_rpp_othtax * transfer
-
-    real_2016 = tools.create_real_2016(year, prices)
-    p_tax = []  # persons in household (1 or 2)
-    for who, sp in enumerate(hh.sp):
-        if who == 0:
-            rpp = real_2016(sp.rpp) - rpp_transfer
-            othtax =real_2016(sp.othtax) - othtax_transfer
-        else:
-            rpp = real_2016(sp.rpp) + rpp_transfer
-            othtax =real_2016(sp.othtax) + othtax_transfer
-
-        p = srd.Person(
-            rpp=rpp, othtax=othtax, age=sp.age, earn=real_2016(sp.earn),
-            cpp=real_2016(sp.cpp), othntax=real_2016(sp.othntax),
-            con_rrsp=real_2016(sp.con_rrsp), inc_rrsp=real_2016(sp.inc_rrsp),
-            cqppc=real_2016(sp.cpp_contrib))
-        p_tax.append(p)
-
-    hh_tax = srd.Hhold(p_tax[0], second=p_tax[1], prov=hh.prov)
-    common.tax.file(hh_tax)
+    common.tax.compute(hh_tax)
     return hh_tax
 
 def file_household_amount_to_tax(hh, year, common, prices):
     """
     Files household with taxable income and cap gains from withdrawals
     from unreg assets.
+
+    Parameters
+    ----------
+    hh: Hhold
+        household
+    year : int
+        year
+    common : Common
+        instance of the class Common
+    prices : Prices
+        instance of the class Prices
+
+    Returns
+    -------
+    Hhold
+        instance of class Hhold after tax
     """
-    real_2016 = tools.create_real_2016(year, prices)
+    real_2018 = tools.create_real(year, prices)
 
     p_tax = []  # persons in household (1 or 2)
-    for sp in hh.sp:
+    for p in hh.sp:
         p = srd.Person(
-            othtax=real_2016(sp.othtax + sp.fin_assets['unreg'].amount_to_tax),
-            age=sp.age, earn=real_2016(sp.earn), rpp=real_2016(sp.rpp),
-            cpp=real_2016(sp.cpp), othntax=real_2016(sp.othntax),
-            con_rrsp=real_2016(sp.con_rrsp), inc_rrsp=real_2016(sp.inc_rrsp),
-            cqppc=real_2016(sp.cpp_contrib))
+            othtax=real_2018(p.othtax + p.fin_assets['unreg'].amount_to_tax),
+            age=sp.age, earn=real_2018(p.earn), rpp=real_2018(p.rpp),
+            cpp=real_2018(p.cpp), othntax=real_2018(p.othntax),
+            con_rrsp=real_2018(p.con_rrsp), inc_rrsp=real_2018(p.inc_rrsp),
+            div_other_can=p.div_other_can)
         p_tax.append(p)
 
     if hh.couple:
@@ -115,10 +115,21 @@ def file_household_amount_to_tax(hh, year, common, prices):
 
 def get_gis_oas(hh, hh_tax, year, prices):
     """
-    Computes nominal GIS and OAS
-    """
-    nom_2016 = tools.create_nom_2016(year, prices)
+    Computes nominal GIS and OAS benefits
 
-    for who, sp in enumerate(hh.sp):
-        sp.inc_gis = nom_2016(hh_tax.sp[who].inc_gis)
-        sp.inc_oas = nom_2016(hh_tax.sp[who].inc_oas)
+    Parameters
+    ----------
+    hh: Hhold
+        household
+    hh_tax : Hhold
+        household
+    year : int
+        year
+    prices : Prices
+        instance of the class Prices
+    """
+    nom_2018 = tools.create_nom(year, prices)
+
+    for who, p in enumerate(hh.sp):
+        p.inc_gis = nom_2018(hh_tax.sp[who].inc_gis)
+        p.inc_oas = nom_2018(hh_tax.sp[who].inc_oas)
