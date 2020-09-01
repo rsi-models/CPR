@@ -1,17 +1,19 @@
-import importlib
+import os
 import pickle
 import pandas as pd
 import numpy as np
 
-from life import life
 import srpp
 
-import tools
-importlib.reload(tools)
+from CPR import life
+from CPR import tools
 
 import sys
 sys.path.insert(1, 'C:/Users/pyann/Dropbox (CEDIA)/srd/Model')
 import srd
+
+module_dir = os.path.dirname(os.path.dirname(__file__))
+path = '/CPR/data/params/'
 
 
 class CommonParameters:
@@ -23,7 +25,7 @@ class CommonParameters:
         self.nsim = nsim
         self.non_stochastic = non_stochastic
         for file in ['common_params.csv', 'user_options.csv']:
-            tools.add_params_as_attr(self, 'CPR/data/params/' + file)
+            tools.add_params_as_attr(self, module_dir + path + file)
         tools.change_params(self, extra_params)
 
         self.tax = srd.tax(year=self.base_year)
@@ -37,7 +39,7 @@ class CommonParameters:
         self.d_ympe = self.prepare_ympe()
         self.d_perc_cpp = self.prepare_cpp()
         self.d_perc_rrif = tools.get_params(
-            'CPR/data/params/rrif_rates.csv', numerical_key=True)
+            module_dir + path + 'rrif_rates.csv', numerical_key=True)
 
     def set_limits(self, name):
         """
@@ -60,8 +62,8 @@ class CommonParameters:
         """"
         Pre-reform ympe used to adjust DB benefits for CPP
         """
-        d_ympe = tools.get_params('CPR/data/params/ympe.csv',
-                                       numerical_key=True)
+        d_ympe = tools.get_params(module_dir + path + 'ympe.csv',
+                                  numerical_key=True)
         for year in range(max(d_ympe.keys()) + 1,
                           self.base_year + self.future_years):
             d_ympe[year] = round(d_ympe[year-1] * (1 + self.gr_ympe))
@@ -85,7 +87,7 @@ class Prices:
     housing price growth rate and price/rent ratio.
     """
     def __init__(self, common, extra_params):
-        tools.add_params_as_attr(self, 'CPR/data/params/prices.csv')
+        tools.add_params_as_attr(self, module_dir + path + 'prices.csv')
         tools.change_params(self, extra_params)
         np.random.seed(self.seed)
 
@@ -102,7 +104,7 @@ class Prices:
         if common.recompute_factors:
             self.d_factors = self.initialize_factors()
         else:
-            with open('CPR/data/precomputed/d_factors', 'rb') as file:
+            with open(module_dir + '/CPR/data/precomputed/d_factors', 'rb') as file:
                 self.d_factors = pickle.load(file)
 
     def simulate_ret(self, asset, common):
@@ -244,7 +246,7 @@ class Prices:
             year: (1 + self.inflation_rate)**(year-common.base_year)
             for year in range(common.base_year, end_year)}
         # past inflation
-        d_inflation = tools.get_params('CPR/data/params/inflation.csv',
+        d_inflation = tools.get_params(module_dir + path +'inflation.csv',
                                        numerical_key=True)
         for year in reversed(range(start_year, common.base_year)):
             d_infl_factors[year] = (d_infl_factors[year + 1]
@@ -261,7 +263,7 @@ class Prices:
         dict:
             Dictionary of interest rates by type of debt and year
         """
-        mix_fee_debts = pd.read_csv("CPR/data/params/mix_fee_debt.csv",
+        mix_fee_debts = pd.read_csv(module_dir + path + "mix_fee_debt.csv",
                                     usecols=list(range(5)),
                                     index_col=0).to_dict('index')
         # monthly rates:
@@ -283,7 +285,7 @@ class Prices:
         dict:
             Dictionary of difference in log wages by education and age
         """
-        diff_log_wages = pd.read_csv('CPR/data/params/diff_log_wage.csv',
+        diff_log_wages = pd.read_csv(module_dir + path + 'diff_log_wage.csv',
                                      index_col=0)
         d_diff_log_wages = {}
         for degree in diff_log_wages.columns:
@@ -309,6 +311,6 @@ class Prices:
             for p in l_prov:
                 d_factors[s][p] = life.table(prov=p, scenario='M',
                                              gender=s+'s')
-        with open('CPR/data/precomputed/d_factors', 'wb') as file:
+        with open(module_dir + '/CPR/data/precomputed/d_factors', 'wb') as file:
             pickle.dump(d_factors, file)
         return d_factors

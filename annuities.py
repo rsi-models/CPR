@@ -1,6 +1,6 @@
 import importlib
-import taxes
-import tools
+from CPR import taxes
+from CPR import tools
 importlib.reload(taxes)
 importlib.reload(tools)
 
@@ -71,11 +71,11 @@ def compute_factors(hh, p, rate, prices):
     """
     rate_real = (1 + rate) / (1 + prices.inflation_rate) - 1
     adj_rate = rate_real - prices.adj_fact_annuities * (rate_real - prices.mu_bonds)
-    p.factor = prices.d_factors[sp.sex][hh.prov].ann(
-        p.byear, agestart=sp.age, rate=adj_rate)
+    p.factor = prices.d_factors[p.sex][hh.prov].ann(
+        p.byear, agestart=p.age, rate=adj_rate)
     real_rate_zero_ret = 1 / (1 + prices.inflation_rate) - 1
-    p.factor_0 = prices.d_factors[sp.sex][hh.prov].ann(
-        p.byear, agestart=sp.age, rate=-real_rate_zero_ret)
+    p.factor_0 = prices.d_factors[p.sex][hh.prov].ann(
+        p.byear, agestart=p.age, rate=-real_rate_zero_ret)
 
 
 def convert_to_real_annuities(p, year, prices):

@@ -1,13 +1,13 @@
-import importlib
+import sys
+sys.path.insert(1, r'C:\Users\pyann\Dropbox (CEDIA)\CPR\Model')
+import os
 import numpy as np
 import pandas as pd
-import main
-importlib.reload(main)
-import time
+from CPR import main
 
-
-df = pd.read_csv('CPR/data/inputs/inputs.csv', index_col=0)
-inputs = df.loc[:, :]
+module_dir = os.path.dirname(os.path.dirname(__file__))
+df = pd.read_csv(module_dir + '/CPR/data/inputs/inputs.csv', index_col=0)
+inputs = df.loc[:20, :]
 
 sim_num = 1
 
