@@ -1,7 +1,7 @@
 import importlib
 import numpy as np
-import assets
-import debts
+from CPR import assets
+from CPR import debts
 importlib.reload(assets)
 importlib.reload(debts)
 
@@ -174,8 +174,8 @@ class Hhold():
     """
     This class creates a household.
     """
-    def __init__(self, d_hh, l_hhold, index, common, sp0, sp1=None):
-        self.sp = [sp0] if sp1 is None else [sp0, sp1]
+    def __init__(self, d_hh, l_hhold, index, common, p0, p1=None):
+        self.sp = [p0] if p1 is None else [p0, p1]
         d_hhold = {k: v for k, v in d_hh.items() if k in l_hhold}
         self.__dict__.update(d_hhold)
         self.index = index

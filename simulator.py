@@ -1,10 +1,10 @@
 import importlib
 import numpy as np
 import srpp
-import annuities
-import taxes
-import tools
-import balance_sheets
+from CPR import annuities
+from CPR import taxes
+from CPR import tools
+from CPR import balance_sheets
 importlib.reload(annuities)
 importlib.reload(taxes)
 importlib.reload(balance_sheets)
@@ -26,7 +26,6 @@ def simulate(job, common, prices):
     dict:
         dictionary containing households' characteristics
         before and after retirement
-
     """
     hh, sim = job
 
@@ -127,8 +126,8 @@ def prepare_wages(p, sim, common, prices):
     ----------
     p : Person
         instance of the class Person
-    sim : [type]
-        [description]
+    sim : int
+        simulation number
     common : Common
         instance of the class Common
     prices: Prices
@@ -138,7 +137,7 @@ def prepare_wages(p, sim, common, prices):
                        p.byear + common.future_years)
     p.d_wages = dict(zip(time_range, p.wage_profile[:, sim]))
     p.d_wages = {year: p.d_wages[year] * prices.d_infl_factors[year]
-                  for year in p.d_wages}
+                 for year in p.d_wages}
 
 
 def initialize_cpp_account(p, hh, common):
@@ -187,8 +186,8 @@ def update_debts(hh, year, sim, common, prices):
         household
     year : int
         year
-    sim : [type]
-        [description]
+    sim : int
+        simulation number
     common : Common
         instance of the class Common
     prices: Prices
@@ -494,7 +493,7 @@ def get_contributions_assets(p, year, common):
         else:
             p.contributions_non_rrsp += p.fin_assets[acc].contribution
     if (p.rate_employee_db > 0) & (year < common.base_year
-                                   +common.max_years_db):
+                                   + common.max_years_db):
         p.contributions_rrsp += p.rate_employee_db * p.d_wages[year]
     if hasattr(p, 'rpp_dc'):
         p.contributions_rrsp += p.contrib_employee_dc

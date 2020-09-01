@@ -16,12 +16,12 @@ class ContributionRoom:
 
         Parameters
         ----------
-        p : [type]
-            [description]
+        p : Person
+            instance of the class Person
         year : int
             year
         common : Common
-           instance of the class Common
+            instance of the class Common
         prices : Prices
             instance of the class Prices
         """
@@ -46,12 +46,12 @@ class ContributionRoom:
 
         Parameters
         ----------
-        p : [type]
-            [description]
+        p : Person
+            instance of the class Person
         year : int
             year
         common : Common
-           instance of the class Common
+            instance of the class Common
         """
         if p.age > common.max_age_no_rrif:
             self.room_rrsp = 0
@@ -65,12 +65,12 @@ class ContributionRoom:
 
         Parameters
         ----------
-        p : [type]
-            [description]
+        p : Person
+            instance of the class Person
         year : int
             year
         common : Common
-           instance of the class Common
+            instance of the class Common
         """
         self.room_tfsa += common.d_tfsa_limit[year]
         self.room_tfsa += p.fin_assets['tfsa'].withdrawal
@@ -81,12 +81,12 @@ class ContributionRoom:
 
         Parameters
         ----------
-        p : [type]
-            [description]
+        p : Person
+            instance of the class Person
         year : int
             year
         common : Common
-           instance of the class Common
+            instance of the class Common
         """
         cpp_offset = (common.perc_cpp_2018
                       * min(p.d_wages[year-1], common.d_ympe[year-1])
@@ -104,8 +104,8 @@ class ContributionRoom:
 
         Parameters
         ----------
-        p : [type]
-            [description]
+        p : Person
+            instance of the class Person
         year : int
             year
         """
@@ -126,8 +126,8 @@ class ContributionRoom:
 
         Parameters
         ----------
-        p : [type]
-            [description]
+        p : Person
+            instance of the class Person
         """
         if p.rpp_dc.contrib_rate == 0:
             p.contrib_employee_dc = 0
@@ -145,12 +145,12 @@ class ContributionRoom:
         ----------
         acc : [type]
             [description]
-        p : [type]
-            [description]
+        p : Person
+            instance of the class Person
         year : int
             year
         """
-        contrib = p.fin_assets[acc].contrib_rate*sp.d_wages[year]
+        contrib = p.fin_assets[acc].contrib_rate * p.d_wages[year]
         if contrib <= self.room_rrsp:
             p.fin_assets[acc].contribution = contrib
             self.room_rrsp -= contrib
@@ -167,12 +167,12 @@ class ContributionRoom:
 
         Parameters
         ----------
-        p : [type]
-            [description]
+        p : Person
+            instance of the class Person
         year : int
             year
         common : Common
-           instance of the class Common
+            instance of the class Common
         prices : Prices
             instance of the class Prices
         """
@@ -196,12 +196,12 @@ class ContributionRoom:
 
         Parameters
         ----------
-        p : [type]
-            [description]
+        p : Person
+            instance of the class Person
         year : int
             year
         common : Common
-           instance of the class Common
+            instance of the class Common
         prices : Prices
             instance of the class Prices
 
@@ -222,8 +222,8 @@ class ContributionRoom:
 
         Parameters
         ----------
-        p : [type]
-            [description]
+        p : Person
+            instance of the class Person
         year : int
             year
         """
@@ -260,12 +260,12 @@ class FinAsset:
 
         Parameters
         ----------
-        d_returns : [type]
-            [description]
+        d_returns : dict
+            dictionary of returns
         year : int
             year
         common : Common
-           instance of the class Common
+            instance of the class Common
         prices : Prices
             instance of the class Prices
         """
@@ -283,8 +283,8 @@ class FinAsset:
 
         Parameters
         ----------
-        d_returns : [type]
-            [description]
+        d_returns : dict
+            dictionary of returns
         year : int
             year
 
@@ -303,10 +303,10 @@ class FinAsset:
 
         Parameters
         ----------
-        p : [type]
-            [description]
+        p : Person
+            instance of the class Person
         common : Common
-           instance of the class Common
+            instance of the class Common
 
         Returns
         -------
@@ -315,7 +315,7 @@ class FinAsset:
         """
         if self.balance > 0:
             extra_withdrawal_real = max(
-                0, common.d_perc_rrif[sp.age]*self.balance_real
+                0, common.d_perc_rrif[p.age]*self.balance_real
                 - self.desired_withdrawal_real)
             self.desired_withdrawal_real += extra_withdrawal_real
         else:
@@ -342,7 +342,7 @@ class FinAsset:
         """
         self.balance = self.init_balance
         self.desired_withdrawal_real = self.init_desired_withdrawal_real
-        # self.withdrawal = 0  # to adjust contribution space tfsa; seems useless
+        self.withdrawal = 0  # to adjust contribution space tfsa first period
 
     @property
     def balance_real(self):
@@ -382,12 +382,12 @@ class UnregAsset:
 
         Parameters
         ----------
-        d_returns : [type]
-            [description]
+        d_returns : dict
+            dictionary of returns
         year : int
             year
         common : Common
-           instance of the class Common
+            instance of the class Common
         prices : Prices
             instance of the class Prices
         """
@@ -407,8 +407,8 @@ class UnregAsset:
 
         Parameters
         ----------
-        d_returns : [type]
-            [description]
+        d_returns : dict
+            dictionary of returns
         year : int
             year
         """
@@ -424,15 +424,15 @@ class UnregAsset:
 
         Parameters
         ----------
-        d_returns : [type]
-            [description]
+        d_returns : dict
+            dictionary of returns
         year : int
             year
 
         Returns
         -------
-        [type]
-            [description]
+        float
+            rate of return (net of fee)
         """
         return (self.mix_bills*d_returns['bills'][year] +
                 self.mix_bonds*d_returns['bonds'][year] +
@@ -506,7 +506,7 @@ class UnregAsset:
         Parameters
         ----------
         common : Common
-           instance of the class Common
+            instance of the class Common
         """
         self.net_withdrawal = (
             self.non_taxable_withdrawal
@@ -518,7 +518,7 @@ class UnregAsset:
     def prepare_liquidation(self, value_liquidation, cap_gains_liquidation,
                             common):
         """
-        Prepare liquidation
+        Prepare liquidation.
 
         Parameters
         ----------
@@ -527,10 +527,10 @@ class UnregAsset:
         cap_gains_liquidation : float
             capital gains on amount liquidated
         common : Common
-           instance of the class Common
+            instance of the class Common
         """
         self.amount_to_tax += common.frac_cap_gains * self.cap_gains
-        self.non_taxable += (1-common.frac_cap_gains) * self.cap_gains
+        self.non_taxable += (1 - common.frac_cap_gains) * self.cap_gains
         self.cap_gains = 0
 
         self.amount_to_tax += common.frac_cap_gains * cap_gains_liquidation
@@ -602,10 +602,10 @@ class RppDB:
 
         Parameters
         ----------
-        p : [type]
-            [description]
+        p : Person
+            instance of the class Person
         common : Common
-           instance of the class Common
+            instance of the class Common
         """
         if self.replacement_rate_db > 0:
             n = common.n_best_wages_db
@@ -628,10 +628,10 @@ class RppDB:
 
         Parameters
         ----------
-        p : [type]
-            [description]
+        p : Person
+            instance of the class Person
         common : Common
-           instance of the class Common
+            instance of the class Common
         """
         years_service = p.replacement_rate_db / common.perc_year_db
         if (years_service < common.max_years_db) and (p.ret_age < common.db_ret_age_no_penalty):
@@ -652,10 +652,10 @@ class RppDB:
 
         Parameters
         ----------
-        p : [type]
-            [description]
+        p : Person
+            instance of the class Person
         common : Common
-           instance of the class Common
+            instance of the class Common
 
         Returns
         -------
@@ -669,8 +669,8 @@ class RppDB:
                                      common.d_ympe[common.base_year +  t])
                                  for t in range(years_db)])
         else:
-            mean_wage = np.mean([min(p.d_wages[sp.ret_year - t],
-                                     common.d_ympe[sp.ret_year - t])
+            mean_wage = np.mean([min(p.d_wages[p.ret_year - t],
+                                     common.d_ympe[p.ret_year - t])
                                  for t in range(1, years_db + 1)])
 
         return (common.perc_cpp_2018 * years_db / common.max_years_db
@@ -765,18 +765,18 @@ class Business:
         Parameters
         ----------
         common : Common
-           instance of the class Common
+            instance of the class Common
 
         Returns
         -------
         float
             selling price
         """
-        self.selling_price = self.balance
+        selling_price = self.balance
         business_exempt = common.business_exempt_real * self.inflation_factor
         self.cap_gains = max(self.balance - business_exempt, 0)
         self.balance = 0
-        return self.selling_price
+        return selling_price
 
     def reset(self):
         """

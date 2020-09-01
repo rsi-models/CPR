@@ -1,19 +1,16 @@
-import importlib
+import os
 from functools import partial
 import multiprocessing as mp
 import time
 import pandas as pd
-import initialisation
-import macro
-import simulator
-import tools
-import analysis
-importlib.reload(initialisation)
-importlib.reload(macro)
-importlib.reload(simulator)
-importlib.reload(tools)
-importlib.reload(analysis)
+from CPR import initialisation
+from CPR import macro
+from CPR import simulator
+from CPR import tools
+from CPR import analysis
 
+module_dir = os.path.dirname(os.path.dirname(__file__))
+path = '/CPR/data/params/'
 
 def run_simulations(inputs, nsim=1, non_stochastic=False, **extra_params):
     """
@@ -37,7 +34,7 @@ def run_simulations(inputs, nsim=1, non_stochastic=False, **extra_params):
     # check extra_params in common_params or prices:
     l_params = []
     for file_csv in ['prices.csv', 'common_params.csv', 'user_options.csv']:
-        params = tools.get_params('CPR/data/params/' + file_csv)
+        params = tools.get_params(module_dir + path + file_csv)
         l_params.extend(params.keys())
     for param in extra_params:
         assert param in l_params, f'{param} is not a parameter'

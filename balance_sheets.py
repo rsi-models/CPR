@@ -1,6 +1,6 @@
-import tools
-import taxes
-import simulator
+from CPR import tools
+from CPR import taxes
+from CPR import simulator
 import importlib
 importlib.reload(taxes)
 importlib.reload(simulator)
@@ -24,9 +24,10 @@ def compute_bs_bef_ret(hh, year, common, prices):
     nom_2018 = tools.create_nom(year, prices)
 
     hh_tax = taxes.file_household(hh, year, common, prices)
-    for p in hh_tax.sp:
+
+    for who, p in enumerate(hh.sp):
         p.net_income_bef_ret = (p.fin_assets['unreg'].net_withdrawal +
-                                nom_2018(p.disp_inc))
+                                nom_2018(hh_tax.sp[who].disp_inc))
     compute_cons_bef_ret(hh, year, prices)
 
 
@@ -45,8 +46,8 @@ def compute_cons_bef_ret(hh, year, prices):
     """
     real = tools.create_real(year, prices)
 
-    hh.net_income_bef_ret = sum([sp.net_income_bef_ret for p in hh.sp])
-    hh.contributions = sum([sp.contributions_rrsp + p.contributions_non_rrsp
+    hh.net_income_bef_ret = sum([p.net_income_bef_ret for p in hh.sp])
+    hh.contributions = sum([p.contributions_rrsp + p.contributions_non_rrsp
                             for p in hh.sp])
     hh.debt_payments = sum([hh.debts[debt].payment for debt in hh.debts])
     hh.cons_bef_ret_real = real(hh.net_income_bef_ret - hh.contributions
@@ -71,8 +72,8 @@ def add_output(hh, year, prices, key):
     real = tools.create_real(year, prices)
 
     for p in hh.sp:
-        hh.d_output[f'{sp.who}wage_{key}'] = real(p.d_wages[year])
-        hh.d_output[f'{sp.who}pension_{key}'] = real(p.pension)
+        hh.d_output[f'{p.who}wage_{key}'] = real(p.d_wages[year])
+        hh.d_output[f'{p.who}pension_{key}'] = real(p.pension)
 
     for residence in hh.residences:
         hh.d_output[f'{residence}_{key}'] = real(hh.residences[residence].balance)
@@ -89,9 +90,9 @@ def add_output(hh, year, prices, key):
     if key in ['bef', 'part']:
         for p in hh.sp:
             if hasattr(p, 'rpp_dc'):
-                hh.d_output[f'{sp.who}rpp_dc_{key}'] = real(p.rpp_dc.balance)
+                hh.d_output[f'{p.who}rpp_dc_{key}'] = real(p.rpp_dc.balance)
             for acc in p.fin_assets:
-                hh.d_output[f'{sp.who}{acc}_balance_{key}'] = \
+                hh.d_output[f'{p.who}{acc}_balance_{key}'] = \
                     real(p.fin_assets[acc].balance)
 
     if key in ['bef', 'after']:
@@ -99,23 +100,23 @@ def add_output(hh, year, prices, key):
 
     if key in ['part', 'after']:
         for p in hh.sp:
-            hh.d_output[f'{sp.who}annuity_rrsp_{key}'] = p.annuity_rrsp_real
-            hh.d_output[f'{sp.who}annuity_dc_{key}'] = p.annuity_rpp_dc_real
-            hh.d_output[f'{sp.who}annuity_tfsa_{key}'] = p.annuity_tfsa_real
-            hh.d_output[f'{sp.who}annuity_unreg_{key}'] = p.annuity_unreg_real
+            hh.d_output[f'{p.who}annuity_rrsp_{key}'] = p.annuity_rrsp_real
+            hh.d_output[f'{p.who}annuity_dc_{key}'] = p.annuity_rpp_dc_real
+            hh.d_output[f'{p.who}annuity_tfsa_{key}'] = p.annuity_tfsa_real
+            hh.d_output[f'{p.who}annuity_unreg_{key}'] = p.annuity_unreg_real
 
     if key == 'after':
         hh.d_output[f'net_income_{key}'] = real(hh.net_income_after_ret)
         hh.d_output[f'cons_{key}'] = hh.cons_after_ret_real
 
         for p in hh.sp:
-            hh.d_output[f'{sp.who}years_to_retire'] = p.ret_age - p.init_age
-            hh.d_output[f'{sp.who}factor'] = p.factor
-            hh.d_output[f'{sp.who}cpp_{key}'] = real(p.cpp)
-            hh.d_output[f'{sp.who}gis_{key}'] = real(p.inc_gis)
-            hh.d_output[f'{sp.who}oas_{key}'] = real(p.inc_oas)
+            hh.d_output[f'{p.who}years_to_retire'] = p.ret_age - p.init_age
+            hh.d_output[f'{p.who}factor'] = p.factor
+            hh.d_output[f'{p.who}cpp_{key}'] = real(p.cpp)
+            hh.d_output[f'{p.who}gis_{key}'] = real(p.inc_gis)
+            hh.d_output[f'{p.who}oas_{key}'] = real(p.inc_oas)
             if hasattr(p, 'rpp_db'):
-                hh.d_output[f'{sp.who}rpp_db_benefits_{key}'] = \
+                hh.d_output[f'{p.who}rpp_db_benefits_{key}'] = \
                     real(p.rpp_db.benefits)
 
 
@@ -138,7 +139,7 @@ def compute_bs_after_ret(hh, year, common, prices):
     nom_2018 = tools.create_nom(year, prices)
 
     hh_tax = taxes.file_household(hh, year, common, prices)
-    hh.net_income_after_ret = nom_2018(common.tax.haftertax(hh_tax))
+    hh.net_income_after_ret = nom_2018(hh_tax.fam_disp_inc)
     taxes.get_gis_oas(hh, hh_tax, year, prices)
 
     hh.debt_payments = sum([hh.debts[debt].payment for debt in hh.debts])
