@@ -115,7 +115,7 @@ class Person:
         self.claim_age_cpp = np.clip(self.ret_age, common.min_claim_age_cpp,
                                      common.max_claim_age_cpp)
         # initialize annuities
-        for acc in ['rrsp', 'non_rrsp', 'non_rrsp_0']:
+        for acc in ['rrsp', 'rpp_dc', 'non_rrsp', 'non_rrsp_0']:
             setattr(self, f'annuity_{acc}_real', 0)
         # create wage_profile
         self.wage_profile = self.create_wage_profile(common, prices)
