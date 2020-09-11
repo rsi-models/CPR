@@ -12,7 +12,7 @@ importlib.reload(balance_sheets)
 
 def simulate(job, common, prices):
     """
-    Project assets, RPPs, debt to retirement.
+    Project assets, RPPs and debts to retirement.
 
     Parameters
     ----------
@@ -51,8 +51,9 @@ def simulate(job, common, prices):
             contribute_cpp(p, year, common)
             claim_cpp(p)
 
-        if check_tax_unreg(hh):
-            tax_unreg_inc(hh, year, common, prices)
+        if check_liquidation(hh) or check_tax_unreg(hh):
+            prepare_taxes(hh, year, common, prices)
+            taxes.compute_after_tax_amount(hh, year, common, prices)
 
         if year == hh.cons_bef_ret_year:
             prepare_taxes(hh, year, common, prices)
@@ -89,6 +90,7 @@ def simulate(job, common, prices):
 
     return hh.d_output
 
+
 def extract_time_series(sim, common, prices):
     """
     Attach stochastic processes on asset returns to households.
@@ -112,7 +114,8 @@ def extract_time_series(sim, common, prices):
     d_returns = {}
     for ret in ['bills', 'bonds', 'equity', 'housing', 'business']:
         years = range(common.base_year, common.base_year + common.future_years)
-        d_returns[ret] = dict(zip(years, getattr(prices, f'ret_{ret}')[:, sim]))
+        d_returns[ret] = dict(zip(years,
+                                  getattr(prices, f'ret_{ret}')[:, sim]))
     d_price_rent_ratio = dict(zip(years, prices.price_rent_ratio[:, sim]))
 
     return d_returns, d_price_rent_ratio
@@ -147,7 +150,7 @@ def initialize_cpp_account(p, hh, common):
     Parameters
     ----------
     p : Person
-        spouse in household 
+        spouse in household
     hh: Hhold
         household
     common : Common
@@ -198,10 +201,11 @@ def update_debts(hh, year, sim, common, prices):
             year, prices.d_interest_debt[debt][year - common.base_year, sim],
             prices)
 
+
 def adjust_contributions(hh, year, common, prices):
     """
-    Adjust contributions to all types of accounts (RRSP, TFSA, etc)
-    to respect contribution rooms.
+    Adjust contributions to all types of accounts (RRSP, other registered,
+    TFSA) and pensions plans (DC and DB rpp) to respect contribution rooms.
 
     Parameters
     ----------
@@ -216,11 +220,12 @@ def adjust_contributions(hh, year, common, prices):
     """
     for p in hh.sp:
         if (p.replacement_rate_db > 0):
-            if (p.age >= p.init_age
-                         + int(p.replacement_rate_db / common.perc_year_db)):
+            if p.age >= (p.init_age + int(p.replacement_rate_db
+                                          / common.perc_year_db)):
                 p.rpp_db.rate_employee_db = 0
         if not p.retired:
             p.contribution_room.compute_contributions(p, year, common, prices)
+
 
 def update_assets(hh, year, d_returns, common, prices):
     """
@@ -239,11 +244,9 @@ def update_assets(hh, year, d_returns, common, prices):
     prices: Prices
     instance of the class Prices
     """
-
     for p in hh.sp:
         if p.retired:
             continue
-
         if hasattr(p, 'rpp_dc'):
             p.rpp_dc.update(d_returns, year, common, prices)
         for acc in p.fin_assets:
@@ -269,16 +272,66 @@ def manage_liquidations(hh, year, common, prices):
     prices: Prices
         instance of the class Prices
     """
+    nom = tools.create_nom(year, prices)
+
+    for p in hh.sp:
+        p.liquidation_non_taxable = 0
+        p.liquidation_cap_gains = 0
+        p.liquidation_cap_losses = 0
+        p.liquidation_business_exempt = 0
+
     if year == getattr(hh, 'partial_ret_year', np.nan) - 1:
-        hh.sp[0].fin_assets['unreg'].prepare_liquidation(0, 0, common)
+        unreg = hh.sp[0].fin_assets['unreg']
+        unreg.liquidate()
+        hh.sp[0].liquidation_non_taxable += unreg.liquidation_non_taxable
+        hh.sp[0].liquidation_cap_gains += unreg.liquidation_cap_gains
+        hh.sp[0].liquidation_cap_losses += unreg.liquidation_cap_losses
 
     if year == hh.ret_year - 1:
-        value_liquidation, cap_gains_liquidation = \
-            annuities.liquidate_real_assets(hh, year, common, prices)
         for p in hh.sp:
-            p.fin_assets['unreg'].prepare_liquidation(
-                value_liquidation / (1 + hh.couple),
-                cap_gains_liquidation / (1 + hh.couple), common)
+            unreg = p.fin_assets['unreg']
+            unreg.liquidate()
+            p.liquidation_non_taxable += unreg.liquidation_non_taxable
+            p.liquidation_cap_gains += unreg.liquidation_cap_gains
+            p.liquidation_cap_losses += unreg.liquidation_cap_losses
+
+        if common.sell_first_resid & ('first_residence' in hh.residences):
+            first_res = hh.residences['first_residence']
+            first_res.impute_rent(hh, year, prices)
+            first_res.liquidate()
+            liquidation_value = (first_res.liquidation_non_taxable
+                                 + first_res.liquidation_cap_gains)
+            if 'first_mortgage' in hh.debts:
+                liquidation_value -= hh.debts['first_mortgage'].balance
+                hh.debts['first_mortgage'].balance = 0
+            for p in hh.sp:
+                p.liquidation_non_taxable += (liquidation_value
+                                              / (1 + hh.couple))
+
+        if common.sell_second_resid & ('second_residence' in hh.residences):
+            second_res = hh.residences['second_residence']
+            second_res.liquidate()
+            if 'second_mortgage' in hh.debts:
+                second_res.liquidation_non_taxable -= (
+                    hh.debts['second_mortgage'].balance)
+                hh.debts['second_mortgage'].balance = 0
+            for p in hh.sp:
+                p.liquidation_non_taxable += (
+                    second_res.liquidation_non_taxable / (1 + hh.couple))
+                p.liquidation_cap_gains += (
+                    second_res.liquidation_cap_gains / (1 + hh.couple))
+
+        if common.sell_business & hasattr(hh, 'business'):
+            hh.business.liquidate(common)
+            liquidation_business_exempt = min(
+                hh.business.liquidation_cap_gains, nom(common.lcge_real))
+            for p in hh.sp:
+                p.liquidation_non_taxable += (
+                    hh.business.liquidation_non_taxable / (1 + hh.couple))
+                p.liquidation_cap_gains += (
+                    hh.business.liquidation_cap_gains / (1 + hh.couple))
+                p.liquidation_business_exempt += (
+                        liquidation_business_exempt / (1 + hh.couple))
 
 
 def contribute_cpp(p, year, common):
@@ -288,7 +341,7 @@ def contribute_cpp(p, year, common):
     Parameters
     ----------
     p : Person
-        spouse in household 
+        spouse in household
     year : int
         year
     common : Common
@@ -305,7 +358,7 @@ def claim_cpp(p):
     Parameters
     ----------
     p : Person
-        spouse in household 
+        spouse in household
     """
     if p.age == p.claim_age_cpp:
         p.cpp_account.ClaimCPP(p.byear + p.claim_age_cpp)
@@ -326,28 +379,34 @@ def check_tax_unreg(hh):
         True or False
     """
     for p in hh.sp:
-        if p.fin_assets['unreg'].amount_to_tax > 0:
+        if p.fin_assets['unreg'].income_to_tax:
             return True
     return False
 
 
-def tax_unreg_inc(hh, year, common, prices):
+def check_liquidation(hh):
     """
-    Tax unregistered assets.
+    Check if there are liquidations to be taxed.
 
     Parameters
     ----------
     hh: Hhold
         household
-    year : int
-        year
-    common : Common
-        instance of the class Common
-    prices: Prices
-        instance of the class Prices
+
+    Returns
+    -------
+    bool
+        True or False
     """
-    prepare_taxes(hh, year, common, prices)
-    taxes.compute_after_tax_amount(hh, year, common, prices)
+    for p in hh.sp:
+        p.liquidation_to_tax = (p.liquidation_non_taxable > 0 or
+                                p.liquidation_cap_gains > 0 or
+                                p.liquidation_cap_losses > 0 or
+                                p.liquidation_business_exempt > 0)
+    for p in hh.sp:
+        if p.liquidation_to_tax:
+            return True
+    return False
 
 
 def prepare_taxes(hh, year, common, prices):
@@ -368,63 +427,50 @@ def prepare_taxes(hh, year, common, prices):
     nom = tools.create_nom(year, prices)
 
     for p in hh.sp:
-        compute_benefits_rpp_db(p, common)
-        get_benefits_cpp(p, year, common)
-        get_contributions_cpp(p, common)
-        get_contributions_assets(p, year, common)
-        get_withdrawals(p)
-
         p.earn = p.d_wages[year]
-        p.div_other_can = 0
-        if hasattr(hh, 'business'):
-            p.div_other_can = hh.business.dividends_business / (1 + hh.couple)
-
-        p.con_rrsp = p.contributions_rrsp
-        p.inc_rrsp = nom(p.annuity_rrsp_real) + p.withdrawal_rrsp
-
-        p.rpp = nom(p.annuity_rpp_dc_real)
-        if p.pension > 0:
-            p.rpp += p.pension
-        if hasattr(p, 'rpp_db'):
-            p.rpp += p.rpp_db.benefits
-
-        p.othtax = 0
-        p.othntax = p.withdrawal_tfsa
-        p.othntax += nom(p.annuity_tfsa_real + p.annuity_unreg_real)
-
-        p.annuity_return = nom((p.annuity_tfsa_real - p.annuity_tfsa_0_real)
-            + (p.annuity_unreg_real - p.annuity_unreg_0_real))
-        p.othtax += p.annuity_return
-        p.othntax -= p.annuity_return
+        compute_rpp(p, nom, common)
+        get_benefits_cpp(p, year, common)
+        p.net_cap_gains = p.fin_assets['unreg'].withdrawal_cap_gains
+        p.prev_cap_losses = p.fin_assets['unreg'].withdrawal_cap_losses
+        p.div_elig = (common.share_div_elig
+                      * p.fin_assets['unreg'].withdrawal_div)
+        p.div_other_can = (hh.business.dividends_business / (1 + hh.couple)
+                           if hasattr(hh, 'business') else 0)
+        get_other_taxable(p, nom, common)
+        get_other_non_taxable(p, nom)
+        get_inc_rrsp(p, nom)
+        get_contributions_assets(p, year, common)
 
 
-def compute_benefits_rpp_db(p, common):
+def compute_rpp(p, nom, common):
     """
-    Compute RPP DB benefits and adjust them for CPP/QPP benefits.
-    If RPP DB < CPP benefits, RPP DB = 0 when CPP starts.
+    Compute rpp (DB and pension).
 
     Parameters
     ----------
     p : Person
-        spouse in household 
-    common : Common
-        instance of the class Common
+        spouse in household
     """
+    p.rpp = 0
+    if p.pension > 0:
+        p.rpp += p.pension
     if hasattr(p, 'rpp_db') & p.retired & (p.age > common.db_minimum_age):
         p.rpp_db.compute_benefits(p, common)
+        p.rpp += p.rpp_db.benefits
 
 
 def get_benefits_cpp(p, year, common):
     """
-    Compute annual CPP benefits. 
+    Compute annual CPP benefits.
     s1 is the increase due to higher contribution rates,
     s2 is the increase due to changes in ympe
-    and PRB is for post retirement benefit (after claiming but still contributing).
+    and PRB is for post retirement benefit
+    (after claiming but still contributing).
 
     Parameters
     ----------
     p : Person
-        spouse in household 
+        spouse in household
     year : int
         year
     common : Common
@@ -442,31 +488,62 @@ def get_benefits_cpp(p, year, common):
             + p.cpp_account.gPRB_s1(year) + p.cpp_account.gPRB_s2(year))
 
 
-def get_contributions_cpp(p, common):
+def get_inc_rrsp(p, nom):
     """
-    Compute CPP contributions. s1 is the increase in contribution rates,
-    s2 is the increase in brackets and PRB is for post retirement benefit
-    (after claiming but still contributing).
+    Compute RRSP income from withdrawals.
 
     Parameters
     ----------
     p : Person
-        spouse in household 
+        spouse in household
+    """
+    p.inc_rrsp = nom(p.annuity_rrsp_real)
+
+    if p.retired:
+        return
+
+    for acc in set(p.fin_assets) & set(('rrsp', 'other_reg')):
+        p.inc_rrsp += p.fin_assets[acc].withdrawal
+
+
+def get_other_taxable(p, nom, common):
+    """
+    Compute other taxable.
+
+    Parameters
+    ----------
+    p : Person
+        spouse in household
+    nom : function
+        function converting to nominal value
     common : Common
         instance of the class Common
     """
-    if p.age > common.max_age_cpp:
-        p.cpp_contrib = 0
-        return
+    regular_div_and_int = (
+        (1 - common.share_div_elig) * p.fin_assets['unreg'].withdrawal_div
+        + p.fin_assets['unreg'].withdrawal_int)
+    annuity_return = nom(p.annuity_non_rrsp_real - p.annuity_non_rrsp_0_real)
+    p.other_taxable = regular_div_and_int + annuity_return
 
-    min_age = common.min_age_cpp
-    p.cpp_contrib = (p.cpp_account.history[p.age - min_age].contrib
-                      + p.cpp_account.history[p.age - min_age].contrib_s1
-                      + p.cpp_account.history[p.age - min_age].contrib_s2)
-    if common.old_cpp:
-        p.cpp_contrib -= (
-            p.cpp_account.history[p.age - min_age].contrib_s1
-            + p.cpp_account.history[p.age - min_age].contrib_s2)
+
+def get_other_non_taxable(p, nom):
+    """
+    Compute other non-taxable.
+
+    Parameters
+    ----------
+    p : Person
+        spouse in household
+    nom : function
+        function converting to nominal value
+    common : Common
+        instance of the class Common
+    """
+    withdrawal_non_tax = (p.fin_assets['unreg'].withdrawal_non_tax
+                          + p.fin_assets['tfsa'].withdrawal)
+    annuity_non_tax = nom(p.annuity_non_rrsp_0_real)
+
+    p.other_non_taxable = withdrawal_non_tax + annuity_non_tax
 
 
 def get_contributions_assets(p, year, common):
@@ -477,48 +554,27 @@ def get_contributions_assets(p, year, common):
     Parameters
     ----------
     p : Person
-        spouse in household 
+        spouse in household
     year : int
         year
     common : Common
         instance of the class Common
     """
-    p.contributions_rrsp, p.contributions_non_rrsp = 0, 0
+    p.con_rrsp, p.con_non_rrsp = 0, 0
 
     if p.retired:
         return
+
     for acc in set(p.fin_assets):
         if acc in ['rrsp', 'other_reg']:
-            p.contributions_rrsp += p.fin_assets[acc].contribution
+            p.con_rrsp += p.fin_assets[acc].contribution
         else:
-            p.contributions_non_rrsp += p.fin_assets[acc].contribution
+            p.con_non_rrsp += p.fin_assets[acc].contribution
     if (p.rate_employee_db > 0) & (year < common.base_year
                                    + common.max_years_db):
-        p.contributions_rrsp += p.rate_employee_db * p.d_wages[year]
+        p.con_rrsp += p.rate_employee_db * p.d_wages[year]
     if hasattr(p, 'rpp_dc'):
-        p.contributions_rrsp += p.contrib_employee_dc
-
-
-def get_withdrawals(p):
-    """
-    Compute withdrawals from RRSP and TFSA.
-
-    Parameters
-    ----------
-    p : Person
-        spouse in household 
-    """
-
-    p.withdrawal_rrsp, p.withdrawal_tfsa = 0, 0
-
-    if p.retired:
-        return
-
-    for acc in p.fin_assets:
-        if acc in ['rrsp', 'other_reg']:
-            p.withdrawal_rrsp += p.fin_assets[acc].withdrawal
-        if acc in ['tfsa']:
-            p.withdrawal_tfsa += p.fin_assets[acc].withdrawal
+        p.con_rrsp += p.contrib_employee_dc
 
 
 def reset_accounts(hh):

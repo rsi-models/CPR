@@ -8,27 +8,41 @@ importlib.reload(debts)
 
 def create_hh(index, d_hh, common, prices):
     """
-    Create a household with all the data attached to it.
-    """
+    Create a household.
 
+    Parameters
+    ----------
+    index : int
+        household index
+    d_hh : dict
+        dictionary of household features
+    common : Common
+        instance of the class Common
+    prices : Prices
+        instance of the class Prices
+
+    Returns
+    -------
+    Hhold
+        instance of the class Hhold
+    """
     # initialize household and spouses:
     l_hh = ['prov', 'couple', 'mix_bills', 'mix_bonds', 'mix_equity', 'fee',
             'fee_equity']
     l_sp = ['byear', 'sex', 'education', 'ret_age', 'claim_age_cpp',
             'init_wage', 'pension', 'init_room_rrsp', 'init_room_tfsa',
             'bal_rrsp', 'bal_tfsa', 'bal_other_reg', 'bal_unreg',
-            'cap_gains_unreg', 'realized_losses_unreg',
-            'cont_rate_rrsp', 'cont_rate_tfsa', 'cont_rate_other_reg',
-            'cont_rate_unreg', 'withdrawal_rrsp', 'withdrawal_tfsa',
-            'withdrawal_other_reg', 'withdrawal_unreg',
-            'replacement_rate_db', 'rate_employee_db', 'income_previous_db',
-            'init_dc', 'rate_employee_dc', 'rate_employer_dc']
-
+            'cap_gains_unreg', 'realized_losses_unreg', 'cont_rate_rrsp',
+            'cont_rate_tfsa', 'cont_rate_other_reg', 'cont_rate_unreg',
+            'withdrawal_rrsp', 'withdrawal_tfsa', 'withdrawal_other_reg',
+            'withdrawal_unreg', 'replacement_rate_db', 'rate_employee_db',
+            'income_previous_db', 'init_dc', 'rate_employee_dc',
+            'rate_employer_dc']
     # create households with 1 or 2 people
     p = Person(d_hh, l_sp, common, prices)  # first p
     if not d_hh['couple']:
         hh = Hhold(d_hh, l_hh, index, common, p)
-    else:  # sp0 is first to retire
+    else:  # p0 is first to retire
         l_s_p = ['s_' + var for var in l_sp]
         s_p = Person(d_hh, l_s_p, common, prices, s_=True)
         if p.ret_year <= s_p.ret_year:
@@ -100,8 +114,8 @@ class Person:
         self.cpp = 0
         self.claim_age_cpp = np.clip(self.ret_age, common.min_claim_age_cpp,
                                      common.max_claim_age_cpp)
-        for acc in ['rrsp', 'rpp_dc', 'tfsa', 'tfsa_0', 'unreg', 'unreg_0',
-                    'return']:
+        # initialize annuities
+        for acc in ['rrsp', 'non_rrsp', 'non_rrsp_0']:
             setattr(self, f'annuity_{acc}_real', 0)
         # create wage_profile
         self.wage_profile = self.create_wage_profile(common, prices)

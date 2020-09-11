@@ -3,7 +3,7 @@ import numpy as np
 
 class Debt():
     """
-    This class manages all debts.
+    This class manages all debts. All amounts are nominal.
     """
     def __init__(self, name, d_hh, common, prices):
         self.name = name
@@ -30,14 +30,13 @@ class Debt():
         """
         init_rate = prices.d_interest_debt[self.name][0, 0]
         init_monthly_rate = (1 + init_rate)**(1/12) - 1
-        interest = init_monthly_rate / (1+init_monthly_rate) \
+        interest = init_monthly_rate / (1 + init_monthly_rate) \
             * self.init_balance
         init_m_payment = max(self.init_m_payment, interest + 1e-12)
         # debt is explosive if init_payment lower than interest
-        term_months = (np.log(init_m_payment /
-                       (init_m_payment - interest)) /
-                       np.log(1+init_monthly_rate))
-        return min(np.ceil(term_months/12), common.max_term_debts)
+        term_months = (np.log(init_m_payment / (init_m_payment - interest))
+                       / np.log(1 + init_monthly_rate))
+        return min(np.ceil(term_months / 12), common.max_term_debts)
 
     def update(self, year, rate, prices):
         """
@@ -52,12 +51,11 @@ class Debt():
         prices : Prices
             instance of the class Prices
         """
-        self.inflation_factor = prices.d_infl_factors[year]
         if self.term == 0:
             self.payment, self.balance = 0, 0
         else:
-            self.payment = (self.balance*(rate/(1+rate)) /
-                            (1 - (1/(1+rate))**self.term))
+            self.payment = (self.balance*(rate/(1 + rate)) /
+                            (1 - (1 / (1 + rate))**self.term))
             new_bal = max(self.balance - self.payment, 0)
             self.balance = new_bal * (1 + rate)
             self.term -= 1
