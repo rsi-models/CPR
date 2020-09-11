@@ -1,7 +1,7 @@
 import csv
 
 
-def get_params(file, numerical_key = False):
+def get_params(file, numerical_key=False):
     """
     Create dictionary from csv file.
 
@@ -69,7 +69,7 @@ def change_params(inst, extra_params):
 
 def create_nom_real(year, prices):
     """
-    Create two functions that convert prices from real to nominal 
+    Create two functions that convert prices from real to nominal
     and from nominal to real, with base year 2018.
 
     Parameters

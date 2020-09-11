@@ -1,9 +1,12 @@
 import heapq
 import numpy as np
+from CPR import tools
+
 
 class ContributionRoom:
     """
-    This class manages contribution rooms for TFSA and RRSP
+    This class manages contribution rooms for TFSA and RRSP.
+    All amounts are nominal.
     """
     def __init__(self, init_room_rrsp, init_room_tfsa):
         self.init_room_rrsp = init_room_rrsp
@@ -93,8 +96,8 @@ class ContributionRoom:
                       / common.max_years_db)
         benefits_earned = (p.replacement_rate_db * p.d_wages[year-1]
                            / common.max_years_db - cpp_offset)
-        pension_credit = max(0,
-            common.db_benefit_multiplier * benefits_earned - common.db_offset)
+        pension_credit = max(0, common.db_benefit_multiplier * benefits_earned
+                             - common.db_offset)
         self.room_rrsp -= min(pension_credit, self.room_rrsp)
 
     def adjust_dc_contributions(self, p, year):
@@ -133,12 +136,12 @@ class ContributionRoom:
             p.contrib_employee_dc = 0
         else:
             p.contrib_employee_dc = (p.rate_employee_dc /
-                                        p.rpp_dc.contrib_rate
-                                        * p.rpp_dc.contribution)
+                                     p.rpp_dc.contrib_rate
+                                     * p.rpp_dc.contribution)
 
     def adjust_rrsp_contributions(self, acc, p, year):
         """
-        Adjust contribution room RRSP for contributions other than RPP. 
+        Adjust contribution room RRSP for contributions other than RPP.
         If insufficent room, extra contribution transferred to TFSA.
 
         Parameters
@@ -242,7 +245,7 @@ class ContributionRoom:
 
 class FinAsset:
     """
-    This class manages registered accounts.
+    This class manages registered accounts. All amounts are nominal.
     """
     def __init__(self, p, hh, acc):
         self.init_balance = getattr(p, f'bal_{acc}')
@@ -269,11 +272,10 @@ class FinAsset:
         prices : Prices
             instance of the class Prices
         """
-        self.inflation_factor = prices.d_infl_factors[year]
+        self.nom, self.real = tools.create_nom_real(year, prices)
         self.balance *= 1 + self.rate(d_returns, year)
         self.balance += self.contribution
-        self.desired_withdrawal = (self.desired_withdrawal_real
-                                   * self.inflation_factor)
+        self.desired_withdrawal = self.nom(self.desired_withdrawal_real)
         self.withdrawal = min(self.balance, self.desired_withdrawal)
         self.balance -= self.withdrawal
 
@@ -310,12 +312,12 @@ class FinAsset:
 
         Returns
         -------
-        [type]
-            [description]
+        float
+            amount of mandatory withdrawal
         """
         if self.balance > 0:
             extra_withdrawal_real = max(
-                0, common.d_perc_rrif[p.age]*self.balance_real
+                0, common.d_perc_rrif[p.age] * self.real(self.balance)
                 - self.desired_withdrawal_real)
             self.desired_withdrawal_real += extra_withdrawal_real
         else:
@@ -333,7 +335,7 @@ class FinAsset:
             amount from liquidation (before taxes)
         """
         value = self.balance
-        self.balance, self.contribution, self.withdrawal = 0, 0, 0
+        self.balance, self.contribution = 0, 0
         return value
 
     def reset(self):
@@ -344,22 +346,10 @@ class FinAsset:
         self.desired_withdrawal_real = self.init_desired_withdrawal_real
         self.withdrawal = 0  # to adjust contribution space tfsa first period
 
-    @property
-    def balance_real(self):
-        """
-        Compute real balance.
-
-        Returns
-        -------
-        float
-            real balance
-        """
-        return self.balance / self.inflation_factor
-
 
 class UnregAsset:
     """
-    This class manages unregistered account.
+    This class manages unregistered account. All amounts are nominal.
     """
     def __init__(self, p, hh, prices):
         self.init_balance = p.bal_unreg
@@ -373,7 +363,6 @@ class UnregAsset:
         self.fee = hh.fee
         self.fee_equity = hh.fee_equity
         self.ret_dividends = prices.ret_dividends
-        self.init_inc_unreg_after_tax = 0
         self.reset()
 
     def update(self, d_returns, year, common, prices):
@@ -391,19 +380,20 @@ class UnregAsset:
         prices : Prices
             instance of the class Prices
         """
-        self.inflation_factor = prices.d_infl_factors[year]
+        self.nom = tools.create_nom(year, prices)
         self.compute_income(d_returns, year)
         self.update_balance()
         self.prepare_withdrawal()
-        self.adjust_withdrawal_and_cap_gains()
+        self.adjust_income()
+        self.withdrawal_cap_losses = self.adjust_cap_losses(
+            self.withdrawal_cap_gains)
         self.adjust_final_balance()
         self.amount_after_tax = 0
-        self.amount_to_tax = (common.frac_cap_gains * self.cap_gains_withdrawal
-                              + self.taxable_inc)
+        self.income_to_tax = bool(self.inc_div + self.inc_int)
 
     def compute_income(self, d_returns, year):
         """
-        Compute capital gains and taxable income (dividends and interests).
+        Compute new capital gains and taxable income (dividends and interests).
 
         Parameters
         ----------
@@ -412,11 +402,15 @@ class UnregAsset:
         year : int
             year
         """
-        self.cap_gains_inc = (
-            self.balance * self.mix_equity * (d_returns['equity'][year]
-            - self.ret_dividends - self.fee_equity))
-        self.taxable_inc = (self.balance * self.rate(d_returns, year)
-                            - self.cap_gains_inc)
+        # to simplify, we assume constant dividend rate and fees paid out
+        # of capital gains.
+        self.inc_div = self.balance * self.mix_equity * self.ret_dividends
+        self.inc_cap_gains = (
+            self.balance * self.mix_equity
+            * (d_returns['equity'][year] - self.fee_equity)
+            - self.inc_div)
+        self.inc_int = (self.balance * self.rate(d_returns, year)
+                        - self.inc_div - self.inc_cap_gains)
 
     def rate(self, d_returns, year):
         """
@@ -440,117 +434,78 @@ class UnregAsset:
 
     def update_balance(self):
         """
-        Update balance and divide between non-taxable, capital gains
-        and taxable.
+        Update balance and divide between non-taxable, capital gains,
+        dividends and interests.
         """
-        self.non_taxable = self.balance - self.cap_gains
-        self.non_taxable += self.after_tax_inc
+        self.non_taxable += self.amount_after_tax
         self.non_taxable += self.contribution
-        self.cap_gains += self.cap_gains_inc
-        self.taxable = self.taxable_inc
-        self.balance = self.non_taxable + self.cap_gains + self.taxable
+        self.cap_gains += self.inc_cap_gains
+        self.balance = (self.non_taxable + self.cap_gains + self.inc_int
+                        + self.inc_div)
 
     def prepare_withdrawal(self):
         """
-        Divide withdrawal from balance at the end of the period 
-        between non-taxable, taxable and realized capital gains.
+        Divide withdrawal from balance at the end of the period
+        between non-taxable, capital gains, dividends and interests.
         """
-        self.withdrawal = min(self.desired_withdrawal * self.inflation_factor,
-                              self.balance)
+        self.withdrawal = min(self.nom(self.desired_withdrawal), self.balance)
         self.share_withdrawal = self.withdrawal / (self.balance + 1e-12)
-        self.non_taxable_withdrawal = self.share_withdrawal * self.non_taxable
-        self.cap_gains_withdrawal = self.share_withdrawal * self.cap_gains
-        self.taxable_withdrawal = self.share_withdrawal * self.taxable
+        self.withdrawal_non_tax = self.share_withdrawal * self.non_taxable
+        self.withdrawal_cap_gains = self.share_withdrawal * self.cap_gains
+        self.withdrawal_div = self.share_withdrawal * self.inc_div
+        self.withdrawal_int = self.share_withdrawal * self.inc_int
 
-    def adjust_withdrawal_and_cap_gains(self):
+    def adjust_income(self):
         """
-        Adjust realized capital losses, and divide capital gains 
-        from withdrawals between non-taxable and realized capital gains.
+        Adjust income for withdrawals.
         """
-        if self.cap_gains_withdrawal > 0:
-            used_cap_losses = min(self.cap_gains_withdrawal,
-                                  self.realized_losses)
-            self.realized_losses -= used_cap_losses
-            self.non_taxable_withdrawal += used_cap_losses
-            self.cap_gains_withdrawal -= used_cap_losses
-        else:
-            self.realized_losses += (-self.cap_gains_withdrawal)
-            self.non_taxable_withdrawal += self.cap_gains_withdrawal
-            self.cap_gains_withdrawal = 0
+        self.inc_div *= 1 - self.share_withdrawal
+        self.inc_int *= 1 - self.share_withdrawal
 
-    def adjust_final_balance(self):
+    def adjust_cap_losses(self, realized_cap_gains):
         """
-        Adjust final balance for withdrawal.
-        """
-        self.non_taxable *= (1 - self.share_withdrawal)
-        self.cap_gains *= (1 - self.share_withdrawal)
-        self.taxable = 0
-        self.balance = self.non_taxable + self.cap_gains
-
-    def compute_after_tax_inc(self):
-        """
-        Compute after tax income.
-        """
-        if self.amount_to_tax == 0:
-            self.after_tax_share = 0
-        else:
-            self.after_tax_share = self.amount_after_tax / self.amount_to_tax
-
-        self.after_tax_inc = ((1 - self.share_withdrawal)
-                              * self.after_tax_share * self.taxable_inc)
-
-    def compute_net_withdrawal(self, common):
-        """
-        Compute net proceeds from withdrawal.
+        Compute capital losses from previous years used for deduction
+        and adjust realized capital losses
 
         Parameters
         ----------
-        common : Common
-            instance of the class Common
-        """
-        self.net_withdrawal = (
-            self.non_taxable_withdrawal
-            + self.after_tax_share * self.taxable_withdrawal
-            + (1 - common.frac_cap_gains) * self.cap_gains_withdrawal
-            + common.frac_cap_gains * self.after_tax_share
-            * self.cap_gains_withdrawal)
-
-    def prepare_liquidation(self, value_liquidation, cap_gains_liquidation,
-                            common):
-        """
-        Prepare liquidation.
-
-        Parameters
-        ----------
-        value_liquidation : float
-            amount to liquidate
-        cap_gains_liquidation : float
-            capital gains on amount liquidated
-        common : Common
-            instance of the class Common
-        """
-        self.amount_to_tax += common.frac_cap_gains * self.cap_gains
-        self.non_taxable += (1 - common.frac_cap_gains) * self.cap_gains
-        self.cap_gains = 0
-
-        self.amount_to_tax += common.frac_cap_gains * cap_gains_liquidation
-        self.non_taxable += (value_liquidation
-                             - common.frac_cap_gains * cap_gains_liquidation)
-        self.balance = self.non_taxable
-
-    def liquidate(self):
-        """
-        Liquidate account, set balance, contribution and withdrawal to zero.
+        realized_cap_gains : float
+            capital gains
 
         Returns
         -------
         float
-            amount from liquidation (before taxes)
+            capital losses (to be deducted)
         """
-        value = self.balance + self.amount_after_tax - self.net_withdrawal
-        self.balance, self.contribution, self.withdrawal = 0, 0, 0
-        self.amount_to_tax, self.amount_after_tax, self.after_tax_inc = 0, 0, 0
-        return value
+        if realized_cap_gains > 0:
+            used_cap_losses = min(realized_cap_gains, self.realized_losses)
+            self.realized_losses = used_cap_losses
+        else:
+            self.realized_losses += -realized_cap_gains
+            used_cap_losses = 0
+
+        return used_cap_losses
+
+    def adjust_final_balance(self):
+        """
+        Adjust final balance for withdrawal, dividends and interests.
+        """
+        self.non_taxable *= (1 - self.share_withdrawal)
+        self.cap_gains *= (1 - self.share_withdrawal)
+        self.balance = int(self.non_taxable + self.cap_gains)
+        # int to avoid approx errors
+
+    def liquidate(self):
+        """
+        Liquidate account and adjust capital losses.
+        """
+        self.liquidation_non_taxable = self.non_taxable
+        self.liquidation_cap_gains = self.cap_gains
+        self.balance, self.non_taxable, self.cap_gains = 0, 0, 0
+        self.inc_int, self.inc_div = 0, 0
+
+        self.liquidation_cap_losses = self.adjust_cap_losses(
+            self.liquidation_cap_gains)
 
     def reset(self):
         """
@@ -560,13 +515,15 @@ class UnregAsset:
         self.cap_gains = self.init_cap_gains
         self.non_taxable = self.balance - self.cap_gains
         self.realized_losses = self.init_realized_losses
-        self.after_tax_inc = 0
-        self.net_withdrawal = 0
+        self.amount_after_tax = 0
+        self.liquidation_non_taxable = 0
+        self.liquidation_cap_gains = 0
+        self.liquidation_cap_losses = 0
 
 
 class RppDC(FinAsset):
     """
-    This class manages DC RPP.
+    This class manages DC RPP. All amounts are nominal.
 
     Parameters
     ----------
@@ -586,7 +543,7 @@ class RppDC(FinAsset):
 
 class RppDB:
     """
-    Class manageing DB RPP.
+    This class manages DB RPP. All amounts are nominal.
     """
     def __init__(self, p):
         self.init_rate_employee_db = p.rate_employee_db
@@ -597,7 +554,7 @@ class RppDB:
     def compute_benefits(self, p, common):
         """
         Compute RPP DB benefits and adjust them for CPP.
-        If RPP benefits are smaller than CPP benefits, 
+        If RPP benefits are smaller than CPP benefits,
         RPP benefits are zero when cpp_qpp starts.
 
         Parameters
@@ -623,7 +580,7 @@ class RppDB:
 
     def adjust_for_penalty(self, p, common):
         """
-        DB RPP benefits lowered when less than 35 years of service and 
+        DB RPP benefits lowered when less than 35 years of service and
         retirement before age 62.
 
         Parameters
@@ -634,7 +591,9 @@ class RppDB:
             instance of the class Common
         """
         years_service = p.replacement_rate_db / common.perc_year_db
-        if (years_service < common.max_years_db) and (p.ret_age < common.db_ret_age_no_penalty):
+        cond0 = years_service < common.max_years_db
+        cond1 = p.ret_age < common.db_ret_age_no_penalty
+        if cond0 and cond1:
             years_early_db = common.official_ret_age - p.ret_age
         else:
             years_early_db = 0
@@ -665,8 +624,8 @@ class RppDB:
         years_db = int(self.replacement_rate_db / common.perc_year_db)
 
         if years_db <= p.ret_year - common.base_year:
-            mean_wage = np.mean([min(p.d_wages[common.base_year +  t],
-                                     common.d_ympe[common.base_year +  t])
+            mean_wage = np.mean([min(p.d_wages[common.base_year + t],
+                                     common.d_ympe[common.base_year + t])
                                  for t in range(years_db)])
         else:
             mean_wage = np.mean([min(p.d_wages[p.ret_year - t],
@@ -686,7 +645,7 @@ class RppDB:
 
 class RealAsset:
     """
-    This class manages housing.
+    This class manages housing. All amounts are nominal.
     """
     def __init__(self, d_hh, resid):
         self.init_balance = d_hh[resid]
@@ -699,15 +658,13 @@ class RealAsset:
 
         Parameters
         ----------
-        growth_rates : [type]
-            [description]
+        growth_rates : dict
+            nominal return to housing (capital gains)
         year : int
             year
         prices : Prices
             instance of the class Prices
         """
-
-        self.inflation_factor = prices.d_infl_factors[year]
         self.balance *= 1 + growth_rates[year]
 
     def liquidate(self):
@@ -719,8 +676,8 @@ class RealAsset:
         float
             amount from liquidation (before taxes)
         """
-        self.sell_value = self.balance
-        self.cap_gains = self.balance - self.price
+        self.liquidation_non_taxable = self.price
+        self.liquidation_cap_gains = self.balance - self.price
         self.balance = 0
 
     def reset(self):
@@ -730,10 +687,27 @@ class RealAsset:
         self.balance = self.init_balance
         self.cap_gains = 0
 
+    def impute_rent(self, hh, year, prices):
+        """
+        Compute imputed rent.
+
+        Parameters
+        ----------
+        hh: Hhold
+            household
+        year : int
+            year
+        prices : Prices
+            instance of the class Prices
+        """
+        hh.imputed_rent = (hh.residences['first_residence'].balance
+                           / prices.d_price_rent_ratio[year])
+
 
 class Business:
     """
     This class manages a business (as an asset owned by the houshehold).
+    All amounts are nominal.
     """
     def __init__(self, d_hh):
         self.init_balance = d_hh['business']
@@ -753,7 +727,6 @@ class Business:
         prices : Prices
             instance of the class Prices
         """
-        self.inflation_factor = prices.d_infl_factors[year]
         self.dividends_business = self.balance * prices.ret_dividends
         self.balance *= 1 + d_business_returns[year] - prices.ret_dividends
 
@@ -772,11 +745,9 @@ class Business:
         float
             selling price
         """
-        selling_price = self.balance
-        business_exempt = common.business_exempt_real * self.inflation_factor
-        self.cap_gains = max(self.balance - business_exempt, 0)
+        self.liquidation_non_taxable = self.price
+        self.liquidation_cap_gains = self.balance - self.price
         self.balance = 0
-        return selling_price
 
     def reset(self):
         """
