@@ -451,7 +451,7 @@ def compute_rpp(p, nom, common):
     p : Person
         spouse in household
     """
-    p.rpp = 0
+    p.rpp = nom(p.annuity_rpp_dc_real)
     if p.pension > 0:
         p.rpp += p.pension
     if hasattr(p, 'rpp_db') & p.retired & (p.age > common.db_minimum_age):

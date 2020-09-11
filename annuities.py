@@ -120,8 +120,8 @@ def convert_to_real_annuities(p, year, prices):
     else:
         amount = 0
 
-    p.annuity_rrsp_real += real(
-        (p.val_annuities_rrsp + p.val_annuities_rpp_dc) / p.factor)
+    p.annuity_rrsp_real += real(p.val_annuities_rrsp) / p.factor
+    p.annuity_rpp_dc_real += real(p.val_annuities_rpp_dc) / p.factor
     p.annuity_non_rrsp_real += real((p.val_annuities_tfsa + amount) / p.factor)
     p.annuity_non_rrsp_0_real += real((p.val_annuities_tfsa + amount)
                                       / p.factor_0)
