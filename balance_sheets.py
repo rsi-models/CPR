@@ -124,6 +124,7 @@ def add_output(hh, year, prices, key):
     if key in ['part', 'after']:
         for p in hh.sp:
             hh.d_output[f'{p.who}annuity_rrsp_{key}'] = p.annuity_rrsp_real
+            hh.d_output[f'{p.who}annuity_rpp_dc_{key}'] = p.annuity_rpp_dc_real
             hh.d_output[f'{p.who}annuity_non_rrsp_{key}'] = \
                 p.annuity_non_rrsp_real
 
