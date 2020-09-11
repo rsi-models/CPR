@@ -13,7 +13,8 @@ sys.path.insert(1, 'C:/Users/pyann/Dropbox (CEDIA)/srd/Model')
 import srd
 
 module_dir = os.path.dirname(os.path.dirname(__file__))
-path = '/CPR/data/params/'
+path_params = '/CPR/data/params/'
+path_factors = '/CPR/data/precomputed/'
 
 
 class CommonParameters:
@@ -25,7 +26,7 @@ class CommonParameters:
         self.nsim = nsim
         self.non_stochastic = non_stochastic
         for file in ['common_params.csv', 'user_options.csv']:
-            tools.add_params_as_attr(self, module_dir + path + file)
+            tools.add_params_as_attr(self, module_dir + path_params + file)
         tools.change_params(self, extra_params)
 
         self.tax = srd.tax(year=self.base_year)
@@ -39,7 +40,7 @@ class CommonParameters:
         self.d_ympe = self.prepare_ympe()
         self.d_perc_cpp = self.prepare_cpp()
         self.d_perc_rrif = tools.get_params(
-            module_dir + path + 'rrif_rates.csv', numerical_key=True)
+            module_dir + path_params + 'rrif_rates.csv', numerical_key=True)
 
     def set_limits(self, name):
         """
@@ -55,14 +56,15 @@ class CommonParameters:
             try:
                 d[year] = getattr(self, f'{name}_limit_{year}')
             except:
-                d[year] = round(d[year-1] * (1+getattr(self, f'gr_{name}_limit')))
+                d[year] = round(d[year-1]
+                                * (1+getattr(self, f'gr_{name}_limit')))
         setattr(self, f'd_{name}_limit', d)
-    
+
     def prepare_ympe(self):
         """"
         Pre-reform ympe used to adjust DB benefits for CPP
         """
-        d_ympe = tools.get_params(module_dir + path + 'ympe.csv',
+        d_ympe = tools.get_params(module_dir + path_params + 'ympe.csv',
                                   numerical_key=True)
         for year in range(max(d_ympe.keys()) + 1,
                           self.base_year + self.future_years):
@@ -71,14 +73,15 @@ class CommonParameters:
 
     def prepare_cpp(self):
         """
-        Set percentages for cpp/qpp benefits. 
+        Set percentages for cpp/qpp benefits.
         """
         d_perc_cpp = {year: getattr(self, f'perc_cpp_{year}')
-                    for year in range(2018, 2023)}
+                      for year in range(2018, 2023)}
         d_perc_cpp.update(
             {year: self.perc_cpp_2023
              for year in range(2023, self.base_year + self.future_years)})
         return d_perc_cpp
+
 
 class Prices:
     """
@@ -87,7 +90,7 @@ class Prices:
     housing price growth rate and price/rent ratio.
     """
     def __init__(self, common, extra_params):
-        tools.add_params_as_attr(self, module_dir + path + 'prices.csv')
+        tools.add_params_as_attr(self, module_dir + path_params + 'prices.csv')
         tools.change_params(self, extra_params)
         np.random.seed(self.seed)
 
@@ -104,21 +107,21 @@ class Prices:
         if common.recompute_factors:
             self.d_factors = self.initialize_factors()
         else:
-            with open(module_dir + '/CPR/data/precomputed/d_factors', 'rb') as file:
+            with open(module_dir + path_factors + 'd_factors', 'rb') as file:
                 self.d_factors = pickle.load(file)
 
     def simulate_ret(self, asset, common):
         """
         Simulate N series of length T nominal returns distributed lognormally
         with autocorrelation rho.
-        
+
         Parameters
         ----------
         asset: str
             type of asset
         common: Common
             instance of the class Common
-        
+
         Returns
         -------
         numpy.array:
@@ -146,9 +149,9 @@ class Prices:
 
     def compute_params_process(self, mu, rho, sigma):
         """
-        Converts arithmetic mean mu, volatility sigma of the returns 
-        and autocorrelation rho of the log returns into 
-        alpha, rho and sig_eps of the process 
+        Converts arithmetic mean mu, volatility sigma of the returns
+        and autocorrelation rho of the log returns into
+        alpha, rho and sig_eps of the process
         $$ \ln(1+r_t) = \alpha + \rho * ln(1+r{t-1}) + \epsilon $$,
         where $$ \epsilon \tilde N(0, sig_eps).
 
@@ -197,7 +200,7 @@ class Prices:
         rho_r = self.rho_housing
         alpha_r, sig_eps_r = self.compute_params_process(
             self.mu_housing, rho_r, self.sig_housing)
-        
+
         ratio = np.empty_like(r)
         ratio[0, :] = self.price_rent_2018
         rho_ratio = self.rho_price_rent
@@ -209,20 +212,19 @@ class Prices:
                 r[t, :] = np.exp(alpha_r) * (1 + r[t-1, :])**rho_r \
                     * np.exp(sig_eps_r**2/2) - 1
                 ratio[t, :] = alpha_ratio + rho_ratio * ratio[t-1, :]
-                    
         else:
             cov = sig_eps_r * sig_eps_ratio * self.corr_housing_price_rent
             m_cov = np.array([[sig_eps_r**2, cov],
                               [cov, sig_eps_ratio**2]])
             eps = np.random.multivariate_normal(
                 [0, 0], m_cov, size=(common.future_years, common.nsim))
-            eps_r, eps_ratio = eps[:, : , 0], eps[:, : , 1]
+            eps_r, eps_ratio = eps[:, :, 0], eps[:, :, 1]
 
             for t in range(1, common.future_years):
                 r[t, :] = np.exp(alpha_r) * (1+r[t-1, :])**rho_r \
                     * np.exp(eps_r[t, :]) - 1
                 ratio[t, :] = alpha_ratio + rho_ratio * ratio[t-1, :] \
-                    + eps_ratio[t, :] 
+                    + eps_ratio[t, :]
         return (1+r) * (1 + self.inflation_rate) - 1, ratio
 
     def prepare_inflation_factors(self, common):
@@ -246,8 +248,8 @@ class Prices:
             year: (1 + self.inflation_rate)**(year-common.base_year)
             for year in range(common.base_year, end_year)}
         # past inflation
-        d_inflation = tools.get_params(module_dir + path +'inflation.csv',
-                                       numerical_key=True)
+        d_inflation = tools.get_params(
+            module_dir + path_params + 'inflation.csv', numerical_key=True)
         for year in reversed(range(start_year, common.base_year)):
             d_infl_factors[year] = (d_infl_factors[year + 1]
                                     / (1 + d_inflation[year]))
@@ -255,7 +257,7 @@ class Prices:
 
     def simulate_interest_debt(self):
         """
-        Creates N series of yearly interest rate of length T
+        Creates N series of yearly nominal interest rate of length T
         for each type of debt
 
         Returns
@@ -263,9 +265,9 @@ class Prices:
         dict:
             Dictionary of interest rates by type of debt and year
         """
-        mix_fee_debts = pd.read_csv(module_dir + path + "mix_fee_debt.csv",
-                                    usecols=list(range(5)),
-                                    index_col=0).to_dict('index')
+        mix_fee_debts = pd.read_csv(
+            module_dir + path_params + "mix_fee_debt.csv",
+            usecols=list(range(5)), index_col=0).to_dict('index')
         # monthly rates:
         d_interest = {}
         for debt in mix_fee_debts:
@@ -273,7 +275,7 @@ class Prices:
                                 + mix_fee_debts[debt]['bonds']*self.ret_bonds
                                 + mix_fee_debts[debt]['fee'])
             d_interest[debt][0] = mix_fee_debts[debt]['value_2018']
-        
+
         return d_interest
 
     def attach_diff_log_wages(self):
@@ -285,8 +287,8 @@ class Prices:
         dict:
             Dictionary of difference in log wages by education and age
         """
-        diff_log_wages = pd.read_csv(module_dir + path + 'diff_log_wage.csv',
-                                     index_col=0)
+        diff_log_wages = pd.read_csv(
+            module_dir + path_params + 'diff_log_wage.csv', index_col=0)
         d_diff_log_wages = {}
         for degree in diff_log_wages.columns:
             d_diff_log_wages[degree] = np.cumsum(
@@ -295,7 +297,7 @@ class Prices:
 
     def initialize_factors(self):
         """
-        This function creates an instance of life.table 
+        This function creates an instance of life.table
         by gender and province.
 
         Returns
@@ -311,6 +313,6 @@ class Prices:
             for p in l_prov:
                 d_factors[s][p] = life.table(prov=p, scenario='M',
                                              gender=s+'s')
-        with open(module_dir + '/CPR/data/precomputed/d_factors', 'wb') as file:
+        with open(module_dir + path_factors + 'd_factors', 'wb') as file:
             pickle.dump(d_factors, file)
         return d_factors

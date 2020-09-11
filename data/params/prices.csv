@@ -6,7 +6,6 @@ mu_equity,0.0688,float,from JKKST
 rho_equity,0,float,autocorrelation of log returns; 0.0978 in JST data
 sig_equity,0.2179,float,from JKKST
 ret_dividends,0.0417,float,from JKKST table VIII
-ret_dividends_tsx,0.028,float,from data
 ret_bills_2018,-0.0029,float,for Canada
 mu_bills,0.0103,float,from JKKST
 rho_bills,0.5756,float,computed from JST data
@@ -33,3 +32,4 @@ rho_wage,0.96235919,float,"from Francois, LISA dataset"
 sig_pers_wage,0.050739054,float,"from Francois, LISA dataset"
 sig_trans_wage,0.018554826,float,"from Francois, LISA dataset"
 adj_fact_annuities,0.9,float,needs to be calibrated more seriously
+ret_dividends_tsx,0.028,float,from data but unused in current version
