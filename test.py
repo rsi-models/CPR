@@ -7,16 +7,20 @@ from CPR import main
 
 module_dir = os.path.dirname(os.path.dirname(__file__))
 df = pd.read_csv(module_dir + '/CPR/data/inputs/inputs.csv', index_col=0)
-inputs = df.loc[:20, :]
+inputs = df
 
-sim_num = 1
+sim_num = 25
 
 if __name__ == '__main__':
     results = main.run_simulations(inputs, sim_num, non_stochastic=True,
-                                   multiprocessing=False)
+                                   sell_first_resid=False,
+                                   sell_second_resid=False,
+                                   sell_business=False,
+                                   multiprocessing=True,
+                                   share_div_elig=1)
     results.check_preparedness(factor_couple=np.sqrt(2))
     results.summarize()
 
     prepared = results.df_merged.prepared
     weight = results.df_merged.weight
-    print(np.average(prepared, weights= weight))
+    print(np.average(prepared, weights=weight))
