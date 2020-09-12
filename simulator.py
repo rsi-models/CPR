@@ -440,7 +440,27 @@ def prepare_taxes(hh, year, common, prices):
         get_other_non_taxable(p, nom)
         get_inc_rrsp(p, nom)
         get_contributions_assets(p, year, common)
+        get_assets(p, common)
 
+
+def get_assets(p, common):
+    """
+    Get asset for social assistance asset test.
+
+    Parameters
+    ----------
+    p : Person
+        spouse in household
+    common : Common
+        instance of class Common
+    """
+    assets_unreg, assets_reg = 0, 0
+    for acc in p.fin_assets:
+        if acc == 'unreg':
+            assets_unreg += p.fin_assets['unreg'].balance
+        else:
+            assets_reg += p.fin_assets[acc].balance
+    p.assets = assets_unreg + max(0, assets_reg - common.exempt_soc_ass)
 
 def compute_rpp(p, nom, common):
     """
