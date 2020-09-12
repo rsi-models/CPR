@@ -67,7 +67,8 @@ def file_household(hh, year, common, prices):
                            othntax=real(p.other_non_taxable),
                            inc_rrsp=real(p.inc_rrsp),
                            con_rrsp=real(p.con_rrsp),
-                           con_non_rrsp=real(p.con_non_rrsp))
+                           con_non_rrsp=real(p.con_non_rrsp),
+                           asset=real(p.assets))
         hh_srd.append(p_srd)
 
     if hh.couple:
@@ -75,6 +76,7 @@ def file_household(hh, year, common, prices):
     else:
         hh_srd = srd.Hhold(hh_srd[0], prov=hh.prov)
     common.tax.compute(hh_srd)
+
     return hh_srd
 
 
@@ -124,7 +126,8 @@ def file_household_inc_to_tax(hh, year, common, prices):
                            othntax=real(p.other_non_taxable + non_taxable),
                            inc_rrsp=real(p.inc_rrsp),
                            con_rrsp=real(p.con_rrsp),
-                           con_non_rrsp=real(p.con_non_rrsp))
+                           con_non_rrsp=real(p.con_non_rrsp),
+                           asset=real(p.assets))
         hh_srd.append(p_srd)
 
     if hh.couple:
