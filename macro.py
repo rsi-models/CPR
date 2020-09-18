@@ -148,12 +148,13 @@ class Prices:
         return (1+r) * (1 + self.inflation_rate) - 1
 
     def compute_params_process(self, mu, rho, sigma):
-        """
-        Converts arithmetic mean mu, volatility sigma of the returns
+        """        
+        Converts arithmetic mean mu and volatility sigma of the returns
         and autocorrelation rho of the log returns into
-        alpha, rho and sig_eps of the process
-        $$ \ln(1+r_t) = \alpha + \rho * ln(1+r{t-1}) + \epsilon $$,
-        where $$ \epsilon \tilde N(0, sig_eps).
+        :math:`\\alpha`, :math:`\\rho` and :math:`\\sigma_{\\epsilon}` of the process:
+        
+        :math:`\\ln(1+r_t) = \\alpha + \\rho * \\ln(1+r{t-1}) + \\epsilon`,
+        where :math:`\\epsilon \\sim N(0, \\sigma_{\\epsilon})`.
 
         Parameters
         ----------
