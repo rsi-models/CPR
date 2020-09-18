@@ -1,7 +1,0 @@
-,observations,mean,std,min,median,max
-replacement_rate_db,2076.0,0.57,0.16,0.02,0.6,0.7
-rate_employee_db,2076.0,0.05,0.02,0.0,0.05,0.09
-income_previous_db,473.0,16770.8,57122.78,0.0,1000.0,800000.0
-init_dc,1796.0,75470.41,143161.64,0.0,25000.0,2000000.0
-rate_employee_dc,1796.0,0.04,0.02,0.0,0.04,0.18
-rate_employer_dc,1796.0,0.04,0.02,0.0,0.04,0.18
