@@ -13,9 +13,9 @@ sim_num = 25
 
 if __name__ == '__main__':
     results = main.run_simulations(inputs, sim_num, non_stochastic=True,
-                                   sell_first_resid=False,
-                                   sell_second_resid=False,
-                                   sell_business=False,
+                                   sell_first_resid=True,
+                                   sell_second_resid=True,
+                                   sell_business=True,
                                    multiprocessing=True)
     results.check_preparedness(factor_couple=np.sqrt(2))
     results.summarize()
