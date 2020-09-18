@@ -73,7 +73,7 @@ def compute_bs_after_ret(hh, year, common, prices):
 
     hh.debt_payments = sum([hh.debts[debt].payment for debt in hh.debts])
     hh.cons_after_ret_real = real(hh.disp_inc_after_ret - hh.debt_payments)
-    hh.cons_after_ret_real -= getattr(hh, 'imputed_rent', 0)
+    hh.cons_after_ret_real -= real(getattr(hh, 'imputed_rent', 0))
 
 
 def add_output(hh, year, prices, key):
