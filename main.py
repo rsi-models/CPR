@@ -14,7 +14,8 @@ path = '/CPR/data/params/'
 
 def run_simulations(inputs, nsim=1, non_stochastic=False, **extra_params):
     """
-    This function launches the simulations.
+    This function launches the simulations. Any parameter can be changed
+    using extra_params.
 
     Parameters
     ----------
