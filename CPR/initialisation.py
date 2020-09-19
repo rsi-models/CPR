@@ -1,9 +1,6 @@
-import importlib
 import numpy as np
 from CPR import assets
 from CPR import debts
-importlib.reload(assets)
-importlib.reload(debts)
 
 
 def create_hh(index, d_hh, common, prices):

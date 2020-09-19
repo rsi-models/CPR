@@ -1,8 +1,5 @@
-import importlib
 from CPR import taxes
 from CPR import tools
-importlib.reload(taxes)
-importlib.reload(tools)
 
 
 def compute_partial_annuities(hh, d_returns, year, prices):

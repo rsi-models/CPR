@@ -1,9 +1,6 @@
 from CPR import tools
 from CPR import taxes
 from CPR import simulator
-import importlib
-importlib.reload(taxes)
-importlib.reload(simulator)
 
 
 def compute_bs_bef_ret(hh, year, common, prices):

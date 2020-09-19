@@ -1,13 +1,9 @@
-import importlib
 import numpy as np
 import srpp
 from CPR import annuities
 from CPR import taxes
 from CPR import tools
 from CPR import balance_sheets
-importlib.reload(annuities)
-importlib.reload(taxes)
-importlib.reload(balance_sheets)
 
 
 def simulate(job, common, prices):
