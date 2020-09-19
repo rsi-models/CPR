@@ -1,1 +1,0 @@
-from .life import life

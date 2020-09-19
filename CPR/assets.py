@@ -567,7 +567,8 @@ class RppDB:
         if self.replacement_rate_db > 0:
             n = common.n_best_wages_db
             l_wages = [wage for wage in p.d_wages.values()]
-            self.mean_best_wage = sum(heapq.nlargest(n, l_wages)) / n
+            n_highest_wages = sorted(l_wages, reverse=True)[:n]
+            self.mean_best_wage = sum(n_highest_wages) / n
 
             self.adjust_for_penalty(p, common)
 

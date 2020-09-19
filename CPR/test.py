@@ -6,8 +6,8 @@ import pandas as pd
 from CPR import main
 
 module_dir = os.path.dirname(os.path.dirname(__file__))
-df = pd.read_csv(module_dir + '/CPR/data/inputs/inputs.csv', index_col=0)
-inputs = df
+df = pd.read_csv(module_dir + '/inputs/inputs.csv', index_col=0)
+inputs = df.sample(50)
 
 sim_num = 25
 
