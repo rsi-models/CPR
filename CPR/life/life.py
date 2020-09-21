@@ -34,7 +34,9 @@ class table:
         names[0] = 'year'
         names[1] = 'gender'
         quotes.columns = names
-        quotes['year'], quotes['temp'] = quotes['year'].str.split('-', 1).str
+        quotes[['year', 'temp']] = quotes['year'].str.split('-', n=1, 
+                                                            expand=True)
+        # quotes['year'], quotes['temp'] = quotes['year'].str.split('-', 1).str
         quotes = quotes.drop(columns=['temp', 'gender'])
         quotes.set_index('year')
         # transform quotients into rates
