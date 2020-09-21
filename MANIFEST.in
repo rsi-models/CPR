@@ -1,1 +1,1 @@
-recursive-include srd *.csv *.xlsx
+recursive-include CPR *.csv *.xlsx *.pickle

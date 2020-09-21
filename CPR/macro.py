@@ -107,7 +107,7 @@ class Prices:
         if common.recompute_factors:
             self.d_factors = self.initialize_factors()
         else:
-            with open(module_dir + path_factors + 'd_factors', 'rb') as file:
+            with open(module_dir + path_factors + 'd_factors.pickle', 'rb') as file:
                 self.d_factors = pickle.load(file)
 
     def simulate_ret(self, asset, common):
@@ -314,6 +314,6 @@ class Prices:
             for p in l_prov:
                 d_factors[s][p] = life.table(prov=p, scenario='M',
                                              gender=s+'s')
-        with open(module_dir + path_factors + 'd_factors', 'wb') as file:
+        with open(module_dir + path_factors + 'd_factors.pickle', 'wb') as file:
             pickle.dump(d_factors, file)
         return d_factors
