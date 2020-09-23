@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Life &mdash; CPR 0.0.1 documentation</title>
+  <title>Getting Started With the CPR &mdash; CPR 0.0.1 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Balance sheets" href="balance_sheets.html" />
-    <link rel="prev" title="Annuities" href="annuities.html" /> 
+    <link rel="next" title="Main" href="main.html" />
+    <link rel="prev" title="Canadians’ Preparation for Retirement (CPR)" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -84,7 +84,10 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Getting Started With the CPR</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started With the CPR</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installing-the-cpr">Installing the CPR</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="main.html">Main</a></li>
 <li class="toctree-l1"><a class="reference internal" href="simulator.html">Simulator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="initialisation.html">Initialisation</a></li>
@@ -93,7 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="debts.html">Debts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="taxes.html">Taxes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="annuities.html">Annuities</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Life</a></li>
+<li class="toctree-l1"><a class="reference internal" href="life.html">Life</a></li>
 <li class="toctree-l1"><a class="reference internal" href="balance_sheets.html">Balance sheets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credits.html">Contributors and Rights of Use</a></li>
@@ -144,13 +147,13 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Life</li>
+      <li>Getting Started With the CPR</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/life.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/overview.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -163,69 +166,45 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="life">
-<h1>Life<a class="headerlink" href="#life" title="Permalink to this headline">¶</a></h1>
-<dl class="class">
-<dt id="CPR.life.life.table">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.life.life.</code><code class="sig-name descname">table</code><span class="sig-paren">(</span><em class="sig-param">prov='qc'</em>, <em class="sig-param">scenario='M'</em>, <em class="sig-param">gender='males'</em>, <em class="sig-param">web=False</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table" title="Permalink to this definition">¶</a></dt>
-<dd><p>Class computing annuity factors by province, gender, age and birth year.</p>
-<dl class="method">
-<dt id="CPR.life.life.table.pull_history_web">
-<code class="sig-name descname">pull_history_web</code><span class="sig-paren">(</span><em class="sig-param">prov='qc'</em>, <em class="sig-param">gender='males'</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.pull_history_web" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get historical mortalilty tables by province and gender.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>prov</strong> (<em>str</em>) – province</p></li>
-<li><p><strong>gender</strong> (<em>str</em>) – gender</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
+  <div class="section" id="getting-started-with-the-cpr">
+<h1>Getting Started With the CPR<a class="headerlink" href="#getting-started-with-the-cpr" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="installing-the-cpr">
+<h2>Installing the CPR<a class="headerlink" href="#installing-the-cpr" title="Permalink to this headline">¶</a></h2>
+<p>On peut installer facilement le SRD en utilisant pip:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">srd</span>
+</pre></div>
+</div>
+<p>Le SRD dépend d’un autre package produit par la chaire, le SRPP, qui permet de simuler les revenus de pensions publiques (RPC et RRQ). Celui-ci est installé automatiquement en installant le SRD.</p>
+<p>Dans un notebook ou un projet, on invoque le SRD en ajoutant la commande suivante:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">srd</span>
+</pre></div>
+</div>
+<p>Pour désinstaller le SRD et le SRPP, il suffit d’utiliser pip:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">uninstall</span> <span class="n">srd</span> <span class="n">srpp</span>
+</pre></div>
+</div>
+<p>Si l’utilisation de pip n’est pas possible :</p>
+<ol class="arabic">
+<li><p>Allez sur <a class="reference external" href="https://www.pypi.org">pypi.org</a> et téléchargez les fichiers sources (extension .tar.gz) du SRD et du SRPP</p></li>
+<li><p>Extrayez les fichiers .tar.gz. Sous Windows, ouvrez les fichiers avec 7-zip ou Winzip ou, dans une fenêtre de commande, entrez (en remplaçant les adresses et noms de fichiers):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tar</span> <span class="o">-</span><span class="n">xvzf</span> <span class="n">C</span><span class="p">:</span>\\<span class="n">SENTIER_VERS_FICHIER</span>\\<span class="n">FICHIER</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span> <span class="o">-</span><span class="n">C</span> <span class="n">C</span><span class="p">:</span>\\<span class="n">SENTIER_VERS_RÉPERTOIRE_EXTRACTION</span>
+</pre></div>
+</div>
+</li>
+<li><p>Dans les dossiers qu’on vient d’extraire, <em>srd-x.x.x</em> et <em>srpp-x.x.x</em> (<em>x.x.x</em> étant le numéro de version), on trouve les répertoires <em>srd</em> et <em>srpp</em></p></li>
+<li><p>Placez <em>srd</em> et <em>srpp</em> dans le répertoire de votre choix</p></li>
+</ol>
+<p>Pour invoquer le SRD, il faut ajouter son adresse:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;C:\SENTIER VERS RÉPERTOIRE_CONTENANT_SRD_ET_SRPP&quot;</span><span class="p">)</span>
 
-<dl class="method">
-<dt id="CPR.life.life.table.pull_history">
-<code class="sig-name descname">pull_history</code><span class="sig-paren">(</span><em class="sig-param">prov='qc'</em>, <em class="sig-param">gender='males'</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.pull_history" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get historical mortalilty tables by province and gender.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>prov</strong> (<em>str</em>) – province</p></li>
-<li><p><strong>gender</strong> (<em>str</em>) – gender</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="method">
-<dt id="CPR.life.life.table.splice">
-<code class="sig-name descname">splice</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.splice" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add survival probabilities for 2012 and after.</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="CPR.life.life.table.compute_annuity_factor">
-<code class="sig-name descname">compute_annuity_factor</code><span class="sig-paren">(</span><em class="sig-param">byear</em>, <em class="sig-param">agestart</em>, <em class="sig-param">rate</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.compute_annuity_factor" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute annuity factor.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>byear</strong> (<em>int</em>) – birth year</p></li>
-<li><p><strong>agestart</strong> (<em>int</em>) – age at which annuity starts</p></li>
-<li><p><strong>rate</strong> (<em>float</em>) – interest rate</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>annuity factor</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
+<span class="kn">import</span> <span class="nn">srd</span>
+</pre></div>
+</div>
+<p>Si l’on ne veut plus le SRD, il suffit d’effacer les répertoires <em>srd</em> et <em>srpp</em>.</p>
+<p>En cas de questions, commentaires ou suggestions, n’hésitez pas à nous contacter: <span class="xref std std-ref">nous_contacter</span>.</p>
+<p>PLACEHOLDER FOR THE INPUT EXAMPLE DOCUMENT</p>
+</div>
 </div>
 
 
@@ -236,10 +215,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="balance_sheets.html" class="btn btn-neutral float-right" title="Balance sheets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="main.html" class="btn btn-neutral float-right" title="Main" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="annuities.html" class="btn btn-neutral float-left" title="Annuities" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Canadians’ Preparation for Retirement (CPR)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
