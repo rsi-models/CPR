@@ -19,7 +19,7 @@ autodoc_member_order = 'bysource'
 # -- Project information -----------------------------------------------------
 
 project = 'CPR'
-copyright = '2020, David Boisclair, Ismaël Choinière-Crèvecœur & Pierre-Carl Michaud, Pierre-Yves Yanni'
+copyright = '© Copyright 2020, `RSI Team <https://ire.hec.ca>`_ at `HEC Montréal <https://hec.ca>`_'
 author = 'David Boisclair, Ismaël Choinière-Crèvecœur, Pierre-Carl Michaud & Pierre-Yves Yanni'
 
 # The full version, including alpha/beta/rc tags
@@ -47,7 +47,6 @@ exclude_patterns = []
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#
 html_theme = "sphinx_rtd_theme"
 
 # Add any paths that contain custom static files (such as style sheets) here,
