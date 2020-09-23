@@ -19,12 +19,11 @@ autodoc_member_order = 'bysource'
 # -- Project information -----------------------------------------------------
 
 project = 'CPR'
-copyright = '© Copyright 2020, `RSI Team <https://ire.hec.ca>`_ at `HEC Montréal <https://hec.ca>`_'
+copyright = '2020, `RSI Team at HEC Montréal'
 author = 'David Boisclair, Ismaël Choinière-Crèvecœur, Pierre-Carl Michaud & Pierre-Yves Yanni'
 
 # The full version, including alpha/beta/rc tags
 release = '0.0.1'
-
 
 # -- General configuration ---------------------------------------------------
 
