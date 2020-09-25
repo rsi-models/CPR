@@ -98,6 +98,8 @@
 <li class="toctree-l1"><a class="reference internal" href="annuities.html">Annuities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="life.html">Life</a></li>
 <li class="toctree-l1"><a class="reference internal" href="balance_sheets.html">Balance Sheets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credits.html">Contributors and Rights of Use</a></li>
 </ul>
@@ -171,18 +173,18 @@
 <div class="section" id="installing-the-cpr">
 <h2>Installing the CPR<a class="headerlink" href="#installing-the-cpr" title="Permalink to this headline">¶</a></h2>
 <p>The CPR can be easily installed using pip:</p>
-<blockquote>
-<div><p>pip install cpr</p>
-</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">cpr</span>
+</pre></div>
+</div>
 <p>The CPR uses two other packages that are produced by the Research Chair on Intergenerational Economics (CREEi), which is supported by the RSI: the Disposable Income Simulator (<a class="reference external" href="https://creei-models.github.io/srd/">Simulateur de revenu disponible, or SRD</a>; documentation in French), which computes taxes and major benefits; and the Public Pensions Income Simulator (Simulateur de revenu de pensions publiques, or SRPP), which simulates QPP and CPP benefits. Both the SRD and the SRPP are automatically installed along with the CPR.</p>
 <p>In a notebook or a project, the CPR is called on by adding the following command:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cpr</span>
 </pre></div>
 </div>
 <p>To uninstall the CPR, the SRD and the SRPP, pip can be used:</p>
-<blockquote>
-<div><p>pip uninstall cpr srd srpp</p>
-</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">uninstall</span> <span class="n">cpr</span> <span class="n">srd</span> <span class="n">srpp</span>
+</pre></div>
+</div>
 <p>If using pip is not possible:</p>
 <ol class="arabic">
 <li><p>Go to <a class="reference external" href="https://www.pypi.org">pypi.org</a> and download the CPR, SRD and SRPP source files (.tar.gz extension)</p></li>
@@ -194,7 +196,7 @@
 <li><p>In the folders just extracted, <em>cpr-x.x.x</em>, <em>srd-x.x.x</em> and <em>srpp-x.x.x</em> (<em>x.x.x</em> being the version number), the folders <em>cpr</em>, <em>srd</em> and <em>srpp</em> can be found</p></li>
 <li><p>Place <em>cpr</em>, <em>srd</em> and <em>srpp</em> in the folder of your choice</p></li>
 </ol>
-<p>To call on the CPR, its address must be added:</p>
+<p>To call the CPR, its address must be added:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;C:\PATH_TO_FOLDER_CONTAINING_CPR_SRD_AND_SRPP&quot;</span><span class="p">)</span>
 
@@ -202,8 +204,8 @@
 </pre></div>
 </div>
 <p>If one does not want the CPR, the <em>cpr</em>, <em>srd</em> and <em>srpp</em> folders can simply be deleted.</p>
+<p>For more details on how to use the CPR, please consult the <a class="reference internal" href="tutorial.html#tutorial"><span class="std std-ref">Tutorial</span></a> section.</p>
 <p>If you have questions, comments or suggestions, do not hesitate to contact us (<a class="reference internal" href="credits.html#nous-contacter"><span class="std std-ref">Contact Person</span></a>).</p>
-<p>PLACEHOLDER FOR THE INPUT EXAMPLE DOCUMENT</p>
 </div>
 </div>
 

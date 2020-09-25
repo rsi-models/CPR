@@ -143,7 +143,7 @@ def prepare_wages(p, sim, common, prices):
 
 def initialize_cpp_account(p, hh, common):
     """
-    Function that creates a CPP account and enters past CPP contributions based on past wages.
+    Function that creates a CPP/QPP account and enters past CPP/QPP contributions based on past wages.
 
     Parameters
     ----------
@@ -333,7 +333,7 @@ def manage_liquidations(hh, year, common, prices):
 
 def contribute_cpp(p, year, common):
     """
-    Function that records CPP contributions.
+    Function that records CPP/QPP contributions.
 
     Parameters
     ----------
@@ -350,7 +350,7 @@ def contribute_cpp(p, year, common):
 
 def claim_cpp(p):
     """
-    Function to claim CPP benefits.
+    Function to claim CPP/QPP benefits.
 
     Parameters
     ----------
@@ -442,7 +442,7 @@ def prepare_taxes(hh, year, common, prices):
 
 def get_assets(p, common):
     """
-    Get asset for social assistance asset test.
+    Function to retrieve assets for social assistance asset test.
 
     Parameters
     ----------
@@ -478,11 +478,9 @@ def compute_rpp(p, nom, common):
 
 def get_benefits_cpp(p, year, common):
     """
-    Compute annual CPP benefits.
-    s1 is the increase due to higher contribution rates,
-    s2 is the increase due to changes in ympe
-    and PRB is for post retirement benefit
-    (after claiming but still contributing).
+    Function that computes annual CPP/QPP retirement benefits.
+
+    s1 is the part of the supplementary benefit due to higher contribution rates in the 2019-2025 expansion; s2 is the part of the supplementary benefits attributable to changes in the YMPE; and PRB is for post-retirement benefits (for individuals who keep working after claiming -- this feature is not used in the CPR, since individuals automatically claim in the year they retire).
 
     Parameters
     ----------
@@ -507,7 +505,7 @@ def get_benefits_cpp(p, year, common):
 
 def get_inc_rrsp(p, nom):
     """
-    Compute RRSP income from withdrawals.
+    Function that computes RRSP income from withdrawals.
 
     Parameters
     ----------
@@ -525,7 +523,7 @@ def get_inc_rrsp(p, nom):
 
 def get_other_taxable(p, nom, common):
     """
-    Compute other taxable.
+    Function that computes other taxable income.
 
     Parameters
     ----------
@@ -545,7 +543,7 @@ def get_other_taxable(p, nom, common):
 
 def get_other_non_taxable(p, nom):
     """
-    Compute other non-taxable.
+    Function that computes other non-taxable income.
 
     Parameters
     ----------
@@ -565,8 +563,7 @@ def get_other_non_taxable(p, nom):
 
 def get_contributions_assets(p, year, common):
     """
-    Compute contributions to registered and unregistered accounts
-    (including DC and DB RPP).
+    Function that computes contributions to registered and unregistered accounts (including DC and DB RPP).
 
     Parameters
     ----------
@@ -596,7 +593,7 @@ def get_contributions_assets(p, year, common):
 
 def reset_accounts(hh):
     """
-    Reset all variables to their initial values.
+    Function that resets all variables to their initial values.
 
     Parameters
     ----------

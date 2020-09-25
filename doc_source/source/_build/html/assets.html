@@ -1,0 +1,763 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Assets &mdash; CPR 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Debts" href="debts.html" />
+    <link rel="prev" title="Macro" href="macro.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> CPR
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Getting Started With the CPR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main.html">Main</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simulator.html">Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="initialisation.html">Initialisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="macro.html">Macro</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debts.html">Debts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="taxes.html">Taxes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="annuities.html">Annuities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="life.html">Life</a></li>
+<li class="toctree-l1"><a class="reference internal" href="balance_sheets.html">Balance Sheets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Contributors and Rights of Use</a></li>
+</ul>
+
+            
+          
+    <a href="genindex.html">Index</a>
+  
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CPR</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Assets</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/assets.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="assets">
+<h1>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="CPR.assets.ContributionRoom">
+<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">ContributionRoom</code><span class="sig-paren">(</span><em class="sig-param">init_room_rrsp</em>, <em class="sig-param">init_room_tfsa</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class manages contribution rooms for TFSA and RRSP.
+All amounts are nominal.</p>
+<dl class="method">
+<dt id="CPR.assets.ContributionRoom.compute_contributions">
+<code class="sig-name descname">compute_contributions</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.compute_contributions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update contribution room for RRSP and TFSA</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.ContributionRoom.update_rrsp_room">
+<code class="sig-name descname">update_rrsp_room</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.update_rrsp_room" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update RRSP contribution room.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.ContributionRoom.update_tfsa_room">
+<code class="sig-name descname">update_tfsa_room</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.update_tfsa_room" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update TFSA contribution room.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.ContributionRoom.adjust_db_contributions">
+<code class="sig-name descname">adjust_db_contributions</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_db_contributions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adjust contributions room RRSP to DB RPP contribution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.ContributionRoom.adjust_dc_contributions">
+<code class="sig-name descname">adjust_dc_contributions</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_dc_contributions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adjust contribution room RRSP to DC contribution. If insufficent room,
+extra contribution transferred to TFSA.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.ContributionRoom.adjust_employees_contributions">
+<code class="sig-name descname">adjust_employees_contributions</code><span class="sig-paren">(</span><em class="sig-param">p</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_employees_contributions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute employee contribution to DC RPP
+(used later to caculate taxes).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.ContributionRoom.adjust_rrsp_contributions">
+<code class="sig-name descname">adjust_rrsp_contributions</code><span class="sig-paren">(</span><em class="sig-param">acc</em>, <em class="sig-param">p</em>, <em class="sig-param">year</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_rrsp_contributions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adjust contribution room RRSP for contributions other than RPP.
+If insufficent room, extra contribution transferred to TFSA.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>acc</strong> (<em>[</em><em>type</em><em>]</em>) – [description]</p></li>
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.ContributionRoom.adjust_tfsa_contributions">
+<code class="sig-name descname">adjust_tfsa_contributions</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_tfsa_contributions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adjust contribution room TFSA to TFSA contributions
+and excess RRSP contributions. If insufficent room,
+extra contribution transferred to TFSA.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.ContributionRoom.adjust_rrif">
+<code class="sig-name descname">adjust_rrif</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_rrif" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adjust RPP DC and RRSP to mandatory withdrawals.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[description]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>[type]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.ContributionRoom.adjust_unreg_contributions">
+<code class="sig-name descname">adjust_unreg_contributions</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_unreg_contributions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adjust contribution to unregistered accounts
+for excess TFSA contributions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.ContributionRoom.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset contribution rooms RRSP and TFSA to inital values.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="CPR.assets.FinAsset">
+<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">FinAsset</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">hh</em>, <em class="sig-param">acc</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class manages registered accounts. All amounts are nominal.</p>
+<dl class="method">
+<dt id="CPR.assets.FinAsset.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">d_returns</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the balance for contribution, withdrawal and return.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>d_returns</strong> (<em>dict</em>) – dictionary of returns</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.FinAsset.rate">
+<code class="sig-name descname">rate</code><span class="sig-paren">(</span><em class="sig-param">d_returns</em>, <em class="sig-param">year</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the rate of return given the composition of assets in account.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>d_returns</strong> (<em>dict</em>) – dictionary of returns</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[description]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>[type]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.FinAsset.rrif_withdrawal">
+<code class="sig-name descname">rrif_withdrawal</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.rrif_withdrawal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Manage mandatory rrif withdrawals.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>amount of mandatory withdrawal</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.FinAsset.liquidate">
+<code class="sig-name descname">liquidate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.liquidate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Liquidate account, set balance, contribution and withdrawal to zero.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>amount from liquidation (before taxes)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.FinAsset.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the balance and withdrawal to its initial balance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="CPR.assets.UnregAsset">
+<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">UnregAsset</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">hh</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class manages unregistered account. All amounts are nominal.</p>
+<dl class="method">
+<dt id="CPR.assets.UnregAsset.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">d_returns</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the balance for contribution, withdrawal and return.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>d_returns</strong> (<em>dict</em>) – dictionary of returns</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.UnregAsset.compute_income">
+<code class="sig-name descname">compute_income</code><span class="sig-paren">(</span><em class="sig-param">d_returns</em>, <em class="sig-param">year</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.compute_income" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute new capital gains and taxable income (dividends and interests).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>d_returns</strong> (<em>dict</em>) – dictionary of returns</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.UnregAsset.rate">
+<code class="sig-name descname">rate</code><span class="sig-paren">(</span><em class="sig-param">d_returns</em>, <em class="sig-param">year</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the rate of return given the composition of assets in account.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>d_returns</strong> (<em>dict</em>) – dictionary of returns</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>rate of return (net of fee)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.UnregAsset.update_balance">
+<code class="sig-name descname">update_balance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.update_balance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update balance and divide between non-taxable, capital gains,
+dividends and interests.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.UnregAsset.prepare_withdrawal">
+<code class="sig-name descname">prepare_withdrawal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.prepare_withdrawal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Divide withdrawal from balance at the end of the period
+between non-taxable, capital gains, dividends and interests.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.UnregAsset.adjust_income">
+<code class="sig-name descname">adjust_income</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.adjust_income" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adjust income for withdrawals.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.UnregAsset.adjust_cap_losses">
+<code class="sig-name descname">adjust_cap_losses</code><span class="sig-paren">(</span><em class="sig-param">realized_cap_gains</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.adjust_cap_losses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute capital losses from previous years used for deduction
+and adjust realized capital losses</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>realized_cap_gains</strong> (<em>float</em>) – capital gains</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>capital losses (to be deducted)</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.UnregAsset.adjust_final_balance">
+<code class="sig-name descname">adjust_final_balance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.adjust_final_balance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adjust final balance for withdrawal, dividends and interests.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.UnregAsset.liquidate">
+<code class="sig-name descname">liquidate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.liquidate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Liquidate account and adjust capital losses.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.UnregAsset.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the balance, cap_gains and withdrawal to its initial balance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="CPR.assets.RppDC">
+<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">RppDC</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDC" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class manages DC RPP. All amounts are nominal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>FinAsset</strong> (<em>object</em>) – class managing registered accounts</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="class">
+<dt id="CPR.assets.RppDB">
+<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">RppDB</code><span class="sig-paren">(</span><em class="sig-param">p</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class manages DB RPP. All amounts are nominal.</p>
+<dl class="method">
+<dt id="CPR.assets.RppDB.compute_benefits">
+<code class="sig-name descname">compute_benefits</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.compute_benefits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute RPP DB benefits and adjust them for CPP.
+If RPP benefits are smaller than CPP benefits,
+RPP benefits are zero when cpp_qpp starts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.RppDB.adjust_for_penalty">
+<code class="sig-name descname">adjust_for_penalty</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.adjust_for_penalty" title="Permalink to this definition">¶</a></dt>
+<dd><p>DB RPP benefits lowered when less than 35 years of service and
+retirement before age 62.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.RppDB.compute_cpp_adjustment">
+<code class="sig-name descname">compute_cpp_adjustment</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.compute_cpp_adjustment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute adjustement to DB RPP for CPP benefits.
+Start in base year if enough years until retirement, otherwise go
+backward from year before retirement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>amount of CPP adjustment</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.RppDB.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the benefits, cap_gains and withdrawal to its initial balance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="CPR.assets.RealAsset">
+<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">RealAsset</code><span class="sig-paren">(</span><em class="sig-param">d_hh</em>, <em class="sig-param">resid</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class manages housing. All amounts are nominal.</p>
+<dl class="method">
+<dt id="CPR.assets.RealAsset.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">growth_rates</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the balance for growth in price.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>growth_rates</strong> (<em>dict</em>) – nominal return to housing (capital gains)</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.RealAsset.liquidate">
+<code class="sig-name descname">liquidate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset.liquidate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Liquidate account, compute capital gains, set balance to zero.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>amount from liquidation (before taxes)</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.RealAsset.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset balance to its initial balance and set capital gains to zero.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.RealAsset.impute_rent">
+<code class="sig-name descname">impute_rent</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset.impute_rent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute imputed rent.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="CPR.assets.Business">
+<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">Business</code><span class="sig-paren">(</span><em class="sig-param">d_hh</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class manages a business (as an asset owned by the houshehold).
+All amounts are nominal.</p>
+<dl class="method">
+<dt id="CPR.assets.Business.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">d_business_returns</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the balance and dividends.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>d_business_returns</strong> (<em>dict</em>) – business returns</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.Business.liquidate">
+<code class="sig-name descname">liquidate</code><span class="sig-paren">(</span><em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business.liquidate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Liquidate account, compute capital gains, set balance to zero
+and returns real liquidation value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>selling price</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.assets.Business.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset balance and capital gains to initial values.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="debts.html" class="btn btn-neutral float-right" title="Debts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="macro.html" class="btn btn-neutral float-left" title="Macro" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, RSI Team at HEC Montréal
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
