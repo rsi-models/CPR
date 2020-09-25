@@ -15,7 +15,7 @@ def get_dataset():
     pandas.core.frame.DataFrame
         dataframe of synthetic data
     """
-    return pd.read_csv(module_dir + '/CPR/data/inputs/inputs.csv',
+    return pd.read_csv(module_dir + '/CPR/data/inputs/synth_inputs.csv',
                        index_col=0)
     
 

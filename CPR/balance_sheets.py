@@ -5,7 +5,7 @@ from CPR import simulator
 
 def compute_bs_bef_ret(hh, year, common, prices):
     """
-    Compute pre-retirement balance sheet.
+    Function to compute the pre-retirement balance sheet.
 
     Parameters
     ----------
@@ -29,7 +29,7 @@ def compute_bs_bef_ret(hh, year, common, prices):
 
 def compute_cons_bef_ret(hh, year, prices):
     """
-    Compute pre-retirement consumption.
+    Function to compute pre-retirement consumption.
 
     Parameters
     ----------
@@ -49,7 +49,7 @@ def compute_cons_bef_ret(hh, year, prices):
 
 def compute_bs_after_ret(hh, year, common, prices):
     """
-    Compute post-retirement balance-sheet.
+    Function to compute the post-retirement balance sheet.
 
     Parameters
     ----------
@@ -75,7 +75,7 @@ def compute_bs_after_ret(hh, year, common, prices):
 
 def add_output(hh, year, prices, key):
     """
-    Extract output variables.
+    Function to extract output variables.
 
     Parameters
     ----------
