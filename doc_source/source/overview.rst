@@ -5,7 +5,7 @@ Getting Started With the CPR
 Installing the CPR
 ==================
 
-The CPR can be easily installed using pip:
+The CPR can be easily installed using pip::
 
   pip install cpr
 
@@ -17,7 +17,7 @@ In a notebook or a project, the CPR is called on by adding the following command
 
     import cpr
 
-To uninstall the CPR, the SRD and the SRPP, pip can be used:
+To uninstall the CPR, the SRD and the SRPP, pip can be used::
 
   pip uninstall cpr srd srpp
 
@@ -33,7 +33,7 @@ If using pip is not possible:
 
 4. Place *cpr*, *srd* and *srpp* in the folder of your choice
 
-To call on the CPR, its address must be added:
+To call the CPR, its address must be added:
 
 .. code:: ipython3
 
@@ -44,7 +44,6 @@ To call on the CPR, its address must be added:
 
 If one does not want the CPR, the *cpr*, *srd* and *srpp* folders can simply be deleted.
 
+For more details on how to use the CPR, please consult the :ref:`tutorial` section.
+
 If you have questions, comments or suggestions, do not hesitate to contact us (:ref:`nous_contacter`).
-
-
-PLACEHOLDER FOR THE INPUT EXAMPLE DOCUMENT

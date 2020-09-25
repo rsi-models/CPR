@@ -4,7 +4,7 @@ import numpy as np
 from CPR import macro
 
 module_dir = os.path.dirname(os.path.dirname(__file__))
-path_params = '/CPR/data/in/'
+
 
 def get_dataset():
     """
