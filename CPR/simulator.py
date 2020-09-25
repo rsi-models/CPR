@@ -8,7 +8,7 @@ from CPR import balance_sheets
 
 def simulate(job, common, prices):
     """
-    Project assets, RPPs and debts to retirement.
+    Function that projects assets, RPPs and debts until the time of retirement.
 
     Parameters
     ----------
@@ -24,7 +24,7 @@ def simulate(job, common, prices):
         before and after retirement
     """
     hh, sim = job
-    
+
     print(hh.index)
 
     # store output in dictionary:
@@ -91,7 +91,7 @@ def simulate(job, common, prices):
 
 def extract_time_series(sim, common, prices):
     """
-    Attach stochastic processes on asset returns to households.
+    Function that attaches to households stochastic processes on asset returns.
 
     Parameters
     ----------
@@ -121,7 +121,7 @@ def extract_time_series(sim, common, prices):
 
 def prepare_wages(p, sim, common, prices):
     """
-    Attach wage profiles to people.
+    Function that attaches wage profiles to individuals.
 
     Parameters
     ----------
@@ -143,7 +143,7 @@ def prepare_wages(p, sim, common, prices):
 
 def initialize_cpp_account(p, hh, common):
     """
-    Create cpp account and enter past contributions based on wages.
+    Function that creates a CPP account and enters past CPP contributions based on past wages.
 
     Parameters
     ----------
@@ -164,7 +164,7 @@ def initialize_cpp_account(p, hh, common):
 
 def update_ages(hh, year):
     """
-    Compute age for a given year.
+    Function that computes age for a given year.
 
     Parameters
     ----------
@@ -179,7 +179,7 @@ def update_ages(hh, year):
 
 def update_debts(hh, year, sim, common, prices):
     """
-    Update debts' payments and balances.
+    Function that updates debt payments and balances.
 
     Parameters
     ----------
@@ -202,8 +202,7 @@ def update_debts(hh, year, sim, common, prices):
 
 def adjust_contributions(hh, year, common, prices):
     """
-    Adjust contributions to all types of accounts (RRSP, other registered,
-    TFSA) and pensions plans (DC and DB rpp) to respect contribution rooms.
+    Function that adjusts contributions to all account types (RRSP, other registered, TFSA) and to pensions plans (DC and DB RPPs) so as to respect available contribution rooms.
 
     Parameters
     ----------
@@ -227,7 +226,7 @@ def adjust_contributions(hh, year, common, prices):
 
 def update_assets(hh, year, d_returns, common, prices):
     """
-    Update assets.
+    Function that updates assets every year.
 
     Parameters
     ----------
@@ -257,7 +256,7 @@ def update_assets(hh, year, d_returns, common, prices):
 
 def manage_liquidations(hh, year, common, prices):
     """
-    Manage liquidation of assets before retirement.
+    Function that manages the liquidation of assets upon retirement.
 
     Parameters
     ----------
@@ -334,7 +333,7 @@ def manage_liquidations(hh, year, common, prices):
 
 def contribute_cpp(p, year, common):
     """
-    Record cpp contributions.
+    Function that records CPP contributions.
 
     Parameters
     ----------
@@ -351,7 +350,7 @@ def contribute_cpp(p, year, common):
 
 def claim_cpp(p):
     """
-    Claim CPP benefits.
+    Function to claim CPP benefits.
 
     Parameters
     ----------
@@ -364,7 +363,7 @@ def claim_cpp(p):
 
 def check_tax_unreg(hh):
     """
-    Check if there are taxable returns to assets.
+    Function that checks whether there are taxable returns to assets.
 
     Parameters
     ----------
@@ -384,7 +383,7 @@ def check_tax_unreg(hh):
 
 def check_liquidation(hh):
     """
-    Check if there are liquidations to be taxed.
+    Function to check whether there are liquidated assets to be taxed.
 
     Parameters
     ----------
@@ -409,7 +408,7 @@ def check_liquidation(hh):
 
 def prepare_taxes(hh, year, common, prices):
     """
-    Prepare variables used in srd (in nominal terms).
+    Function to prepare the variables used in the SRD (in nominal terms).
 
     Parameters
     ----------

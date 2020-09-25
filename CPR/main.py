@@ -19,7 +19,7 @@ def run_simulations(inputs, nsim=1, non_stochastic=False, **extra_params):
 
     Parameters
     ----------
-    file : _io.TextIOWrapper
+    inputs : _io.TextIOWrapper
         csv file
     nsim : int, optional
         number of simulations, by default 1

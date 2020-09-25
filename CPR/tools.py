@@ -3,7 +3,7 @@ import csv
 
 def get_params(file, numerical_key=False):
     """
-    Create dictionary from csv file.
+    Function to create a dictionary from a .csv file.
 
     Parameters
     ----------
@@ -38,7 +38,7 @@ def get_params(file, numerical_key=False):
 
 def add_params_as_attr(inst, file):
     """
-    Add parameters to class instance.
+    Function to add parameters to a class instance.
 
     Parameters
     ----------
@@ -53,7 +53,7 @@ def add_params_as_attr(inst, file):
 
 def change_params(inst, extra_params):
     """
-    Update value of some parameters in inst to values of extra_params.
+    Function to update the value of some parameters in inst with values form *extra_params*.
 
     Parameters
     ----------
@@ -69,8 +69,7 @@ def change_params(inst, extra_params):
 
 def create_nom_real(year, prices):
     """
-    Create two functions that convert prices from real to nominal
-    and from nominal to real, with base year 2018.
+    Creation of a function to convert prices from real to nominal and from nominal to real, with base year 2018.
 
     Parameters
     ----------
@@ -99,8 +98,7 @@ def create_nom_real(year, prices):
 
 def create_nom(year, prices):
     """
-    Create function that converts prices from real to nominal,
-    with base year 2018.
+    Creation of a function that converts prices from real to nominal, with base year 2018.
 
     Parameters
     ----------
@@ -124,8 +122,7 @@ def create_nom(year, prices):
 
 def create_real(year, prices):
     """
-    Create function that convert prices from nominal to real,
-    with base year 2018.
+    Creation of a function that converts prices from nominal to real, with base year 2018.
 
     Parameters
     ----------
