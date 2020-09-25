@@ -60,6 +60,6 @@ def run_simulations(inputs, nsim=1, non_stochastic=False, **extra_params):
         l_outputs = [simulator.simulate(job, common, prices) for job in jobs]
 
     output = pd.DataFrame.from_dict(l_outputs)
-    print(f'total time: {time.time() -  start}')
+    print(f'\ntotal time: {time.time() -  start}')
     results = analysis.Results(inputs, output, common, prices, extra_params)
     return results

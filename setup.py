@@ -14,8 +14,8 @@ setuptools.setup(
     description="Assessing Canadians' Preparation for Retirement",
     long_description=README,
     long_description_content_type="text/markdown",
-    url="http://ire.hec.ca/en/", # to ba added
-    author="RSI",
+    url="https://rsi-models.github.io/CPR/",
+    author="Team RSI",
     author_email="pyanni@gmail.com",
     license="MIT",
     classifiers=["Programming Language :: Python :: 3",
