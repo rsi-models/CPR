@@ -1,5 +1,23 @@
+import os
 import pandas as pd
 import numpy as np
+from CPR import macro
+
+module_dir = os.path.dirname(os.path.dirname(__file__))
+path_params = '/CPR/data/in/'
+
+def get_dataset():
+    """
+    Returns a dataframe of synthetic data
+
+    Returns
+    -------
+    pandas.core.frame.DataFrame
+        dataframe of synthetic data
+    """
+    return pd.read_csv(module_dir + '/CPR/data/inputs/inputs.csv',
+                       index_col=0)
+    
 
 class Results:
     """

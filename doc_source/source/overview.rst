@@ -5,47 +5,46 @@ Getting Started With the CPR
 Installing the CPR
 ==================
 
-On peut installer facilement le SRD en utilisant pip::
+The CPR can be easily installed using pip:
 
-  pip install srd
+  pip install cpr
 
-Le SRD dépend d'un autre package produit par la chaire, le SRPP, qui permet de simuler les revenus de pensions publiques (RPC et RRQ). Celui-ci est installé automatiquement en installant le SRD.
+The CPR uses two other packages that are produced by the Research Chair on Intergenerational Economics (CREEi), which is supported by the RSI: the Disposable Income Simulator (`Simulateur de revenu disponible, or SRD <https://creei-models.github.io/srd/>`_; documentation in French), which computes taxes and major benefits; and the Public Pensions Income Simulator (Simulateur de revenu de pensions publiques, or SRPP), which simulates QPP and CPP benefits. Both the SRD and the SRPP are automatically installed along with the CPR.
 
-Dans un notebook ou un projet, on invoque le SRD en ajoutant la commande suivante:
+In a notebook or a project, the CPR is called on by adding the following command:
 
 .. code:: ipython3
 
-    import srd
+    import cpr
 
-Pour désinstaller le SRD et le SRPP, il suffit d'utiliser pip::
+To uninstall the CPR, the SRD and the SRPP, pip can be used:
 
-  pip uninstall srd srpp
+  pip uninstall cpr srd srpp
 
-Si l'utilisation de pip n'est pas possible :
+If using pip is not possible:
 
-1. Allez sur `pypi.org <https://www.pypi.org>`_ et téléchargez les fichiers sources (extension .tar.gz) du SRD et du SRPP
+1. Go to `pypi.org <https://www.pypi.org>`_ and download the CPR, SRD and SRPP source files (.tar.gz extension)
 
-2. Extrayez les fichiers .tar.gz. Sous Windows, ouvrez les fichiers avec 7-zip ou Winzip ou, dans une fenêtre de commande, entrez (en remplaçant les adresses et noms de fichiers)::
+2. Extract the .tar.gz files. In Windows, open the files using 7-zip or Winzip, or enter in a command window (replacing addresses and file names)::
 
-    tar -xvzf C:\\SENTIER_VERS_FICHIER\\FICHIER.tar.gz -C C:\\SENTIER_VERS_RÉPERTOIRE_EXTRACTION
+    tar -xvzf C:\\PATH_TO_FILE\\FILE.tar.gz -C C:\\PATH_TO_EXTRACTION_FOLDER
 
-3. Dans les dossiers qu’on vient d’extraire, *srd-x.x.x* et *srpp-x.x.x* (*x.x.x* étant le numéro de version), on trouve les répertoires *srd* et *srpp*
+3. In the folders just extracted, *cpr-x.x.x*, *srd-x.x.x* and *srpp-x.x.x* (*x.x.x* being the version number), the folders *cpr*, *srd* and *srpp* can be found
 
-4. Placez *srd* et *srpp* dans le répertoire de votre choix
+4. Place *cpr*, *srd* and *srpp* in the folder of your choice
 
-Pour invoquer le SRD, il faut ajouter son adresse:
+To call on the CPR, its address must be added:
 
 .. code:: ipython3
 
     import sys
-    sys.path.append("C:\SENTIER VERS RÉPERTOIRE_CONTENANT_SRD_ET_SRPP")
+    sys.path.append("C:\PATH_TO_FOLDER_CONTAINING_CPR_SRD_AND_SRPP")
 
-    import srd
+    import cpr
 
-Si l'on ne veut plus le SRD, il suffit d'effacer les répertoires *srd* et *srpp*.
+If one does not want the CPR, the *cpr*, *srd* and *srpp* folders can simply be deleted.
 
-En cas de questions, commentaires ou suggestions, n'hésitez pas à nous contacter: :ref:`nous_contacter`.
-
+If you have questions, comments or suggestions, do not hesitate to contact us (:ref:`nous_contacter`).
 
 
 PLACEHOLDER FOR THE INPUT EXAMPLE DOCUMENT

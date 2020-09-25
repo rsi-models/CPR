@@ -18,7 +18,7 @@ perc_cpp_2021,0.29,float,
 perc_cpp_2022,0.31,float,
 perc_cpp_2023,0.33,float,
 future_years,110,int,enough for late retirement and large age difference in couple
-official_ret_age,65,int, ### check params from here on###
+official_ret_age,65,int,
 min_age_cpp,18,int,
 max_ret_age,75,int,
 min_claim_age_cpp,60,int,
