@@ -43,7 +43,7 @@ The CPR and the other tools it uses (SRD and SRPP) are written in Python, a mode
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
    overview.rst

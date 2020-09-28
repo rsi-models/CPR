@@ -21,7 +21,7 @@ as well as the values of residences and outstanding mortgages
 are stored in variables ending in '_aft'.
 
 In the case of couples, the variables describing the spouse who retires last
-start with 's_'.
+start with 's\_'.
 
 .. automodule:: CPR.balance_sheets
     :members: compute_bs_bef_ret, compute_cons_bef_ret, compute_bs_after_ret,
