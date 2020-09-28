@@ -3,17 +3,13 @@ Contributors and Rights of Use
 
 .. _nous_contacter:
 
+Contributors
+************
+David Boisclair, Ismaël Choinière-Crèvecœur, Pierre-Carl Michaud, Pierre-Yves Yanni
+
 Contact Person
 **************
 `Pierre-Yves Yanni <pierre-yves.yanni@hec.ca>`_
-
-Current Contributors
-********************
-David Boisclair, Pierre-Carl Michaud, Pierre-Yves Yanni
-
-Past Contributor
-****************
-Ismaël Choinière-Crèvecœur
 
 Licence
 *******

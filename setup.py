@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setuptools.setup(
     name="CPR",
-    version="0.0.9",
+    version="0.0.10",
     description="Assessing Canadians' Preparation for Retirement",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -23,5 +23,5 @@ setuptools.setup(
                  "Operating System :: OS Independent"],
     packages=setuptools.find_packages(),
     include_package_data=True,
-    install_requires=["pandas", "numpy", "srpp"],
+    install_requires=["pandas", "numpy", "srpp", "srd"],
     python_requires=">=3.6")
