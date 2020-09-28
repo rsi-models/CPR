@@ -172,7 +172,8 @@
 <dl class="function">
 <dt id="CPR.initialisation.create_hh">
 <code class="sig-prename descclassname">CPR.initialisation.</code><code class="sig-name descname">create_hh</code><span class="sig-paren">(</span><em class="sig-param">index</em>, <em class="sig-param">d_hh</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.create_hh" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create a household.</p>
+<dd><p>Function that creates a household with one or two persons and attaches
+assets and debts.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -183,7 +184,7 @@
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>instance of the class Hhold</p>
+<dd class="field-even"><p>Instance of the class Hhold.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold">Hhold</a></p>
@@ -209,7 +210,7 @@
 <dl class="method">
 <dt id="CPR.initialisation.Person.create_wage_profile">
 <code class="sig-name descname">create_wage_profile</code><span class="sig-paren">(</span><em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Person.create_wage_profile" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create wage profiles for each realisation of uncertainty.</p>
+<dd><p>Function that creates wage profiles for each realisation of uncertainty, to be used when the stochastic version of the tool is selected.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -218,7 +219,7 @@
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>wage profiles</p>
+<dd class="field-even"><p>Wage profiles.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>np.array</p>
@@ -229,7 +230,7 @@
 <dl class="method">
 <dt id="CPR.initialisation.Person.create_shocks">
 <code class="sig-name descname">create_shocks</code><span class="sig-paren">(</span><em class="sig-param">T</em>, <em class="sig-param">N</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Person.create_shocks" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create time series on shocks to the wage.</p>
+<dd><p>Function that creats a time series of shocks to the wage.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -239,7 +240,7 @@
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>time series on shocks to the wage</p>
+<dd class="field-even"><p>Time series of shocks to the wage.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>np.array</p>
@@ -268,9 +269,7 @@
 <dl class="method">
 <dt id="CPR.initialisation.Hhold.set_other_years">
 <code class="sig-name descname">set_other_years</code><span class="sig-paren">(</span><em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Hhold.set_other_years" title="Permalink to this definition">¶</a></dt>
-<dd><p>Set years of partial and full retirement as well as
-years in which pre-retirement and post-retirement consumptions
-are assessed.</p>
+<dd><p>Function that sets years of partial and full retirement as well as years in which pre-retirement and post-retirement consumptions are assessed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p>
