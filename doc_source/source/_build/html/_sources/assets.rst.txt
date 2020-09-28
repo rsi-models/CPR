@@ -1,6 +1,8 @@
 Assets
 ======
 
+This module manages all assets using various classes and functions: pension plans, individual savings (registered and unregistered), housing, business assets. It uses the contributions and room used as inputs as well as returns generated in the Macro module, and it updates all asset-related variables as the simulation progresses. 
+
 .. currentmodule:: CPR.assets
 
 .. autoclass:: ContributionRoom

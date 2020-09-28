@@ -5,7 +5,7 @@ from CPR import debts
 
 def create_hh(index, d_hh, common, prices):
     """
-    Create a household.
+    Function that creates a household.
 
     Parameters
     ----------
@@ -21,7 +21,7 @@ def create_hh(index, d_hh, common, prices):
     Returns
     -------
     Hhold
-        instance of the class Hhold
+        Instance of the class Hhold.
     """
     # initialize household and spouses:
     l_hh = ['prov', 'couple', 'mix_bills', 'mix_bonds', 'mix_equity', 'fee',
@@ -91,7 +91,7 @@ def create_hh(index, d_hh, common, prices):
 class Person:
     """
     This class creates a person.
-    
+
     Parameters
     ----------
     d_hh: dict
@@ -132,7 +132,7 @@ class Person:
 
     def create_wage_profile(self, common, prices):
         """
-        Create wage profiles for each realisation of uncertainty.
+        Function that creates wage profiles for each realisation of uncertainty, to be used when the stochastic version of the tool is selected.
 
         Parameters
         ----------
@@ -197,7 +197,7 @@ class Person:
 class Hhold():
     """
     This class creates a household.
-    
+
     Parameters
     ----------
     d_hh: dict

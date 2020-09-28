@@ -44,6 +44,6 @@ To call the CPR, its address must be added:
 
 If one does not want the CPR, the *cpr*, *srd* and *srpp* folders can simply be deleted.
 
-For more details on how to use the CPR, a :ref:`tutorial` is available.
+For more details on how to use the CPR, please consult the :ref:`tutorial` section.
 
 If you have questions, comments or suggestions, do not hesitate to contact us (:ref:`nous_contacter`).

@@ -86,7 +86,8 @@ def add_output(hh, year, prices, key):
     prices : Prices
         instance of the class Prices
     key : str
-        before ("bef") or after ("aft")
+        before ("bef"), when first spouse retires ("part") 
+        or after retirement ("aft")
     """
     real = tools.create_real(year, prices)
 
@@ -104,7 +105,6 @@ def add_output(hh, year, prices, key):
             real(hh.debts['first_mortgage'].balance)
 
     if key == 'bef':
-        hh.d_output[f'disp_inc_{key}'] = real(hh.disp_inc_bef_ret)
         hh.d_output[f'cons_{key}'] = hh.cons_bef_ret_real
 
     if key in ['bef', 'part']:
@@ -115,9 +115,6 @@ def add_output(hh, year, prices, key):
                 hh.d_output[f'{p.who}{acc}_balance_{key}'] = \
                     real(p.fin_assets[acc].balance)
 
-    if key in ['bef', 'after']:
-        hh.d_output[f'debt_payments_{key}'] = real(hh.debt_payments)
-
     if key in ['part', 'after']:
         for p in hh.sp:
             hh.d_output[f'{p.who}annuity_rrsp_{key}'] = p.annuity_rrsp_real
@@ -126,12 +123,9 @@ def add_output(hh, year, prices, key):
                 p.annuity_non_rrsp_real
 
     if key == 'after':
-        hh.d_output[f'disp_inc_{key}'] = real(hh.disp_inc_after_ret)
         hh.d_output[f'cons_{key}'] = hh.cons_after_ret_real
 
         for p in hh.sp:
-            hh.d_output[f'{p.who}years_to_retire'] = p.ret_age - p.init_age
-            hh.d_output[f'{p.who}factor'] = p.factor
             hh.d_output[f'{p.who}cpp_{key}'] = real(p.cpp)
             hh.d_output[f'{p.who}gis_{key}'] = real(p.inc_gis)
             hh.d_output[f'{p.who}oas_{key}'] = real(p.inc_oas)
