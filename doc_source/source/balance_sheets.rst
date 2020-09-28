@@ -2,9 +2,9 @@ Balance Sheets
 ==============
 
 This module holds functions that compute the various balance sheet items 
-for each household at different points in the simulation process. 
-A collection of variables are calculated and added to the output dataframe
-retrieved by the module *main*.
+for each household at different points in the simulation process.
+A collection of variables are calculated in real terms (base year 2018)
+and added to the output dataframe retrieved by the module *main*.
 
 At age 55 or in the year preceding retirement if the latter intervenes before
 age 56, wages, pensions, consumption, accounts balances(rrsp, other registered, tfsa
