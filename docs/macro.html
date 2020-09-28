@@ -167,10 +167,20 @@
             
   <div class="section" id="macro">
 <h1>Macro<a class="headerlink" href="#macro" title="Permalink to this headline">¶</a></h1>
+<p>The Macro module contains various classes and functions that generate and manage the macroeconomic variables, in particular over time.</p>
 <dl class="class">
 <dt id="CPR.macro.CommonParameters">
 <em class="property">class </em><code class="sig-prename descclassname">CPR.macro.</code><code class="sig-name descname">CommonParameters</code><span class="sig-paren">(</span><em class="sig-param">nsim</em>, <em class="sig-param">non_stochastic</em>, <em class="sig-param">extra_params</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.CommonParameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class sets and contains the parameters common to all households.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nsim</strong> (<em>int</em>) – number of simulations</p></li>
+<li><p><strong>non_stochastic</strong> (<em>bool</em>) – True if non stochastic simulation, False otherwise</p></li>
+<li><p><strong>extra_params</strong> (<em>dict</em>) – dictionary of extra parameters</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="method">
 <dt id="CPR.macro.CommonParameters.set_limits">
 <code class="sig-name descname">set_limits</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.CommonParameters.set_limits" title="Permalink to this definition">¶</a></dt>
@@ -203,6 +213,14 @@ Pre-reform ympe used to adjust DB benefits for CPP</p>
 <dd><p>This class computes the times series for asset returns,
 interest rates on debt, deterministic wage profiles,
 housing price growth rate and price/rent ratio.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>extra_params</strong> (<em>dict</em>) – dictionary of extra parameters</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="method">
 <dt id="CPR.macro.Prices.simulate_ret">
 <code class="sig-name descname">simulate_ret</code><span class="sig-paren">(</span><em class="sig-param">asset</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.simulate_ret" title="Permalink to this definition">¶</a></dt>

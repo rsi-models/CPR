@@ -7,6 +7,17 @@ from os import path
 class table:
     """
     Class computing annuity factors by province, gender, age and birth year.
+    
+    Parameters
+    ----------
+    prov: str
+        province
+    scenario: str
+        type of scenario
+    gender: str
+        gender
+    web: bool
+        True to pull data from internet, False otherwise
     """
     def __init__(self, prov='qc', scenario='M', gender='males', web=False):
         self.params = path.join(path.dirname(__file__), 'params')

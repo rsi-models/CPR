@@ -20,6 +20,15 @@ path_factors = '/CPR/data/precomputed/'
 class CommonParameters:
     """
     This class sets and contains the parameters common to all households.
+    
+    Parameters
+    ----------
+    nsim: int
+        number of simulations
+    non_stochastic: bool
+        True if non stochastic simulation, False otherwise
+    extra_params: dict
+        dictionary of extra parameters
     """
     def __init__(self, nsim, non_stochastic, extra_params):
 
@@ -88,6 +97,13 @@ class Prices:
     This class computes the times series for asset returns,
     interest rates on debt, deterministic wage profiles,
     housing price growth rate and price/rent ratio.
+    
+    Parameters
+    ----------
+    common: Common
+        instance of the class Common
+    extra_params: dict
+        dictionary of extra parameters
     """
     def __init__(self, common, extra_params):
         tools.add_params_as_attr(self, module_dir + path_params + 'prices.csv')

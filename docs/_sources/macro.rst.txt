@@ -1,6 +1,8 @@
 Macro
 =====
-    
+
+The Macro module contains various classes and functions that generate and manage the macroeconomic variables, in particular over time.
+
 .. currentmodule:: CPR.macro
 
 .. autoclass:: CommonParameters

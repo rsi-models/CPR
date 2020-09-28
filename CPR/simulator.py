@@ -125,7 +125,7 @@ def prepare_wages(p, sim, common, prices):
 
     Parameters
     ----------
-    p : Person
+    p: Person
         instance of the class Person
     sim : int
         simulation number
@@ -147,7 +147,7 @@ def initialize_cpp_account(p, hh, common):
 
     Parameters
     ----------
-    p : Person
+    p: Person
         spouse in household
     hh: Hhold
         household
@@ -337,7 +337,7 @@ def contribute_cpp(p, year, common):
 
     Parameters
     ----------
-    p : Person
+    p: Person
         spouse in household
     year : int
         year
@@ -354,7 +354,7 @@ def claim_cpp(p):
 
     Parameters
     ----------
-    p : Person
+    p: Person
         spouse in household
     """
     if p.age == p.claim_age_cpp:
@@ -446,7 +446,7 @@ def get_assets(p, common):
 
     Parameters
     ----------
-    p : Person
+    p: Person
         spouse in household
     common : Common
         instance of class Common
@@ -465,7 +465,7 @@ def compute_rpp(p, nom, common):
 
     Parameters
     ----------
-    p : Person
+    p: Person
         spouse in household
     """
     p.rpp = nom(p.annuity_rpp_dc_real)
@@ -484,7 +484,7 @@ def get_benefits_cpp(p, year, common):
 
     Parameters
     ----------
-    p : Person
+    p: Person
         spouse in household
     year : int
         year
@@ -509,7 +509,7 @@ def get_inc_rrsp(p, nom):
 
     Parameters
     ----------
-    p : Person
+    p: Person
         spouse in household
     """
     p.inc_rrsp = nom(p.annuity_rrsp_real)
@@ -527,7 +527,7 @@ def get_other_taxable(p, nom, common):
 
     Parameters
     ----------
-    p : Person
+    p: Person
         spouse in household
     nom : function
         function converting to nominal value
@@ -547,7 +547,7 @@ def get_other_non_taxable(p, nom):
 
     Parameters
     ----------
-    p : Person
+    p: Person
         spouse in household
     nom : function
         function converting to nominal value
@@ -567,7 +567,7 @@ def get_contributions_assets(p, year, common):
 
     Parameters
     ----------
-    p : Person
+    p: Person
         spouse in household
     year : int
         year

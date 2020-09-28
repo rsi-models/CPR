@@ -53,7 +53,7 @@ def liquidate_fin_assets(p):
 
     Parameters
     ----------
-    p : Person
+    p: Person
         spouse in household
     """
     for acc in ['rrsp', 'rpp_dc', 'tfsa']:
@@ -80,7 +80,7 @@ def compute_factors(hh, p, rate, prices):
     ----------
     hh: Hhold
         household
-    p : Person
+    p: Person
         spouse in household
     rate : float
         interest rate
@@ -103,7 +103,7 @@ def convert_to_real_annuities(p, year, prices):
 
     Parameters
     ----------
-    p : Person
+    p: Person
         spouse in household
     year : int
         year

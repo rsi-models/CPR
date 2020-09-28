@@ -4,6 +4,17 @@ import numpy as np
 class Debt():
     """
     This class manages all debts. All amounts are nominal.
+    
+    Parameters
+    ----------
+    name: str
+        name of the debt
+    d_hh: dict
+        dictionary containing debt initial balances and monthly payments
+    common: Common
+        instance of the class Common
+    prices: Prices
+        instance of the class Prices
     """
     def __init__(self, name, d_hh, common, prices):
         self.name = name

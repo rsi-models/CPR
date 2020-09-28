@@ -22,6 +22,19 @@ def get_dataset():
 class Results:
     """
     This class prepares the results.
+    
+    Parameters
+    ----------
+    input_data: pandas.core.frame.DataFrame
+        dataframe of inputs
+    output: pandas.core.frame.DataFrame
+        dataframe of outputs
+    common: Common
+        instance of the class Common    
+    prices: Prices
+        instance of the class Prices
+    extra_params: dict
+        dictionary of extra parameters
     """
     def __init__(self, input_data, output, common, prices, extra_params):
         self.input = input_data
