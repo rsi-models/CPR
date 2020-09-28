@@ -5,7 +5,8 @@ from CPR import debts
 
 def create_hh(index, d_hh, common, prices):
     """
-    Function that creates a household.
+    Function that creates a household with one or two persons and attaches
+    assets and debts. 
 
     Parameters
     ----------
@@ -144,7 +145,7 @@ class Person:
         Returns
         -------
         np.array:
-            wage profiles
+            Wage profiles.
         """
         rel_age = self.age - common.min_age_cpp
         rel_ret_age = self.ret_age - common.min_age_cpp
@@ -166,7 +167,7 @@ class Person:
 
     def create_shocks(self, T, N, prices):
         """
-        Create time series on shocks to the wage.
+        Function that creats a time series of shocks to the wage.
 
         Parameters
         ----------
@@ -180,7 +181,7 @@ class Person:
         Returns
         -------
         np.array:
-            time series on shocks to the wage
+            Time series of shocks to the wage.
         """
         if T == 0:
             return np.zeros((1, N))
@@ -222,9 +223,7 @@ class Hhold():
 
     def set_other_years(self, common):
         """
-        Set years of partial and full retirement as well as
-        years in which pre-retirement and post-retirement consumptions
-        are assessed.
+        Function that sets years of partial and full retirement as well as years in which pre-retirement and post-retirement consumptions are assessed.
 
         Parameters
         ----------
