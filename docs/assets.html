@@ -167,11 +167,20 @@
             
   <div class="section" id="assets">
 <h1>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h1>
+<p>This module manages all assets using various classes and functions: pension plans, individual savings (registered and unregistered), housing, business assets. It uses the contributions and room used as inputs as well as returns generated in the Macro module, and it updates all asset-related variables as the simulation progresses.</p>
 <dl class="class">
 <dt id="CPR.assets.ContributionRoom">
 <em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">ContributionRoom</code><span class="sig-paren">(</span><em class="sig-param">init_room_rrsp</em>, <em class="sig-param">init_room_tfsa</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class manages contribution rooms for TFSA and RRSP.
 All amounts are nominal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>init_room_rrsp</strong> (<em>float</em>) – initial room available in rrsp</p></li>
+<li><p><strong>init_room_tfsa</strong> (<em>float</em>) – initial room available in tfsa</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="method">
 <dt id="CPR.assets.ContributionRoom.compute_contributions">
 <code class="sig-name descname">compute_contributions</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.compute_contributions" title="Permalink to this definition">¶</a></dt>
@@ -343,6 +352,14 @@ for excess TFSA contributions.</p>
 <dt id="CPR.assets.FinAsset">
 <em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">FinAsset</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">hh</em>, <em class="sig-param">acc</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class manages registered accounts. All amounts are nominal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – spouse in household</p></li>
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="method">
 <dt id="CPR.assets.FinAsset.update">
 <code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">d_returns</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.update" title="Permalink to this definition">¶</a></dt>
@@ -425,6 +442,15 @@ for excess TFSA contributions.</p>
 <dt id="CPR.assets.UnregAsset">
 <em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">UnregAsset</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">hh</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class manages unregistered account. All amounts are nominal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – spouse in household</p></li>
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="method">
 <dt id="CPR.assets.UnregAsset.update">
 <code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">d_returns</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.update" title="Permalink to this definition">¶</a></dt>
@@ -539,7 +565,10 @@ and adjust realized capital losses</p>
 <dd><p>This class manages DC RPP. All amounts are nominal.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>FinAsset</strong> (<em>object</em>) – class managing registered accounts</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – spouse in household</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -548,6 +577,11 @@ and adjust realized capital losses</p>
 <dt id="CPR.assets.RppDB">
 <em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">RppDB</code><span class="sig-paren">(</span><em class="sig-param">p</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class manages DB RPP. All amounts are nominal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – spouse in household</p>
+</dd>
+</dl>
 <dl class="method">
 <dt id="CPR.assets.RppDB.compute_benefits">
 <code class="sig-name descname">compute_benefits</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.compute_benefits" title="Permalink to this definition">¶</a></dt>
@@ -613,6 +647,14 @@ backward from year before retirement.</p>
 <dt id="CPR.assets.RealAsset">
 <em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">RealAsset</code><span class="sig-paren">(</span><em class="sig-param">d_hh</em>, <em class="sig-param">resid</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class manages housing. All amounts are nominal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>d_hh</strong> (<em>dict of float</em>) – dictionnary containing values of residences</p></li>
+<li><p><strong>resid</strong> (<em>str</em>) – primary or secondary residence</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="method">
 <dt id="CPR.assets.RealAsset.update">
 <code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">growth_rates</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset.update" title="Permalink to this definition">¶</a></dt>
@@ -670,6 +712,11 @@ backward from year before retirement.</p>
 <em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">Business</code><span class="sig-paren">(</span><em class="sig-param">d_hh</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class manages a business (as an asset owned by the houshehold).
 All amounts are nominal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p>
+</dd>
+</dl>
 <dl class="method">
 <dt id="CPR.assets.Business.update">
 <code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">d_business_returns</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business.update" title="Permalink to this definition">¶</a></dt>

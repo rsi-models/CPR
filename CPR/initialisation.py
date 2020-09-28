@@ -91,6 +91,19 @@ def create_hh(index, d_hh, common, prices):
 class Person:
     """
     This class creates a person.
+    
+    Parameters
+    ----------
+    d_hh: dict
+        dictionary containing all informations about households
+    l_sp: list
+        list of features attached to spouses
+    common: Common
+        instance of the class Common
+    prices: Prices
+        instance of the class Prices
+    s_: bool
+        False for head of household, True otherwise
     """
     def __init__(self, d_hh, l_sp, common, prices, s_=False):
         if s_:  # removes 's_' in front of variable names
@@ -184,6 +197,21 @@ class Person:
 class Hhold():
     """
     This class creates a household.
+    
+    Parameters
+    ----------
+    d_hh: dict
+        dictionary containing all informations about households
+    l_hhold: list
+        list of features attached to the household
+    index: int
+        household index
+    common: Common
+        instance of the class Common
+    p0: Person
+        first spouse
+    p1: Person
+        second spouse (in the case of a couple)
     """
     def __init__(self, d_hh, l_hhold, index, common, p0, p1=None):
         self.sp = [p0] if p1 is None else [p0, p1]

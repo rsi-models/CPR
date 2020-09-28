@@ -7,6 +7,13 @@ class ContributionRoom:
     """
     This class manages contribution rooms for TFSA and RRSP.
     All amounts are nominal.
+    
+    Parameters
+    ----------
+    init_room_rrsp: float
+        initial room available in rrsp
+    init_room_tfsa: float
+        initial room available in tfsa
     """
     def __init__(self, init_room_rrsp, init_room_tfsa):
         self.init_room_rrsp = init_room_rrsp
@@ -19,7 +26,7 @@ class ContributionRoom:
 
         Parameters
         ----------
-        p : Person
+        p: Person
             instance of the class Person
         year : int
             year
@@ -49,7 +56,7 @@ class ContributionRoom:
 
         Parameters
         ----------
-        p : Person
+        p: Person
             instance of the class Person
         year : int
             year
@@ -68,7 +75,7 @@ class ContributionRoom:
 
         Parameters
         ----------
-        p : Person
+        p: Person
             instance of the class Person
         year : int
             year
@@ -84,7 +91,7 @@ class ContributionRoom:
 
         Parameters
         ----------
-        p : Person
+        p: Person
             instance of the class Person
         year : int
             year
@@ -107,7 +114,7 @@ class ContributionRoom:
 
         Parameters
         ----------
-        p : Person
+        p: Person
             instance of the class Person
         year : int
             year
@@ -129,7 +136,7 @@ class ContributionRoom:
 
         Parameters
         ----------
-        p : Person
+        p: Person
             instance of the class Person
         """
         if p.rpp_dc.contrib_rate == 0:
@@ -148,7 +155,7 @@ class ContributionRoom:
         ----------
         acc : [type]
             [description]
-        p : Person
+        p: Person
             instance of the class Person
         year : int
             year
@@ -170,7 +177,7 @@ class ContributionRoom:
 
         Parameters
         ----------
-        p : Person
+        p: Person
             instance of the class Person
         year : int
             year
@@ -199,7 +206,7 @@ class ContributionRoom:
 
         Parameters
         ----------
-        p : Person
+        p: Person
             instance of the class Person
         year : int
             year
@@ -225,7 +232,7 @@ class ContributionRoom:
 
         Parameters
         ----------
-        p : Person
+        p: Person
             instance of the class Person
         year : int
             year
@@ -246,6 +253,13 @@ class ContributionRoom:
 class FinAsset:
     """
     This class manages registered accounts. All amounts are nominal.
+    
+    Parameters
+    ----------
+    p: Person
+        spouse in household
+    hh: Hhold
+        household
     """
     def __init__(self, p, hh, acc):
         self.init_balance = getattr(p, f'bal_{acc}')
@@ -305,7 +319,7 @@ class FinAsset:
 
         Parameters
         ----------
-        p : Person
+        p: Person
             instance of the class Person
         common : Common
             instance of the class Common
@@ -350,6 +364,15 @@ class FinAsset:
 class UnregAsset:
     """
     This class manages unregistered account. All amounts are nominal.
+    
+    Parameters
+    ----------
+    p: Person
+        spouse in household
+    hh: Hhold
+        household
+    prices: Prices
+        instance of the class Prices
     """
     def __init__(self, p, hh, prices):
         self.init_balance = p.bal_unreg
@@ -527,8 +550,10 @@ class RppDC(FinAsset):
 
     Parameters
     ----------
-    FinAsset : object
-        class managing registered accounts
+    p: Person
+        spouse in household
+    common: Common
+        instance of the class Common
     """
     def __init__(self, p, common):
         self.init_balance = p.init_dc
@@ -544,6 +569,11 @@ class RppDC(FinAsset):
 class RppDB:
     """
     This class manages DB RPP. All amounts are nominal.
+    
+    Parameters
+    ----------
+    p: Person
+        spouse in household
     """
     def __init__(self, p):
         self.init_rate_employee_db = p.rate_employee_db
@@ -559,7 +589,7 @@ class RppDB:
 
         Parameters
         ----------
-        p : Person
+        p: Person
             instance of the class Person
         common : Common
             instance of the class Common
@@ -586,7 +616,7 @@ class RppDB:
 
         Parameters
         ----------
-        p : Person
+        p: Person
             instance of the class Person
         common : Common
             instance of the class Common
@@ -612,7 +642,7 @@ class RppDB:
 
         Parameters
         ----------
-        p : Person
+        p: Person
             instance of the class Person
         common : Common
             instance of the class Common
@@ -647,6 +677,13 @@ class RppDB:
 class RealAsset:
     """
     This class manages housing. All amounts are nominal.
+    
+    Parameters
+    ----------
+    d_hh: dict of float
+        dictionnary containing values of residences
+    resid: str
+        primary or secondary residence
     """
     def __init__(self, d_hh, resid):
         self.init_balance = d_hh[resid]
@@ -709,6 +746,11 @@ class Business:
     """
     This class manages a business (as an asset owned by the houshehold).
     All amounts are nominal.
+    
+    Parameters
+    ----------
+    hh: Hhold
+        household
     """
     def __init__(self, d_hh):
         self.init_balance = d_hh['business']
