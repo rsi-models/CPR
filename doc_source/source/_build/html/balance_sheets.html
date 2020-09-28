@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tools" href="tools.html" />
+    <link rel="next" title="Analysis" href="analysis.html" />
     <link rel="prev" title="Life" href="life.html" /> 
 </head>
 
@@ -95,6 +95,8 @@
 <li class="toctree-l1"><a class="reference internal" href="annuities.html">Annuities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="life.html">Life</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Balance Sheets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credits.html">Contributors and Rights of Use</a></li>
 </ul>
@@ -165,11 +167,27 @@
             
   <div class="section" id="balance-sheets">
 <h1>Balance Sheets<a class="headerlink" href="#balance-sheets" title="Permalink to this headline">¶</a></h1>
-<p>This module holds functions that compute the various balance sheet items for each household at different points in the simulation process.</p>
+<p>This module holds functions that compute the various balance sheet items
+for each household at different points in the simulation process.
+A collection of variables are calculated and added to the output dataframe
+retrieved by the module <em>main</em>.</p>
+<p>At age 55 or in the year preceding retirement if the latter intervenes before
+age 56, wages, pensions, consumption, accounts balances(rrsp, other registered, tfsa
+and unregistered accounts, as well as DC RPPs) are calculated.
+They are stored in variables ending in ‘_bef’.</p>
+<p>For couples who do not retire at the same time, wages, pensions, account balances
+and annuities of the first spouse to retire are calculated.
+They are stored in variables ending in ‘_part’.</p>
+<p>At age 65 or in the year of retirement if the latter intervenes later,
+consumption, pension, annuities, DB RPP, CPP, OAS and GIS benefits,
+as well as the values of residences and outstanding mortgages
+are stored in variables ending in ‘_aft’.</p>
+<p>In the case of couples, the variables describing the spouse who retires last
+start with ‘<a href="#id1"><span class="problematic" id="id2">s_</span></a>’.</p>
 <span class="target" id="module-CPR.balance_sheets"></span><dl class="function">
 <dt id="CPR.balance_sheets.compute_bs_bef_ret">
 <code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">compute_bs_bef_ret</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.compute_bs_bef_ret" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute pre-retirement balance sheet.</p>
+<dd><p>Function to compute the pre-retirement balance sheet.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -185,7 +203,7 @@
 <dl class="function">
 <dt id="CPR.balance_sheets.compute_cons_bef_ret">
 <code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">compute_cons_bef_ret</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.compute_cons_bef_ret" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute pre-retirement consumption.</p>
+<dd><p>Function to compute pre-retirement consumption.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -200,7 +218,7 @@
 <dl class="function">
 <dt id="CPR.balance_sheets.compute_bs_after_ret">
 <code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">compute_bs_after_ret</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.compute_bs_after_ret" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute post-retirement balance-sheet.</p>
+<dd><p>Function to compute the post-retirement balance sheet.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -216,7 +234,7 @@
 <dl class="function">
 <dt id="CPR.balance_sheets.add_output">
 <code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">add_output</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em>, <em class="sig-param">key</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.add_output" title="Permalink to this definition">¶</a></dt>
-<dd><p>Extract output variables.</p>
+<dd><p>Function to extract output variables.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -239,7 +257,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tools.html" class="btn btn-neutral float-right" title="Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="analysis.html" class="btn btn-neutral float-right" title="Analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="life.html" class="btn btn-neutral float-left" title="Life" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

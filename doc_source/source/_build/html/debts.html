@@ -95,6 +95,8 @@
 <li class="toctree-l1"><a class="reference internal" href="annuities.html">Annuities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="life.html">Life</a></li>
 <li class="toctree-l1"><a class="reference internal" href="balance_sheets.html">Balance Sheets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credits.html">Contributors and Rights of Use</a></li>
 </ul>
@@ -165,10 +167,21 @@
             
   <div class="section" id="debts">
 <h1>Debts<a class="headerlink" href="#debts" title="Permalink to this headline">¶</a></h1>
+<p>The Debts module manages debts (payments and balances) in the simulation.</p>
 <dl class="class">
 <dt id="CPR.debts.Debt">
 <em class="property">class </em><code class="sig-prename descclassname">CPR.debts.</code><code class="sig-name descname">Debt</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">d_hh</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.debts.Debt" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class manages all debts. All amounts are nominal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – name of the debt</p></li>
+<li><p><strong>d_hh</strong> (<em>dict</em>) – dictionary containing debt initial balances and monthly payments</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="method">
 <dt id="CPR.debts.Debt.estimate_init_term">
 <code class="sig-name descname">estimate_init_term</code><span class="sig-paren">(</span><em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.debts.Debt.estimate_init_term" title="Permalink to this definition">¶</a></dt>

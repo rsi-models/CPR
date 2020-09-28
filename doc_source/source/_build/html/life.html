@@ -95,6 +95,8 @@
 <li class="toctree-l1"><a class="reference internal" href="annuities.html">Annuities</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Life</a></li>
 <li class="toctree-l1"><a class="reference internal" href="balance_sheets.html">Balance Sheets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credits.html">Contributors and Rights of Use</a></li>
 </ul>
@@ -165,10 +167,21 @@
             
   <div class="section" id="life">
 <h1>Life<a class="headerlink" href="#life" title="Permalink to this headline">¶</a></h1>
+<p>The Life module contains the class that computes annuity factors for all individuals in the simulation, using mortality tables by province and gender as provided by Statistics Canada.</p>
 <dl class="class">
 <dt id="CPR.life.life.table">
 <em class="property">class </em><code class="sig-prename descclassname">CPR.life.life.</code><code class="sig-name descname">table</code><span class="sig-paren">(</span><em class="sig-param">prov='qc'</em>, <em class="sig-param">scenario='M'</em>, <em class="sig-param">gender='males'</em>, <em class="sig-param">web=False</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class computing annuity factors by province, gender, age and birth year.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prov</strong> (<em>str</em>) – province</p></li>
+<li><p><strong>scenario</strong> (<em>str</em>) – type of scenario</p></li>
+<li><p><strong>gender</strong> (<em>str</em>) – gender</p></li>
+<li><p><strong>web</strong> (<em>bool</em>) – True to pull data from internet, False otherwise</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="method">
 <dt id="CPR.life.life.table.pull_history_web">
 <code class="sig-name descname">pull_history_web</code><span class="sig-paren">(</span><em class="sig-param">prov='qc'</em>, <em class="sig-param">gender='males'</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.pull_history_web" title="Permalink to this definition">¶</a></dt>

@@ -95,6 +95,8 @@
 <li class="toctree-l1"><a class="reference internal" href="annuities.html">Annuities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="life.html">Life</a></li>
 <li class="toctree-l1"><a class="reference internal" href="balance_sheets.html">Balance Sheets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credits.html">Contributors and Rights of Use</a></li>
 </ul>
@@ -165,7 +167,8 @@
             
   <div class="section" id="initialisation">
 <h1>Initialisation<a class="headerlink" href="#initialisation" title="Permalink to this headline">¶</a></h1>
-<p>PLACEHOLDER FOR A CAUTIONARY NOTE ON CHANGING INPUTS USED</p>
+<p>This module contains the classes required to setup the data that will be used to run the simulations.</p>
+<p>Though an example input file is provided as part of the package, a tutorial is also offered to show users how to modify those inputs to use the ones of their choice. NOTE: users must be careful when using their inputs, as a general error message will be generated if any of the – numerous – inputs is incorrectly specified (i.e. contains a mistake or is highly implausible).</p>
 <dl class="function">
 <dt id="CPR.initialisation.create_hh">
 <code class="sig-prename descclassname">CPR.initialisation.</code><code class="sig-name descname">create_hh</code><span class="sig-paren">(</span><em class="sig-param">index</em>, <em class="sig-param">d_hh</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.create_hh" title="Permalink to this definition">¶</a></dt>
@@ -192,6 +195,17 @@
 <dt id="CPR.initialisation.Person">
 <em class="property">class </em><code class="sig-prename descclassname">CPR.initialisation.</code><code class="sig-name descname">Person</code><span class="sig-paren">(</span><em class="sig-param">d_hh</em>, <em class="sig-param">l_sp</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em>, <em class="sig-param">s_=False</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Person" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class creates a person.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>d_hh</strong> (<em>dict</em>) – dictionary containing all informations about households</p></li>
+<li><p><strong>l_sp</strong> (<em>list</em>) – list of features attached to spouses</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>s_</strong> (<em>bool</em>) – False for head of household, True otherwise</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="method">
 <dt id="CPR.initialisation.Person.create_wage_profile">
 <code class="sig-name descname">create_wage_profile</code><span class="sig-paren">(</span><em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Person.create_wage_profile" title="Permalink to this definition">¶</a></dt>
@@ -239,6 +253,18 @@
 <dt id="CPR.initialisation.Hhold">
 <em class="property">class </em><code class="sig-prename descclassname">CPR.initialisation.</code><code class="sig-name descname">Hhold</code><span class="sig-paren">(</span><em class="sig-param">d_hh</em>, <em class="sig-param">l_hhold</em>, <em class="sig-param">index</em>, <em class="sig-param">common</em>, <em class="sig-param">p0</em>, <em class="sig-param">p1=None</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Hhold" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class creates a household.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>d_hh</strong> (<em>dict</em>) – dictionary containing all informations about households</p></li>
+<li><p><strong>l_hhold</strong> (<em>list</em>) – list of features attached to the household</p></li>
+<li><p><strong>index</strong> (<em>int</em>) – household index</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>p0</strong> (<a class="reference internal" href="#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – first spouse</p></li>
+<li><p><strong>p1</strong> (<a class="reference internal" href="#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – second spouse (in the case of a couple)</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="method">
 <dt id="CPR.initialisation.Hhold.set_other_years">
 <code class="sig-name descname">set_other_years</code><span class="sig-paren">(</span><em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Hhold.set_other_years" title="Permalink to this definition">¶</a></dt>
