@@ -96,8 +96,8 @@
 <li class="toctree-l1"><a class="reference internal" href="life.html">Life</a></li>
 <li class="toctree-l1"><a class="reference internal" href="balance_sheets.html">Balance Sheets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credits.html">Contributors and Rights of Use</a></li>
 </ul>
 
@@ -171,7 +171,7 @@
 <span class="target" id="module-CPR.annuities"></span><dl class="function">
 <dt id="CPR.annuities.compute_partial_annuities">
 <code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">compute_partial_annuities</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">d_returns</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.compute_partial_annuities" title="Permalink to this definition">¶</a></dt>
-<dd><p>Partially convert assets into annuities when first spouse retires.</p>
+<dd><p>Function that partially converts assets into annuities when the first spouse retires, using the other functions below.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -187,7 +187,7 @@
 <dl class="function">
 <dt id="CPR.annuities.compute_annuities">
 <code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">compute_annuities</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">d_returns</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.compute_annuities" title="Permalink to this definition">¶</a></dt>
-<dd><p>Fully convert assets into annuities when last spouse retires.</p>
+<dd><p>Function that fully converts assets into annuities when the last spouse retires, using the other functions below.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -203,10 +203,10 @@
 <dl class="function">
 <dt id="CPR.annuities.liquidate_fin_assets">
 <code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">liquidate_fin_assets</code><span class="sig-paren">(</span><em class="sig-param">p</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.liquidate_fin_assets" title="Permalink to this definition">¶</a></dt>
-<dd><p>Liquidate financial assets.</p>
+<dd><p>Function to liquidate financial assets.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – spouse in household</p>
+<dd class="field-odd"><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – spouse</p>
 </dd>
 </dl>
 </dd></dl>
@@ -214,17 +214,13 @@
 <dl class="function">
 <dt id="CPR.annuities.compute_factors">
 <code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">compute_factors</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">p</em>, <em class="sig-param">rate</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.compute_factors" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute individual factor for annuities constant in real terms. We use an
-adjusted rate to smooth excess factor volatility. This is because
-we take the total return on bonds in the year that the annuity
-is purchased.
-The whole interest structure should be used and mean reversion
-would smooth out annuity prices.</p>
+<dd><p>Function to compute an individual factor for annuities constant in real terms.</p>
+<p>We use an adjusted rate to dampen excess factor volatility. This is because we take the total return on bonds in the year that the annuity is purchased. Ideally, the whole interest structure should be used instead, such that mean reversion would smooth out annuity prices.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
-<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – spouse in household</p></li>
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – spouse</p></li>
 <li><p><strong>rate</strong> (<em>float</em>) – interest rate</p></li>
 <li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
 </ul>
@@ -235,11 +231,11 @@ would smooth out annuity prices.</p>
 <dl class="function">
 <dt id="CPR.annuities.convert_to_real_annuities">
 <code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">convert_to_real_annuities</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.convert_to_real_annuities" title="Permalink to this definition">¶</a></dt>
-<dd><p>Converts assets to annuities in real terms.</p>
+<dd><p>Function that converts assets to annuities in real terms.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – spouse in household</p></li>
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – spouse</p></li>
 <li><p><strong>year</strong> (<em>int</em>) – year</p></li>
 <li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
 </ul>

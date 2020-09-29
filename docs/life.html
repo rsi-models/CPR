@@ -96,8 +96,8 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Life</a></li>
 <li class="toctree-l1"><a class="reference internal" href="balance_sheets.html">Balance Sheets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credits.html">Contributors and Rights of Use</a></li>
 </ul>
 
@@ -176,7 +176,7 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>prov</strong> (<em>str</em>) – province</p></li>
-<li><p><strong>scenario</strong> (<em>str</em>) – type of scenario</p></li>
+<li><p><strong>scenario</strong> (<em>str</em>) – longevity scenario</p></li>
 <li><p><strong>gender</strong> (<em>str</em>) – gender</p></li>
 <li><p><strong>web</strong> (<em>bool</em>) – True to pull data from internet, False otherwise</p></li>
 </ul>
@@ -185,7 +185,7 @@
 <dl class="method">
 <dt id="CPR.life.life.table.pull_history_web">
 <code class="sig-name descname">pull_history_web</code><span class="sig-paren">(</span><em class="sig-param">prov='qc'</em>, <em class="sig-param">gender='males'</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.pull_history_web" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get historical mortalilty tables by province and gender.</p>
+<dd><p>Function to get historical mortalilty tables by province and gender.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -199,7 +199,7 @@
 <dl class="method">
 <dt id="CPR.life.life.table.pull_history">
 <code class="sig-name descname">pull_history</code><span class="sig-paren">(</span><em class="sig-param">prov='qc'</em>, <em class="sig-param">gender='males'</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.pull_history" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get historical mortalilty tables by province and gender.</p>
+<dd><p>Function to get historical mortalilty tables by province and gender.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -213,13 +213,13 @@
 <dl class="method">
 <dt id="CPR.life.life.table.splice">
 <code class="sig-name descname">splice</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.splice" title="Permalink to this definition">¶</a></dt>
-<dd><p>Add survival probabilities for 2012 and after.</p>
+<dd><p>Function to add survival probabilities for 2012 and after.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CPR.life.life.table.compute_annuity_factor">
 <code class="sig-name descname">compute_annuity_factor</code><span class="sig-paren">(</span><em class="sig-param">byear</em>, <em class="sig-param">agestart</em>, <em class="sig-param">rate</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.compute_annuity_factor" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute annuity factor.</p>
+<dd><p>Function to compute an annuity factor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -229,7 +229,7 @@
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>annuity factor</p>
+<dd class="field-even"><p>Annuity factor.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>float</p>

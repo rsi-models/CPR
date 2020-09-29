@@ -15,7 +15,7 @@ def get_params(file, numerical_key=False):
     Returns
     -------
     dict
-        dictionary of parameters
+        Dictionary of parameters.
     """
     d_params = {}
     with open(file) as params:
@@ -81,9 +81,9 @@ def create_nom_real(year, prices):
     Returns
     -------
     function
-        function converting nominal to real
+        Function converting nominal to real.
     function
-        function converting real to nominal
+        Function converting real to nominal.
     """
     factor = prices.d_infl_factors[year]
 
@@ -98,7 +98,7 @@ def create_nom_real(year, prices):
 
 def create_nom(year, prices):
     """
-    Creation of a function that converts prices from real to nominal, with base year 2018.
+    Creation of a function that converts prices from real to nominal, with base year 2018. Used for some specific purposes elsewhere in the code.
 
     Parameters
     ----------
@@ -110,7 +110,7 @@ def create_nom(year, prices):
     Returns
     -------
     function
-        function converting real to nominal
+        Function converting real to nominal.
     """
     factor = prices.d_infl_factors[year]
 

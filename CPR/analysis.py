@@ -8,21 +8,21 @@ module_dir = os.path.dirname(os.path.dirname(__file__))
 
 def get_dataset():
     """
-    Returns a dataframe of synthetic data
+    Function that returns a dataframe of synthetic data.
 
     Returns
     -------
     pandas.core.frame.DataFrame
-        dataframe of synthetic data
+        Dataframe of synthetic data.
     """
     return pd.read_csv(module_dir + '/CPR/data/inputs/synth_inputs.csv',
                        index_col=0)
-    
+
 
 class Results:
     """
     This class prepares the results.
-    
+
     Parameters
     ----------
     input_data: pandas.core.frame.DataFrame
@@ -30,7 +30,7 @@ class Results:
     output: pandas.core.frame.DataFrame
         dataframe of outputs
     common: Common
-        instance of the class Common    
+        instance of the class Common
     prices: Prices
         instance of the class Prices
     extra_params: dict
@@ -45,7 +45,7 @@ class Results:
 
     def summarize(self):
         """
-        Summarize the simulation.
+        Function to summarize the simulation.
         """
         if self.common.non_stochastic is True:
             print('\nDeterministic Model')
@@ -60,12 +60,12 @@ class Results:
 
     def merge(self, add_index=True):
         """
-        Merge input and output variables to create database
+        Function to merge input and output variables to create a database.
 
         Parameters
         ----------
         add_index : bool, optional
-            add index to database, by default True
+            add index to database, True by default
         """
         self.df_merged = self.input.merge(self.output, how='left',
                                           left_index=True, right_on='hh_index')
@@ -79,9 +79,7 @@ class Results:
     def check_preparedness(self, factor_couple=2, cons_floor=100,
                            d_cutoffs={20: 80, 100: 65}):
         """
-        Puts a consumption floor, computes RRI 
-        (NaN if consumption before and after retirement below cons_floor)
-        and checks preparedness for retirement.
+        Function that introduces a consumption floor, computes RRI (NaN if consumption before and after retirement below cons_floor), and checks preparedness for retirement.
 
         Parameters
         ----------
@@ -101,14 +99,14 @@ class Results:
         # compute RRI
         self.df_merged['rri'] = \
             self.df_merged.cons_after / self.df_merged.cons_bef * 100
-        mask = ((self.df_merged.cons_bef == cons_floor) & 
+        mask = ((self.df_merged.cons_bef == cons_floor) &
                 (self.df_merged.cons_after == cons_floor))
         self.df_merged.loc[mask, 'rri'] = np.nan
 
         # compute cutoffs
         def compute_hh_wage(row):
             """
-            Compute normalized wage for the household.
+            Function to compute a normalized wage for the household.
 
             Parameters
             ----------
@@ -118,7 +116,7 @@ class Results:
             Returns
             -------
             float
-                normalized wage
+                Normalized wage.
             """
             if row['couple']:
                 return (row['init_wage'] + row['s_init_wage']) / factor_couple
@@ -133,7 +131,7 @@ class Results:
 
         # apply cutoffs to households inital wages
         self.df_merged['category'] = \
-            np.searchsorted(l_cutoffs, self.df_merged.hh_init_adj_wage)     
+            np.searchsorted(l_cutoffs, self.df_merged.hh_init_adj_wage)
         self.df_merged['rri_cutoff'] = \
             self.df_merged.category.replace(d_cutoffs_by_cat)
         self.df_merged.drop(columns='category', inplace=True)

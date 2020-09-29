@@ -4,7 +4,7 @@ from CPR import tools
 
 def compute_partial_annuities(hh, d_returns, year, prices):
     """
-    Partially convert assets into annuities when first spouse retires.
+    Function that partially converts assets into annuities when the first spouse retires, using the other functions below.
 
     Parameters
     ----------
@@ -27,7 +27,7 @@ def compute_partial_annuities(hh, d_returns, year, prices):
 
 def compute_annuities(hh, d_returns, year, prices):
     """
-    Fully convert assets into annuities when last spouse retires.
+    Function that fully converts assets into annuities when the last spouse retires, using the other functions below.
 
     Parameters
     ----------
@@ -49,12 +49,12 @@ def compute_annuities(hh, d_returns, year, prices):
 
 def liquidate_fin_assets(p):
     """
-    Liquidate financial assets.
+    Function to liquidate financial assets.
 
     Parameters
     ----------
     p: Person
-        spouse in household
+        spouse
     """
     for acc in ['rrsp', 'rpp_dc', 'tfsa']:
         setattr(p, f'val_annuities_{acc}', 0)
@@ -69,19 +69,16 @@ def liquidate_fin_assets(p):
 
 def compute_factors(hh, p, rate, prices):
     """
-    Compute individual factor for annuities constant in real terms. We use an
-    adjusted rate to smooth excess factor volatility. This is because
-    we take the total return on bonds in the year that the annuity
-    is purchased.
-    The whole interest structure should be used and mean reversion
-    would smooth out annuity prices.
+    Function to compute an individual factor for annuities constant in real terms.
+
+    We use an adjusted rate to dampen excess factor volatility. This is because we take the total return on bonds in the year that the annuity is purchased. Ideally, the whole interest structure should be used instead, such that mean reversion would smooth out annuity prices.
 
     Parameters
     ----------
     hh: Hhold
         household
     p: Person
-        spouse in household
+        spouse
     rate : float
         interest rate
     prices : Prices
@@ -99,12 +96,12 @@ def compute_factors(hh, p, rate, prices):
 
 def convert_to_real_annuities(p, year, prices):
     """
-    Converts assets to annuities in real terms.
+    Function that converts assets to annuities in real terms.
 
     Parameters
     ----------
     p: Person
-        spouse in household
+        spouse
     year : int
         year
     prices : Prices

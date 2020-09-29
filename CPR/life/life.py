@@ -7,13 +7,13 @@ from os import path
 class table:
     """
     Class computing annuity factors by province, gender, age and birth year.
-    
+
     Parameters
     ----------
     prov: str
         province
     scenario: str
-        type of scenario
+        longevity scenario
     gender: str
         gender
     web: bool
@@ -45,7 +45,7 @@ class table:
         names[0] = 'year'
         names[1] = 'gender'
         quotes.columns = names
-        quotes[['year', 'temp']] = quotes['year'].str.split('-', n=1, 
+        quotes[['year', 'temp']] = quotes['year'].str.split('-', n=1,
                                                             expand=True)
         # quotes['year'], quotes['temp'] = quotes['year'].str.split('-', 1).str
         quotes = quotes.drop(columns=['temp', 'gender'])
@@ -69,7 +69,7 @@ class table:
     # newfoundland and labrador given new brunswick for same reason
     def pull_history_web(self, prov='qc', gender='males'):
         """
-        Get historical mortalilty tables by province and gender.
+        Function to get historical mortalilty tables by province and gender.
 
         Parameters
         ----------
@@ -128,7 +128,7 @@ class table:
 
     def pull_history(self, prov='qc', gender='males'):
         """
-        Get historical mortalilty tables by province and gender.
+        Function to get historical mortalilty tables by province and gender.
 
         Parameters
         ----------
@@ -142,14 +142,14 @@ class table:
 
     def splice(self):
         """
-        Add survival probabilities for 2012 and after.
+        Function to add survival probabilities for 2012 and after.
         """
         self.history.loc['2012'] = self.history.loc['2011']
         self.tab = self.history.append(self.prospect, sort=True)
 
     def compute_annuity_factor(self, byear, agestart, rate):
         """
-        Compute annuity factor.
+        Function to compute an annuity factor.
 
         Parameters
         ----------
@@ -163,7 +163,7 @@ class table:
         Returns
         -------
         float
-            annuity factor
+            Annuity factor.
         """
         yrstart = byear + agestart
         prob_surv = 1
