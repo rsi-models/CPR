@@ -618,9 +618,8 @@ def reset_accounts(hh):
         hh.debts[debt].reset()
     # annuities
     for p in hh.sp:
-        for acc in ['rrsp', 'rpp_dc', 'tfsa', 'tfsa_0', 'unreg', 'unreg_0',
-                    'return']:
-            setattr(p, f'annuity_{acc}_real', 0)
+        for type in ['non_rrsp_0', 'non_rrsp', 'rpp_dc', 'rrsp']:
+            setattr(p, f'annuity_{type}_real', 0)
     # cpp/qpp
         p.cpp_account.ResetCase()
         p.cpp = 0
