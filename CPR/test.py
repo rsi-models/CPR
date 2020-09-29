@@ -7,16 +7,17 @@ from CPR import main
 
 module_dir = os.path.dirname(os.path.dirname(__file__))
 df = pd.read_csv(module_dir + '/inputs/inputs.csv', index_col=0)
-inputs = df # pd.read_csv(module_dir + '/CPR/data/inputs/inputs.csv', index_col=0)
+inputs = df.loc[0:0, :] # pd.read_csv(module_dir + '/CPR/data/inputs/inputs.csv', index_col=0)
+
 
 sim_num = 25
 
 if __name__ == '__main__':
-    results = main.run_simulations(inputs, sim_num, non_stochastic=True,
+    results = main.run_simulations(inputs, sim_num, non_stochastic=False,
                                    sell_first_resid=False,
                                    sell_second_resid=False,
                                    sell_business=False,
-                                   multiprocessing=True,
+                                   multiprocessing=False,
                                    recompute_factors=False)
     results.check_preparedness(factor_couple=np.sqrt(2))
     results.summarize()
