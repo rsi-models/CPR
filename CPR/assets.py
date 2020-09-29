@@ -257,7 +257,7 @@ class FinAsset:
     Parameters
     ----------
     p: Person
-        spouse in household
+        spouse
     hh: Hhold
         household
     """
@@ -368,7 +368,7 @@ class UnregAsset:
     Parameters
     ----------
     p: Person
-        spouse in household
+        spouse
     hh: Hhold
         household
     prices: Prices
@@ -551,7 +551,7 @@ class RppDC(FinAsset):
     Parameters
     ----------
     p: Person
-        spouse in household
+        spouse
     common: Common
         instance of the class Common
     """
@@ -573,7 +573,7 @@ class RppDB:
     Parameters
     ----------
     p: Person
-        spouse in household
+        spouse
     """
     def __init__(self, p):
         self.init_rate_employee_db = p.rate_employee_db

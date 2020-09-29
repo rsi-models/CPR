@@ -12,6 +12,8 @@ def simulate(job, common, prices):
 
     Parameters
     ----------
+    job: tuple(Hhold, int)
+        instance of the class Hhold and simulation number
     common: Common
         instance of the class Common
     prices: Prices
@@ -146,7 +148,7 @@ def initialize_cpp_account(p, hh, common):
     Parameters
     ----------
     p: Person
-        spouse in household
+        spouse
     hh: Hhold
         household
     common : Common
@@ -237,7 +239,7 @@ def update_assets(hh, year, d_returns, common, prices):
     common : Common
         instance of the class Common
     prices: Prices
-    instance of the class Prices
+        instance of the class Prices
     """
     for p in hh.sp:
         if p.retired:
@@ -336,7 +338,7 @@ def contribute_cpp(p, year, common):
     Parameters
     ----------
     p: Person
-        spouse in household
+        spouse
     year : int
         year
     common : Common
@@ -353,7 +355,7 @@ def claim_cpp(p):
     Parameters
     ----------
     p: Person
-        spouse in household
+        spouse
     """
     if p.age == p.claim_age_cpp:
         p.cpp_account.ClaimCPP(p.byear + p.claim_age_cpp)
@@ -445,7 +447,7 @@ def get_assets(p, common):
     Parameters
     ----------
     p: Person
-        spouse in household
+        spouse
     common : Common
         instance of class Common
     """
@@ -464,7 +466,11 @@ def compute_rpp(p, nom, common):
     Parameters
     ----------
     p: Person
-        spouse in household
+        spouse
+    nom: function
+        function converting to nominal value
+    common: Common
+        instance of the class Common
     """
     p.rpp = nom(p.annuity_rpp_dc_real)
     if p.pension > 0:
@@ -483,7 +489,7 @@ def get_benefits_cpp(p, year, common):
     Parameters
     ----------
     p: Person
-        spouse in household
+        spouse
     year : int
         year
     common : Common
@@ -508,7 +514,9 @@ def get_inc_rrsp(p, nom):
     Parameters
     ----------
     p: Person
-        spouse in household
+        spouse
+    nom: function
+        function converting to nominal value
     """
     p.inc_rrsp = nom(p.annuity_rrsp_real)
 
@@ -526,8 +534,8 @@ def get_other_taxable(p, nom, common):
     Parameters
     ----------
     p: Person
-        spouse in household
-    nom : function
+        spouse
+    nom: function
         function converting to nominal value
     common : Common
         instance of the class Common
@@ -546,11 +554,9 @@ def get_other_non_taxable(p, nom):
     Parameters
     ----------
     p: Person
-        spouse in household
-    nom : function
+        spouse
+    nom: function
         function converting to nominal value
-    common : Common
-        instance of the class Common
     """
     withdrawal_non_tax = (p.fin_assets['unreg'].withdrawal_non_tax
                           + p.fin_assets['tfsa'].withdrawal)
@@ -566,7 +572,7 @@ def get_contributions_assets(p, year, common):
     Parameters
     ----------
     p: Person
-        spouse in household
+        spouse
     year : int
         year
     common : Common

@@ -58,10 +58,9 @@ The CPR and the other tools it uses (SRD and SRPP) are written in Python, a mode
    life.rst
    balance_sheets.rst
    analysis.rst
-   tutorial.rst
    tools.rst
+   tutorial.rst
    credits.rst
-
 
 
 Index

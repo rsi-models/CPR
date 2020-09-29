@@ -169,7 +169,7 @@ class Prices:
         and autocorrelation rho of the log returns into
         :math:`\\alpha`, :math:`\\rho` and :math:`\\sigma_{\\epsilon}` of the process:
         
-        :math:`\\ln(1+r_t) = \\alpha + \\rho * \\ln(1+r{t-1}) + \\epsilon`,
+        :math:`\\ln(1+r_t) = \\alpha + \\rho * \\ln(1+r_{t-1}) + \\epsilon`,
         where :math:`\\epsilon \\sim N(0, \\sigma_{\\epsilon})`.
 
         Parameters
@@ -177,16 +177,16 @@ class Prices:
         mu: float
             arithmetic mean
         rho: float
-            autocorrelation
+            autocorrelation :math:
         sigma: float
             standard deviation
 
         Returns
         -------
         float:
-            AR(1) coefficient
+            AR(1) coefficient (:math:`\\alpha`)
         float:
-            Standard deviation of error term
+            Standard deviation of error term (:math:`\\sigma_{\\epsilon}`)
         """
         m, v = (1+mu), sigma**2
         sig_lognorm = np.sqrt(np.log(1 + v / m**2))
@@ -197,7 +197,7 @@ class Prices:
 
     def simulate_housing(self, common):
         """
-        Simulate series of nominal housing price growth (in log(1+r) form)
+        Simulate series of nominal housing price growth (in :math:`\\ln(1+r)` form)
         and price-rent ratio.
 
         Parameters

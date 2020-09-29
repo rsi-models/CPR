@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tutorials" href="tutorial.html" />
+    <link rel="next" title="Tools" href="tools.html" />
     <link rel="prev" title="Balance Sheets" href="balance_sheets.html" /> 
 </head>
 
@@ -96,8 +96,8 @@
 <li class="toctree-l1"><a class="reference internal" href="life.html">Life</a></li>
 <li class="toctree-l1"><a class="reference internal" href="balance_sheets.html">Balance Sheets</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="credits.html">Contributors and Rights of Use</a></li>
 </ul>
 
@@ -167,16 +167,14 @@
             
   <div class="section" id="analysis">
 <h1>Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">¶</a></h1>
-<p>In this module, the function <em>get_dataset</em> retrieves a synthetic dataset
-constructed from the one used in the report. The class Results offers a couple of
-functions to summarize and merge the data, as well as assess preparedness for retirement.</p>
+<p>In this module, the function <em>get_dataset</em> retrieves a synthetic (fake) dataset. The class <em>Results</em> offers a few functions to summarize and merge the data, as well as assess preparedness for retirement.</p>
 <dl class="function">
 <dt id="CPR.analysis.get_dataset">
 <code class="sig-prename descclassname">CPR.analysis.</code><code class="sig-name descname">get_dataset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.analysis.get_dataset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns a dataframe of synthetic data</p>
+<dd><p>Function that returns a dataframe of synthetic data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>dataframe of synthetic data</p>
+<dd class="field-odd"><p>Dataframe of synthetic data.</p>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>pandas.core.frame.DataFrame</p>
@@ -202,16 +200,16 @@ functions to summarize and merge the data, as well as assess preparedness for re
 <dl class="method">
 <dt id="CPR.analysis.Results.summarize">
 <code class="sig-name descname">summarize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.analysis.Results.summarize" title="Permalink to this definition">¶</a></dt>
-<dd><p>Summarize the simulation.</p>
+<dd><p>Function to summarize the simulation.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CPR.analysis.Results.merge">
 <code class="sig-name descname">merge</code><span class="sig-paren">(</span><em class="sig-param">add_index=True</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.analysis.Results.merge" title="Permalink to this definition">¶</a></dt>
-<dd><p>Merge input and output variables to create database</p>
+<dd><p>Function to merge input and output variables to create a database.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>add_index</strong> (<em>bool</em><em>, </em><em>optional</em>) – add index to database, by default True</p>
+<dd class="field-odd"><p><strong>add_index</strong> (<em>bool</em><em>, </em><em>optional</em>) – add index to database, True by default</p>
 </dd>
 </dl>
 </dd></dl>
@@ -219,9 +217,7 @@ functions to summarize and merge the data, as well as assess preparedness for re
 <dl class="method">
 <dt id="CPR.analysis.Results.check_preparedness">
 <code class="sig-name descname">check_preparedness</code><span class="sig-paren">(</span><em class="sig-param">factor_couple=2</em>, <em class="sig-param">cons_floor=100</em>, <em class="sig-param">d_cutoffs={20: 80</em>, <em class="sig-param">100: 65}</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.analysis.Results.check_preparedness" title="Permalink to this definition">¶</a></dt>
-<dd><p>Puts a consumption floor, computes RRI
-(NaN if consumption before and after retirement below cons_floor)
-and checks preparedness for retirement.</p>
+<dd><p>Function that introduces a consumption floor, computes RRI (NaN if consumption before and after retirement below cons_floor), and checks preparedness for retirement.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -245,7 +241,7 @@ and checks preparedness for retirement.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tutorial.html" class="btn btn-neutral float-right" title="Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tools.html" class="btn btn-neutral float-right" title="Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="balance_sheets.html" class="btn btn-neutral float-left" title="Balance Sheets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
