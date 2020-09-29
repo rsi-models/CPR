@@ -1,5 +1,5 @@
-# import sys
-# sys.path.insert(1, r'C:\Users\pyann\Documents\Model')
+import sys
+sys.path.insert(1, r'C:\Users\pyann\Dropbox (CEDIA)\CPR\Model')
 import os
 import numpy as np
 import pandas as pd
