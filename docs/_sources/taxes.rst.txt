@@ -1,5 +1,5 @@
 Taxes
-==============
+=====
 
 The Taxes module uses the SRD to compute taxes and benefits for each household. 
 
