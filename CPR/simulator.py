@@ -25,8 +25,6 @@ def simulate(job, common, prices):
     """
     hh, sim = job
 
-    print(hh.index)
-
     # store output in dictionary:
     hh.d_output = dict(hh_index=hh.index, sim=sim)
 
