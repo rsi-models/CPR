@@ -7,7 +7,7 @@ Installing the CPR
 
 The CPR can be easily installed using pip::
 
-  pip install cpr
+  pip install cpr-rsi
 
 The CPR uses two other packages that are produced by the Research Chair on Intergenerational Economics (CREEi), which is supported by the RSI: the Disposable Income Simulator (`Simulateur de revenu disponible, or SRD <https://creei-models.github.io/srd/>`_; documentation in French), which computes taxes and major benefits; and the Public Pensions Income Simulator (Simulateur de revenu de pensions publiques, or SRPP), which simulates QPP and CPP benefits. Both the SRD and the SRPP are automatically installed along with the CPR.
 
