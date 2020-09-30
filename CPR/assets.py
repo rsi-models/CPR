@@ -5,15 +5,16 @@ from CPR import tools
 
 class ContributionRoom:
     """
-    This class manages contribution rooms for TFSA and RRSP.
+    This class manages contribution room for TFSAs and RRSPs.
+
     All amounts are nominal.
-    
+
     Parameters
     ----------
     init_room_rrsp: float
-        initial room available in rrsp
+        initial RRSP contribution room available
     init_room_tfsa: float
-        initial room available in tfsa
+        initial TFSA contribution room available
     """
     def __init__(self, init_room_rrsp, init_room_tfsa):
         self.init_room_rrsp = init_room_rrsp
@@ -22,7 +23,7 @@ class ContributionRoom:
 
     def compute_contributions(self, p, year, common, prices):
         """
-        Update contribution room for RRSP and TFSA
+        Function to update contribution room for RRSPs and TFSAs, using the 2 other functions below (which themselves call the other functions of the class).
 
         Parameters
         ----------
@@ -52,7 +53,7 @@ class ContributionRoom:
 
     def update_rrsp_room(self, p, year, common):
         """
-        Update RRSP contribution room.
+        Function to update RRSP contribution room.
 
         Parameters
         ----------
@@ -71,7 +72,7 @@ class ContributionRoom:
 
     def update_tfsa_room(self, p, year, common):
         """
-        Update TFSA contribution room.
+        Function to update TFSA contribution room.
 
         Parameters
         ----------
@@ -87,7 +88,7 @@ class ContributionRoom:
 
     def adjust_db_contributions(self, p, year, common):
         """
-        Adjust contributions room RRSP to DB RPP contribution.
+        Function to adjust RRSP contribution room to DB RPP contributions.
 
         Parameters
         ----------
@@ -109,8 +110,9 @@ class ContributionRoom:
 
     def adjust_dc_contributions(self, p, year):
         """
-        Adjust contribution room RRSP to DC contribution. If insufficent room,
-        extra contribution transferred to TFSA.
+        Function to adjust RRSP contribution room to DC RPP contributions.
+
+        If contribution room is insufficent for the intended/planned RRSP contributions, the "excess" contributions are channeled to TFSA.
 
         Parameters
         ----------
@@ -131,8 +133,7 @@ class ContributionRoom:
 
     def adjust_employees_contributions(self, p):
         """
-        Compute employee contribution to DC RPP
-        (used later to caculate taxes).
+        Function to compute employee contributions to DC RPPs (later used to caculate taxes).
 
         Parameters
         ----------
@@ -148,8 +149,9 @@ class ContributionRoom:
 
     def adjust_rrsp_contributions(self, acc, p, year):
         """
-        Adjust contribution room RRSP for contributions other than RPP.
-        If insufficent room, extra contribution transferred to TFSA.
+        Function to adjust RRSP contribution for contributions other than to RPPs.
+
+        If contribution room is insufficent for the intended/planned RRSP contributions, the "excess" contributions are channeled to TFSA.
 
         Parameters
         ----------
@@ -171,9 +173,9 @@ class ContributionRoom:
 
     def adjust_tfsa_contributions(self, p, year, common, prices):
         """
-        Adjust contribution room TFSA to TFSA contributions
-        and excess RRSP contributions. If insufficent room,
-        extra contribution transferred to TFSA.
+        Function to adjust TFSA contribution room to TFSA contributions (including "excess" DC RPP and RRSP contributions).
+
+        If contribution room is insufficent for the intended/planned TFSA contributions, the "excess" contributions are channeled to unregistered accounts.
 
         Parameters
         ----------
@@ -202,7 +204,7 @@ class ContributionRoom:
 
     def adjust_rrif(self, p, year, common, prices):
         """
-        Adjust RPP DC and RRSP to mandatory withdrawals.
+        Function to adjust DC RPP and RRSP accounts to mandatory withdrawals.
 
         Parameters
         ----------
@@ -227,8 +229,7 @@ class ContributionRoom:
 
     def adjust_unreg_contributions(self, p, year):
         """
-        Adjust contribution to unregistered accounts
-        for excess TFSA contributions.
+        Function to adjust contributions to unregistered accounts for "excess" TFSA contributions channeled to them.
 
         Parameters
         ----------
@@ -244,7 +245,7 @@ class ContributionRoom:
 
     def reset(self):
         """
-        Reset contribution rooms RRSP and TFSA to inital values.
+        Reset RRSP and TFSA contribution rooms to their inital values.
         """
         self.room_rrsp = self.init_room_rrsp
         self.room_tfsa = self.init_room_tfsa
@@ -253,7 +254,7 @@ class ContributionRoom:
 class FinAsset:
     """
     This class manages registered accounts. All amounts are nominal.
-    
+
     Parameters
     ----------
     p: Person
@@ -364,7 +365,7 @@ class FinAsset:
 class UnregAsset:
     """
     This class manages unregistered account. All amounts are nominal.
-    
+
     Parameters
     ----------
     p: Person
@@ -569,7 +570,7 @@ class RppDC(FinAsset):
 class RppDB:
     """
     This class manages DB RPP. All amounts are nominal.
-    
+
     Parameters
     ----------
     p: Person
@@ -677,7 +678,7 @@ class RppDB:
 class RealAsset:
     """
     This class manages housing. All amounts are nominal.
-    
+
     Parameters
     ----------
     d_hh: dict of float
@@ -746,7 +747,7 @@ class Business:
     """
     This class manages a business (as an asset owned by the houshehold).
     All amounts are nominal.
-    
+
     Parameters
     ----------
     hh: Hhold
