@@ -11,13 +11,13 @@ class table:
     Parameters
     ----------
     prov: str
-        province
+        province; default=qc
     scenario: str
-        longevity scenario
+        longevity scenario; default=M (Medium mortality)
     gender: str
-        gender
+        gender; default=males
     web: bool
-        True to pull data from internet, False otherwise
+        True to pull data from internet (option unavailable at the moment), False otherwise; default=False
     """
     def __init__(self, prov='qc', scenario='M', gender='males', web=False):
         self.params = path.join(path.dirname(__file__), 'params')
@@ -74,9 +74,9 @@ class table:
         Parameters
         ----------
         prov: str
-            province
+            province; default=qc
         gender: str
-            gender
+            gender; default=males
         """
         maprov = {'qc': 'que',
                   'on': 'ont',
@@ -133,16 +133,16 @@ class table:
         Parameters
         ----------
         prov: str
-            province
+            province; default=qc
         gender: str
-            gender
+            gender; default=males
         """
         self.history = pd.read_excel(self.params + f'/{prov}_{gender}.xlsx')
         self.history.index = [str(i) for i in range(1921, 2012)]
 
     def splice(self):
         """
-        Function to add survival probabilities for 2012 and after.
+        Function to add survival probabilities for the 2012 birth year and after.
         """
         self.history.loc['2012'] = self.history.loc['2011']
         self.tab = self.history.append(self.prospect, sort=True)

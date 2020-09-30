@@ -21,4 +21,4 @@ Experiments with CPR
         <iframe src="https://www.youtube.com/embed/C1xIC8PteIc" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 50%; height: 50%;"></iframe>
     </div>
 
-Click `here <https://colab.research.google.com/github/rsi-models/CPR/blob/master/Notebooks/Tutorial%20CPR.ipynb>`_ to access the notebook.
+Click `here <https://colab.research.google.com/github/rsi-models/CPR/blob/master/Notebooks/Tutorial_CPR_collab.ipynb>`_ to access the notebook.
