@@ -175,27 +175,13 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>prov</strong> (<em>str</em>) – province</p></li>
-<li><p><strong>scenario</strong> (<em>str</em>) – longevity scenario</p></li>
-<li><p><strong>gender</strong> (<em>str</em>) – gender</p></li>
-<li><p><strong>web</strong> (<em>bool</em>) – True to pull data from internet, False otherwise</p></li>
+<li><p><strong>prov</strong> (<em>str</em>) – province; default=qc</p></li>
+<li><p><strong>scenario</strong> (<em>str</em>) – longevity scenario; default=M (Medium mortality)</p></li>
+<li><p><strong>gender</strong> (<em>str</em>) – gender; default=males</p></li>
+<li><p><strong>web</strong> (<em>bool</em>) – True to pull data from internet (option unavailable at the moment), False otherwise; default=False</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="method">
-<dt id="CPR.life.life.table.pull_history_web">
-<code class="sig-name descname">pull_history_web</code><span class="sig-paren">(</span><em class="sig-param">prov='qc'</em>, <em class="sig-param">gender='males'</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.pull_history_web" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function to get historical mortalilty tables by province and gender.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>prov</strong> (<em>str</em>) – province</p></li>
-<li><p><strong>gender</strong> (<em>str</em>) – gender</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
 <dl class="method">
 <dt id="CPR.life.life.table.pull_history">
 <code class="sig-name descname">pull_history</code><span class="sig-paren">(</span><em class="sig-param">prov='qc'</em>, <em class="sig-param">gender='males'</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.pull_history" title="Permalink to this definition">¶</a></dt>
@@ -203,8 +189,8 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>prov</strong> (<em>str</em>) – province</p></li>
-<li><p><strong>gender</strong> (<em>str</em>) – gender</p></li>
+<li><p><strong>prov</strong> (<em>str</em>) – province; default=qc</p></li>
+<li><p><strong>gender</strong> (<em>str</em>) – gender; default=males</p></li>
 </ul>
 </dd>
 </dl>
@@ -213,7 +199,7 @@
 <dl class="method">
 <dt id="CPR.life.life.table.splice">
 <code class="sig-name descname">splice</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.splice" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function to add survival probabilities for 2012 and after.</p>
+<dd><p>Function to add survival probabilities for the 2012 birth year and after.</p>
 </dd></dl>
 
 <dl class="method">

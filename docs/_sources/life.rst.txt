@@ -6,4 +6,4 @@ The Life module contains the class that computes annuity factors for all individ
 .. currentmodule:: CPR.life.life
 
 .. autoclass:: table
-    :members: pull_history_web, pull_history, splice, compute_annuity_factor
+    :members: pull_history, splice, compute_annuity_factor
