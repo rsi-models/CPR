@@ -274,7 +274,7 @@ class FinAsset:
 
     def update(self, d_returns, year, common, prices):
         """
-        Update the balance for contribution, withdrawal and return.
+        Function to update the balance to account for contributions, withdrawals, and returns.
 
         Parameters
         ----------
@@ -296,7 +296,7 @@ class FinAsset:
 
     def rate(self, d_returns, year):
         """
-        Compute the rate of return given the composition of assets in account.
+        Function to compute the rate of return given the mix of assets in the account.
 
         Parameters
         ----------
@@ -316,7 +316,7 @@ class FinAsset:
 
     def rrif_withdrawal(self, p, common):
         """
-        Manage mandatory rrif withdrawals.
+        Function to manage mandatory RRIF withdrawals.
 
         Parameters
         ----------
@@ -328,7 +328,7 @@ class FinAsset:
         Returns
         -------
         float
-            amount of mandatory withdrawal
+            Amount of mandatory withdrawal.
         """
         if self.balance > 0:
             extra_withdrawal_real = max(
@@ -342,12 +342,12 @@ class FinAsset:
 
     def liquidate(self):
         """
-        Liquidate account, set balance, contribution and withdrawal to zero.
+        Function to liquidate an account, setting balance, contributions and withdrawals to zero.
 
         Returns
         -------
         float
-            amount from liquidation (before taxes)
+            Amount from liquidation (before taxes).
         """
         value = self.balance
         self.balance, self.contribution = 0, 0
@@ -355,7 +355,7 @@ class FinAsset:
 
     def reset(self):
         """
-        Reset the balance and withdrawal to its initial balance.
+        Function to reset the balance and withdrawal to their initial values.
         """
         self.balance = self.init_balance
         self.desired_withdrawal_real = self.init_desired_withdrawal_real
@@ -364,7 +364,9 @@ class FinAsset:
 
 class UnregAsset:
     """
-    This class manages unregistered account. All amounts are nominal.
+    This class manages unregistered accounts.
+
+    All amounts are nominal.
 
     Parameters
     ----------
@@ -391,7 +393,7 @@ class UnregAsset:
 
     def update(self, d_returns, year, common, prices):
         """
-        Update the balance for contribution, withdrawal and return.
+        Function to update the balance for contributions, withdrawals and returns.
 
         Parameters
         ----------
@@ -417,7 +419,7 @@ class UnregAsset:
 
     def compute_income(self, d_returns, year):
         """
-        Compute new capital gains and taxable income (dividends and interests).
+        Function to compute new capital gains and taxable income (dividends and interests).
 
         Parameters
         ----------
@@ -438,7 +440,7 @@ class UnregAsset:
 
     def rate(self, d_returns, year):
         """
-        Compute the rate of return given the composition of assets in account.
+        Function that computes the rate of return given the mix of assets in account.
 
         Parameters
         ----------
@@ -450,7 +452,7 @@ class UnregAsset:
         Returns
         -------
         float
-            rate of return (net of fee)
+            Rate of return (net of fees).
         """
         return (self.mix_bills*d_returns['bills'][year] +
                 self.mix_bonds*d_returns['bonds'][year] +
@@ -458,8 +460,7 @@ class UnregAsset:
 
     def update_balance(self):
         """
-        Update balance and divide between non-taxable, capital gains,
-        dividends and interests.
+        Function to update to balance and separate between non-taxable funds (i.e. previous post-tax balance), capital gains, dividends, and interests.
         """
         self.non_taxable += self.amount_after_tax
         self.non_taxable += self.contribution
@@ -469,8 +470,7 @@ class UnregAsset:
 
     def prepare_withdrawal(self):
         """
-        Divide withdrawal from balance at the end of the period
-        between non-taxable, capital gains, dividends and interests.
+        Function to separate a withdrawal from the balance at the end of the period, and separately identify non-taxable funds, capital gains, dividends, and interests.
         """
         self.withdrawal = min(self.nom(self.desired_withdrawal), self.balance)
         self.share_withdrawal = self.withdrawal / (self.balance + 1e-12)
@@ -481,15 +481,14 @@ class UnregAsset:
 
     def adjust_income(self):
         """
-        Adjust income for withdrawals.
+        Funciton to adjust investment income (dividends and interests) for withdrawals.
         """
         self.inc_div *= 1 - self.share_withdrawal
         self.inc_int *= 1 - self.share_withdrawal
 
     def adjust_cap_losses(self, realized_cap_gains):
         """
-        Compute capital losses from previous years used for deduction
-        and adjust realized capital losses
+        Function to compute capital losses from previous years used for deduction against capital gains, and adjust realized capital losses accordingly.
 
         Parameters
         ----------
@@ -499,7 +498,7 @@ class UnregAsset:
         Returns
         -------
         float
-            capital losses (to be deducted)
+            Capital losses (to be deducted).
         """
         if realized_cap_gains > 0:
             used_cap_losses = min(realized_cap_gains, self.realized_losses)
@@ -512,7 +511,7 @@ class UnregAsset:
 
     def adjust_final_balance(self):
         """
-        Adjust final balance for withdrawal, dividends and interests.
+        Function that adjusts the final balance for withdrawals, dividends and interests.
         """
         self.non_taxable *= (1 - self.share_withdrawal)
         self.cap_gains *= (1 - self.share_withdrawal)
@@ -521,7 +520,7 @@ class UnregAsset:
 
     def liquidate(self):
         """
-        Liquidate account and adjust capital losses.
+        Function to liquidate the account and adjust capital losses.
         """
         self.liquidation_non_taxable = self.non_taxable
         self.liquidation_cap_gains = self.cap_gains
@@ -533,7 +532,7 @@ class UnregAsset:
 
     def reset(self):
         """
-        Reset the balance, cap_gains and withdrawal to its initial balance.
+        Function to reset the balance, capital gains, and withdrawals to their initial values.
         """
         self.balance = self.init_balance
         self.cap_gains = self.init_cap_gains
@@ -547,7 +546,9 @@ class UnregAsset:
 
 class RppDC(FinAsset):
     """
-    This class manages DC RPP. All amounts are nominal.
+    This class manages DC RPPs.
+
+    All amounts are nominal.
 
     Parameters
     ----------
@@ -569,7 +570,9 @@ class RppDC(FinAsset):
 
 class RppDB:
     """
-    This class manages DB RPP. All amounts are nominal.
+    This class manages DB RPPs.
+
+    All amounts are nominal.
 
     Parameters
     ----------
@@ -584,9 +587,9 @@ class RppDB:
 
     def compute_benefits(self, p, common):
         """
-        Compute RPP DB benefits and adjust them for CPP.
-        If RPP benefits are smaller than CPP benefits,
-        RPP benefits are zero when cpp_qpp starts.
+        Function that computes RPP DB benefits and adjusts them for CPP/QPP integration.
+
+        If RPP benefits are smaller than CPP/QPP benefits, RPP benefits are set to zero once the receipt of CPP/QPP retirement benefits begins.
 
         Parameters
         ----------
@@ -612,8 +615,9 @@ class RppDB:
 
     def adjust_for_penalty(self, p, common):
         """
-        DB RPP benefits lowered when less than 35 years of service and
-        retirement before age 62.
+        Function to compute a penalty for individuals who begin to receive DB RPP benefits "early", i.e. before they accumulate the maximum number of years of service, if they are younger than the age at which benefits can start without penalty (the "early retirement age").
+
+        By default, the penalty applies to those who begin RPP benefits receipt before reaching 35 years of service and before age 62. These values can be modified.
 
         Parameters
         ----------
@@ -637,7 +641,8 @@ class RppDB:
 
     def compute_cpp_adjustment(self, p, common):
         """
-        Compute adjustement to DB RPP for CPP benefits.
+        Function to compute an adjustment (reduction) to DB RPP benefits to account for CPP/QPP integration.
+
         Start in base year if enough years until retirement, otherwise go
         backward from year before retirement.
 
@@ -651,7 +656,7 @@ class RppDB:
         Returns
         -------
         float
-            amount of CPP adjustment
+            Amount of benefit adjustment for CPP/QPP integration.
         """
         years_db = int(self.replacement_rate_db / common.perc_year_db)
 
@@ -669,7 +674,7 @@ class RppDB:
 
     def reset(self):
         """
-        Reset the benefits, cap_gains and withdrawal to its initial balance.
+        Function that resets the benefits, catpial gains and withdrawal to their initial values.
         """
         self.benefits = 0
         self.rate_employee_db = self.init_rate_employee_db
@@ -677,7 +682,9 @@ class RppDB:
 
 class RealAsset:
     """
-    This class manages housing. All amounts are nominal.
+    This class manages housing and residences.
+
+    All amounts are nominal.
 
     Parameters
     ----------
@@ -693,7 +700,7 @@ class RealAsset:
 
     def update(self, growth_rates, year, prices):
         """
-        Update the balance for growth in price.
+        Function to update the balance (residence values) for growth in price.
 
         Parameters
         ----------
@@ -708,12 +715,12 @@ class RealAsset:
 
     def liquidate(self):
         """
-        Liquidate account, compute capital gains, set balance to zero.
+        Function to liquidate the asset, compute capital gains if they apply, and set balance to zero.
 
         Returns
         -------
         float
-            amount from liquidation (before taxes)
+            Amount from asset liquidation (before taxes).
         """
         self.liquidation_non_taxable = self.price
         self.liquidation_cap_gains = self.balance - self.price
@@ -721,14 +728,14 @@ class RealAsset:
 
     def reset(self):
         """
-        Reset balance to its initial balance and set capital gains to zero.
+        Function to reset balance to its initial value and set capital gains to zero.
         """
         self.balance = self.init_balance
         self.cap_gains = 0
 
     def impute_rent(self, hh, year, prices):
         """
-        Compute imputed rent.
+        Function to compute imputed rent.
 
         Parameters
         ----------
@@ -746,6 +753,7 @@ class RealAsset:
 class Business:
     """
     This class manages a business (as an asset owned by the houshehold).
+
     All amounts are nominal.
 
     Parameters
@@ -760,12 +768,12 @@ class Business:
 
     def update(self, d_business_returns, year, prices):
         """
-        Update the balance and dividends.
+        Function to update the balance and dividends.
 
         Parameters
         ----------
         d_business_returns : dict
-            business returns
+            returns on business assets
         year : int
             year
         prices : Prices
@@ -776,8 +784,7 @@ class Business:
 
     def liquidate(self, common):
         """
-        Liquidate account, compute capital gains, set balance to zero
-        and returns real liquidation value.
+        Function to liquidate account (business assets), compute capital gains, and set balance to zero.
 
         Parameters
         ----------
@@ -787,7 +794,7 @@ class Business:
         Returns
         -------
         float
-            selling price
+            Selling price of the business assets.
         """
         self.liquidation_non_taxable = self.price
         self.liquidation_cap_gains = self.balance - self.price
@@ -795,7 +802,7 @@ class Business:
 
     def reset(self):
         """
-        Reset balance and capital gains to initial values.
+        Reset business value and capital gains to their initial values.
         """
         self.balance = self.init_balance
         self.cap_gains = self.init_balance - self.price

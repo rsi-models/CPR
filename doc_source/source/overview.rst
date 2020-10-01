@@ -21,26 +21,21 @@ To uninstall the CPR, the SRD and the SRPP, pip can be used::
 
   pip uninstall cpr srd srpp
 
-If using pip is not possible:
 
-1. Go to `pypi.org <https://www.pypi.org>`_ and download the CPR, SRD and SRPP source files (.tar.gz extension)
+##### part to be modified ###########
 
-2. Extract the .tar.gz files. In Windows, open the files using 7-zip or Winzip, or enter in a command window (replacing addresses and file names)::
+Pour l'installer afin de le modifier, il faut d'abord aller le chercher sur Github:
 
-    tar -xvzf C:\\PATH_TO_FILE\\FILE.tar.gz -C C:\\PATH_TO_EXTRACTION_FOLDER
+  git clone https://github.com/creei-models/srpp
 
-3. In the folders just extracted, *cpr-x.x.x*, *srd-x.x.x* and *srpp-x.x.x* (*x.x.x* being the version number), the folders *cpr*, *srd* and *srpp* can be found
 
-4. Place *cpr*, *srd* and *srpp* in the folder of your choice
+Ensuite on peut l'installer en allant dans srpp/ et en lançant au terminal:
 
-To call the CPR, its address must be added:
+  python setup.py install -e
 
-.. code:: ipython3
+Les modifications apportées affecteront directement le fichier installé. Il est fortement recommandé de procéder à l'installation de développement dans un environnement (p.ex. `conda environment <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`_)
 
-    import sys
-    sys.path.append("C:\PATH_TO_FOLDER_CONTAINING_CPR_SRD_AND_SRPP")
-
-    import cpr
+########### end of part #####################
 
 If one does not want the CPR, the *cpr*, *srd* and *srpp* folders can simply be deleted.
 
