@@ -1,7 +1,8 @@
 Life
 ====
 
-The Life module contains the class that computes annuity factors for all individuals in the simulation, using mortality tables by province and gender as provided by Statistics Canada.
+The Life module contains the class that computes annuity factors for all individuals in the simulation, 
+using mortality tables by province, gender as provided by Statistics Canada.
 
 .. currentmodule:: CPR.life.life
 

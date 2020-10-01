@@ -176,28 +176,26 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">cpr</span><span class="o">-</span><span class="n">rsi</span>
 </pre></div>
 </div>
-<p>The CPR uses two other packages that are produced by the Research Chair on Intergenerational Economics (CREEi), which is supported by the RSI: the Disposable Income Simulator (<a class="reference external" href="https://creei-models.github.io/srd/">Simulateur de revenu disponible, or SRD</a>; documentation in French), which computes taxes and major benefits; and the Public Pensions Income Simulator (Simulateur de revenu de pensions publiques, or SRPP), which simulates QPP and CPP benefits. Both the SRD and the SRPP are automatically installed along with the CPR.</p>
-<p>In a notebook or a project, the CPR is called on by adding the following command:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cpr</span>
+<p>The CPR uses two other packages that are produced by the RSI and the Research Chair on Intergenerational Economics (CREEi), which is supported by the RSI: the Disposable Income Simulator (<a class="reference external" href="https://creei-models.github.io/srd/">Simulateur de revenu disponible, or SRD</a>; documentation in French), which computes taxes and major benefits; and the Public Pension Plans Simulator (<a class="reference external" href="https://creei-models.github.io/srpp/">Simulateur de régimes de pensions publiques, or SRPP</a>; documentation in French), which simulates QPP and CPP contributions and benefits. Both the SRD and the SRPP are automatically installed along with the CPR.</p>
+<p>In a notebook or a project, the CPR is called by adding the following command:</p>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">CPR</span>
 </pre></div>
 </div>
 <p>To uninstall the CPR, the SRD and the SRPP, pip can be used:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">uninstall</span> <span class="n">cpr</span> <span class="n">srd</span> <span class="n">srpp</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">uninstall</span> <span class="n">cpr</span><span class="o">-</span><span class="n">rsi</span> <span class="n">srd</span> <span class="n">srpp</span>
 </pre></div>
 </div>
-<p>##### part to be modified ###########</p>
-<p>Pour l’installer afin de le modifier, il faut d’abord aller le chercher sur Github:</p>
+<p>To install the CPR in order to modify it, retrieving it from Github is the first step:</p>
 <blockquote>
-<div><p>git clone <a class="reference external" href="https://github.com/creei-models/srpp">https://github.com/creei-models/srpp</a></p>
+<div><p>git clone <a class="reference external" href="https://github.com/rsi-models/CPR.git">https://github.com/rsi-models/CPR.git</a></p>
 </div></blockquote>
-<p>Ensuite on peut l’installer en allant dans srpp/ et en lançant au terminal:</p>
+<p>Then it can be installed by going to cpr/ from the terminal and launching:</p>
 <blockquote>
 <div><p>python setup.py install -e</p>
 </div></blockquote>
-<p>Les modifications apportées affecteront directement le fichier installé. Il est fortement recommandé de procéder à l’installation de développement dans un environnement (p.ex. <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">conda environment</a>)</p>
-<p>########### end of part #####################</p>
-<p>If one does not want the CPR, the <em>cpr</em>, <em>srd</em> and <em>srpp</em> folders can simply be deleted.</p>
-<p>For more details on how to use the CPR, please consult the <a class="reference internal" href="tutorial.html#tutorial"><span class="std std-ref">Tutorials</span></a> section.</p>
+<p>The changes made will directly impact the installed file. It is strongly recommended to make the development install within an environment (e.g. <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">conda environment</a>).</p>
+<p>If one does not want the CPR anymore, the <em>cpr</em>, <em>srd</em> and <em>srpp</em> folders can simply be deleted.</p>
+<p>For further details on how to use the CPR, please consult the <a class="reference internal" href="tutorial.html#tutorial"><span class="std std-ref">Tutorials</span></a> section.</p>
 <p>If you have questions, comments or suggestions, do not hesitate to contact us (<a class="reference internal" href="credits.html#nous-contacter"><span class="std std-ref">Contributors</span></a>).</p>
 </div>
 </div>

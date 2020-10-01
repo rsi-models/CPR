@@ -167,7 +167,8 @@
             
   <div class="section" id="macro">
 <h1>Macro<a class="headerlink" href="#macro" title="Permalink to this headline">¶</a></h1>
-<p>The Macro module contains various classes and functions that generate and manage the macroeconomic variables, in particular over time.</p>
+<p>The Macro module contains classes that contain parameters common to all households,
+generate stochastic processes for returns and wages and other prices.</p>
 <dl class="class">
 <dt id="CPR.macro.CommonParameters">
 <em class="property">class </em><code class="sig-prename descclassname">CPR.macro.</code><code class="sig-name descname">CommonParameters</code><span class="sig-paren">(</span><em class="sig-param">nsim</em>, <em class="sig-param">non_stochastic</em>, <em class="sig-param">extra_params</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.CommonParameters" title="Permalink to this definition">¶</a></dt>
@@ -245,7 +246,7 @@ with autocorrelation rho.</p>
 <dl class="method">
 <dt id="CPR.macro.Prices.compute_params_process">
 <code class="sig-name descname">compute_params_process</code><span class="sig-paren">(</span><em class="sig-param">mu</em>, <em class="sig-param">rho</em>, <em class="sig-param">sigma</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.compute_params_process" title="Permalink to this definition">¶</a></dt>
-<dd><p>Converts arithmetic mean mu and volatility sigma of the returns
+<dd><p>Convert arithmetic mean mu and volatility sigma of the returns
 and autocorrelation rho of the log returns into
 <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\rho\)</span> and <span class="math notranslate nohighlight">\(\sigma_{\epsilon}\)</span> of the process:</p>
 <p><span class="math notranslate nohighlight">\(\ln(1+r_t) = \alpha + \rho * \ln(1+r_{t-1}) + \epsilon\)</span>,

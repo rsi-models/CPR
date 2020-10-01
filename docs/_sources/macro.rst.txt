@@ -1,7 +1,8 @@
 Macro
 =====
 
-The Macro module contains various classes and functions that generate and manage the macroeconomic variables, in particular over time.
+The Macro module contains classes that contain parameters common to all households, 
+generate stochastic processes for returns and wages and other prices.
 
 .. currentmodule:: CPR.macro
 

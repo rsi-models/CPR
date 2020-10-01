@@ -11,7 +11,6 @@ inputs = df.loc[:, :]
 # inputs = pd.read_csv(module_dir + '/CPR/data/inputs/synth_inputs.csv', index_col=0)
 
 
-
 if __name__ == '__main__':
     results = main.run_simulations(inputs, 1, non_stochastic=True,
                                    sell_first_resid=False,
