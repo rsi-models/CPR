@@ -238,7 +238,6 @@ class ContributionRoom:
         year : int
             year
         """
-
         contrib = p.fin_assets['unreg'].contrib_rate * p.d_wages[year]
         contrib += self.extra_contrib_tfsa
         p.fin_assets['unreg'].contribution = contrib
@@ -307,8 +306,9 @@ class FinAsset:
 
         Returns
         -------
-        [type]
-            [description]
+        float
+            
+            Rate of return (net of fees).
         """
         return (self.mix_bills*d_returns['bills'][year]
                 + self.mix_bonds*d_returns['bonds'][year]
@@ -343,7 +343,7 @@ class FinAsset:
     def liquidate(self):
         """
         Function to liquidate an account, setting balance, contributions and withdrawals to zero.
-
+        
         Returns
         -------
         float
@@ -355,7 +355,7 @@ class FinAsset:
 
     def reset(self):
         """
-        Function to reset the balance and withdrawal to their initial values.
+        Reset the balance and withdrawal to its initial balance.
         """
         self.balance = self.init_balance
         self.desired_withdrawal_real = self.init_desired_withdrawal_real
@@ -442,9 +442,6 @@ class UnregAsset:
         """
         Function that computes the rate of return given the mix of assets in account.
 
-        Parameters
-        ----------
-        d_returns : dict
             dictionary of returns
         year : int
             year
@@ -481,7 +478,7 @@ class UnregAsset:
 
     def adjust_income(self):
         """
-        Funciton to adjust investment income (dividends and interests) for withdrawals.
+        Function to adjust investment income (dividends and interests) for withdrawals.
         """
         self.inc_div *= 1 - self.share_withdrawal
         self.inc_int *= 1 - self.share_withdrawal
