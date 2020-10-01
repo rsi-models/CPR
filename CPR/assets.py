@@ -155,8 +155,8 @@ class ContributionRoom:
 
         Parameters
         ----------
-        acc : [type]
-            [description]
+        acc : str
+            type of account
         p: Person
             instance of the class Person
         year : int
@@ -204,7 +204,7 @@ class ContributionRoom:
 
     def adjust_rrif(self, p, year, common, prices):
         """
-        Function to adjust DC RPP and RRSP accounts to mandatory withdrawals.
+        Function to adjust DC RPP and RRSP accounts to mandatory RRIF withdrawals (RRIFs are not separately modelled in this version).
 
         Parameters
         ----------
@@ -219,8 +219,8 @@ class ContributionRoom:
 
         Returns
         -------
-        [type]
-            [description]
+        float
+            Nominal amount that needs to be withdrawn.
         """
         rrif_transfer_real = 0
         for acc in set(p.fin_assets) & set(('rpp_dc', 'rrsp', 'other_reg')):
@@ -257,9 +257,11 @@ class FinAsset:
     Parameters
     ----------
     p: Person
-        spouse
+        instance of the class Person
     hh: Hhold
         household
+    acc: str
+        type of account
     """
     def __init__(self, p, hh, acc):
         self.init_balance = getattr(p, f'bal_{acc}')
@@ -307,7 +309,6 @@ class FinAsset:
         Returns
         -------
         float
-            
             Rate of return (net of fees).
         """
         return (self.mix_bills*d_returns['bills'][year]
@@ -371,7 +372,7 @@ class UnregAsset:
     Parameters
     ----------
     p: Person
-        spouse
+        instance of the class Person
     hh: Hhold
         household
     prices: Prices
@@ -488,7 +489,8 @@ class UnregAsset:
 
     def adjust_cap_losses(self, realized_cap_gains):
         """
-        Function to compute capital losses from previous years used for deduction against capital gains, and adjust realized capital losses accordingly.
+        Function to compute capital losses from previous years used for deduction 
+        against capital gains, and adjust realized capital losses accordingly.
 
         Parameters
         ----------
@@ -553,7 +555,7 @@ class RppDC(FinAsset):
     Parameters
     ----------
     p: Person
-        spouse
+        instance of the class Person
     common: Common
         instance of the class Common
     """
@@ -577,7 +579,7 @@ class RppDB:
     Parameters
     ----------
     p: Person
-        spouse
+        instance of the class Person
     """
     def __init__(self, p):
         self.init_rate_employee_db = p.rate_employee_db
@@ -643,9 +645,6 @@ class RppDB:
         """
         Function to compute an adjustment (reduction) to DB RPP benefits to account for CPP/QPP integration.
 
-        Start in base year if enough years until retirement, otherwise go
-        backward from year before retirement.
-
         Parameters
         ----------
         p: Person
@@ -674,7 +673,7 @@ class RppDB:
 
     def reset(self):
         """
-        Function that resets the benefits, catpial gains and withdrawal to their initial values.
+        Function that resets the benefits and contribution rates to their initial values.
         """
         self.benefits = 0
         self.rate_employee_db = self.init_rate_employee_db
@@ -689,7 +688,7 @@ class RealAsset:
     Parameters
     ----------
     d_hh: dict of float
-        dictionnary containing values of residences
+        dictionary containing values of residences
     resid: str
         primary or secondary residence
     """
@@ -728,7 +727,7 @@ class RealAsset:
 
     def reset(self):
         """
-        Function to reset balance to its initial value and set capital gains to zero.
+        Function to reset residence value to its initial value and set capital gains to zero.
         """
         self.balance = self.init_balance
         self.cap_gains = 0
@@ -758,8 +757,8 @@ class Business:
 
     Parameters
     ----------
-    hh: Hhold
-        household
+    d_hh: dict of float
+        dictionary containing value of business
     """
     def __init__(self, d_hh):
         self.init_balance = d_hh['business']

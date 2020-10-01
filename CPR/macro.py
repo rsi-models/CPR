@@ -165,7 +165,7 @@ class Prices:
 
     def compute_params_process(self, mu, rho, sigma):
         """        
-        Converts arithmetic mean mu and volatility sigma of the returns
+        Convert arithmetic mean mu and volatility sigma of the returns
         and autocorrelation rho of the log returns into
         :math:`\\alpha`, :math:`\\rho` and :math:`\\sigma_{\\epsilon}` of the process:
         

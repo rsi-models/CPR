@@ -148,7 +148,7 @@ def initialize_cpp_account(p, hh, common):
     Parameters
     ----------
     p: Person
-        spouse
+        instance of the class Person
     hh: Hhold
         household
     common : Common
@@ -338,7 +338,7 @@ def contribute_cpp(p, year, common):
     Parameters
     ----------
     p: Person
-        spouse
+        instance of the class Person
     year : int
         year
     common : Common
@@ -355,7 +355,7 @@ def claim_cpp(p):
     Parameters
     ----------
     p: Person
-        spouse
+        instance of the class Person
     """
     if p.age == p.claim_age_cpp:
         p.cpp_account.ClaimCPP(p.byear + p.claim_age_cpp)
@@ -447,7 +447,7 @@ def get_assets(p, common):
     Parameters
     ----------
     p: Person
-        spouse
+        instance of the class Person
     common : Common
         instance of class Common
     """
@@ -466,7 +466,7 @@ def compute_rpp(p, nom, common):
     Parameters
     ----------
     p: Person
-        spouse
+        instance of the class Person
     nom: function
         function converting to nominal value
     common: Common
@@ -489,7 +489,7 @@ def get_benefits_cpp(p, year, common):
     Parameters
     ----------
     p: Person
-        spouse
+        instance of the class Person
     year : int
         year
     common : Common
@@ -514,7 +514,7 @@ def get_inc_rrsp(p, nom):
     Parameters
     ----------
     p: Person
-        spouse
+        instance of the class Person
     nom: function
         function converting to nominal value
     """
@@ -534,7 +534,7 @@ def get_other_taxable(p, nom, common):
     Parameters
     ----------
     p: Person
-        spouse
+        instance of the class Person
     nom: function
         function converting to nominal value
     common : Common
@@ -554,7 +554,7 @@ def get_other_non_taxable(p, nom):
     Parameters
     ----------
     p: Person
-        spouse
+        instance of the class Person
     nom: function
         function converting to nominal value
     """
@@ -572,7 +572,7 @@ def get_contributions_assets(p, year, common):
     Parameters
     ----------
     p: Person
-        spouse
+        instance of the class Person
     year : int
         year
     common : Common

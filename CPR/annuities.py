@@ -54,7 +54,7 @@ def liquidate_fin_assets(p):
     Parameters
     ----------
     p: Person
-        spouse
+        instance of the class Person
     """
     for acc in ['rrsp', 'rpp_dc', 'tfsa']:
         setattr(p, f'val_annuities_{acc}', 0)
@@ -78,7 +78,7 @@ def compute_factors(hh, p, rate, prices):
     hh: Hhold
         household
     p: Person
-        spouse
+        instance of the class Person
     rate : float
         interest rate
     prices : Prices
@@ -101,7 +101,7 @@ def convert_to_real_annuities(p, year, prices):
     Parameters
     ----------
     p: Person
-        spouse
+        instance of the class Person
     year : int
         year
     prices : Prices
