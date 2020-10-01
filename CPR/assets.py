@@ -397,7 +397,7 @@ class UnregAsset:
 
         Parameters
         ----------
-        d_returns : dict
+        d_returns : dict of float
             dictionary of returns
         year : int
             year
@@ -423,7 +423,7 @@ class UnregAsset:
 
         Parameters
         ----------
-        d_returns : dict
+        d_returns : dict of float
             dictionary of returns
         year : int
             year
@@ -442,6 +442,9 @@ class UnregAsset:
         """
         Function that computes the rate of return given the mix of assets in account.
 
+        Parameters
+        ----------
+        d_returns : dict of float
             dictionary of returns
         year : int
             year

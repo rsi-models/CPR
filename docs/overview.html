@@ -173,7 +173,7 @@
 <div class="section" id="installing-the-cpr">
 <h2>Installing the CPR<a class="headerlink" href="#installing-the-cpr" title="Permalink to this headline">¶</a></h2>
 <p>The CPR can be easily installed using pip:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">cpr</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">cpr</span><span class="o">-</span><span class="n">rsi</span>
 </pre></div>
 </div>
 <p>The CPR uses two other packages that are produced by the Research Chair on Intergenerational Economics (CREEi), which is supported by the RSI: the Disposable Income Simulator (<a class="reference external" href="https://creei-models.github.io/srd/">Simulateur de revenu disponible, or SRD</a>; documentation in French), which computes taxes and major benefits; and the Public Pensions Income Simulator (Simulateur de revenu de pensions publiques, or SRPP), which simulates QPP and CPP benefits. Both the SRD and the SRPP are automatically installed along with the CPR.</p>
@@ -185,24 +185,17 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">uninstall</span> <span class="n">cpr</span> <span class="n">srd</span> <span class="n">srpp</span>
 </pre></div>
 </div>
-<p>If using pip is not possible:</p>
-<ol class="arabic">
-<li><p>Go to <a class="reference external" href="https://www.pypi.org">pypi.org</a> and download the CPR, SRD and SRPP source files (.tar.gz extension)</p></li>
-<li><p>Extract the .tar.gz files. In Windows, open the files using 7-zip or Winzip, or enter in a command window (replacing addresses and file names):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tar</span> <span class="o">-</span><span class="n">xvzf</span> <span class="n">C</span><span class="p">:</span>\\<span class="n">PATH_TO_FILE</span>\\<span class="n">FILE</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span> <span class="o">-</span><span class="n">C</span> <span class="n">C</span><span class="p">:</span>\\<span class="n">PATH_TO_EXTRACTION_FOLDER</span>
-</pre></div>
-</div>
-</li>
-<li><p>In the folders just extracted, <em>cpr-x.x.x</em>, <em>srd-x.x.x</em> and <em>srpp-x.x.x</em> (<em>x.x.x</em> being the version number), the folders <em>cpr</em>, <em>srd</em> and <em>srpp</em> can be found</p></li>
-<li><p>Place <em>cpr</em>, <em>srd</em> and <em>srpp</em> in the folder of your choice</p></li>
-</ol>
-<p>To call the CPR, its address must be added:</p>
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;C:\PATH_TO_FOLDER_CONTAINING_CPR_SRD_AND_SRPP&quot;</span><span class="p">)</span>
-
-<span class="kn">import</span> <span class="nn">cpr</span>
-</pre></div>
-</div>
+<p>##### part to be modified ###########</p>
+<p>Pour l’installer afin de le modifier, il faut d’abord aller le chercher sur Github:</p>
+<blockquote>
+<div><p>git clone <a class="reference external" href="https://github.com/creei-models/srpp">https://github.com/creei-models/srpp</a></p>
+</div></blockquote>
+<p>Ensuite on peut l’installer en allant dans srpp/ et en lançant au terminal:</p>
+<blockquote>
+<div><p>python setup.py install -e</p>
+</div></blockquote>
+<p>Les modifications apportées affecteront directement le fichier installé. Il est fortement recommandé de procéder à l’installation de développement dans un environnement (p.ex. <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">conda environment</a>)</p>
+<p>########### end of part #####################</p>
 <p>If one does not want the CPR, the <em>cpr</em>, <em>srd</em> and <em>srpp</em> folders can simply be deleted.</p>
 <p>For more details on how to use the CPR, please consult the <a class="reference internal" href="tutorial.html#tutorial"><span class="std std-ref">Tutorials</span></a> section.</p>
 <p>If you have questions, comments or suggestions, do not hesitate to contact us (<a class="reference internal" href="credits.html#nous-contacter"><span class="std std-ref">Contributors</span></a>).</p>
