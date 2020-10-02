@@ -21,13 +21,13 @@ To uninstall the CPR, the SRD and the SRPP, pip can be used::
 
   pip uninstall cpr-rsi srd srpp
 
-To install the CPR in order to modify it, retrieving it from Github is the first step:
+To install the CPR in order to modify it, retrieving it from Github is the first step::
 
   git clone https://github.com/rsi-models/CPR.git
 
-Then it can be installed by going to cpr/ from the terminal and launching:
+Then it can be installed by going to cpr/ from the terminal and launching::
 
-  python setup.py install -e
+  pip install -e .
 
 The changes made will directly impact the installed file. It is strongly recommended to make the development install within an environment (e.g. `conda environment <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`_).
 
