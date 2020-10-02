@@ -81,8 +81,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Getting Started With the CPR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="main.html">Main</a></li>
 <li class="toctree-l1"><a class="reference internal" href="simulator.html">Simulator</a></li>
@@ -167,36 +166,13 @@
   <div class="section" id="canadians-preparation-for-retirement-cpr">
 <h1>Canadians’ Preparation for Retirement (CPR)<a class="headerlink" href="#canadians-preparation-for-retirement-cpr" title="Permalink to this headline">¶</a></h1>
 <p>The Canadians’ Preparation for Retirement (CPR) tool was developed by a team at HEC Montréal’s <a class="reference external" href="https://ire.hec.ca">Retirement and Savings Institute (RSI)</a>,
-with financial support from the National Pension Hub at the <a class="reference external" href="https://globalriskinstitute.org">Global Risk Institute (GRI)</a>. It allows to compute retirement preparation for any household or group of households for which the user has the required input (personal and financial information) at any given point in time.</p>
+with financial support from the National Pension Hub at the <a class="reference external" href="https://globalriskinstitute.org">Global Risk Institute (GRI)</a>. It allows to compute retirement preparation for any household or group of households for which the user has the required input (personal and financial information) at any given point in time. It has been used with 2018 proprietary data to prepare <a class="reference external" href="https://ire.hec.ca/en/canadians-preparation-retirement-cpr/">a report published by in June 2020</a>.</p>
 <p>The CPR simulates the years between the base year and retirement, then converts all financial wealth into actuarially fair annuities upon retirement and compares post- and pre-retirement situations. Compared to other available tools, the CPR offers complete flexibility and transparency, in that its code is fully and freely available online and it can be modified and adapted at will. Importantly and distinctively, the CPR also allows to perform stochastic simulations, letting several dimensions vary over time according to cutting-edge processes and assumptions. All those can be modified by the sophisticated user, as can the number of replications that the tool uses to average outcomes and determine retirement preparation (or the probability thereof). The current version of the CPR takes 2018 as base year and the tax systems of Quebec and Ontario are currently modelled (other provinces can be approximated using one of these 2 provinces, preferably Ontario).</p>
-<p>The CPR outputs a level of “consumption replacement” for each household that passes through the simulator and classifies each household as “prepared” or “unprepared”, according to the pre-set criterion. As in reports published by other groups in the 2010s, retirement preparation can be assessed by computing the ratio of post-retirement consumption to pre-retirement consumption and comparing it to a cutoff set at 65% for the top 4 income quintiles, and at 80% for the bottom income quintile. These measures can then be aggregated over all households analyzed to obtain a) the average of the replacement rate, or its distribution; and b) the proportion of households that are deemed “prepared”. When using the stochastic version of the tool, preparation probabilities can also be computed and visualized, for one or several households.</p>
+<p>The CPR outputs a level of “consumption replacement” for each household that passes through the simulator and classifies each household as “prepared” or “unprepared”, according to the pre-set criterion. As in reports published by other groups in the 2010s, retirement preparation can be assessed by computing the ratio of post-retirement consumption to pre-retirement consumption and comparing it to a cutoff set at 65% for the top 4 income quintiles, and at 80% for the bottom income quintile. These measures can then be aggregated over all households analyzed to obtain a) the average of the replacement rate, or its distribution; and b) the proportion of households that are deemed “prepared”. When using the stochastic version of the tool, preparation probabilities can also be computed and visualized, for one or several households. The figure below  illustrates conceptually the parts and flows of the CPR.</p>
 <p>The CPR and the other tools it uses (SRD and SRPP) are written in Python, a modern, simple and fast language. In order to use it, it is essential to ensure first that an up-to-date Python distribution is installed, for example using Anaconda. Although not essential, it will also be useful to have a minimal understanding of Python environments and, if possible, vocabulary (e.g. function, class, instance, profile).</p>
+<img alt="_images/CPR_flow5.png" src="_images/CPR_flow5.png" />
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Getting Started With the CPR</a></li>
-<li class="toctree-l1"><a class="reference internal" href="main.html">Main</a></li>
-<li class="toctree-l1"><a class="reference internal" href="simulator.html">Simulator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="initialisation.html">Initialisation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="macro.html">Macro</a></li>
-<li class="toctree-l1"><a class="reference internal" href="assets.html">Assets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="debts.html">Debts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="taxes.html">Taxes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="annuities.html">Annuities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="life.html">Life</a></li>
-<li class="toctree-l1"><a class="reference internal" href="balance_sheets.html">Balance Sheets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="credits.html">Contributors and Rights of Use</a></li>
-</ul>
 </div>
-</div>
-<div class="section" id="index">
-<h1>Index<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-</ul>
 </div>
 
 
