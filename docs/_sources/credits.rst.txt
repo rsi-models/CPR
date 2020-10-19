@@ -1,11 +1,11 @@
 Contributors and Rights of Use
 ==============================
 
-.. _nous_contacter:
-
 Contributors
 ************
 David Boisclair, Ismaël Choinière-Crèvecœur, Pierre-Carl Michaud, Pierre-Yves Yanni
+
+.. _nous_contacter:
 
 Contact Person
 **************
