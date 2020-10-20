@@ -26,8 +26,8 @@ To uninstall the CPR, the SRD and the SRPP, pip can be used::
 Alternative Install
 ===================
 
-If one is unable to install the CPR, a zip file containing CPR and its dependencies, SRD and SRPP, can be downloaded from `Github <https://github.com/rsi-models/CPR/releases>`_ (choose the file CPR_with_dep.zip in the latest release). To start using CPR, it suffices to unzip the file in the directory of your choice and either work from that directory or add the directory to the path (for example by using the module *sys*). A jupyter notebook explaining how CPR works, *Tutorial CPR*, is also included in the zip file.
-If one does not want the CPR anymore, the cpr, srd and srpp folders can simply be deleted.
+If one is unable to install the CPR, a zip file containing CPR and its dependencies, SRD and SRPP, can be downloaded from `Github <https://github.com/rsi-models/CPR/releases>`_ (choose the file CPR_with_dep.zip in the latest release). To start using *CPR*, it suffices to unzip the file in the directory of your choice and either work from that directory or add the directory to the path (for example by using the module *sys*). A jupyter notebook explaining how CPR works, *Tutorial CPR*, is also included in the zip file.
+If one does not want the CPR anymore, the *cpr*, *srd* and *srpp* folders can simply be deleted.
 
 For further details on how to use the CPR, please consult the :ref:`tutorial` section.
 
