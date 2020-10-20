@@ -23,26 +23,14 @@ To uninstall the CPR, the SRD and the SRPP, pip can be used::
 
   pip uninstall cpr-rsi srd srpp
 
-Development/Alternative Install
-===============================
+Alternative Install
+===================
 
-If one is unable to use pip, or to install the CPR in order to modify it, retrieving it from Github is the first step::
-
-  git clone https://github.com/rsi-models/CPR.git
-
-Then it can be installed by going to cpr/ from the terminal and launching::
-
-  pip install -e .
-
-The changes made will directly impact the installed file.
-
-Such a development install must be made within an environment (e.g. `conda environment <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`_) that includes *pandas* and *numpy*.
-
-If one does not want the CPR anymore, the *cpr*, *srd* and *srpp* folders can simply be deleted.
-
+If one is unable to install the CPR, a zip file containing CPR and its dependencies, SRD and SRPP, can be downloaded from `Github <https://github.com/rsi-models/CPR/releases>`_ (choose the file CPR_with_dep.zip in the latest release). To start using CPR, it suffices to unzip the file in the directory of your choice and either work from that directory or add the directory to the path (for example by using the module *sys*). A jupyter notebook explaining how CPR works, *Tutorial CPR*, is also included in the zip file.
+If one does not want the CPR anymore, the cpr, srd and srpp folders can simply be deleted.
 
 For further details on how to use the CPR, please consult the :ref:`tutorial` section.
 
 As mentioned elsewhere, note the CPR is provided "as is" under `an MIT license <https://rsi-models.github.io/CPR/credits.html#licence>`_.
 
-If you have questions, comments or suggestions, do not hesitate to contact us (:ref:`nous_contacter`).
+If you have questions, comments or suggestions, do not hesitate to :ref:`contact us <nous_contacter>`.    

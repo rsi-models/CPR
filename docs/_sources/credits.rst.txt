@@ -5,10 +5,11 @@ Contributors
 ************
 David Boisclair, Ismaël Choinière-Crèvecœur, Pierre-Carl Michaud, Pierre-Yves Yanni
 
-.. _nous_contacter:
-
 Contact Person
 **************
+
+.. _nous_contacter:
+
 `Pierre-Yves Yanni <pierre-yves.yanni@hec.ca>`_
 
 Licence
