@@ -20,7 +20,8 @@ autodoc_member_order = 'bysource'
 
 project = 'CPR'
 copyright = '2020, RSI Team at HEC Montréal'
-author = 'David Boisclair, Ismaël Choinière-Crèvecœur, Pierre-Carl Michaud & Pierre-Yves Yanni'
+author = 'Team RSI'
+#author = 'David Boisclair, Ismaël Choinière-Crèvecœur, \n Pierre-Carl Michaud & Pierre-Yves Yanni'
 
 # The full version, including alpha/beta/rc tags
 release = '0.0.1'
@@ -32,6 +33,7 @@ release = '0.0.1'
 # ones.
 extensions = ["sphinx_rtd_theme", "sphinx.ext.autodoc", "sphinx.ext.napoleon",
               "sphinx.ext.mathjax"]
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

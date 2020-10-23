@@ -37,3 +37,9 @@ The CPR and the other tools it uses (SRD and SRPP) are written in Python, a mode
    tools.rst
    tutorial.rst
    credits.rst
+
+
+PDF Documentation
+=================
+
+Documentation :download:`pdf <../build/latex/CPR.pdf>`
