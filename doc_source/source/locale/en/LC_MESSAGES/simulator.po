@@ -8,11 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CPR \n"
 "Report-Msgid-Bugs-To: \n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2020-10-28 17:49-0400\n"
-=======
 "POT-Creation-Date: 2020-10-28 15:37-0400\n"
->>>>>>> 6627876ec91596132849bcec227995f3ac497841
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,11 +42,7 @@ msgstr ""
 #: CPR.simulator.prepare_wages CPR.simulator.reset_accounts
 #: CPR.simulator.simulate CPR.simulator.update_ages CPR.simulator.update_assets
 #: CPR.simulator.update_debts of
-<<<<<<< HEAD
-msgid "Parameters"
-=======
 msgid "Paramètres"
->>>>>>> 6627876ec91596132849bcec227995f3ac497841
 msgstr ""
 
 #: CPR.simulator.simulate:3 of
@@ -76,11 +68,7 @@ msgstr ""
 
 #: CPR.simulator.check_liquidation CPR.simulator.check_tax_unreg
 #: CPR.simulator.extract_time_series CPR.simulator.simulate of
-<<<<<<< HEAD
-msgid "Returns"
-=======
 msgid "Renvoie"
->>>>>>> 6627876ec91596132849bcec227995f3ac497841
 msgstr ""
 
 #: CPR.simulator.simulate:10 of
@@ -91,11 +79,7 @@ msgstr ""
 
 #: CPR.simulator.check_liquidation CPR.simulator.check_tax_unreg
 #: CPR.simulator.simulate of
-<<<<<<< HEAD
-msgid "Return type"
-=======
 msgid "Type renvoyé"
->>>>>>> 6627876ec91596132849bcec227995f3ac497841
 msgstr ""
 
 #: CPR.simulator.extract_time_series:1 of

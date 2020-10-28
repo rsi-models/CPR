@@ -8,11 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CPR \n"
 "Report-Msgid-Bugs-To: \n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2020-10-28 17:49-0400\n"
-=======
 "POT-Creation-Date: 2020-10-28 15:37-0400\n"
->>>>>>> 6627876ec91596132849bcec227995f3ac497841
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,11 +34,7 @@ msgstr ""
 
 #: CPR.tools.add_params_as_attr CPR.tools.change_params CPR.tools.create_nom
 #: CPR.tools.create_nom_real CPR.tools.create_real CPR.tools.get_params of
-<<<<<<< HEAD
-msgid "Parameters"
-=======
 msgid "Paramètres"
->>>>>>> 6627876ec91596132849bcec227995f3ac497841
 msgstr ""
 
 #: CPR.tools.add_params_as_attr:5 CPR.tools.get_params:3 of
@@ -55,11 +47,7 @@ msgstr ""
 
 #: CPR.tools.create_nom CPR.tools.create_nom_real CPR.tools.create_real
 #: CPR.tools.get_params of
-<<<<<<< HEAD
-msgid "Returns"
-=======
 msgid "Renvoie"
->>>>>>> 6627876ec91596132849bcec227995f3ac497841
 msgstr ""
 
 #: CPR.tools.get_params:8 of
@@ -67,11 +55,7 @@ msgid "Dictionary of parameters."
 msgstr ""
 
 #: CPR.tools.create_nom CPR.tools.create_real CPR.tools.get_params of
-<<<<<<< HEAD
-msgid "Return type"
-=======
 msgid "Type renvoyé"
->>>>>>> 6627876ec91596132849bcec227995f3ac497841
 msgstr ""
 
 #: CPR.tools.add_params_as_attr:1 of

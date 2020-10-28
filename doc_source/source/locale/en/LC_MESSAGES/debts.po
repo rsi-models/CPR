@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CPR \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-28 17:49-0400\n"
+"POT-Creation-Date: 2020-10-28 15:37-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,11 +30,7 @@ msgid "This class manages all debts. All amounts are nominal."
 msgstr ""
 
 #: CPR.debts.Debt CPR.debts.Debt.estimate_init_term CPR.debts.Debt.update of
-<<<<<<< HEAD
-msgid "Parameters"
-=======
 msgid "Paramètres"
->>>>>>> 6627876ec91596132849bcec227995f3ac497841
 msgstr ""
 
 #: CPR.debts.Debt:3 of
@@ -59,11 +55,7 @@ msgid "Estimate the term of the debt."
 msgstr ""
 
 #: CPR.debts.Debt.estimate_init_term of
-<<<<<<< HEAD
-msgid "Returns"
-=======
 msgid "Renvoie"
->>>>>>> 6627876ec91596132849bcec227995f3ac497841
 msgstr ""
 
 #: CPR.debts.Debt.estimate_init_term:8 of
@@ -71,11 +63,7 @@ msgid "term of the debt"
 msgstr ""
 
 #: CPR.debts.Debt.estimate_init_term of
-<<<<<<< HEAD
-msgid "Return type"
-=======
 msgid "Type renvoyé"
->>>>>>> 6627876ec91596132849bcec227995f3ac497841
 msgstr ""
 
 #: CPR.debts.Debt.update:1 of

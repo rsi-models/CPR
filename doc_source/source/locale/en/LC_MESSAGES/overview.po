@@ -8,11 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CPR \n"
 "Report-Msgid-Bugs-To: \n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2020-10-28 17:49-0400\n"
-=======
 "POT-Creation-Date: 2020-10-28 14:13-0400\n"
->>>>>>> 6627876ec91596132849bcec227995f3ac497841
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,11 +19,7 @@ msgstr ""
 
 #: ../../source/overview.rst:3
 msgid "Getting Started With the CPR"
-<<<<<<< HEAD
-msgstr "Commencer avec le CPR"
-=======
 msgstr ""
->>>>>>> 6627876ec91596132849bcec227995f3ac497841
 
 #: ../../source/overview.rst:5
 msgid ""
