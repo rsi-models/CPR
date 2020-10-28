@@ -1,0 +1,466 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, RSI Team at HEC Montréal
+# This file is distributed under the same license as the CPR package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: CPR \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-28 17:49-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/assets.rst:2
+msgid "Assets"
+msgstr ""
+
+#: ../../source/assets.rst:4
+msgid ""
+"This module manages all assets using various classes and functions: "
+"pension plans, individual savings (registered and unregistered), housing,"
+" business assets. It uses the contributions and room used as inputs as "
+"well as returns generated in the Macro module, and it updates all asset-"
+"related variables as the simulation progresses."
+msgstr ""
+
+#: CPR.assets.ContributionRoom:1 of
+msgid "This class manages contribution room for TFSAs and RRSPs."
+msgstr ""
+
+#: CPR.assets.Business:3 CPR.assets.ContributionRoom:3 CPR.assets.RealAsset:3
+#: CPR.assets.RppDB:3 CPR.assets.RppDC:3 CPR.assets.UnregAsset:3 of
+msgid "All amounts are nominal."
+msgstr ""
+
+#: CPR.assets.Business CPR.assets.Business.liquidate CPR.assets.Business.update
+#: CPR.assets.ContributionRoom
+#: CPR.assets.ContributionRoom.adjust_db_contributions
+#: CPR.assets.ContributionRoom.adjust_dc_contributions
+#: CPR.assets.ContributionRoom.adjust_employees_contributions
+#: CPR.assets.ContributionRoom.adjust_rrif
+#: CPR.assets.ContributionRoom.adjust_rrsp_contributions
+#: CPR.assets.ContributionRoom.adjust_tfsa_contributions
+#: CPR.assets.ContributionRoom.adjust_unreg_contributions
+#: CPR.assets.ContributionRoom.compute_contributions
+#: CPR.assets.ContributionRoom.update_rrsp_room
+#: CPR.assets.ContributionRoom.update_tfsa_room CPR.assets.FinAsset
+#: CPR.assets.FinAsset.rate CPR.assets.FinAsset.rrif_withdrawal
+#: CPR.assets.FinAsset.update CPR.assets.RealAsset
+#: CPR.assets.RealAsset.impute_rent CPR.assets.RealAsset.update
+#: CPR.assets.RppDB CPR.assets.RppDB.adjust_for_penalty
+#: CPR.assets.RppDB.compute_benefits CPR.assets.RppDB.compute_cpp_adjustment
+#: CPR.assets.RppDC CPR.assets.UnregAsset
+#: CPR.assets.UnregAsset.adjust_cap_losses CPR.assets.UnregAsset.compute_income
+#: CPR.assets.UnregAsset.rate CPR.assets.UnregAsset.update of
+msgid "Parameters"
+msgstr ""
+
+#: CPR.assets.ContributionRoom:5 of
+msgid "initial RRSP contribution room available"
+msgstr ""
+
+#: CPR.assets.ContributionRoom:7 of
+msgid "initial TFSA contribution room available"
+msgstr ""
+
+#: CPR.assets.ContributionRoom.compute_contributions:1 of
+msgid ""
+"Function to update contribution room for RRSPs and TFSAs, using the 2 "
+"other functions below (which themselves call the other functions of the "
+"class)."
+msgstr ""
+
+#: CPR.assets.ContributionRoom.adjust_db_contributions:3
+#: CPR.assets.ContributionRoom.adjust_dc_contributions:5
+#: CPR.assets.ContributionRoom.adjust_employees_contributions:3
+#: CPR.assets.ContributionRoom.adjust_rrif:3
+#: CPR.assets.ContributionRoom.adjust_rrsp_contributions:7
+#: CPR.assets.ContributionRoom.adjust_tfsa_contributions:5
+#: CPR.assets.ContributionRoom.adjust_unreg_contributions:3
+#: CPR.assets.ContributionRoom.compute_contributions:3
+#: CPR.assets.ContributionRoom.update_rrsp_room:3
+#: CPR.assets.ContributionRoom.update_tfsa_room:3 CPR.assets.FinAsset:3
+#: CPR.assets.FinAsset.rrif_withdrawal:3 CPR.assets.RppDB:5
+#: CPR.assets.RppDB.adjust_for_penalty:5 CPR.assets.RppDB.compute_benefits:5
+#: CPR.assets.RppDB.compute_cpp_adjustment:3 CPR.assets.RppDC:5
+#: CPR.assets.UnregAsset:5 of
+msgid "instance of the class Person"
+msgstr ""
+
+#: CPR.assets.Business.update:5
+#: CPR.assets.ContributionRoom.adjust_db_contributions:5
+#: CPR.assets.ContributionRoom.adjust_dc_contributions:7
+#: CPR.assets.ContributionRoom.adjust_rrif:5
+#: CPR.assets.ContributionRoom.adjust_rrsp_contributions:9
+#: CPR.assets.ContributionRoom.adjust_tfsa_contributions:7
+#: CPR.assets.ContributionRoom.adjust_unreg_contributions:5
+#: CPR.assets.ContributionRoom.compute_contributions:5
+#: CPR.assets.ContributionRoom.update_rrsp_room:5
+#: CPR.assets.ContributionRoom.update_tfsa_room:5 CPR.assets.FinAsset.rate:5
+#: CPR.assets.FinAsset.update:5 CPR.assets.RealAsset.impute_rent:5
+#: CPR.assets.RealAsset.update:5 CPR.assets.UnregAsset.compute_income:5
+#: CPR.assets.UnregAsset.rate:5 CPR.assets.UnregAsset.update:5 of
+msgid "year"
+msgstr ""
+
+#: CPR.assets.Business.liquidate:3
+#: CPR.assets.ContributionRoom.adjust_db_contributions:7
+#: CPR.assets.ContributionRoom.adjust_rrif:7
+#: CPR.assets.ContributionRoom.adjust_tfsa_contributions:9
+#: CPR.assets.ContributionRoom.compute_contributions:7
+#: CPR.assets.ContributionRoom.update_rrsp_room:7
+#: CPR.assets.ContributionRoom.update_tfsa_room:7
+#: CPR.assets.FinAsset.rrif_withdrawal:5 CPR.assets.FinAsset.update:7
+#: CPR.assets.RppDB.adjust_for_penalty:7 CPR.assets.RppDB.compute_benefits:7
+#: CPR.assets.RppDB.compute_cpp_adjustment:5 CPR.assets.RppDC:7
+#: CPR.assets.UnregAsset.update:7 of
+msgid "instance of the class Common"
+msgstr ""
+
+#: CPR.assets.Business.update:7 CPR.assets.ContributionRoom.adjust_rrif:9
+#: CPR.assets.ContributionRoom.adjust_tfsa_contributions:11
+#: CPR.assets.ContributionRoom.compute_contributions:9
+#: CPR.assets.FinAsset.update:9 CPR.assets.RealAsset.impute_rent:7
+#: CPR.assets.RealAsset.update:7 CPR.assets.UnregAsset:9
+#: CPR.assets.UnregAsset.update:9 of
+msgid "instance of the class Prices"
+msgstr ""
+
+#: CPR.assets.ContributionRoom.update_rrsp_room:1 of
+msgid "Function to update RRSP contribution room."
+msgstr ""
+
+#: CPR.assets.ContributionRoom.update_tfsa_room:1 of
+msgid "Function to update TFSA contribution room."
+msgstr ""
+
+#: CPR.assets.ContributionRoom.adjust_db_contributions:1 of
+msgid "Function to adjust RRSP contribution room to DB RPP contributions."
+msgstr ""
+
+#: CPR.assets.ContributionRoom.adjust_dc_contributions:1 of
+msgid "Function to adjust RRSP contribution room to DC RPP contributions."
+msgstr ""
+
+#: CPR.assets.ContributionRoom.adjust_dc_contributions:3
+#: CPR.assets.ContributionRoom.adjust_rrsp_contributions:3 of
+msgid ""
+"If contribution room is insufficent for the intended/planned RRSP "
+"contributions, the \"excess\" contributions are channeled to TFSA."
+msgstr ""
+
+#: CPR.assets.ContributionRoom.adjust_employees_contributions:1 of
+msgid ""
+"Function to compute employee contributions to DC RPPs (later used to "
+"caculate taxes)."
+msgstr ""
+
+#: CPR.assets.ContributionRoom.adjust_rrsp_contributions:1 of
+msgid "Function to adjust RRSP contribution for contributions other than to RPPs."
+msgstr ""
+
+#: CPR.assets.ContributionRoom.adjust_rrsp_contributions:5
+#: CPR.assets.FinAsset:7 of
+msgid "type of account"
+msgstr ""
+
+#: CPR.assets.ContributionRoom.adjust_tfsa_contributions:1 of
+msgid ""
+"Function to adjust TFSA contribution room to TFSA contributions "
+"(including \"excess\" DC RPP and RRSP contributions)."
+msgstr ""
+
+#: CPR.assets.ContributionRoom.adjust_tfsa_contributions:3 of
+msgid ""
+"If contribution room is insufficent for the intended/planned TFSA "
+"contributions, the \"excess\" contributions are channeled to unregistered"
+" accounts."
+msgstr ""
+
+#: CPR.assets.ContributionRoom.adjust_rrif:1 of
+msgid ""
+"Function to adjust DC RPP and RRSP accounts to mandatory RRIF withdrawals"
+" (RRIFs are not separately modelled in this version)."
+msgstr ""
+
+#: CPR.assets.Business.liquidate CPR.assets.ContributionRoom.adjust_rrif
+#: CPR.assets.FinAsset.liquidate CPR.assets.FinAsset.rate
+#: CPR.assets.FinAsset.rrif_withdrawal CPR.assets.RealAsset.liquidate
+#: CPR.assets.RppDB.compute_cpp_adjustment
+#: CPR.assets.UnregAsset.adjust_cap_losses CPR.assets.UnregAsset.rate of
+msgid "Returns"
+msgstr ""
+
+#: CPR.assets.ContributionRoom.adjust_rrif:12 of
+msgid "Nominal amount that needs to be withdrawn."
+msgstr ""
+
+#: CPR.assets.Business.liquidate CPR.assets.ContributionRoom.adjust_rrif
+#: CPR.assets.FinAsset.liquidate CPR.assets.FinAsset.rate
+#: CPR.assets.FinAsset.rrif_withdrawal CPR.assets.RealAsset.liquidate
+#: CPR.assets.RppDB.compute_cpp_adjustment
+#: CPR.assets.UnregAsset.adjust_cap_losses CPR.assets.UnregAsset.rate of
+msgid "Return type"
+msgstr ""
+
+#: CPR.assets.ContributionRoom.adjust_unreg_contributions:1 of
+msgid ""
+"Function to adjust contributions to unregistered accounts for \"excess\" "
+"TFSA contributions channeled to them."
+msgstr ""
+
+#: CPR.assets.ContributionRoom.reset:1 of
+msgid "Reset RRSP and TFSA contribution rooms to their inital values."
+msgstr ""
+
+#: CPR.assets.FinAsset:1 of
+msgid "This class manages registered accounts. All amounts are nominal."
+msgstr ""
+
+#: CPR.assets.FinAsset:5 CPR.assets.RealAsset.impute_rent:3
+#: CPR.assets.UnregAsset:7 of
+msgid "household"
+msgstr ""
+
+#: CPR.assets.FinAsset.update:1 of
+msgid ""
+"Function to update the balance to account for contributions, withdrawals,"
+" and returns."
+msgstr ""
+
+#: CPR.assets.FinAsset.rate:3 CPR.assets.FinAsset.update:3
+#: CPR.assets.UnregAsset.compute_income:3 CPR.assets.UnregAsset.rate:3
+#: CPR.assets.UnregAsset.update:3 of
+msgid "dictionary of returns"
+msgstr ""
+
+#: CPR.assets.FinAsset.rate:1 of
+msgid ""
+"Function to compute the rate of return given the mix of assets in the "
+"account."
+msgstr ""
+
+#: CPR.assets.FinAsset.rate:8 CPR.assets.UnregAsset.rate:8 of
+msgid "Rate of return (net of fees)."
+msgstr ""
+
+#: CPR.assets.FinAsset.rrif_withdrawal:1 of
+msgid "Function to manage mandatory RRIF withdrawals."
+msgstr ""
+
+#: CPR.assets.FinAsset.rrif_withdrawal:8 of
+msgid "Amount of mandatory withdrawal."
+msgstr ""
+
+#: CPR.assets.FinAsset.liquidate:1 of
+msgid ""
+"Function to liquidate an account, setting balance, contributions and "
+"withdrawals to zero."
+msgstr ""
+
+#: CPR.assets.FinAsset.liquidate:3 of
+msgid "Amount from liquidation (before taxes)."
+msgstr ""
+
+#: CPR.assets.FinAsset.reset:1 of
+msgid "Reset the balance and withdrawal to its initial balance."
+msgstr ""
+
+#: CPR.assets.UnregAsset:1 of
+msgid "This class manages unregistered accounts."
+msgstr ""
+
+#: CPR.assets.UnregAsset.update:1 of
+msgid "Function to update the balance for contributions, withdrawals and returns."
+msgstr ""
+
+#: CPR.assets.UnregAsset.compute_income:1 of
+msgid ""
+"Function to compute new capital gains and taxable income (dividends and "
+"interests)."
+msgstr ""
+
+#: CPR.assets.UnregAsset.rate:1 of
+msgid ""
+"Function that computes the rate of return given the mix of assets in "
+"account."
+msgstr ""
+
+#: CPR.assets.UnregAsset.update_balance:1 of
+msgid ""
+"Function to update to balance and separate between non-taxable funds "
+"(i.e. previous post-tax balance), capital gains, dividends, and "
+"interests."
+msgstr ""
+
+#: CPR.assets.UnregAsset.prepare_withdrawal:1 of
+msgid ""
+"Function to separate a withdrawal from the balance at the end of the "
+"period, and separately identify non-taxable funds, capital gains, "
+"dividends, and interests."
+msgstr ""
+
+#: CPR.assets.UnregAsset.adjust_income:1 of
+msgid ""
+"Function to adjust investment income (dividends and interests) for "
+"withdrawals."
+msgstr ""
+
+#: CPR.assets.UnregAsset.adjust_cap_losses:1 of
+msgid ""
+"Function to compute capital losses from previous years used for deduction"
+" against capital gains, and adjust realized capital losses accordingly."
+msgstr ""
+
+#: CPR.assets.UnregAsset.adjust_cap_losses:4 of
+msgid "capital gains"
+msgstr ""
+
+#: CPR.assets.UnregAsset.adjust_cap_losses:7 of
+msgid "Capital losses (to be deducted)."
+msgstr ""
+
+#: CPR.assets.UnregAsset.adjust_final_balance:1 of
+msgid ""
+"Function that adjusts the final balance for withdrawals, dividends and "
+"interests."
+msgstr ""
+
+#: CPR.assets.UnregAsset.liquidate:1 of
+msgid "Function to liquidate the account and adjust capital losses."
+msgstr ""
+
+#: CPR.assets.UnregAsset.reset:1 of
+msgid ""
+"Function to reset the balance, capital gains, and withdrawals to their "
+"initial values."
+msgstr ""
+
+#: CPR.assets.RppDC:1 of
+msgid "This class manages DC RPPs."
+msgstr ""
+
+#: CPR.assets.RppDB:1 of
+msgid "This class manages DB RPPs."
+msgstr ""
+
+#: CPR.assets.RppDB.compute_benefits:1 of
+msgid ""
+"Function that computes RPP DB benefits and adjusts them for CPP/QPP "
+"integration."
+msgstr ""
+
+#: CPR.assets.RppDB.compute_benefits:3 of
+msgid ""
+"If RPP benefits are smaller than CPP/QPP benefits, RPP benefits are set "
+"to zero once the receipt of CPP/QPP retirement benefits begins."
+msgstr ""
+
+#: CPR.assets.RppDB.adjust_for_penalty:1 of
+msgid ""
+"Function to compute a penalty for individuals who begin to receive DB RPP"
+" benefits \"early\", i.e. before they accumulate the maximum number of "
+"years of service, if they are younger than the age at which benefits can "
+"start without penalty (the \"early retirement age\")."
+msgstr ""
+
+#: CPR.assets.RppDB.adjust_for_penalty:3 of
+msgid ""
+"By default, the penalty applies to those who begin RPP benefits receipt "
+"before reaching 35 years of service and before age 62. These values can "
+"be modified."
+msgstr ""
+
+#: CPR.assets.RppDB.compute_cpp_adjustment:1 of
+msgid ""
+"Function to compute an adjustment (reduction) to DB RPP benefits to "
+"account for CPP/QPP integration."
+msgstr ""
+
+#: CPR.assets.RppDB.compute_cpp_adjustment:8 of
+msgid "Amount of benefit adjustment for CPP/QPP integration."
+msgstr ""
+
+#: CPR.assets.RppDB.reset:1 of
+msgid ""
+"Function that resets the benefits and contribution rates to their initial"
+" values."
+msgstr ""
+
+#: CPR.assets.RealAsset:1 of
+msgid "This class manages housing and residences."
+msgstr ""
+
+#: CPR.assets.RealAsset:5 of
+msgid "dictionary containing values of residences"
+msgstr ""
+
+#: CPR.assets.RealAsset:7 of
+msgid "primary or secondary residence"
+msgstr ""
+
+#: CPR.assets.RealAsset.update:1 of
+msgid "Function to update the balance (residence values) for growth in price."
+msgstr ""
+
+#: CPR.assets.RealAsset.update:3 of
+msgid "nominal return to housing (capital gains)"
+msgstr ""
+
+#: CPR.assets.RealAsset.liquidate:1 of
+msgid ""
+"Function to liquidate the asset, compute capital gains if they apply, and"
+" set balance to zero."
+msgstr ""
+
+#: CPR.assets.RealAsset.liquidate:3 of
+msgid "Amount from asset liquidation (before taxes)."
+msgstr ""
+
+#: CPR.assets.RealAsset.reset:1 of
+msgid ""
+"Function to reset residence value to its initial value and set capital "
+"gains to zero."
+msgstr ""
+
+#: CPR.assets.RealAsset.impute_rent:1 of
+msgid "Function to compute imputed rent."
+msgstr ""
+
+#: CPR.assets.Business:1 of
+msgid "This class manages a business (as an asset owned by the houshehold)."
+msgstr ""
+
+#: CPR.assets.Business:5 of
+msgid "dictionary containing value of business"
+msgstr ""
+
+#: CPR.assets.Business.update:1 of
+msgid "Function to update the balance and dividends."
+msgstr ""
+
+#: CPR.assets.Business.update:3 of
+msgid "returns on business assets"
+msgstr ""
+
+#: CPR.assets.Business.liquidate:1 of
+msgid ""
+"Function to liquidate account (business assets), compute capital gains, "
+"and set balance to zero."
+msgstr ""
+
+#: CPR.assets.Business.liquidate:6 of
+msgid "Selling price of the business assets."
+msgstr ""
+
+#: CPR.assets.Business.reset:1 of
+msgid "Reset business value and capital gains to their initial values."
+msgstr ""
+

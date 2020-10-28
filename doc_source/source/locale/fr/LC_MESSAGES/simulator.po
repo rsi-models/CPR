@@ -1,0 +1,246 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, RSI Team at HEC Montréal
+# This file is distributed under the same license as the CPR package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: CPR \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-28 17:49-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/simulator.rst:2
+msgid "Simulator"
+msgstr ""
+
+#: ../../source/simulator.rst:4
+msgid "This module runs the simulations."
+msgstr ""
+
+#: CPR.simulator.simulate:1 of
+msgid ""
+"Function that projects assets, RPPs and debts until the time of "
+"retirement."
+msgstr ""
+
+#: CPR.simulator.adjust_contributions CPR.simulator.check_liquidation
+#: CPR.simulator.check_tax_unreg CPR.simulator.claim_cpp
+#: CPR.simulator.compute_rpp CPR.simulator.contribute_cpp
+#: CPR.simulator.extract_time_series CPR.simulator.get_assets
+#: CPR.simulator.get_benefits_cpp CPR.simulator.get_contributions_assets
+#: CPR.simulator.get_inc_rrsp CPR.simulator.get_other_non_taxable
+#: CPR.simulator.get_other_taxable CPR.simulator.initialize_cpp_account
+#: CPR.simulator.manage_liquidations CPR.simulator.prepare_taxes
+#: CPR.simulator.prepare_wages CPR.simulator.reset_accounts
+#: CPR.simulator.simulate CPR.simulator.update_ages CPR.simulator.update_assets
+#: CPR.simulator.update_debts of
+msgid "Parameters"
+msgstr ""
+
+#: CPR.simulator.simulate:3 of
+msgid "instance of the class Hhold and simulation number"
+msgstr ""
+
+#: CPR.simulator.adjust_contributions:7 CPR.simulator.compute_rpp:7
+#: CPR.simulator.contribute_cpp:7 CPR.simulator.extract_time_series:5
+#: CPR.simulator.get_benefits_cpp:9 CPR.simulator.get_contributions_assets:7
+#: CPR.simulator.get_other_taxable:7 CPR.simulator.initialize_cpp_account:7
+#: CPR.simulator.manage_liquidations:7 CPR.simulator.prepare_taxes:7
+#: CPR.simulator.prepare_wages:7 CPR.simulator.simulate:5
+#: CPR.simulator.update_assets:9 CPR.simulator.update_debts:9 of
+msgid "instance of the class Common"
+msgstr ""
+
+#: CPR.simulator.adjust_contributions:9 CPR.simulator.extract_time_series:7
+#: CPR.simulator.manage_liquidations:9 CPR.simulator.prepare_taxes:9
+#: CPR.simulator.prepare_wages:9 CPR.simulator.simulate:7
+#: CPR.simulator.update_assets:11 CPR.simulator.update_debts:11 of
+msgid "instance of the class Prices"
+msgstr ""
+
+#: CPR.simulator.check_liquidation CPR.simulator.check_tax_unreg
+#: CPR.simulator.extract_time_series CPR.simulator.simulate of
+msgid "Returns"
+msgstr ""
+
+#: CPR.simulator.simulate:10 of
+msgid ""
+"dictionary containing households' characteristics before and after "
+"retirement"
+msgstr ""
+
+#: CPR.simulator.check_liquidation CPR.simulator.check_tax_unreg
+#: CPR.simulator.simulate of
+msgid "Return type"
+msgstr ""
+
+#: CPR.simulator.extract_time_series:1 of
+msgid ""
+"Function that attaches to households stochastic processes on asset "
+"returns."
+msgstr ""
+
+#: CPR.simulator.extract_time_series:3 CPR.simulator.prepare_wages:5
+#: CPR.simulator.update_debts:7 of
+msgid "simulation number"
+msgstr ""
+
+#: CPR.simulator.extract_time_series:10 of
+msgid "* *dict* -- returns on assets * *dict* -- price-rent ratio"
+msgstr ""
+
+#: CPR.simulator.extract_time_series:10 of
+msgid "*dict* -- returns on assets"
+msgstr ""
+
+#: CPR.simulator.extract_time_series:11 of
+msgid "*dict* -- price-rent ratio"
+msgstr ""
+
+#: CPR.simulator.prepare_wages:1 of
+msgid "Function that attaches wage profiles to individuals."
+msgstr ""
+
+#: CPR.simulator.claim_cpp:3 CPR.simulator.compute_rpp:3
+#: CPR.simulator.contribute_cpp:3 CPR.simulator.get_assets:3
+#: CPR.simulator.get_benefits_cpp:5 CPR.simulator.get_contributions_assets:3
+#: CPR.simulator.get_inc_rrsp:3 CPR.simulator.get_other_non_taxable:3
+#: CPR.simulator.get_other_taxable:3 CPR.simulator.initialize_cpp_account:3
+#: CPR.simulator.prepare_wages:3 of
+msgid "instance of the class Person"
+msgstr ""
+
+#: CPR.simulator.initialize_cpp_account:1 of
+msgid ""
+"Function that creates a CPP/QPP account and enters past CPP/QPP "
+"contributions based on past wages."
+msgstr ""
+
+#: CPR.simulator.adjust_contributions:3 CPR.simulator.check_liquidation:3
+#: CPR.simulator.check_tax_unreg:3 CPR.simulator.initialize_cpp_account:5
+#: CPR.simulator.manage_liquidations:3 CPR.simulator.prepare_taxes:3
+#: CPR.simulator.reset_accounts:3 CPR.simulator.update_ages:3
+#: CPR.simulator.update_assets:3 CPR.simulator.update_debts:3 of
+msgid "household"
+msgstr ""
+
+#: CPR.simulator.update_ages:1 of
+msgid "Function that computes age for a given year."
+msgstr ""
+
+#: CPR.simulator.adjust_contributions:5 CPR.simulator.contribute_cpp:5
+#: CPR.simulator.get_benefits_cpp:7 CPR.simulator.get_contributions_assets:5
+#: CPR.simulator.manage_liquidations:5 CPR.simulator.prepare_taxes:5
+#: CPR.simulator.update_ages:5 CPR.simulator.update_assets:5
+#: CPR.simulator.update_debts:5 of
+msgid "year"
+msgstr ""
+
+#: CPR.simulator.update_debts:1 of
+msgid "Function that updates debt payments and balances."
+msgstr ""
+
+#: CPR.simulator.adjust_contributions:1 of
+msgid ""
+"Function that adjusts contributions to all account types (RRSP, other "
+"registered, TFSA) and to pensions plans (DC and DB RPPs) so as to respect"
+" available contribution rooms."
+msgstr ""
+
+#: CPR.simulator.update_assets:1 of
+msgid "Function that updates assets every year."
+msgstr ""
+
+#: CPR.simulator.update_assets:7 of
+msgid "dictionary of returns"
+msgstr ""
+
+#: CPR.simulator.manage_liquidations:1 of
+msgid "Function that manages the liquidation of assets upon retirement."
+msgstr ""
+
+#: CPR.simulator.contribute_cpp:1 of
+msgid "Function that records CPP/QPP contributions."
+msgstr ""
+
+#: CPR.simulator.claim_cpp:1 of
+msgid "Function to claim CPP/QPP benefits."
+msgstr ""
+
+#: CPR.simulator.check_tax_unreg:1 of
+msgid "Function that checks whether there are taxable returns to assets."
+msgstr ""
+
+#: CPR.simulator.check_liquidation:6 CPR.simulator.check_tax_unreg:6 of
+msgid "True or False"
+msgstr ""
+
+#: CPR.simulator.check_liquidation:1 of
+msgid "Function to check whether there are liquidated assets to be taxed."
+msgstr ""
+
+#: CPR.simulator.prepare_taxes:1 of
+msgid "Function to prepare the variables used in the SRD (in nominal terms)."
+msgstr ""
+
+#: CPR.simulator.get_assets:1 of
+msgid "Function to retrieve assets for social assistance asset test."
+msgstr ""
+
+#: CPR.simulator.get_assets:5 of
+msgid "instance of class Common"
+msgstr ""
+
+#: CPR.simulator.compute_rpp:1 of
+msgid "Compute rpp (DB and pension)."
+msgstr ""
+
+#: CPR.simulator.compute_rpp:5 CPR.simulator.get_inc_rrsp:5
+#: CPR.simulator.get_other_non_taxable:5 CPR.simulator.get_other_taxable:5 of
+msgid "function converting to nominal value"
+msgstr ""
+
+#: CPR.simulator.get_benefits_cpp:1 of
+msgid "Function that computes annual CPP/QPP retirement benefits."
+msgstr ""
+
+#: CPR.simulator.get_benefits_cpp:3 of
+msgid ""
+"s1 is the part of the supplementary benefit due to higher contribution "
+"rates in the 2019-2025 expansion; s2 is the part of the supplementary "
+"benefits attributable to changes in the YMPE; and PRB is for post-"
+"retirement benefits (for individuals who keep working after claiming -- "
+"this feature is not used in the CPR, since individuals automatically "
+"claim in the year they retire)."
+msgstr ""
+
+#: CPR.simulator.get_inc_rrsp:1 of
+msgid "Function that computes RRSP income from withdrawals."
+msgstr ""
+
+#: CPR.simulator.get_other_taxable:1 of
+msgid "Function that computes other taxable income."
+msgstr ""
+
+#: CPR.simulator.get_other_non_taxable:1 of
+msgid "Function that computes other non-taxable income."
+msgstr ""
+
+#: CPR.simulator.get_contributions_assets:1 of
+msgid ""
+"Function that computes contributions to registered and unregistered "
+"accounts (including DC and DB RPP)."
+msgstr ""
+
+#: CPR.simulator.reset_accounts:1 of
+msgid "Function that resets all variables to their initial values."
+msgstr ""
+

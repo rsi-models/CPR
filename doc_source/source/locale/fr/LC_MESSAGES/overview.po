@@ -1,0 +1,108 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, RSI Team at HEC Montréal
+# This file is distributed under the same license as the CPR package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: CPR \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-28 17:49-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/overview.rst:3
+msgid "Getting Started With the CPR"
+msgstr "Commencer avec le CPR"
+
+#: ../../source/overview.rst:5
+msgid ""
+"The CPR and the other tools it uses (SRD and SRPP) are written in Python,"
+" a modern, simple and fast language. In order to use it, it is essential "
+"to ensure first that an up-to-date Python distribution is installed, for "
+"example using Anaconda. In all cases, the minimum requirements to use the"
+" CPR are Python 3.6+ with *numpy*, *pandas* and *xlrd*. Although not "
+"essential, it will also be useful to have a minimal understanding of "
+"Python environments and, if possible, vocabulary (e.g. function, class, "
+"instance, profile)."
+msgstr ""
+
+#: ../../source/overview.rst:8
+msgid "Installing the CPR"
+msgstr ""
+
+#: ../../source/overview.rst:10
+msgid "The CPR can be easily installed using pip::"
+msgstr ""
+
+#: ../../source/overview.rst:14
+msgid ""
+"Please read the `terms of use <https://pypi.org/policy/terms-of-use/>`_ "
+"for *pypi*, the website hosting the package."
+msgstr ""
+
+#: ../../source/overview.rst:16
+msgid ""
+"The CPR uses two other packages that are produced by the RSI and the "
+"Research Chair on Intergenerational Economics (CREEi), which is supported"
+" by the RSI: the Disposable Income Simulator (`Simulateur de revenu "
+"disponible, or SRD <https://creei-models.github.io/srd/>`_; documentation"
+" in French), which computes taxes and major benefits; and the Public "
+"Pension Plans Simulator (`Simulateur de régimes de pensions publiques, or"
+" SRPP <https://creei-models.github.io/srpp/>`_; documentation in French),"
+" which simulates QPP and CPP contributions and benefits. Both the SRD and"
+" the SRPP are automatically installed along with the CPR."
+msgstr ""
+
+#: ../../source/overview.rst:18
+msgid ""
+"In a notebook or a project, the CPR is called by adding the following "
+"command:"
+msgstr ""
+
+#: ../../source/overview.rst:24
+msgid "To uninstall the CPR, the SRD and the SRPP, pip can be used::"
+msgstr ""
+
+#: ../../source/overview.rst:29
+msgid "Alternative Install"
+msgstr ""
+
+#: ../../source/overview.rst:31
+msgid ""
+"If one is unable to install the CPR, a zip file containing CPR and its "
+"dependencies, SRD and SRPP, can be downloaded from `Github "
+"<https://github.com/rsi-models/CPR/releases>`_ (choose the file "
+"CPR_with_dep.zip in the latest release). To start using  the CPR, it "
+"suffices to unzip the file in the directory of your choice and either "
+"work from that directory or add the directory to the path (for example by"
+" using the module *sys*). A jupyter notebook explaining how CPR works, "
+"*Tutorial CPR*, is also included in the zip file. If one does not want "
+"the CPR anymore, the *cpr*, *srd* and *srpp* folders can simply be "
+"deleted."
+msgstr ""
+
+#: ../../source/overview.rst:34
+msgid ""
+"For further details on how to use the CPR, please consult the "
+":ref:`tutorial` section."
+msgstr ""
+
+#: ../../source/overview.rst:36
+msgid ""
+"As mentioned elsewhere, note the CPR is provided \"as is\" under `an MIT "
+"license <https://rsi-models.github.io/CPR/credits.html#licence>`_."
+msgstr ""
+
+#: ../../source/overview.rst:38
+msgid ""
+"If you have questions, comments or suggestions, do not hesitate to "
+":ref:`contact us <nous_contacter>`."
+msgstr ""
+

@@ -1,0 +1,567 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Simulator &mdash; Documentation CPR 0.0.1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Initialisation" href="initialisation.html" />
+    <link rel="prev" title="Main" href="main.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> CPR
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Getting Started With the CPR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main.html">Main</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="initialisation.html">Initialisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="macro.html">Macro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assets.html">Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debts.html">Debts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="taxes.html">Taxes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="annuities.html">Annuities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="life.html">Life</a></li>
+<li class="toctree-l1"><a class="reference internal" href="balance_sheets.html">Balance Sheets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Contributors and Rights of Use</a></li>
+</ul>
+
+            
+          
+    <a href="genindex.html">Index</a>
+  
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CPR</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Simulator</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/simulator.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="simulator">
+<h1>Simulator<a class="headerlink" href="#simulator" title="Lien permanent vers ce titre">¶</a></h1>
+<p>This module runs the simulations.</p>
+<span class="target" id="module-CPR.simulator"></span><dl class="function">
+<dt id="CPR.simulator.simulate">
+<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">simulate</code><span class="sig-paren">(</span><em class="sig-param">job</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.simulate" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function that projects assets, RPPs and debts until the time of retirement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>job</strong> (<em>tuple</em><em>(</em><a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a><em>, </em><em>int</em><em>)</em>) – instance of the class Hhold and simulation number</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie</dt>
+<dd class="field-even"><p>dictionary containing households” characteristics
+before and after retirement</p>
+</dd>
+<dt class="field-odd">Type renvoyé</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.simulator.extract_time_series">
+<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">extract_time_series</code><span class="sig-paren">(</span><em class="sig-param">sim</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.extract_time_series" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function that attaches to households stochastic processes on asset returns.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sim</strong> (<em>int</em>) – simulation number</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>dict</em> – returns on assets</p></li>
+<li><p><em>dict</em> – price-rent ratio</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.simulator.prepare_wages">
+<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">prepare_wages</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">sim</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.prepare_wages" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function that attaches wage profiles to individuals.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
+<li><p><strong>sim</strong> (<em>int</em>) – simulation number</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.simulator.initialize_cpp_account">
+<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">initialize_cpp_account</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">hh</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.initialize_cpp_account" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function that creates a CPP/QPP account and enters past CPP/QPP contributions based on past wages.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.simulator.update_ages">
+<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">update_ages</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.update_ages" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function that computes age for a given year.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.simulator.update_debts">
+<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">update_debts</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">sim</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.update_debts" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function that updates debt payments and balances.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>sim</strong> (<em>int</em>) – simulation number</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.simulator.adjust_contributions">
+<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">adjust_contributions</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.adjust_contributions" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function that adjusts contributions to all account types (RRSP, other registered, TFSA) and to pensions plans (DC and DB RPPs) so as to respect available contribution rooms.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.simulator.update_assets">
+<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">update_assets</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">d_returns</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.update_assets" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function that updates assets every year.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>d_returns</strong> (<em>dict</em>) – dictionary of returns</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.simulator.manage_liquidations">
+<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">manage_liquidations</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.manage_liquidations" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function that manages the liquidation of assets upon retirement.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.simulator.contribute_cpp">
+<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">contribute_cpp</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.contribute_cpp" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function that records CPP/QPP contributions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.simulator.claim_cpp">
+<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">claim_cpp</code><span class="sig-paren">(</span><em class="sig-param">p</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.claim_cpp" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function to claim CPP/QPP benefits.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.simulator.check_tax_unreg">
+<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">check_tax_unreg</code><span class="sig-paren">(</span><em class="sig-param">hh</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.check_tax_unreg" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function that checks whether there are taxable returns to assets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p>
+</dd>
+<dt class="field-even">Renvoie</dt>
+<dd class="field-even"><p>True or False</p>
+</dd>
+<dt class="field-odd">Type renvoyé</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.simulator.check_liquidation">
+<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">check_liquidation</code><span class="sig-paren">(</span><em class="sig-param">hh</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.check_liquidation" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function to check whether there are liquidated assets to be taxed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p>
+</dd>
+<dt class="field-even">Renvoie</dt>
+<dd class="field-even"><p>True or False</p>
+</dd>
+<dt class="field-odd">Type renvoyé</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.simulator.prepare_taxes">
+<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">prepare_taxes</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.prepare_taxes" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function to prepare the variables used in the SRD (in nominal terms).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.simulator.get_assets">
+<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">get_assets</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.get_assets" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function to retrieve assets for social assistance asset test.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of class Common</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.simulator.compute_rpp">
+<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">compute_rpp</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">nom</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.compute_rpp" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Compute rpp (DB and pension).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
+<li><p><strong>nom</strong> (<em>function</em>) – function converting to nominal value</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.simulator.get_benefits_cpp">
+<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">get_benefits_cpp</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.get_benefits_cpp" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function that computes annual CPP/QPP retirement benefits.</p>
+<p>s1 is the part of the supplementary benefit due to higher contribution rates in the 2019-2025 expansion; s2 is the part of the supplementary benefits attributable to changes in the YMPE; and PRB is for post-retirement benefits (for individuals who keep working after claiming – this feature is not used in the CPR, since individuals automatically claim in the year they retire).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.simulator.get_inc_rrsp">
+<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">get_inc_rrsp</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">nom</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.get_inc_rrsp" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function that computes RRSP income from withdrawals.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
+<li><p><strong>nom</strong> (<em>function</em>) – function converting to nominal value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.simulator.get_other_taxable">
+<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">get_other_taxable</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">nom</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.get_other_taxable" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function that computes other taxable income.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
+<li><p><strong>nom</strong> (<em>function</em>) – function converting to nominal value</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.simulator.get_other_non_taxable">
+<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">get_other_non_taxable</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">nom</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.get_other_non_taxable" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function that computes other non-taxable income.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
+<li><p><strong>nom</strong> (<em>function</em>) – function converting to nominal value</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.simulator.get_contributions_assets">
+<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">get_contributions_assets</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.get_contributions_assets" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function that computes contributions to registered and unregistered accounts (including DC and DB RPP).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.simulator.reset_accounts">
+<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">reset_accounts</code><span class="sig-paren">(</span><em class="sig-param">hh</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.reset_accounts" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function that resets all variables to their initial values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="initialisation.html" class="btn btn-neutral float-right" title="Initialisation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="main.html" class="btn btn-neutral float-left" title="Main" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, RSI Team at HEC Montréal
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
