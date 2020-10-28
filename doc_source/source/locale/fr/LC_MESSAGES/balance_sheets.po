@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CPR \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-28 17:49-0400\n"
+"POT-Creation-Date: 2020-10-28 18:20-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,11 +61,7 @@ msgstr ""
 #: CPR.balance_sheets.add_output CPR.balance_sheets.compute_bs_after_ret
 #: CPR.balance_sheets.compute_bs_bef_ret
 #: CPR.balance_sheets.compute_cons_bef_ret of
-<<<<<<< HEAD
 msgid "Parameters"
-=======
-msgid "Paramètres"
->>>>>>> 6627876ec91596132849bcec227995f3ac497841
 msgstr ""
 
 #: CPR.balance_sheets.add_output:3 CPR.balance_sheets.compute_bs_after_ret:3

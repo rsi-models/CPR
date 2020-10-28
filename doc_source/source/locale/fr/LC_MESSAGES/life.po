@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CPR \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-28 17:49-0400\n"
+"POT-Creation-Date: 2020-10-28 18:20-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,11 +34,7 @@ msgstr ""
 
 #: CPR.life.life.table CPR.life.life.table.compute_annuity_factor
 #: CPR.life.life.table.pull_history of
-<<<<<<< HEAD
 msgid "Parameters"
-=======
-msgid "Paramètres"
->>>>>>> 6627876ec91596132849bcec227995f3ac497841
 msgstr ""
 
 #: CPR.life.life.table:3 CPR.life.life.table.pull_history:3 of
@@ -84,11 +80,7 @@ msgid "interest rate"
 msgstr ""
 
 #: CPR.life.life.table.compute_annuity_factor of
-<<<<<<< HEAD
 msgid "Returns"
-=======
-msgid "Renvoie"
->>>>>>> 6627876ec91596132849bcec227995f3ac497841
 msgstr ""
 
 #: CPR.life.life.table.compute_annuity_factor:10 of
@@ -96,10 +88,6 @@ msgid "Annuity factor."
 msgstr ""
 
 #: CPR.life.life.table.compute_annuity_factor of
-<<<<<<< HEAD
 msgid "Return type"
-=======
-msgid "Type renvoyé"
->>>>>>> 6627876ec91596132849bcec227995f3ac497841
 msgstr ""
 
