@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/overview.rst:3
 msgid "Getting Started With the CPR"
-msgstr ""
+msgstr "Commencer avec le CPR"
 
 #: ../../source/overview.rst:5
 msgid ""

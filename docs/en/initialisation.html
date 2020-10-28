@@ -1,8 +1,8 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="'en'" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="'en'" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
@@ -168,7 +168,7 @@
 <h1>Initialisation<a class="headerlink" href="#initialisation" title="Permalink to this headline">¶</a></h1>
 <p>This module sets up households and attaches assets and debts to them. The table below shows all the individual inputs to the CPR (some of them are entered in other modules).</p>
 <img alt="_images/table_inputs.png" src="_images/table_inputs.png" />
-<p>Though an example input file is provided as part of the package, a tutorial is also offered to show users how to modify those inputs to use the ones of their choice. NOTE: users must be careful when using their inputs, as a general error message will be generated if any of the -- numerous -- inputs is incorrectly specified (i.e. contains a mistake or is highly implausible).</p>
+<p>Though an example input file is provided as part of the package, a tutorial is also offered to show users how to modify those inputs to use the ones of their choice. NOTE: users must be careful when using their inputs, as a general error message will be generated if any of the – numerous – inputs is incorrectly specified (i.e. contains a mistake or is highly implausible).</p>
 <dl class="function">
 <dt id="CPR.initialisation.create_hh">
 <code class="sig-prename descclassname">CPR.initialisation.</code><code class="sig-name descname">create_hh</code><span class="sig-paren">(</span><em class="sig-param">index</em>, <em class="sig-param">d_hh</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.create_hh" title="Permalink to this definition">¶</a></dt>
@@ -177,10 +177,10 @@ assets and debts.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>index</strong> (<em>int</em>) -- household index</p></li>
-<li><p><strong>d_hh</strong> (<em>dict</em>) -- dictionary of household features</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) -- instance of the class Common</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) -- instance of the class Prices</p></li>
+<li><p><strong>index</strong> (<em>int</em>) – household index</p></li>
+<li><p><strong>d_hh</strong> (<em>dict</em>) – dictionary of household features</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -199,11 +199,11 @@ assets and debts.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>d_hh</strong> (<em>dict</em>) -- dictionary containing all informations about households</p></li>
-<li><p><strong>l_sp</strong> (<em>list</em>) -- list of features attached to spouses</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) -- instance of the class Common</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) -- instance of the class Prices</p></li>
-<li><p><strong>s_</strong> (<em>bool</em>) -- False for head of household, True otherwise</p></li>
+<li><p><strong>d_hh</strong> (<em>dict</em>) – dictionary containing all informations about households</p></li>
+<li><p><strong>l_sp</strong> (<em>list</em>) – list of features attached to spouses</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>s_</strong> (<em>bool</em>) – False for head of household, True otherwise</p></li>
 </ul>
 </dd>
 </dl>
@@ -214,8 +214,8 @@ assets and debts.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>common</strong> (<em>Common</em>) -- instance of the class Common</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) -- instance of the class Prices</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -234,9 +234,9 @@ assets and debts.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>T</strong> (<em>int</em>) -- length of the time series</p></li>
-<li><p><strong>N</strong> (<em>int</em>) -- number of realisations</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) -- instance of the class Prices</p></li>
+<li><p><strong>T</strong> (<em>int</em>) – length of the time series</p></li>
+<li><p><strong>N</strong> (<em>int</em>) – number of realisations</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -257,12 +257,12 @@ assets and debts.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>d_hh</strong> (<em>dict</em>) -- dictionary containing all informations about households</p></li>
-<li><p><strong>l_hhold</strong> (<em>list</em>) -- list of features attached to the household</p></li>
-<li><p><strong>index</strong> (<em>int</em>) -- household index</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) -- instance of the class Common</p></li>
-<li><p><strong>p0</strong> (<a class="reference internal" href="#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) -- first spouse</p></li>
-<li><p><strong>p1</strong> (<a class="reference internal" href="#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) -- second spouse (in the case of a couple)</p></li>
+<li><p><strong>d_hh</strong> (<em>dict</em>) – dictionary containing all informations about households</p></li>
+<li><p><strong>l_hhold</strong> (<em>list</em>) – list of features attached to the household</p></li>
+<li><p><strong>index</strong> (<em>int</em>) – household index</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>p0</strong> (<a class="reference internal" href="#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – first spouse</p></li>
+<li><p><strong>p1</strong> (<a class="reference internal" href="#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – second spouse (in the case of a couple)</p></li>
 </ul>
 </dd>
 </dl>
@@ -272,7 +272,7 @@ assets and debts.</p>
 <dd><p>Function that sets years of partial and full retirement as well as years in which pre-retirement and post-retirement consumptions are assessed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>common</strong> (<em>Common</em>) -- instance of the class Common</p>
+<dd class="field-odd"><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p>
 </dd>
 </dl>
 </dd></dl>

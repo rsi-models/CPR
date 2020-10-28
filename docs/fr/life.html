@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="'fr'" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="'fr'" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Life &mdash; CPR 0.0.1 documentation</title>
+  <title>Life &mdash; Documentation CPR 0.0.1</title>
   
 
   
@@ -25,6 +25,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
@@ -35,7 +36,7 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="Balance Sheets" href="balance_sheets.html" />
     <link rel="prev" title="Annuities" href="annuities.html" /> 
 </head>
@@ -83,7 +84,7 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Getting Started With the CPR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Commencer avec le CPR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="main.html">Main</a></li>
 <li class="toctree-l1"><a class="reference internal" href="simulator.html">Simulator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="initialisation.html">Initialisation</a></li>
@@ -165,32 +166,32 @@
            <div itemprop="articleBody">
             
   <div class="section" id="life">
-<h1>Life<a class="headerlink" href="#life" title="Permalink to this headline">¶</a></h1>
+<h1>Life<a class="headerlink" href="#life" title="Lien permanent vers ce titre">¶</a></h1>
 <p>The Life module contains the class that computes annuity factors for all individuals in the simulation,
 using mortality tables by province, gender as provided by Statistics Canada.</p>
 <dl class="class">
 <dt id="CPR.life.life.table">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.life.life.</code><code class="sig-name descname">table</code><span class="sig-paren">(</span><em class="sig-param">prov='qc'</em>, <em class="sig-param">scenario='M'</em>, <em class="sig-param">gender='males'</em>, <em class="sig-param">web=False</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">CPR.life.life.</code><code class="sig-name descname">table</code><span class="sig-paren">(</span><em class="sig-param">prov='qc'</em>, <em class="sig-param">scenario='M'</em>, <em class="sig-param">gender='males'</em>, <em class="sig-param">web=False</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Class computing annuity factors by province, gender, age and birth year.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>prov</strong> (<em>str</em>) -- province; default=qc</p></li>
-<li><p><strong>scenario</strong> (<em>str</em>) -- longevity scenario; default=M (Medium mortality)</p></li>
-<li><p><strong>gender</strong> (<em>str</em>) -- gender; default=males</p></li>
-<li><p><strong>web</strong> (<em>bool</em>) -- True to pull data from internet (option unavailable at the moment), False otherwise; default=False</p></li>
+<li><p><strong>prov</strong> (<em>str</em>) – province; default=qc</p></li>
+<li><p><strong>scenario</strong> (<em>str</em>) – longevity scenario; default=M (Medium mortality)</p></li>
+<li><p><strong>gender</strong> (<em>str</em>) – gender; default=males</p></li>
+<li><p><strong>web</strong> (<em>bool</em>) – True to pull data from internet (option unavailable at the moment), False otherwise; default=False</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="method">
 <dt id="CPR.life.life.table.pull_history">
-<code class="sig-name descname">pull_history</code><span class="sig-paren">(</span><em class="sig-param">prov='qc'</em>, <em class="sig-param">gender='males'</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.pull_history" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pull_history</code><span class="sig-paren">(</span><em class="sig-param">prov='qc'</em>, <em class="sig-param">gender='males'</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.pull_history" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Function to get historical mortalilty tables by province and gender.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>prov</strong> (<em>str</em>) -- province; default=qc</p></li>
-<li><p><strong>gender</strong> (<em>str</em>) -- gender; default=males</p></li>
+<li><p><strong>prov</strong> (<em>str</em>) – province; default=qc</p></li>
+<li><p><strong>gender</strong> (<em>str</em>) – gender; default=males</p></li>
 </ul>
 </dd>
 </dl>
@@ -198,26 +199,26 @@ using mortality tables by province, gender as provided by Statistics Canada.</p>
 
 <dl class="method">
 <dt id="CPR.life.life.table.splice">
-<code class="sig-name descname">splice</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.splice" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">splice</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.splice" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Function to add survival probabilities for the 2012 birth year and after.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CPR.life.life.table.compute_annuity_factor">
-<code class="sig-name descname">compute_annuity_factor</code><span class="sig-paren">(</span><em class="sig-param">byear</em>, <em class="sig-param">agestart</em>, <em class="sig-param">rate</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.compute_annuity_factor" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">compute_annuity_factor</code><span class="sig-paren">(</span><em class="sig-param">byear</em>, <em class="sig-param">agestart</em>, <em class="sig-param">rate</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.compute_annuity_factor" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Function to compute an annuity factor.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>byear</strong> (<em>int</em>) -- birth year</p></li>
-<li><p><strong>agestart</strong> (<em>int</em>) -- age at which annuity starts</p></li>
-<li><p><strong>rate</strong> (<em>float</em>) -- interest rate</p></li>
+<li><p><strong>byear</strong> (<em>int</em>) – birth year</p></li>
+<li><p><strong>agestart</strong> (<em>int</em>) – age at which annuity starts</p></li>
+<li><p><strong>rate</strong> (<em>float</em>) – interest rate</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Renvoie</dt>
 <dd class="field-even"><p>Annuity factor.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Type renvoyé</dt>
 <dd class="field-odd"><p>float</p>
 </dd>
 </dl>

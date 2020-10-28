@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="'fr'" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="'fr'" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Main &mdash; CPR 0.0.1 documentation</title>
+  <title>Main &mdash; Documentation CPR 0.0.1</title>
   
 
   
@@ -25,6 +25,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
@@ -35,9 +36,9 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
+    <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="Simulator" href="simulator.html" />
-    <link rel="prev" title="Getting Started With the CPR" href="overview.html" /> 
+    <link rel="prev" title="Commencer avec le CPR" href="overview.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -83,7 +84,7 @@
             
             
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Getting Started With the CPR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Commencer avec le CPR</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Main</a></li>
 <li class="toctree-l1"><a class="reference internal" href="simulator.html">Simulator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="initialisation.html">Initialisation</a></li>
@@ -165,7 +166,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="main">
-<h1>Main<a class="headerlink" href="#main" title="Permalink to this headline">¶</a></h1>
+<h1>Main<a class="headerlink" href="#main" title="Lien permanent vers ce titre">¶</a></h1>
 <p>This module calls the simulator.</p>
 <p>The function <em>run_simulations</em> runs the simulations. Its arguments are used to select
 whether the stochastic version of the tool is to be used, as well as the number of simulations
@@ -173,21 +174,21 @@ whether the stochastic version of the tool is to be used, as well as the number 
 to use values other than the default ones provided.</p>
 <dl class="function">
 <dt id="CPR.main.run_simulations">
-<code class="sig-prename descclassname">CPR.main.</code><code class="sig-name descname">run_simulations</code><span class="sig-paren">(</span><em class="sig-param">inputs</em>, <em class="sig-param">nsim=1</em>, <em class="sig-param">non_stochastic=False</em>, <em class="sig-param">**extra_params</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.main.run_simulations" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.main.</code><code class="sig-name descname">run_simulations</code><span class="sig-paren">(</span><em class="sig-param">inputs</em>, <em class="sig-param">nsim=1</em>, <em class="sig-param">non_stochastic=False</em>, <em class="sig-param">**extra_params</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.main.run_simulations" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>This function launches the simulations. Any parameter can be changed
 using extra_params.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>inputs</strong> (<em>_io.TextIOWrapper</em>) -- csv file</p></li>
-<li><p><strong>nsim</strong> (<em>int</em><em>, </em><em>optional</em>) -- number of simulations, by default 1</p></li>
-<li><p><strong>non_stochastic</strong> (<em>bool</em><em>, </em><em>optional</em>) -- deterministic prices and price-rent ratio, by default False</p></li>
+<li><p><strong>inputs</strong> (<em>_io.TextIOWrapper</em>) – csv file</p></li>
+<li><p><strong>nsim</strong> (<em>int</em><em>, </em><em>optional</em>) – number of simulations, by default 1</p></li>
+<li><p><strong>non_stochastic</strong> (<em>bool</em><em>, </em><em>optional</em>) – deterministic prices and price-rent ratio, by default False</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Renvoie</dt>
 <dd class="field-even"><p>instance of the class Results</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Type renvoyé</dt>
 <dd class="field-odd"><p><a class="reference internal" href="analysis.html#CPR.analysis.Results" title="CPR.analysis.Results">Results</a></p>
 </dd>
 </dl>
@@ -206,7 +207,7 @@ using extra_params.</p>
         <a href="simulator.html" class="btn btn-neutral float-right" title="Simulator" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="overview.html" class="btn btn-neutral float-left" title="Getting Started With the CPR" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="overview.html" class="btn btn-neutral float-left" title="Commencer avec le CPR" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
