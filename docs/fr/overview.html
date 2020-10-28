@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Commencer avec le CPR &mdash; Documentation CPR 0.0.1</title>
+  <title>Premiers pas avec le CPR &mdash; Documentation CPR 0.0.1</title>
   
 
   
@@ -84,9 +84,9 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Commencer avec le CPR</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#installing-the-cpr">Installing the CPR</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#alternative-install">Alternative Install</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Premiers pas avec le CPR</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installing-the-cpr">Installation du CPR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#alternative-install">Installation alternative</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="main.html">Main</a></li>
@@ -150,7 +150,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Commencer avec le CPR</li>
+      <li>Premiers pas avec le CPR</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -170,32 +170,31 @@
            <div itemprop="articleBody">
             
   <div class="section" id="getting-started-with-the-cpr">
-<h1>Commencer avec le CPR<a class="headerlink" href="#getting-started-with-the-cpr" title="Lien permanent vers ce titre">¶</a></h1>
-<p>The CPR and the other tools it uses (SRD and SRPP) are written in Python, a modern, simple and fast language. In order to use it, it is essential to ensure first that an up-to-date Python distribution is installed, for example using Anaconda. In all cases, the minimum requirements to use the CPR are Python 3.6+ with <em>numpy</em>, <em>pandas</em> and <em>xlrd</em>. Although not essential, it will also be useful to have a minimal understanding of Python environments and, if possible, vocabulary (e.g. function, class, instance, profile).</p>
+<h1>Premiers pas avec le CPR<a class="headerlink" href="#getting-started-with-the-cpr" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Le CPR et les autres outils qu’il utilise (le SRD et le SRPP) sont écrits en Python, un langage simple, rapide et moderne. Afin de pouvoir l’utiliser, il faut s’assurer d’avoir au préalable installé une distribution à jour de Python, par exemple à l’aide d’Anaconda. Dans tous les cas, les exigences minimales pour utiliser le CPR sont Python 3.6+ avec <em>numpy</em>, <em>pandas</em> et <em>xlrd</em>. Bien que ce ne soit pas essentiel, il sera également utile de se familiariser un minimum, au préalable, avec les environnements et le vocabulaire Python (p.ex. fonction, classe, instance, profil).</p>
 <div class="section" id="installing-the-cpr">
-<h2>Installing the CPR<a class="headerlink" href="#installing-the-cpr" title="Lien permanent vers ce titre">¶</a></h2>
-<p>The CPR can be easily installed using pip:</p>
+<h2>Installation du CPR<a class="headerlink" href="#installing-the-cpr" title="Lien permanent vers ce titre">¶</a></h2>
+<p>On peut installer facilement le CPR en utilisant pip:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">cpr</span><span class="o">-</span><span class="n">rsi</span>
 </pre></div>
 </div>
-<p>Please read the <a class="reference external" href="https://pypi.org/policy/terms-of-use/">terms of use</a> for <em>pypi</em>, the website hosting the package.</p>
-<p>The CPR uses two other packages that are produced by the RSI and the Research Chair on Intergenerational Economics (CREEi), which is supported by the RSI: the Disposable Income Simulator (<a class="reference external" href="https://creei-models.github.io/srd/">Simulateur de revenu disponible, or SRD</a>; documentation in French), which computes taxes and major benefits; and the Public Pension Plans Simulator (<a class="reference external" href="https://creei-models.github.io/srpp/">Simulateur de régimes de pensions publiques, or SRPP</a>; documentation in French), which simulates QPP and CPP contributions and benefits. Both the SRD and the SRPP are automatically installed along with the CPR.</p>
-<p>In a notebook or a project, the CPR is called by adding the following command:</p>
+<p>Veuillez lire les <a class="reference external" href="https://pypi.org/policy/terms-of-use/">conditions d’utilisation (en anglais)</a> de <em>pypi</em>, le site Web qui héberge le package.</p>
+<p>Le CPR utilise deux autres packages produits par l’IRE et la Chaire de recherche sur les enjeux économiques intergénérationnels (CRREi), soutenue par l’IRE: le <a class="reference external" href="https://creei-models.github.io/srd/">Simulateur de revenu disponible (SRD)</a>, qui calcule les impôts et les principales prestations; et le <a class="reference external" href="https://creei-models.github.io/srpp/">Simulateur de régimes de pensions publiques</a>, qui simule les cotisations et les prestations de RRQ et de RPC. Tant le SRD que le SRPP sont installés automatiquement en même temps que le CPR.</p>
+<p>Dans un notebook ou un projet, on invoque le CPR en ajoutant la commande suivante:</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">CPR</span>
 </pre></div>
 </div>
-<p>To uninstall the CPR, the SRD and the SRPP, pip can be used:</p>
+<p>Pour désinstaller le CPR, le SRD et le SRPP, il suffit d’utiliser pip:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">uninstall</span> <span class="n">cpr</span><span class="o">-</span><span class="n">rsi</span> <span class="n">srd</span> <span class="n">srpp</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="alternative-install">
-<h2>Alternative Install<a class="headerlink" href="#alternative-install" title="Lien permanent vers ce titre">¶</a></h2>
-<p>If one is unable to install the CPR, a zip file containing CPR and its dependencies, SRD and SRPP, can be downloaded from <a class="reference external" href="https://github.com/rsi-models/CPR/releases">Github</a> (choose the file CPR_with_dep.zip in the latest release). To start using  the CPR, it suffices to unzip the file in the directory of your choice and either work from that directory or add the directory to the path (for example by using the module <em>sys</em>). A jupyter notebook explaining how CPR works, <em>Tutorial CPR</em>, is also included in the zip file.
-If one does not want the CPR anymore, the <em>cpr</em>, <em>srd</em> and <em>srpp</em> folders can simply be deleted.</p>
-<p>For further details on how to use the CPR, please consult the <a class="reference internal" href="tutorial.html#tutorial"><span class="std std-ref">Tutorials</span></a> section.</p>
-<p>As mentioned elsewhere, note the CPR is provided « as is » under <a class="reference external" href="https://rsi-models.github.io/CPR/credits.html#licence">an MIT license</a>.</p>
-<p>If you have questions, comments or suggestions, do not hesitate to <a class="reference internal" href="credits.html#nous-contacter"><span class="std std-ref">contact us</span></a>.</p>
+<h2>Installation alternative<a class="headerlink" href="#alternative-install" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Si l’on est dans l’impossibilité d’installer le CPR, un fichier zip contenant le CPR et ses dépendances, le SRD et le SRPP, peut être téléchargé de <a class="reference external" href="https://github.com/rsi-models/CPR/releases">Github</a> (choisir le fichier CPR_with_dep.zip dans le plus récent « release »). Pour utiliser le CPR, il suffit d’extraire les fichiers du zip dans le répertoire de son choix et de travailler de ce dernier ou d’ajouter ce répertoire au chemin d’accès (par exemple en utilisant le module <em>sys</em>). Un notebook jupyter qui explique le fonctionnement du CPR, <em>Tutorial CPR</em>, est également inclus dans le fichier zip. Si l’on ne veut plus le CPR, il suffit d’effacer les répertoires <em>cpr</em>, <em>srd</em> et <em>srpp</em>.</p>
+<p>Pour plus de détails la manière d’utiliser le CPR, veuillez consulter la section <a class="reference internal" href="tutorial.html#tutorial"><span class="std std-ref">Tutorials</span></a>.</p>
+<p>Tel que mentionné ailleurs, le CPR est fourni « tel quel », sous une <a class="reference external" href="https://rsi-models.github.io/CPR/credits.html#licence">licence MIT</a>.</p>
+<p>En cas de questions, commentaires ou suggestions, n’hésitez pas à <a class="reference internal" href="credits.html#nous-contacter"><span class="std std-ref">nous_contacter</span></a>.</p>
 </div>
 </div>
 
