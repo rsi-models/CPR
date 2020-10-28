@@ -1,0 +1,405 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Macro &mdash; Documentation CPR 0.0.1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Assets" href="assets.html" />
+    <link rel="prev" title="Initialisation" href="initialisation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> CPR
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Commencer avec le CPR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main.html">Main</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simulator.html">Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="initialisation.html">Initialisation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Macro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assets.html">Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debts.html">Debts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="taxes.html">Taxes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="annuities.html">Annuities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="life.html">Life</a></li>
+<li class="toctree-l1"><a class="reference internal" href="balance_sheets.html">Balance Sheets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Contributors and Rights of Use</a></li>
+</ul>
+
+            
+          
+    <a href="genindex.html">Index</a>
+  
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CPR</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Macro</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/macro.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="macro">
+<h1>Macro<a class="headerlink" href="#macro" title="Lien permanent vers ce titre">¶</a></h1>
+<p>The Macro module contains classes that contain parameters common to all households,
+generate stochastic processes for returns and wages and other prices.</p>
+<dl class="class">
+<dt id="CPR.macro.CommonParameters">
+<em class="property">class </em><code class="sig-prename descclassname">CPR.macro.</code><code class="sig-name descname">CommonParameters</code><span class="sig-paren">(</span><em class="sig-param">nsim</em>, <em class="sig-param">non_stochastic</em>, <em class="sig-param">extra_params</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.CommonParameters" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>This class sets and contains the parameters common to all households.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nsim</strong> (<em>int</em>) – number of simulations</p></li>
+<li><p><strong>non_stochastic</strong> (<em>bool</em>) – True if non stochastic simulation, False otherwise</p></li>
+<li><p><strong>extra_params</strong> (<em>dict</em>) – dictionary of extra parameters</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="CPR.macro.CommonParameters.set_limits">
+<code class="sig-name descname">set_limits</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.CommonParameters.set_limits" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Set contributions limits for RRSP and TFSA.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – RRSP or TFSA</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.macro.CommonParameters.prepare_ympe">
+<code class="sig-name descname">prepare_ympe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.CommonParameters.prepare_ympe" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p> »
+Pre-reform ympe used to adjust DB benefits for CPP</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.macro.CommonParameters.prepare_cpp">
+<code class="sig-name descname">prepare_cpp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.CommonParameters.prepare_cpp" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Set percentages for cpp/qpp benefits.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="CPR.macro.Prices">
+<em class="property">class </em><code class="sig-prename descclassname">CPR.macro.</code><code class="sig-name descname">Prices</code><span class="sig-paren">(</span><em class="sig-param">common</em>, <em class="sig-param">extra_params</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>This class computes the times series for asset returns,
+interest rates on debt, deterministic wage profiles,
+housing price growth rate and price/rent ratio.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>extra_params</strong> (<em>dict</em>) – dictionary of extra parameters</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="method">
+<dt id="CPR.macro.Prices.simulate_ret">
+<code class="sig-name descname">simulate_ret</code><span class="sig-paren">(</span><em class="sig-param">asset</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.simulate_ret" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Simulate N series of length T nominal returns distributed lognormally
+with autocorrelation rho.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>asset</strong> (<em>str</em>) – type of asset</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie</dt>
+<dd class="field-even"><p>Array of nominal returns</p>
+</dd>
+<dt class="field-odd">Type renvoyé</dt>
+<dd class="field-odd"><p>numpy.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.macro.Prices.compute_params_process">
+<code class="sig-name descname">compute_params_process</code><span class="sig-paren">(</span><em class="sig-param">mu</em>, <em class="sig-param">rho</em>, <em class="sig-param">sigma</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.compute_params_process" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Convert arithmetic mean mu and volatility sigma of the returns
+and autocorrelation rho of the log returns into
+<span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\rho\)</span> and <span class="math notranslate nohighlight">\(\sigma_{\epsilon}\)</span> of the process:</p>
+<p><span class="math notranslate nohighlight">\(\ln(1+r_t) = \alpha + \rho * \ln(1+r_{t-1}) + \epsilon\)</span>,
+where <span class="math notranslate nohighlight">\(\epsilon \sim N(0, \sigma_{\epsilon})\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mu</strong> (<em>float</em>) – arithmetic mean</p></li>
+<li><p><strong>rho</strong> (<em>float</em>) – autocorrelation :math:</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – standard deviation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Renvoie</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>float</em> – AR(1) coefficient (<span class="math notranslate nohighlight">\(\alpha\)</span>)</p></li>
+<li><p><em>float</em> – Standard deviation of error term (<span class="math notranslate nohighlight">\(\sigma_{\epsilon}\)</span>)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.macro.Prices.simulate_housing">
+<code class="sig-name descname">simulate_housing</code><span class="sig-paren">(</span><em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.simulate_housing" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Simulate series of nominal housing price growth (in <span class="math notranslate nohighlight">\(\ln(1+r)\)</span> form)
+and price-rent ratio.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p>
+</dd>
+<dt class="field-even">Renvoie</dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>numpy.array</em> – Array of nominal housing price growth</p></li>
+<li><p><em>numpy.array</em> – Array of price-rent ratios</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.macro.Prices.prepare_inflation_factors">
+<code class="sig-name descname">prepare_inflation_factors</code><span class="sig-paren">(</span><em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.prepare_inflation_factors" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Compute inflation factors with base year 2018.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p>
+</dd>
+<dt class="field-even">Renvoie</dt>
+<dd class="field-even"><p>Dictionary of inflation factors for each year</p>
+</dd>
+<dt class="field-odd">Type renvoyé</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.macro.Prices.simulate_interest_debt">
+<code class="sig-name descname">simulate_interest_debt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.simulate_interest_debt" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Creates N series of yearly nominal interest rate of length T
+for each type of debt</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie</dt>
+<dd class="field-odd"><p>Dictionary of interest rates by type of debt and year</p>
+</dd>
+<dt class="field-even">Type renvoyé</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.macro.Prices.attach_diff_log_wages">
+<code class="sig-name descname">attach_diff_log_wages</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.attach_diff_log_wages" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Creates a dictionary of differences in log wages by education and age.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie</dt>
+<dd class="field-odd"><p>Dictionary of difference in log wages by education and age</p>
+</dd>
+<dt class="field-even">Type renvoyé</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="CPR.macro.Prices.initialize_factors">
+<code class="sig-name descname">initialize_factors</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.initialize_factors" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>This function creates an instance of life.table
+by gender and province.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Renvoie</dt>
+<dd class="field-odd"><p>dictionary of annuity factors by gender and provinces</p>
+</dd>
+<dt class="field-even">Type renvoyé</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="assets.html" class="btn btn-neutral float-right" title="Assets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="initialisation.html" class="btn btn-neutral float-left" title="Initialisation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, RSI Team at HEC Montréal
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

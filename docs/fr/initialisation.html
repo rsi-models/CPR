@@ -1,14 +1,14 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="'fr'" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="'fr'" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Initialisation &mdash; Documentation CPR 0.0.1</title>
+  <title>Initialisation &mdash; CPR 0.0.1 documentation</title>
   
 
   
@@ -25,7 +25,6 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/language_data.js"></script>
-        <script src="_static/translations.js"></script>
         <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
@@ -36,7 +35,7 @@
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Macro" href="macro.html" />
     <link rel="prev" title="Simulator" href="simulator.html" /> 
 </head>
@@ -166,28 +165,28 @@
            <div itemprop="articleBody">
             
   <div class="section" id="initialisation">
-<h1>Initialisation<a class="headerlink" href="#initialisation" title="Lien permanent vers ce titre">¶</a></h1>
+<h1>Initialisation<a class="headerlink" href="#initialisation" title="Permalink to this headline">¶</a></h1>
 <p>This module sets up households and attaches assets and debts to them. The table below shows all the individual inputs to the CPR (some of them are entered in other modules).</p>
 <img alt="_images/table_inputs.png" src="_images/table_inputs.png" />
-<p>Though an example input file is provided as part of the package, a tutorial is also offered to show users how to modify those inputs to use the ones of their choice. NOTE: users must be careful when using their inputs, as a general error message will be generated if any of the – numerous – inputs is incorrectly specified (i.e. contains a mistake or is highly implausible).</p>
+<p>Though an example input file is provided as part of the package, a tutorial is also offered to show users how to modify those inputs to use the ones of their choice. NOTE: users must be careful when using their inputs, as a general error message will be generated if any of the -- numerous -- inputs is incorrectly specified (i.e. contains a mistake or is highly implausible).</p>
 <dl class="function">
 <dt id="CPR.initialisation.create_hh">
-<code class="sig-prename descclassname">CPR.initialisation.</code><code class="sig-name descname">create_hh</code><span class="sig-paren">(</span><em class="sig-param">index</em>, <em class="sig-param">d_hh</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.create_hh" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.initialisation.</code><code class="sig-name descname">create_hh</code><span class="sig-paren">(</span><em class="sig-param">index</em>, <em class="sig-param">d_hh</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.create_hh" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function that creates a household with one or two persons and attaches
 assets and debts.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Paramètres</dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>index</strong> (<em>int</em>) – household index</p></li>
-<li><p><strong>d_hh</strong> (<em>dict</em>) – dictionary of household features</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>index</strong> (<em>int</em>) -- household index</p></li>
+<li><p><strong>d_hh</strong> (<em>dict</em>) -- dictionary of household features</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) -- instance of the class Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) -- instance of the class Prices</p></li>
 </ul>
 </dd>
-<dt class="field-even">Renvoie</dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Instance of the class Hhold.</p>
 </dd>
-<dt class="field-odd">Type renvoyé</dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p><a class="reference internal" href="#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold">Hhold</a></p>
 </dd>
 </dl>
@@ -195,34 +194,34 @@ assets and debts.</p>
 
 <dl class="class">
 <dt id="CPR.initialisation.Person">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.initialisation.</code><code class="sig-name descname">Person</code><span class="sig-paren">(</span><em class="sig-param">d_hh</em>, <em class="sig-param">l_sp</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em>, <em class="sig-param">s_=False</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Person" title="Lien permanent vers cette définition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">CPR.initialisation.</code><code class="sig-name descname">Person</code><span class="sig-paren">(</span><em class="sig-param">d_hh</em>, <em class="sig-param">l_sp</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em>, <em class="sig-param">s_=False</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Person" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class creates a person.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Paramètres</dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>d_hh</strong> (<em>dict</em>) – dictionary containing all informations about households</p></li>
-<li><p><strong>l_sp</strong> (<em>list</em>) – list of features attached to spouses</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
-<li><p><strong>s_</strong> (<em>bool</em>) – False for head of household, True otherwise</p></li>
+<li><p><strong>d_hh</strong> (<em>dict</em>) -- dictionary containing all informations about households</p></li>
+<li><p><strong>l_sp</strong> (<em>list</em>) -- list of features attached to spouses</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) -- instance of the class Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) -- instance of the class Prices</p></li>
+<li><p><strong>s_</strong> (<em>bool</em>) -- False for head of household, True otherwise</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="method">
 <dt id="CPR.initialisation.Person.create_wage_profile">
-<code class="sig-name descname">create_wage_profile</code><span class="sig-paren">(</span><em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Person.create_wage_profile" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-name descname">create_wage_profile</code><span class="sig-paren">(</span><em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Person.create_wage_profile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function that creates wage profiles for each realisation of uncertainty, to be used when the stochastic version of the tool is selected.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Paramètres</dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) -- instance of the class Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) -- instance of the class Prices</p></li>
 </ul>
 </dd>
-<dt class="field-even">Renvoie</dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Wage profiles.</p>
 </dd>
-<dt class="field-odd">Type renvoyé</dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>np.array</p>
 </dd>
 </dl>
@@ -230,20 +229,20 @@ assets and debts.</p>
 
 <dl class="method">
 <dt id="CPR.initialisation.Person.create_shocks">
-<code class="sig-name descname">create_shocks</code><span class="sig-paren">(</span><em class="sig-param">T</em>, <em class="sig-param">N</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Person.create_shocks" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-name descname">create_shocks</code><span class="sig-paren">(</span><em class="sig-param">T</em>, <em class="sig-param">N</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Person.create_shocks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function that creats a time series of shocks to the wage.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Paramètres</dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>T</strong> (<em>int</em>) – length of the time series</p></li>
-<li><p><strong>N</strong> (<em>int</em>) – number of realisations</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>T</strong> (<em>int</em>) -- length of the time series</p></li>
+<li><p><strong>N</strong> (<em>int</em>) -- number of realisations</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) -- instance of the class Prices</p></li>
 </ul>
 </dd>
-<dt class="field-even">Renvoie</dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Time series of shocks to the wage.</p>
 </dd>
-<dt class="field-odd">Type renvoyé</dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>np.array</p>
 </dd>
 </dl>
@@ -253,27 +252,27 @@ assets and debts.</p>
 
 <dl class="class">
 <dt id="CPR.initialisation.Hhold">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.initialisation.</code><code class="sig-name descname">Hhold</code><span class="sig-paren">(</span><em class="sig-param">d_hh</em>, <em class="sig-param">l_hhold</em>, <em class="sig-param">index</em>, <em class="sig-param">common</em>, <em class="sig-param">p0</em>, <em class="sig-param">p1=None</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Hhold" title="Lien permanent vers cette définition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">CPR.initialisation.</code><code class="sig-name descname">Hhold</code><span class="sig-paren">(</span><em class="sig-param">d_hh</em>, <em class="sig-param">l_hhold</em>, <em class="sig-param">index</em>, <em class="sig-param">common</em>, <em class="sig-param">p0</em>, <em class="sig-param">p1=None</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Hhold" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class creates a household.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Paramètres</dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>d_hh</strong> (<em>dict</em>) – dictionary containing all informations about households</p></li>
-<li><p><strong>l_hhold</strong> (<em>list</em>) – list of features attached to the household</p></li>
-<li><p><strong>index</strong> (<em>int</em>) – household index</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
-<li><p><strong>p0</strong> (<a class="reference internal" href="#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – first spouse</p></li>
-<li><p><strong>p1</strong> (<a class="reference internal" href="#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – second spouse (in the case of a couple)</p></li>
+<li><p><strong>d_hh</strong> (<em>dict</em>) -- dictionary containing all informations about households</p></li>
+<li><p><strong>l_hhold</strong> (<em>list</em>) -- list of features attached to the household</p></li>
+<li><p><strong>index</strong> (<em>int</em>) -- household index</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) -- instance of the class Common</p></li>
+<li><p><strong>p0</strong> (<a class="reference internal" href="#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) -- first spouse</p></li>
+<li><p><strong>p1</strong> (<a class="reference internal" href="#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) -- second spouse (in the case of a couple)</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="method">
 <dt id="CPR.initialisation.Hhold.set_other_years">
-<code class="sig-name descname">set_other_years</code><span class="sig-paren">(</span><em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Hhold.set_other_years" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-name descname">set_other_years</code><span class="sig-paren">(</span><em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Hhold.set_other_years" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function that sets years of partial and full retirement as well as years in which pre-retirement and post-retirement consumptions are assessed.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Paramètres</dt>
-<dd class="field-odd"><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>common</strong> (<em>Common</em>) -- instance of the class Common</p>
 </dd>
 </dl>
 </dd></dl>

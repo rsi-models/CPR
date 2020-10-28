@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Balance Sheets &mdash; Documentation CPR 0.0.1</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Analysis" href="analysis.html" />
+    <link rel="prev" title="Life" href="life.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> CPR
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+    
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Commencer avec le CPR</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main.html">Main</a></li>
+<li class="toctree-l1"><a class="reference internal" href="simulator.html">Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="initialisation.html">Initialisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="macro.html">Macro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assets.html">Assets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debts.html">Debts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="taxes.html">Taxes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="annuities.html">Annuities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="life.html">Life</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Balance Sheets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Contributors and Rights of Use</a></li>
+</ul>
+
+            
+          
+    <a href="genindex.html">Index</a>
+  
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CPR</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Balance Sheets</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/balance_sheets.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="balance-sheets">
+<h1>Balance Sheets<a class="headerlink" href="#balance-sheets" title="Lien permanent vers ce titre">¶</a></h1>
+<p>This module holds functions that compute the various balance sheet items for each household at different points in the simulation process. A collection of variables are calculated in real terms (base year 2018) and added to the output dataframe retrieved by the module <em>main</em>.</p>
+<p>At age 55 or in the year preceding retirement, if the latter occurs before age 56, wages, consumption, earlier pensions, account balances (RRSP, other registered, TFSA and unregistered accounts, as well as DC RPPs) are calculated. They are stored in variables ending with “_bef”.</p>
+<p>At age 65 or in the year of retirement, if the latter occurs later, consumption; earlier pensions; annuities purchased with financial assets (balances); DB RPP, CPP/QPP, and OAS/GIS/Allowances benefits; as well as the values of residences and outstanding mortgages, are stored in variables ending with “_aft”.</p>
+<p>For couples who do not retire at the same time, wages, earlier pensions, account balances and annuities of the first spouse to retire are calculated. They are stored in variables ending with “_part”. Variables describing the spouse who retires last begin with “s_”.</p>
+<span class="target" id="module-CPR.balance_sheets"></span><dl class="function">
+<dt id="CPR.balance_sheets.compute_bs_bef_ret">
+<code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">compute_bs_bef_ret</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.compute_bs_bef_ret" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function to compute the pre-retirement balance sheet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.balance_sheets.compute_cons_bef_ret">
+<code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">compute_cons_bef_ret</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.compute_cons_bef_ret" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function to compute pre-retirement consumption.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.balance_sheets.compute_bs_after_ret">
+<code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">compute_bs_after_ret</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.compute_bs_after_ret" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function to compute the post-retirement balance sheet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="CPR.balance_sheets.add_output">
+<code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">add_output</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em>, <em class="sig-param">key</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.add_output" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function to extract output variables.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Paramètres</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>key</strong> (<em>str</em>) – before (« bef »), when first spouse retires (« part »)
+or after retirement (« aft »)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="analysis.html" class="btn btn-neutral float-right" title="Analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="life.html" class="btn btn-neutral float-left" title="Life" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, RSI Team at HEC Montréal
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
