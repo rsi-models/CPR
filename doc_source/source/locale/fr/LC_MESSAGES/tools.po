@@ -1,0 +1,132 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, RSI Team at HEC Montréal
+# This file is distributed under the same license as the CPR package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: CPR \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-28 15:37-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/tools.rst:2
+msgid "Tools"
+msgstr ""
+
+#: ../../source/tools.rst:4
+msgid ""
+"In this module, several functions, used in the rest of the code, are "
+"available to create dictionaries, modify parameters, or convert prices, "
+"among other aspects."
+msgstr ""
+
+#: CPR.tools.get_params:1 of
+msgid "Function to create a dictionary from a .csv file."
+msgstr ""
+
+#: CPR.tools.add_params_as_attr CPR.tools.change_params CPR.tools.create_nom
+#: CPR.tools.create_nom_real CPR.tools.create_real CPR.tools.get_params of
+msgid "Paramètres"
+msgstr ""
+
+#: CPR.tools.add_params_as_attr:5 CPR.tools.get_params:3 of
+msgid "csv file"
+msgstr ""
+
+#: CPR.tools.get_params:5 of
+msgid "numerical key, by default False"
+msgstr ""
+
+#: CPR.tools.create_nom CPR.tools.create_nom_real CPR.tools.create_real
+#: CPR.tools.get_params of
+msgid "Renvoie"
+msgstr ""
+
+#: CPR.tools.get_params:8 of
+msgid "Dictionary of parameters."
+msgstr ""
+
+#: CPR.tools.create_nom CPR.tools.create_real CPR.tools.get_params of
+msgid "Type renvoyé"
+msgstr ""
+
+#: CPR.tools.add_params_as_attr:1 of
+msgid "Function to add parameters to a class instance."
+msgstr ""
+
+#: CPR.tools.add_params_as_attr:3 of
+msgid "class instance"
+msgstr ""
+
+#: CPR.tools.change_params:1 of
+msgid ""
+"Function to update the value of some parameters in inst with values form "
+"*extra_params*."
+msgstr ""
+
+#: CPR.tools.change_params:3 of
+msgid "parameters"
+msgstr ""
+
+#: CPR.tools.change_params:5 of
+msgid "parameters to be updated and their new values"
+msgstr ""
+
+#: CPR.tools.create_nom_real:1 of
+msgid ""
+"Creation of a function to convert prices from real to nominal and from "
+"nominal to real, with base year 2018."
+msgstr ""
+
+#: CPR.tools.create_nom:3 CPR.tools.create_nom_real:3 CPR.tools.create_real:3
+#: of
+msgid "year"
+msgstr ""
+
+#: CPR.tools.create_nom:5 CPR.tools.create_nom_real:5 CPR.tools.create_real:5
+#: of
+msgid "instance of the class Prices"
+msgstr ""
+
+#: CPR.tools.create_nom_real:8 of
+msgid ""
+"* *function* -- Function converting nominal to real. * *function* -- "
+"Function converting real to nominal."
+msgstr ""
+
+#: CPR.tools.create_nom_real:8 of
+msgid "*function* -- Function converting nominal to real."
+msgstr ""
+
+#: CPR.tools.create_nom_real:9 of
+msgid "*function* -- Function converting real to nominal."
+msgstr ""
+
+#: CPR.tools.create_nom:1 of
+msgid ""
+"Creation of a function that converts prices from real to nominal, with "
+"base year 2018. Used for some specific purposes elsewhere in the code."
+msgstr ""
+
+#: CPR.tools.create_nom:8 of
+msgid "Function converting real to nominal."
+msgstr ""
+
+#: CPR.tools.create_real:1 of
+msgid ""
+"Creation of a function that converts prices from nominal to real, with "
+"base year 2018."
+msgstr ""
+
+#: CPR.tools.create_real:8 of
+msgid "function converting nominal to real"
+msgstr ""
+

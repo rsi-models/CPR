@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, RSI Team at HEC Montréal
+# This file is distributed under the same license as the CPR package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: CPR \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-28 15:37-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/life.rst:2
+msgid "Life"
+msgstr ""
+
+#: ../../source/life.rst:4
+msgid ""
+"The Life module contains the class that computes annuity factors for all "
+"individuals in the simulation, using mortality tables by province, gender"
+" as provided by Statistics Canada."
+msgstr ""
+
+#: CPR.life.life.table:1 of
+msgid "Class computing annuity factors by province, gender, age and birth year."
+msgstr ""
+
+#: CPR.life.life.table CPR.life.life.table.compute_annuity_factor
+#: CPR.life.life.table.pull_history of
+msgid "Paramètres"
+msgstr ""
+
+#: CPR.life.life.table:3 CPR.life.life.table.pull_history:3 of
+msgid "province; default=qc"
+msgstr ""
+
+#: CPR.life.life.table:5 of
+msgid "longevity scenario; default=M (Medium mortality)"
+msgstr ""
+
+#: CPR.life.life.table:7 CPR.life.life.table.pull_history:5 of
+msgid "gender; default=males"
+msgstr ""
+
+#: CPR.life.life.table:9 of
+msgid ""
+"True to pull data from internet (option unavailable at the moment), False"
+" otherwise; default=False"
+msgstr ""
+
+#: CPR.life.life.table.pull_history:1 of
+msgid "Function to get historical mortalilty tables by province and gender."
+msgstr ""
+
+#: CPR.life.life.table.splice:1 of
+msgid "Function to add survival probabilities for the 2012 birth year and after."
+msgstr ""
+
+#: CPR.life.life.table.compute_annuity_factor:1 of
+msgid "Function to compute an annuity factor."
+msgstr ""
+
+#: CPR.life.life.table.compute_annuity_factor:3 of
+msgid "birth year"
+msgstr ""
+
+#: CPR.life.life.table.compute_annuity_factor:5 of
+msgid "age at which annuity starts"
+msgstr ""
+
+#: CPR.life.life.table.compute_annuity_factor:7 of
+msgid "interest rate"
+msgstr ""
+
+#: CPR.life.life.table.compute_annuity_factor of
+msgid "Renvoie"
+msgstr ""
+
+#: CPR.life.life.table.compute_annuity_factor:10 of
+msgid "Annuity factor."
+msgstr ""
+
+#: CPR.life.life.table.compute_annuity_factor of
+msgid "Type renvoyé"
+msgstr ""
+

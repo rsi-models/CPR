@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, RSI Team at HEC Montréal
+# This file is distributed under the same license as the CPR package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: CPR \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-28 15:37-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/debts.rst:2
+msgid "Debts"
+msgstr ""
+
+#: ../../source/debts.rst:4
+msgid "The Debts module manages debts (payments and balances) in the simulation."
+msgstr ""
+
+#: CPR.debts.Debt:1 of
+msgid "This class manages all debts. All amounts are nominal."
+msgstr ""
+
+#: CPR.debts.Debt CPR.debts.Debt.estimate_init_term CPR.debts.Debt.update of
+msgid "Paramètres"
+msgstr ""
+
+#: CPR.debts.Debt:3 of
+msgid "name of the debt"
+msgstr ""
+
+#: CPR.debts.Debt:5 of
+msgid "dictionary containing debt initial balances and monthly payments"
+msgstr ""
+
+#: CPR.debts.Debt:7 CPR.debts.Debt.estimate_init_term:3 of
+msgid "instance of the class Common"
+msgstr ""
+
+#: CPR.debts.Debt:9 CPR.debts.Debt.estimate_init_term:5 CPR.debts.Debt.update:7
+#: of
+msgid "instance of the class Prices"
+msgstr ""
+
+#: CPR.debts.Debt.estimate_init_term:1 of
+msgid "Estimate the term of the debt."
+msgstr ""
+
+#: CPR.debts.Debt.estimate_init_term of
+msgid "Renvoie"
+msgstr ""
+
+#: CPR.debts.Debt.estimate_init_term:8 of
+msgid "term of the debt"
+msgstr ""
+
+#: CPR.debts.Debt.estimate_init_term of
+msgid "Type renvoyé"
+msgstr ""
+
+#: CPR.debts.Debt.update:1 of
+msgid "Updates yearly payment and balance."
+msgstr ""
+
+#: CPR.debts.Debt.update:3 of
+msgid "year"
+msgstr ""
+
+#: CPR.debts.Debt.update:5 of
+msgid "interest rate"
+msgstr ""
+
+#: CPR.debts.Debt.reset:1 of
+msgid "Reset balance and term to initial values."
+msgstr ""
+
