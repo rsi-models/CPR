@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, RSI Team at HEC Montréal
+# This file is distributed under the same license as the CPR package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: CPR \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-28 15:37-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/main.rst:2
+msgid "Main"
+msgstr ""
+
+#: ../../source/main.rst:4
+msgid "This module calls the simulator."
+msgstr ""
+
+#: ../../source/main.rst:8
+msgid ""
+"The function *run_simulations* runs the simulations. Its arguments are "
+"used to select whether the stochastic version of the tool is to be used, "
+"as well as the number of simulations (replications) that should be "
+"carried out. Any parameter value can also be changed here, to use values "
+"other than the default ones provided."
+msgstr ""
+
+#: CPR.main.run_simulations:1 of
+msgid ""
+"This function launches the simulations. Any parameter can be changed "
+"using extra_params."
+msgstr ""
+
+#: CPR.main.run_simulations of
+msgid "Paramètres"
+msgstr ""
+
+#: CPR.main.run_simulations:4 of
+msgid "csv file"
+msgstr ""
+
+#: CPR.main.run_simulations:6 of
+msgid "number of simulations, by default 1"
+msgstr ""
+
+#: CPR.main.run_simulations:8 of
+msgid "deterministic prices and price-rent ratio, by default False"
+msgstr ""
+
+#: CPR.main.run_simulations of
+msgid "Renvoie"
+msgstr ""
+
+#: CPR.main.run_simulations:11 of
+msgid "instance of the class Results"
+msgstr ""
+
+#: CPR.main.run_simulations of
+msgid "Type renvoyé"
+msgstr ""
+
