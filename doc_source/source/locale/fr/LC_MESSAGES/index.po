@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CPR \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-30 13:19-0400\n"
+"POT-Creation-Date: 2020-10-30 13:47-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,11 +30,12 @@ msgid "Canadians' Preparation for Retirement (CPR)"
 msgstr "Préparation à la retraite des Canadiens (CPR)"
 
 #: ../../source/index.rst:9
+#, fuzzy
 msgid ""
 "The Canadians' Preparation for Retirement (CPR) tool was developed by a "
 "team at HEC Montréal's `Retirement and Savings Institute (RSI) "
-"<https://ire.hec.ca>`_, with financial support from the National Pension "
-"Hub at the `Global Risk Institute (GRI) "
+"<https://ire.hec.ca/en>`_, with financial support from the National "
+"Pension Hub at the `Global Risk Institute (GRI) "
 "<https://globalriskinstitute.org>`_. It allows to compute retirement "
 "preparation for any household or group of households for which the user "
 "has the required input (personal and financial information) at any given "
@@ -57,11 +58,9 @@ msgstr ""
 #: ../../source/index.rst:11
 #, fuzzy
 msgid ""
-"As mentioned elsewhere, the CPR is provided \"as is\" under :ref:`an MIT "
-"license <license>`."
+"As mentioned elsewhere, the CPR is provided \"as is\" under :ref:`an MIT licence <licence>`."
 msgstr ""
-"Tel que mentionné ailleurs, le CPR est fourni \"tel quel\", sous une  "
-":ref:`licence MIT <license>`."
+"Tel que mentionné ailleurs, le CPR est fourni \"tel quel\", sous une :ref:`licence MIT <licence>`."
 
 #: ../../source/index.rst:13
 msgid ""
@@ -156,3 +155,4 @@ msgstr "Documentation en PDF"
 #: ../../source/index.rst:48
 msgid "Documentation :download:`pdf <../build/pdf/en/latex/cpr.pdf>`"
 msgstr "Documentation :download:`pdf <../build/pdf/fr/latex/cpr.pdf>`"
+

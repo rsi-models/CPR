@@ -33,6 +33,6 @@ If one does not want the CPR anymore, the *cpr*, *srd* and *srpp* folders can si
 
 For further details on how to use the CPR, please consult the :ref:`tutorial` section.
 
-As mentioned elsewhere, note the CPR is provided "as is" under :ref:`an MIT license <license>`.
+As mentioned elsewhere, note the CPR is provided "as is" under :ref:`an MIT licence <licence>`.
 
 If you have questions, comments or suggestions, do not hesitate to :ref:`contact us <nous_contacter>`.
