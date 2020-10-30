@@ -30,7 +30,6 @@ msgid "Canadians' Preparation for Retirement (CPR)"
 msgstr "Préparation à la retraite des Canadiens (CPR)"
 
 #: ../../source/index.rst:9
-#, fuzzy
 msgid ""
 "The Canadians' Preparation for Retirement (CPR) tool was developed by a "
 "team at HEC Montréal's `Retirement and Savings Institute (RSI) "
@@ -56,11 +55,12 @@ msgstr ""
 "retraite-canadiens/>`_."
 
 #: ../../source/index.rst:11
-#, fuzzy
 msgid ""
-"As mentioned elsewhere, the CPR is provided \"as is\" under :ref:`an MIT licence <licence>`."
+"As mentioned elsewhere, the CPR is provided \"as is\" under "
+":ref:`an MIT licence <licence>`."
 msgstr ""
-"Tel que mentionné ailleurs, le CPR est fourni \"tel quel\", sous une :ref:`licence MIT <licence>`."
+"Tel que mentionné ailleurs, le CPR est fourni \"tel quel\", sous une "
+":ref:`licence MIT <licence>`."
 
 #: ../../source/index.rst:13
 msgid ""

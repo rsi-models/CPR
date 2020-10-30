@@ -126,7 +126,7 @@ msgid ""
 "before (\"bef\"), when first spouse retires (\"part\") or after "
 "retirement (\"aft\")"
 msgstr ""
+"avant (\"bef\"), lorsque le premier conjoint prend sa retraite (\"part\"), ou après la retraite (\"aft\")"
 
 #~ msgid "Paramètres"
 #~ msgstr ""
-

@@ -44,13 +44,12 @@ msgid "Licence"
 msgstr "Droits d'utilisation"
 
 #: ../../source/credits.rst:19
-#, fuzzy
 msgid ""
-"The CPR is provided under the `MIT licence <https://opensource.org/licenses/MIT>`_ (\"MIT License\"). The conditions"
-" of the licence are as follows:"
+"The CPR is provided under the `MIT licence <https://opensource.org/licenses/MIT>`_ "
+"(\"MIT License\"). The conditions of the licence are as follows:"
 msgstr ""
-"Le CPR est fourni sous `licence MIT <https://opensource.org/licenses/MIT>`_ (\"MIT License\"). Les conditions"
-" de la licence sont les suivantes:"
+"Le CPR est fourni sous `licence MIT <https://opensource.org/licenses/MIT>`_ "
+"(\"MIT License\"). Les conditions de la licence sont les suivantes:"
 
 #: ../../source/credits.rst:21
 msgid ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CPR \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-30 13:47-0400\n"
+"POT-Creation-Date: 2020-10-30 14:55-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -123,20 +123,18 @@ msgstr ""
 #: ../../source/overview.rst:34
 msgid ""
 "For further details on how to use the CPR, please consult the "
-":ref:`tutorial` section."
+":ref:`tutorials <tutorial>`."
 msgstr ""
-"Pour plus de détails concernant la manière d'utiliser le CPR, veuillez "
-"consulter les vidéos (en anglais pour le moment) disponibles à la section"
-" :ref:`tutoriel <tutorial>`."
+"Pour plus de détails concernant la manière d'utiliser le CPR, veuillez consulter les vidéos (en anglais pour le moment) disponibles à la section "
+":ref:`tutoriels <tutorial>`."
 
 #: ../../source/overview.rst:36
-#, fuzzy
 msgid ""
 "As mentioned elsewhere, note the CPR is provided \"as is\" under :ref:`an"
 " MIT licence <licence>`."
 msgstr ""
 "Tel que mentionné ailleurs, le CPR est fourni \"tel quel\", sous une "
-"`licence MIT <licence>`."
+":ref:`licence MIT <licence>`."
 
 #: ../../source/overview.rst:38
 msgid ""
