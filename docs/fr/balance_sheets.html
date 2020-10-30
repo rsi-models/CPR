@@ -85,6 +85,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference external" href="https://rsi-models.github.io/CPR/fr">VERSION FRANÇAISE</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rsi-models.github.io/CPR/en">ENGLISH VERSION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Premiers pas avec le CPR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="main.html">Main</a></li>
 <li class="toctree-l1"><a class="reference internal" href="simulator.html">Simulator</a></li>
@@ -168,21 +169,21 @@
             
   <div class="section" id="balance-sheets">
 <h1>Balance Sheets<a class="headerlink" href="#balance-sheets" title="Lien permanent vers ce titre">¶</a></h1>
-<p>This module holds functions that compute the various balance sheet items for each household at different points in the simulation process. A collection of variables are calculated in real terms (base year 2018) and added to the output dataframe retrieved by the module <em>main</em>.</p>
-<p>At age 55 or in the year preceding retirement, if the latter occurs before age 56, wages, consumption, earlier pensions, account balances (RRSP, other registered, TFSA and unregistered accounts, as well as DC RPPs) are calculated. They are stored in variables ending with “_bef”.</p>
-<p>At age 65 or in the year of retirement, if the latter occurs later, consumption; earlier pensions; annuities purchased with financial assets (balances); DB RPP, CPP/QPP, and OAS/GIS/Allowances benefits; as well as the values of residences and outstanding mortgages, are stored in variables ending with “_aft”.</p>
-<p>For couples who do not retire at the same time, wages, earlier pensions, account balances and annuities of the first spouse to retire are calculated. They are stored in variables ending with “_part”. Variables describing the spouse who retires last begin with “s_”.</p>
+<p>Ce module contient des fonctions qui calculent les différents éléments du bilan pour chaque ménage à différents moments du processus de simulation. Un ensemble de variables sont calculées en termes réels (avec 2018 comme année de base) et ajoutées au dataframe d’output récupéré par le module <em>main</em>.</p>
+<p>À 55 ans ou dans l’année précédant la retraite, si cette dernière se produit avant 56 ans, les salaires, la consommation, les pensions antérieures et les soldes des comptes (REER, autres comptes enregistrés, CELI et comptes non enregistrés, ainsi que RPA à CD) sont calculés. Ils sont entreposés dans des variables dont le nom se termine par “_bef”.</p>
+<p>À 65 ans ou dans l’année de la retraite, si cette dernière se produit plus tard, la consommation; les pensions antérieures; les rentes achetées avec les (soldes des) actifs financiers; les prestations de RPA à PD, de RPC/RRQ et de PSV/SRG/Allocations; ainsi que les valeurs des résidences et les soldes hypothécaires sont entreposés dans des variables dont le nom se termine par “_aft”.</p>
+<p>Pour les couples qui ne prennent pas leur retraite en même temps, les salaires, les pensions antérieures, les soldes de comptes et les rentes du premier conjoint à prendre sa retraite sont calculés. Ils sont entreposés dans des variables dont le nom se termine par “_part”. Le nom des variables décrivant le conjoint qui prend sa retraite en dernier débute avec “s_”.</p>
 <span class="target" id="module-CPR.balance_sheets"></span><dl class="function">
 <dt id="CPR.balance_sheets.compute_bs_bef_ret">
 <code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">compute_bs_bef_ret</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.compute_bs_bef_ret" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to compute the pre-retirement balance sheet.</p>
+<dd><p>Fonction qui calcule le bilan avant la retraite.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – ménage</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance de la classe Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance de la classe Prices</p></li>
 </ul>
 </dd>
 </dl>
@@ -191,13 +192,13 @@
 <dl class="function">
 <dt id="CPR.balance_sheets.compute_cons_bef_ret">
 <code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">compute_cons_bef_ret</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.compute_cons_bef_ret" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to compute pre-retirement consumption.</p>
+<dd><p>Fonction qui calcule la consommation avant la retraite.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – ménage</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance de la classe Prices</p></li>
 </ul>
 </dd>
 </dl>
@@ -206,14 +207,14 @@
 <dl class="function">
 <dt id="CPR.balance_sheets.compute_bs_after_ret">
 <code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">compute_bs_after_ret</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.compute_bs_after_ret" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to compute the post-retirement balance sheet.</p>
+<dd><p>Fonction qui calcule le bilan après la retraite.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – ménage</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance de la classe Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance de la classe Prices</p></li>
 </ul>
 </dd>
 </dl>
@@ -222,13 +223,13 @@
 <dl class="function">
 <dt id="CPR.balance_sheets.add_output">
 <code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">add_output</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em>, <em class="sig-param">key</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.add_output" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to extract output variables.</p>
+<dd><p>Fonction qui extrait les variables d’output.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – ménage</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance de la classe Prices</p></li>
 <li><p><strong>key</strong> (<em>str</em>) – before (« bef »), when first spouse retires (« part »)
 or after retirement (« aft »)</p></li>
 </ul>
@@ -258,7 +259,7 @@ or after retirement (« aft »)</p></li>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, RSI Team at HEC Montréal
+        &copy; Copyright 2020, RSI Team / Équipe IRE, HEC Montréal
 
     </p>
   </div>

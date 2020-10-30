@@ -23,11 +23,11 @@ msgstr ""
 
 #: ../../source/debts.rst:4
 msgid "The Debts module manages debts (payments and balances) in the simulation."
-msgstr ""
+msgstr "Le module Debts gère les dettes (paiements et soldes) dans la simulation."
 
 #: CPR.debts.Debt:1 of
 msgid "This class manages all debts. All amounts are nominal."
-msgstr ""
+msgstr "Cette classe gère toutes les dettes. Tous les montants sont nominaux."
 
 #: CPR.debts.Debt CPR.debts.Debt.estimate_init_term CPR.debts.Debt.update of
 msgid "Parameters"
@@ -35,24 +35,26 @@ msgstr ""
 
 #: CPR.debts.Debt:3 of
 msgid "name of the debt"
-msgstr ""
+msgstr "nom de la dette"
 
 #: CPR.debts.Debt:5 of
 msgid "dictionary containing debt initial balances and monthly payments"
 msgstr ""
+"dictionnaire contenant les soldes initiaux des dettes et les paiements "
+"mensuels"
 
 #: CPR.debts.Debt:7 CPR.debts.Debt.estimate_init_term:3 of
 msgid "instance of the class Common"
-msgstr ""
+msgstr "instance de la classe Common"
 
 #: CPR.debts.Debt:9 CPR.debts.Debt.estimate_init_term:5 CPR.debts.Debt.update:7
 #: of
 msgid "instance of the class Prices"
-msgstr ""
+msgstr "instance de la classe Prices"
 
 #: CPR.debts.Debt.estimate_init_term:1 of
 msgid "Estimate the term of the debt."
-msgstr ""
+msgstr "Estime le terme de la dette."
 
 #: CPR.debts.Debt.estimate_init_term of
 msgid "Returns"
@@ -60,7 +62,7 @@ msgstr ""
 
 #: CPR.debts.Debt.estimate_init_term:8 of
 msgid "term of the debt"
-msgstr ""
+msgstr "durée de la dette"
 
 #: CPR.debts.Debt.estimate_init_term of
 msgid "Return type"
@@ -68,17 +70,26 @@ msgstr ""
 
 #: CPR.debts.Debt.update:1 of
 msgid "Updates yearly payment and balance."
-msgstr ""
+msgstr "Met à jour le paiement annuel et le solde."
 
 #: CPR.debts.Debt.update:3 of
 msgid "year"
-msgstr ""
+msgstr "année"
 
 #: CPR.debts.Debt.update:5 of
 msgid "interest rate"
-msgstr ""
+msgstr "taux d'intérêt"
 
 #: CPR.debts.Debt.reset:1 of
 msgid "Reset balance and term to initial values."
-msgstr ""
+msgstr "Remet le solde et la durée à leur valeur initiale."
+
+#~ msgid "Paramètres"
+#~ msgstr ""
+
+#~ msgid "Renvoie"
+#~ msgstr ""
+
+#~ msgid "Type renvoyé"
+#~ msgstr ""
 

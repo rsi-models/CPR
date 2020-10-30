@@ -26,12 +26,16 @@ msgid ""
 "The Taxes module uses the SRD to compute taxes and benefits for each "
 "household."
 msgstr ""
+"Le module Taxes utilise le SRD pour calculer les impôts et les "
+"prestations pour chaque ménage."
 
 #: CPR.taxes.compute_after_tax_amount:1 of
 msgid ""
 "Compute net nominal return and net amount from withdrawal for "
 "unregistered assets."
 msgstr ""
+"Calcule le rendement nominal net et le montant de retrait net pour les "
+"actifs non enregistrés."
 
 #: CPR.taxes.compute_after_tax_amount CPR.taxes.file_household
 #: CPR.taxes.file_household_inc_to_tax CPR.taxes.get_gis_oas of
@@ -42,26 +46,26 @@ msgstr ""
 #: CPR.taxes.file_household_inc_to_tax:4 CPR.taxes.get_gis_oas:3
 #: CPR.taxes.get_gis_oas:5 of
 msgid "household"
-msgstr ""
+msgstr "ménage"
 
 #: CPR.taxes.compute_after_tax_amount:6 CPR.taxes.file_household:5
 #: CPR.taxes.file_household_inc_to_tax:6 CPR.taxes.get_gis_oas:7 of
 msgid "year"
-msgstr ""
+msgstr "année"
 
 #: CPR.taxes.compute_after_tax_amount:8 CPR.taxes.file_household:7
 #: CPR.taxes.file_household_inc_to_tax:8 of
 msgid "instance of the class Common"
-msgstr ""
+msgstr "instance de la classe Common"
 
 #: CPR.taxes.compute_after_tax_amount:10 CPR.taxes.file_household:9
 #: CPR.taxes.file_household_inc_to_tax:10 CPR.taxes.get_gis_oas:9 of
 msgid "instance of the class Prices"
-msgstr ""
+msgstr "instance de la classe Prices"
 
 #: CPR.taxes.file_household:1 of
 msgid "Files household using SRD."
-msgstr ""
+msgstr "Remplit la déclaration de revenus du ménage à l'aide du SRD."
 
 #: CPR.taxes.file_household CPR.taxes.file_household_inc_to_tax of
 msgid "Returns"
@@ -69,7 +73,7 @@ msgstr ""
 
 #: CPR.taxes.file_household:12 CPR.taxes.file_household_inc_to_tax:13 of
 msgid "instance of class Hhold after tax"
-msgstr ""
+msgstr "instance de la classe Hhold après impôt"
 
 #: CPR.taxes.file_household CPR.taxes.file_household_inc_to_tax of
 msgid "Return type"
@@ -80,8 +84,19 @@ msgid ""
 "Files household with taxable income (interests and dividends) from "
 "unregistered assets."
 msgstr ""
+"Déclare les revenus imposables (intérêts et dividendes) provenant "
+"d'actifs non enregistrés du ménage ayant de tels revenus."
 
 #: CPR.taxes.get_gis_oas:1 of
 msgid "Computes nominal GIS and OAS benefits"
-msgstr ""
+msgstr "Calcule les prestations nominales de PSV et de SRG"
+
+#~ msgid "Paramètres"
+#~ msgstr ""
+
+#~ msgid "Renvoie"
+#~ msgstr ""
+
+#~ msgid "Type renvoyé"
+#~ msgstr ""
 

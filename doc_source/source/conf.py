@@ -19,7 +19,7 @@ autodoc_member_order = 'bysource'
 # -- Project information -----------------------------------------------------
 
 project = 'CPR'
-copyright = '2020, RSI Team at HEC Montréal'
+copyright = '2020, RSI Team / Équipe IRE, HEC Montréal'
 author = 'Team RSI'
 #author = 'David Boisclair, Ismaël Choinière-Crèvecœur, \n Pierre-Carl Michaud & Pierre-Yves Yanni'
 

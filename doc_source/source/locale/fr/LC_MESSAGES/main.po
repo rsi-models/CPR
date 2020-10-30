@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CPR \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-28 15:37-0400\n"
+"POT-Creation-Date: 2020-10-28 18:20-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,17 +33,23 @@ msgid ""
 "carried out. Any parameter value can also be changed here, to use values "
 "other than the default ones provided."
 msgstr ""
-"La fonction *run_simulations* fait tourner les simulations. Ses arguments sont utilisés pour choisir si la version stochastique de l'outil doit être utilisée, ainsi que le nombre de simulations (réplications) qui doivent être effectuées. N'importe quelle valeur de paramètre peut également être modifiée ici, afin d'utiliser des valeurs autres que celles fournies par défaut."
+"La fonction *run_simulations* fait tourner les simulations. Ses arguments"
+" sont utilisés pour choisir si la version stochastique de l'outil doit "
+"être utilisée, ainsi que le nombre de simulations (réplications) qui "
+"doivent être effectuées. N'importe quelle valeur de paramètre peut "
+"également être modifiée ici, afin d'utiliser des valeurs autres que "
+"celles fournies par défaut."
 
 #: CPR.main.run_simulations:1 of
 msgid ""
 "This function launches the simulations. Any parameter can be changed "
 "using extra_params."
 msgstr ""
-"Cette fonction lance les simulations. N'importe quel paramètre peut être modifié à l'aide de extra_params."
+"Cette fonction lance les simulations. N'importe quel paramètre peut être "
+"modifié à l'aide de extra_params."
 
 #: CPR.main.run_simulations of
-msgid "Paramètres"
+msgid "Parameters"
 msgstr ""
 
 #: CPR.main.run_simulations:4 of
@@ -59,7 +65,7 @@ msgid "deterministic prices and price-rent ratio, by default False"
 msgstr "prix et ratio prix-loyers déterministes, par défaut à Faux"
 
 #: CPR.main.run_simulations of
-msgid "Renvoie"
+msgid "Returns"
 msgstr ""
 
 #: CPR.main.run_simulations:11 of
@@ -67,5 +73,15 @@ msgid "instance of the class Results"
 msgstr "instance de la classe Results"
 
 #: CPR.main.run_simulations of
-msgid "Type renvoyé"
+msgid "Return type"
 msgstr ""
+
+#~ msgid "Paramètres"
+#~ msgstr ""
+
+#~ msgid "Renvoie"
+#~ msgstr ""
+
+#~ msgid "Type renvoyé"
+#~ msgstr ""
+

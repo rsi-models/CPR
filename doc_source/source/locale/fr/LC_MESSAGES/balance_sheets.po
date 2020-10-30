@@ -28,6 +28,11 @@ msgid ""
 "collection of variables are calculated in real terms (base year 2018) and"
 " added to the output dataframe retrieved by the module *main*."
 msgstr ""
+"Ce module contient des fonctions qui calculent les différents éléments du"
+" bilan pour chaque ménage à différents moments du processus de "
+"simulation. Un ensemble de variables sont calculées en termes réels (avec"
+" 2018 comme année de base) et ajoutées au dataframe d'output récupéré par"
+" le module *main*."
 
 #: ../../source/balance_sheets.rst:6
 msgid ""
@@ -36,6 +41,11 @@ msgid ""
 "(RRSP, other registered, TFSA and unregistered accounts, as well as DC "
 "RPPs) are calculated. They are stored in variables ending with '_bef'."
 msgstr ""
+"À 55 ans ou dans l'année précédant la retraite, si cette dernière se "
+"produit avant 56 ans, les salaires, la consommation, les pensions "
+"antérieures et les soldes des comptes (REER, autres comptes enregistrés, "
+"CELI et comptes non enregistrés, ainsi que RPA à CD) sont calculés. Ils "
+"sont entreposés dans des variables dont le nom se termine par '_bef'."
 
 #: ../../source/balance_sheets.rst:8
 msgid ""
@@ -45,6 +55,12 @@ msgid ""
 "the values of residences and outstanding mortgages, are stored in "
 "variables ending with '_aft'."
 msgstr ""
+"À 65 ans ou dans l'année de la retraite, si cette dernière se produit "
+"plus tard, la consommation; les pensions antérieures; les rentes achetées"
+" avec les (soldes des) actifs financiers; les prestations de RPA à PD, de"
+" RPC/RRQ et de PSV/SRG/Allocations; ainsi que les valeurs des résidences "
+"et les soldes hypothécaires sont entreposés dans des variables dont le "
+"nom se termine par '_aft'."
 
 #: ../../source/balance_sheets.rst:10
 msgid ""
@@ -53,10 +69,16 @@ msgid ""
 "calculated. They are stored in variables ending with '_part'. Variables "
 "describing the spouse who retires last begin with 's\\_'."
 msgstr ""
+"Pour les couples qui ne prennent pas leur retraite en même temps, les "
+"salaires, les pensions antérieures, les soldes de comptes et les rentes "
+"du premier conjoint à prendre sa retraite sont calculés. Ils sont "
+"entreposés dans des variables dont le nom se termine par '_part'. Le nom "
+"des variables décrivant le conjoint qui prend sa retraite en dernier "
+"débute avec 's\\_'."
 
 #: CPR.balance_sheets.compute_bs_bef_ret:1 of
 msgid "Function to compute the pre-retirement balance sheet."
-msgstr ""
+msgstr "Fonction qui calcule le bilan avant la retraite."
 
 #: CPR.balance_sheets.add_output CPR.balance_sheets.compute_bs_after_ret
 #: CPR.balance_sheets.compute_bs_bef_ret
@@ -68,40 +90,43 @@ msgstr ""
 #: CPR.balance_sheets.compute_bs_bef_ret:3
 #: CPR.balance_sheets.compute_cons_bef_ret:3 of
 msgid "household"
-msgstr ""
+msgstr "ménage"
 
 #: CPR.balance_sheets.add_output:5 CPR.balance_sheets.compute_bs_after_ret:5
 #: CPR.balance_sheets.compute_bs_bef_ret:5
 #: CPR.balance_sheets.compute_cons_bef_ret:5 of
 msgid "year"
-msgstr ""
+msgstr "année"
 
 #: CPR.balance_sheets.compute_bs_after_ret:7
 #: CPR.balance_sheets.compute_bs_bef_ret:7 of
 msgid "instance of the class Common"
-msgstr ""
+msgstr "instance de la classe Common"
 
 #: CPR.balance_sheets.add_output:7 CPR.balance_sheets.compute_bs_after_ret:9
 #: CPR.balance_sheets.compute_bs_bef_ret:9
 #: CPR.balance_sheets.compute_cons_bef_ret:7 of
 msgid "instance of the class Prices"
-msgstr ""
+msgstr "instance de la classe Prices"
 
 #: CPR.balance_sheets.compute_cons_bef_ret:1 of
 msgid "Function to compute pre-retirement consumption."
-msgstr ""
+msgstr "Fonction qui calcule la consommation avant la retraite."
 
 #: CPR.balance_sheets.compute_bs_after_ret:1 of
 msgid "Function to compute the post-retirement balance sheet."
-msgstr ""
+msgstr "Fonction qui calcule le bilan après la retraite."
 
 #: CPR.balance_sheets.add_output:1 of
 msgid "Function to extract output variables."
-msgstr ""
+msgstr "Fonction qui extrait les variables d'output."
 
 #: CPR.balance_sheets.add_output:9 of
 msgid ""
 "before (\"bef\"), when first spouse retires (\"part\") or after "
 "retirement (\"aft\")"
 msgstr ""
+
+#~ msgid "Paramètres"
+#~ msgstr ""
 

@@ -85,6 +85,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference external" href="https://rsi-models.github.io/CPR/fr">VERSION FRANÇAISE</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rsi-models.github.io/CPR/en">ENGLISH VERSION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Premiers pas avec le CPR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="main.html">Main</a></li>
 <li class="toctree-l1"><a class="reference internal" href="simulator.html">Simulator</a></li>
@@ -168,31 +169,31 @@
             
   <div class="section" id="assets">
 <h1>Assets<a class="headerlink" href="#assets" title="Lien permanent vers ce titre">¶</a></h1>
-<p>This module manages all assets using various classes and functions: pension plans, individual savings (registered and unregistered), housing, business assets. It uses the contributions and room used as inputs as well as returns generated in the Macro module, and it updates all asset-related variables as the simulation progresses.</p>
+<p>À l’aide de plusieurs classes et fonctions, ce module gère tous les actifs: régimes de retraite, épargne individuelle (enregistrée et non enregistrée), logement, entreprises. Il utilise les cotisations et l’espace entrés comme inputs ainsi que les rendements générés dans le module Macro. Il met à jour toutes les variables reliées aux actifs à mesure que la simulation progresse.</p>
 <dl class="class">
 <dt id="CPR.assets.ContributionRoom">
 <em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">ContributionRoom</code><span class="sig-paren">(</span><em class="sig-param">init_room_rrsp</em>, <em class="sig-param">init_room_tfsa</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>This class manages contribution room for TFSAs and RRSPs.</p>
-<p>All amounts are nominal.</p>
+<dd><p>Cette classe gère l’espace de cotisation aux CELI et aux REER.</p>
+<p>Tous les montants sont nominaux.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>init_room_rrsp</strong> (<em>float</em>) – initial RRSP contribution room available</p></li>
-<li><p><strong>init_room_tfsa</strong> (<em>float</em>) – initial TFSA contribution room available</p></li>
+<li><p><strong>init_room_rrsp</strong> (<em>float</em>) – espace de cotisation REER initialement disponible</p></li>
+<li><p><strong>init_room_tfsa</strong> (<em>float</em>) – espace de cotisation CELI initialement disponible</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="method">
 <dt id="CPR.assets.ContributionRoom.compute_contributions">
 <code class="sig-name descname">compute_contributions</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.compute_contributions" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to update contribution room for RRSPs and TFSAs, using the 2 other functions below (which themselves call the other functions of the class).</p>
+<dd><p>Fonction qui met à jour l’espace de cotisation pour les REER et les CELI, en utilisant les 2 autres fonctions ci-dessous (qui elles-mêmes appellent les autres fonctions de la classe).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance de la classe Person</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance de la classe Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance de la classe Prices</p></li>
 </ul>
 </dd>
 </dl>
@@ -201,13 +202,13 @@
 <dl class="method">
 <dt id="CPR.assets.ContributionRoom.update_rrsp_room">
 <code class="sig-name descname">update_rrsp_room</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.update_rrsp_room" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to update RRSP contribution room.</p>
+<dd><p>Fonction qui met à jour l’espace de cotisation REER.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance de la classe Person</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance de la classe Common</p></li>
 </ul>
 </dd>
 </dl>
@@ -216,13 +217,13 @@
 <dl class="method">
 <dt id="CPR.assets.ContributionRoom.update_tfsa_room">
 <code class="sig-name descname">update_tfsa_room</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.update_tfsa_room" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to update TFSA contribution room.</p>
+<dd><p>Fonction qui met à jour l’espace de cotisation CELI.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance de la classe Person</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance de la classe Common</p></li>
 </ul>
 </dd>
 </dl>
@@ -231,13 +232,13 @@
 <dl class="method">
 <dt id="CPR.assets.ContributionRoom.adjust_db_contributions">
 <code class="sig-name descname">adjust_db_contributions</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_db_contributions" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to adjust RRSP contribution room to DB RPP contributions.</p>
+<dd><p>Fonction qui ajuste l’espace de cotisation REER en fonction des cotisations aux RPA à PD.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance de la classe Person</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance de la classe Common</p></li>
 </ul>
 </dd>
 </dl>
@@ -246,13 +247,13 @@
 <dl class="method">
 <dt id="CPR.assets.ContributionRoom.adjust_dc_contributions">
 <code class="sig-name descname">adjust_dc_contributions</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_dc_contributions" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to adjust RRSP contribution room to DC RPP contributions.</p>
-<p>If contribution room is insufficent for the intended/planned RRSP contributions, the « excess » contributions are channeled to TFSA.</p>
+<dd><p>Fonction qui ajuste l’espace de cotisation REER en fonction des cotisations aux RPA à CD.</p>
+<p>Si l’espace de cotisation est insuffisant pour les cotisations REER prévues / planifiées, les cotisations « excédentaires » sont dirigées vers le CELI.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance de la classe Person</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
 </ul>
 </dd>
 </dl>
@@ -261,10 +262,10 @@
 <dl class="method">
 <dt id="CPR.assets.ContributionRoom.adjust_employees_contributions">
 <code class="sig-name descname">adjust_employees_contributions</code><span class="sig-paren">(</span><em class="sig-param">p</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_employees_contributions" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to compute employee contributions to DC RPPs (later used to caculate taxes).</p>
+<dd><p>Fonction qui calcule les cotisations d’employé aux RPA à CD (utilisées plus tard afin de calculer les impôts).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
-<dd class="field-odd"><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p>
+<dd class="field-odd"><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance de la classe Person</p>
 </dd>
 </dl>
 </dd></dl>
@@ -272,14 +273,14 @@
 <dl class="method">
 <dt id="CPR.assets.ContributionRoom.adjust_rrsp_contributions">
 <code class="sig-name descname">adjust_rrsp_contributions</code><span class="sig-paren">(</span><em class="sig-param">acc</em>, <em class="sig-param">p</em>, <em class="sig-param">year</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_rrsp_contributions" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to adjust RRSP contribution for contributions other than to RPPs.</p>
-<p>If contribution room is insufficent for the intended/planned RRSP contributions, the « excess » contributions are channeled to TFSA.</p>
+<dd><p>Fonction qui ajuste l’espace de cotisation REER en fonction des cotisations autres qu’à des RPA.</p>
+<p>Si l’espace de cotisation est insuffisant pour les cotisations REER prévues / planifiées, les cotisations « excédentaires » sont dirigées vers le CELI.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>acc</strong> (<em>str</em>) – type of account</p></li>
-<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>acc</strong> (<em>str</em>) – type de compte</p></li>
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance de la classe Person</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
 </ul>
 </dd>
 </dl>
@@ -288,15 +289,15 @@
 <dl class="method">
 <dt id="CPR.assets.ContributionRoom.adjust_tfsa_contributions">
 <code class="sig-name descname">adjust_tfsa_contributions</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_tfsa_contributions" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to adjust TFSA contribution room to TFSA contributions (including « excess » DC RPP and RRSP contributions).</p>
-<p>If contribution room is insufficent for the intended/planned TFSA contributions, the « excess » contributions are channeled to unregistered accounts.</p>
+<dd><p>Fonction qui ajuste l’espace de cotisation CELI en fonction des cotisations CELI (y compris les cotisations « excédentaires » aux REER et aux RPA à CD).</p>
+<p>Si l’espace de cotisation est insuffisant pour les cotisations CELI prévues / planifiées, les cotisations « excédentaires » sont dirigées vers des comptes non enregistrés.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance de la classe Person</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance de la classe Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance de la classe Prices</p></li>
 </ul>
 </dd>
 </dl>
@@ -305,18 +306,18 @@
 <dl class="method">
 <dt id="CPR.assets.ContributionRoom.adjust_rrif">
 <code class="sig-name descname">adjust_rrif</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_rrif" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to adjust DC RPP and RRSP accounts to mandatory RRIF withdrawals (RRIFs are not separately modelled in this version).</p>
+<dd><p>Fonction qui ajuste les comptes REER et RPA à CD en fonction des retraits obligatoires aux FERR (les FERR ne sont pas modélisés séparément dans cette version).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance de la classe Person</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance de la classe Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance de la classe Prices</p></li>
 </ul>
 </dd>
 <dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p>Nominal amount that needs to be withdrawn.</p>
+<dd class="field-even"><p>Montant nominal qui doit être retiré.</p>
 </dd>
 <dt class="field-odd">Type renvoyé</dt>
 <dd class="field-odd"><p>float</p>
@@ -327,12 +328,12 @@
 <dl class="method">
 <dt id="CPR.assets.ContributionRoom.adjust_unreg_contributions">
 <code class="sig-name descname">adjust_unreg_contributions</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_unreg_contributions" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to adjust contributions to unregistered accounts for « excess » TFSA contributions channeled to them.</p>
+<dd><p>Fonction qui ajuste les cotisations aux comptes non enregistrés en fonction des cotisations CELI « excédentaires » qui sont dirigées vers eux.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance de la classe Person</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
 </ul>
 </dd>
 </dl>
@@ -341,7 +342,7 @@
 <dl class="method">
 <dt id="CPR.assets.ContributionRoom.reset">
 <code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.reset" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Reset RRSP and TFSA contribution rooms to their inital values.</p>
+<dd><p>Remet les espaces de cotisation REER et CELI à leurs valeurs initiales.</p>
 </dd></dl>
 
 </dd></dl>
@@ -349,27 +350,27 @@
 <dl class="class">
 <dt id="CPR.assets.FinAsset">
 <em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">FinAsset</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">hh</em>, <em class="sig-param">acc</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>This class manages registered accounts. All amounts are nominal.</p>
+<dd><p>Cette classe gère les comptes enregistrés. Tous les montants sont nominaux.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
-<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
-<li><p><strong>acc</strong> (<em>str</em>) – type of account</p></li>
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance de la classe Person</p></li>
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – ménage</p></li>
+<li><p><strong>acc</strong> (<em>str</em>) – type de compte</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="method">
 <dt id="CPR.assets.FinAsset.update">
 <code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">d_returns</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.update" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to update the balance to account for contributions, withdrawals, and returns.</p>
+<dd><p>Fonction qui met à jour le solde pour tenir compte des cotisations, des retraits et des rendements.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>d_returns</strong> (<em>dict</em>) – dictionary of returns</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>d_returns</strong> (<em>dict</em>) – dictionnaire de rendements</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance de la classe Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance de la classe Prices</p></li>
 </ul>
 </dd>
 </dl>
@@ -378,16 +379,16 @@
 <dl class="method">
 <dt id="CPR.assets.FinAsset.rate">
 <code class="sig-name descname">rate</code><span class="sig-paren">(</span><em class="sig-param">d_returns</em>, <em class="sig-param">year</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.rate" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to compute the rate of return given the mix of assets in the account.</p>
+<dd><p>Fonction qui calcule le taux de rendement étant donné la composition des actifs dans le compte.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>d_returns</strong> (<em>dict</em>) – dictionary of returns</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>d_returns</strong> (<em>dict</em>) – dictionnaire de rendements</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
 </ul>
 </dd>
 <dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p>Rate of return (net of fees).</p>
+<dd class="field-even"><p>Taux de rendement (net de frais).</p>
 </dd>
 <dt class="field-odd">Type renvoyé</dt>
 <dd class="field-odd"><p>float</p>
@@ -398,16 +399,16 @@
 <dl class="method">
 <dt id="CPR.assets.FinAsset.rrif_withdrawal">
 <code class="sig-name descname">rrif_withdrawal</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.rrif_withdrawal" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to manage mandatory RRIF withdrawals.</p>
+<dd><p>Fonction gérant les retraits obligatoires aux FERR.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance de la classe Person</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance de la classe Common</p></li>
 </ul>
 </dd>
 <dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p>Amount of mandatory withdrawal.</p>
+<dd class="field-even"><p>Montant du retrait obligatoire.</p>
 </dd>
 <dt class="field-odd">Type renvoyé</dt>
 <dd class="field-odd"><p>float</p>
@@ -418,10 +419,10 @@
 <dl class="method">
 <dt id="CPR.assets.FinAsset.liquidate">
 <code class="sig-name descname">liquidate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.liquidate" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to liquidate an account, setting balance, contributions and withdrawals to zero.</p>
+<dd><p>Fonction qui liquide le compte et met le solde, les cotisations et les retraits à zéro.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Renvoie</dt>
-<dd class="field-odd"><p>Amount from liquidation (before taxes).</p>
+<dd class="field-odd"><p>Montant de la liquidation (avant impôts).</p>
 </dd>
 <dt class="field-even">Type renvoyé</dt>
 <dd class="field-even"><p>float</p>
@@ -432,7 +433,7 @@
 <dl class="method">
 <dt id="CPR.assets.FinAsset.reset">
 <code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.reset" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Reset the balance and withdrawal to its initial balance.</p>
+<dd><p>Remet le solde et les retraits à leur valeur initiale.</p>
 </dd></dl>
 
 </dd></dl>
@@ -440,28 +441,28 @@
 <dl class="class">
 <dt id="CPR.assets.UnregAsset">
 <em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">UnregAsset</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">hh</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>This class manages unregistered accounts.</p>
-<p>All amounts are nominal.</p>
+<dd><p>Cette classe gère les comptes non enregistrés.</p>
+<p>Tous les montants sont nominaux.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
-<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance de la classe Person</p></li>
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – ménage</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance de la classe Prices</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="method">
 <dt id="CPR.assets.UnregAsset.update">
 <code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">d_returns</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.update" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to update the balance for contributions, withdrawals and returns.</p>
+<dd><p>Fonction qui met à jour le solde en fonction des cotisations, retraits et rendements.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>d_returns</strong> (<em>dict of float</em>) – dictionary of returns</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>d_returns</strong> (<em>dict of float</em>) – dictionnaire de rendements</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance de la classe Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance de la classe Prices</p></li>
 </ul>
 </dd>
 </dl>
@@ -470,12 +471,12 @@
 <dl class="method">
 <dt id="CPR.assets.UnregAsset.compute_income">
 <code class="sig-name descname">compute_income</code><span class="sig-paren">(</span><em class="sig-param">d_returns</em>, <em class="sig-param">year</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.compute_income" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to compute new capital gains and taxable income (dividends and interests).</p>
+<dd><p>Fonction qui calcule les nouveaux gains en capital et le revenu imposable de dividendes et d’intérêts.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>d_returns</strong> (<em>dict of float</em>) – dictionary of returns</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>d_returns</strong> (<em>dict of float</em>) – dictionnaire de rendements</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
 </ul>
 </dd>
 </dl>
@@ -484,16 +485,16 @@
 <dl class="method">
 <dt id="CPR.assets.UnregAsset.rate">
 <code class="sig-name descname">rate</code><span class="sig-paren">(</span><em class="sig-param">d_returns</em>, <em class="sig-param">year</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.rate" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function that computes the rate of return given the mix of assets in account.</p>
+<dd><p>Fonction qui calcule le taux de rendement étant donné la composition d’actifs dans le compte.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>d_returns</strong> (<em>dict of float</em>) – dictionary of returns</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
+<li><p><strong>d_returns</strong> (<em>dict of float</em>) – dictionnaire de rendements</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
 </ul>
 </dd>
 <dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p>Rate of return (net of fees).</p>
+<dd class="field-even"><p>Taux de rendement (net de frais).</p>
 </dd>
 <dt class="field-odd">Type renvoyé</dt>
 <dd class="field-odd"><p>float</p>
@@ -504,32 +505,31 @@
 <dl class="method">
 <dt id="CPR.assets.UnregAsset.update_balance">
 <code class="sig-name descname">update_balance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.update_balance" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to update to balance and separate between non-taxable funds (i.e. previous post-tax balance), capital gains, dividends, and interests.</p>
+<dd><p>Fonction qui met à jour le solde et distingue les fonds non imposables (c.-à-d. le solde antérieur après impôts), les gains en capital, les dividendes et les intérêts.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CPR.assets.UnregAsset.prepare_withdrawal">
 <code class="sig-name descname">prepare_withdrawal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.prepare_withdrawal" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to separate a withdrawal from the balance at the end of the period, and separately identify non-taxable funds, capital gains, dividends, and interests.</p>
+<dd><p>Fonction qui sépare un retrait du solde à la fin de la période et identifie séparément les fonds non imposables, les gains en capital, les dividendes et les intérêts.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CPR.assets.UnregAsset.adjust_income">
 <code class="sig-name descname">adjust_income</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.adjust_income" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to adjust investment income (dividends and interests) for withdrawals.</p>
+<dd><p>Fonction qui ajuste le revenu d’investissement (dividendes et intérêts) en fonction des retraits.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CPR.assets.UnregAsset.adjust_cap_losses">
 <code class="sig-name descname">adjust_cap_losses</code><span class="sig-paren">(</span><em class="sig-param">realized_cap_gains</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.adjust_cap_losses" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to compute capital losses from previous years used for deduction
-against capital gains, and adjust realized capital losses accordingly.</p>
+<dd><p>Fonction qui calcule les perts en capital d’années antérieures utilisées comme déduction contre des gains en capital, et ajuste en conséquence les pertes en capital réalisées.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
-<dd class="field-odd"><p><strong>realized_cap_gains</strong> (<em>float</em>) – capital gains</p>
+<dd class="field-odd"><p><strong>realized_cap_gains</strong> (<em>float</em>) – gains en capital</p>
 </dd>
 <dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p>Capital losses (to be deducted).</p>
+<dd class="field-even"><p>Pertes en capital (à déduire).</p>
 </dd>
 <dt class="field-odd">Type renvoyé</dt>
 <dd class="field-odd"><p>float</p>
@@ -540,19 +540,19 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 <dl class="method">
 <dt id="CPR.assets.UnregAsset.adjust_final_balance">
 <code class="sig-name descname">adjust_final_balance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.adjust_final_balance" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function that adjusts the final balance for withdrawals, dividends and interests.</p>
+<dd><p>Fonction qui ajuste le solde final en fonction des retraits, dividendes et intérêts.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CPR.assets.UnregAsset.liquidate">
 <code class="sig-name descname">liquidate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.liquidate" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to liquidate the account and adjust capital losses.</p>
+<dd><p>Fonction qui liquide le compte et ajuste les pertes en capital.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CPR.assets.UnregAsset.reset">
 <code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.reset" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to reset the balance, capital gains, and withdrawals to their initial values.</p>
+<dd><p>Fonction qui remet à leur valeur initiale le solde, les gains en capital et les retraits.</p>
 </dd></dl>
 
 </dd></dl>
@@ -560,13 +560,13 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 <dl class="class">
 <dt id="CPR.assets.RppDC">
 <em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">RppDC</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDC" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>This class manages DC RPPs.</p>
-<p>All amounts are nominal.</p>
+<dd><p>Cette classe gère les RPA à CD.</p>
+<p>Tous les montants sont nominaux.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance de la classe Person</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance de la classe Common</p></li>
 </ul>
 </dd>
 </dl>
@@ -575,23 +575,23 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 <dl class="class">
 <dt id="CPR.assets.RppDB">
 <em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">RppDB</code><span class="sig-paren">(</span><em class="sig-param">p</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>This class manages DB RPPs.</p>
-<p>All amounts are nominal.</p>
+<dd><p>Cette classe gère les RPA à PD.</p>
+<p>Tous les montants sont nominaux.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
-<dd class="field-odd"><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p>
+<dd class="field-odd"><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance de la classe Person</p>
 </dd>
 </dl>
 <dl class="method">
 <dt id="CPR.assets.RppDB.compute_benefits">
 <code class="sig-name descname">compute_benefits</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.compute_benefits" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function that computes RPP DB benefits and adjusts them for CPP/QPP integration.</p>
-<p>If RPP benefits are smaller than CPP/QPP benefits, RPP benefits are set to zero once the receipt of CPP/QPP retirement benefits begins.</p>
+<dd><p>Fonction qui calcule les prestations de RPA à PD et les ajuste pour tenir compte de l’intégration au RPC/RRQ.</p>
+<p>Si les prestations de RPA sont plus faibles que les prestations de RPC/RRQ, les prestations de RPA sont fixées à zéro une fois que débutent les prestations de retraite du RPC/RRQ.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance de la classe Person</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance de la classe Common</p></li>
 </ul>
 </dd>
 </dl>
@@ -600,13 +600,13 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 <dl class="method">
 <dt id="CPR.assets.RppDB.adjust_for_penalty">
 <code class="sig-name descname">adjust_for_penalty</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.adjust_for_penalty" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to compute a penalty for individuals who begin to receive DB RPP benefits « early », i.e. before they accumulate the maximum number of years of service, if they are younger than the age at which benefits can start without penalty (the « early retirement age »).</p>
-<p>By default, the penalty applies to those who begin RPP benefits receipt before reaching 35 years of service and before age 62. These values can be modified.</p>
+<dd><p>Fonction qui calcule une pénalité pour les individus débutant leurs prestations de RPA à PD de façpn « hâtive », c.-à-d. avant d’avoir accumulé le nombre maximal d’années de service, s’ils sont plus jeunes que l’âge auquel les prestations peuvent débuter sans pénalité (« l’âge de retraite anticipée »).</p>
+<p>Par défaut, la pénalité s’applique aux individus qui débutent leurs prestations avant d’avoir atteint 35 années de service et avant 62 ans. Ces valeurs peuvent être modifiées.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance de la classe Person</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance de la classe Common</p></li>
 </ul>
 </dd>
 </dl>
@@ -615,16 +615,16 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 <dl class="method">
 <dt id="CPR.assets.RppDB.compute_cpp_adjustment">
 <code class="sig-name descname">compute_cpp_adjustment</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.compute_cpp_adjustment" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to compute an adjustment (reduction) to DB RPP benefits to account for CPP/QPP integration.</p>
+<dd><p>Fonction qui calcule un ajustement (une réduction) des prestations de RPA à PD pour tenir compte de l’intégration avec le RPC/RRQ.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
+<li><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance de la classe Person</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance de la classe Common</p></li>
 </ul>
 </dd>
 <dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p>Amount of benefit adjustment for CPP/QPP integration.</p>
+<dd class="field-even"><p>Montant de l’ajustement pour l’intégration au RPC/RRQ.</p>
 </dd>
 <dt class="field-odd">Type renvoyé</dt>
 <dd class="field-odd"><p>float</p>
@@ -635,7 +635,7 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 <dl class="method">
 <dt id="CPR.assets.RppDB.reset">
 <code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.reset" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function that resets the benefits and contribution rates to their initial values.</p>
+<dd><p>Fonction qui remet à leur valeur initiale les prestations et taux de cotisation.</p>
 </dd></dl>
 
 </dd></dl>
@@ -643,26 +643,26 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 <dl class="class">
 <dt id="CPR.assets.RealAsset">
 <em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">RealAsset</code><span class="sig-paren">(</span><em class="sig-param">d_hh</em>, <em class="sig-param">resid</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>This class manages housing and residences.</p>
-<p>All amounts are nominal.</p>
+<dd><p>Cette classe gère le logement et les résidences.</p>
+<p>Tous les montants sont nominaux.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>d_hh</strong> (<em>dict of float</em>) – dictionary containing values of residences</p></li>
-<li><p><strong>resid</strong> (<em>str</em>) – primary or secondary residence</p></li>
+<li><p><strong>d_hh</strong> (<em>dict of float</em>) – dictionnaire contenant les valeurs des résidences</p></li>
+<li><p><strong>resid</strong> (<em>str</em>) – résidence principale ou secondaire</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="method">
 <dt id="CPR.assets.RealAsset.update">
 <code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">growth_rates</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset.update" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to update the balance (residence values) for growth in price.</p>
+<dd><p>Fonction qui met à jour le solde (les valeurs des résidences) en fonction de la croissance du prix.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>growth_rates</strong> (<em>dict</em>) – nominal return to housing (capital gains)</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>growth_rates</strong> (<em>dict</em>) – rendement nominal sur le logement (gains en capital)</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance de la classe Prices</p></li>
 </ul>
 </dd>
 </dl>
@@ -671,10 +671,10 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 <dl class="method">
 <dt id="CPR.assets.RealAsset.liquidate">
 <code class="sig-name descname">liquidate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset.liquidate" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to liquidate the asset, compute capital gains if they apply, and set balance to zero.</p>
+<dd><p>Fonction qui liquide l’actif, calcule les gains en capital si applicable, et fixe le solde à zéro.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Renvoie</dt>
-<dd class="field-odd"><p>Amount from asset liquidation (before taxes).</p>
+<dd class="field-odd"><p>Montant de la liquidation d’actif (avant impôts).</p>
 </dd>
 <dt class="field-even">Type renvoyé</dt>
 <dd class="field-even"><p>float</p>
@@ -685,19 +685,19 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 <dl class="method">
 <dt id="CPR.assets.RealAsset.reset">
 <code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset.reset" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to reset residence value to its initial value and set capital gains to zero.</p>
+<dd><p>Fonction qui remet la valeur de la résidence à sa valeur initiale et fixe les gains en capital à zéro.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="CPR.assets.RealAsset.impute_rent">
 <code class="sig-name descname">impute_rent</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset.impute_rent" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to compute imputed rent.</p>
+<dd><p>Fonction qui calcule le loyer imputé.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – ménage</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance de la classe Prices</p></li>
 </ul>
 </dd>
 </dl>
@@ -708,23 +708,23 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 <dl class="class">
 <dt id="CPR.assets.Business">
 <em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">Business</code><span class="sig-paren">(</span><em class="sig-param">d_hh</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>This class manages a business (as an asset owned by the houshehold).</p>
-<p>All amounts are nominal.</p>
+<dd><p>Cette classe gère une entreprise (comme un actif détenu par le ménage).</p>
+<p>Tous les montants sont nominaux.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
-<dd class="field-odd"><p><strong>d_hh</strong> (<em>dict of float</em>) – dictionary containing value of business</p>
+<dd class="field-odd"><p><strong>d_hh</strong> (<em>dict of float</em>) – dictionnaire contenant la valeur de l’entreprise</p>
 </dd>
 </dl>
 <dl class="method">
 <dt id="CPR.assets.Business.update">
 <code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">d_business_returns</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business.update" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to update the balance and dividends.</p>
+<dd><p>Fonction qui met à jour le solde et les dividendes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>d_business_returns</strong> (<em>dict</em>) – returns on business assets</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>d_business_returns</strong> (<em>dict</em>) – rendements sur les actifs d’entreprise</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance de la classe Prices</p></li>
 </ul>
 </dd>
 </dl>
@@ -733,13 +733,13 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 <dl class="method">
 <dt id="CPR.assets.Business.liquidate">
 <code class="sig-name descname">liquidate</code><span class="sig-paren">(</span><em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business.liquidate" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to liquidate account (business assets), compute capital gains, and set balance to zero.</p>
+<dd><p>Fonction qui liquide le compte (actifs d’entreprise), calcule les gains en capital et fixe le solde à zéro.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
-<dd class="field-odd"><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p>
+<dd class="field-odd"><p><strong>common</strong> (<em>Common</em>) – instance de la classe Common</p>
 </dd>
 <dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p>Selling price of the business assets.</p>
+<dd class="field-even"><p>Prix de vente des actifs d’entreprise.</p>
 </dd>
 <dt class="field-odd">Type renvoyé</dt>
 <dd class="field-odd"><p>float</p>
@@ -750,7 +750,7 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 <dl class="method">
 <dt id="CPR.assets.Business.reset">
 <code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business.reset" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Reset business value and capital gains to their initial values.</p>
+<dd><p>Remet à leur valeur initiale la valeur de l’entreprise et les gains en capital.</p>
 </dd></dl>
 
 </dd></dl>
@@ -777,7 +777,7 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, RSI Team at HEC Montréal
+        &copy; Copyright 2020, RSI Team / Équipe IRE, HEC Montréal
 
     </p>
   </div>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CPR \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-28 15:37-0400\n"
+"POT-Creation-Date: 2020-10-28 18:20-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,9 @@ msgid ""
 " table below shows all the individual inputs to the CPR (some of them are"
 " entered in other modules)."
 msgstr ""
-"Ce module configure des ménages et leur attache des actifs et des dettes. Le tableau ci-dessous montre tous les intrants individuels au CPR (certains sont entrés dans d'autres modules)."
+"Ce module configure des ménages et leur attache des actifs et des dettes."
+" Le tableau ci-dessous montre tous les intrants individuels au CPR "
+"(certains sont entrés dans d'autres modules)."
 
 #: ../../source/initialisation.rst:8
 msgid ""
@@ -38,20 +40,27 @@ msgid ""
 "numerous -- inputs is incorrectly specified (i.e. contains a mistake or "
 "is highly implausible)."
 msgstr ""
-"Bien qu'un fichier exemple d'intrants soit fourni avec le package, un tutoriel est également offert afin de montrer aux utilisateurs comment modifier ces intrants afin d'utiliser ceux de leur choix. NOTE: il faut être prudent lorsque l'on utilise ses propres intrants, car un message d'erreur général sera généré si l'un des -- nombreux -- intrants est spécifié de manière incorrecte (c.-à-d. qu'il contient une erreur ou est très peu plausible)."
+"Bien qu'un fichier exemple d'intrants soit fourni avec le package, un "
+"tutoriel est également offert afin de montrer aux utilisateurs comment "
+"modifier ces intrants afin d'utiliser ceux de leur choix. NOTE: il faut "
+"être prudent lorsque l'on utilise ses propres intrants, car un message "
+"d'erreur général sera généré si l'un des -- nombreux -- intrants est "
+"spécifié de manière incorrecte (c.-à-d. qu'il contient une erreur ou est "
+"très peu plausible)."
 
 #: CPR.initialisation.create_hh:1 of
 msgid ""
 "Function that creates a household with one or two persons and attaches "
 "assets and debts."
 msgstr ""
-"Fonction qui crée un ménage avec une ou deux personnes et y attache des actifs et des dettes."
+"Fonction qui crée un ménage avec une ou deux personnes et y attache des "
+"actifs et des dettes."
 
 #: CPR.initialisation.Hhold CPR.initialisation.Hhold.set_other_years
 #: CPR.initialisation.Person CPR.initialisation.Person.create_shocks
 #: CPR.initialisation.Person.create_wage_profile CPR.initialisation.create_hh
 #: of
-msgid "Paramètres"
+msgid "Parameters"
 msgstr ""
 
 #: CPR.initialisation.Hhold:7 CPR.initialisation.create_hh:4 of
@@ -77,7 +86,7 @@ msgstr "innstance de la classe Prices"
 #: CPR.initialisation.Person.create_shocks
 #: CPR.initialisation.Person.create_wage_profile CPR.initialisation.create_hh
 #: of
-msgid "Renvoie"
+msgid "Returns"
 msgstr ""
 
 #: CPR.initialisation.create_hh:13 of
@@ -87,7 +96,7 @@ msgstr "Instance de la classe Hhold."
 #: CPR.initialisation.Person.create_shocks
 #: CPR.initialisation.Person.create_wage_profile CPR.initialisation.create_hh
 #: of
-msgid "Type renvoyé"
+msgid "Return type"
 msgstr ""
 
 #: CPR.initialisation.Person:1 of
@@ -111,7 +120,9 @@ msgid ""
 "Function that creates wage profiles for each realisation of uncertainty, "
 "to be used when the stochastic version of the tool is selected."
 msgstr ""
-"Fonction qui crée des profils de salaires pour chaque réalisation de l'incertitude, utilisée lorsque la version stochastique de l'outil est sélectionnée."
+"Fonction qui crée des profils de salaires pour chaque réalisation de "
+"l'incertitude, utilisée lorsque la version stochastique de l'outil est "
+"sélectionnée."
 
 #: CPR.initialisation.Person.create_wage_profile:8 of
 msgid "Wage profiles."
@@ -154,4 +165,16 @@ msgid ""
 "Function that sets years of partial and full retirement as well as years "
 "in which pre-retirement and post-retirement consumptions are assessed."
 msgstr ""
-"Fonction qui fixe les années de retraite partielle et complète (pour les couples) ainsi que les années dans lesquelles la consommation avant et après la retraite sont évaluées."
+"Fonction qui fixe les années de retraite partielle et complète (pour les "
+"couples) ainsi que les années dans lesquelles la consommation avant et "
+"après la retraite sont évaluées."
+
+#~ msgid "Paramètres"
+#~ msgstr ""
+
+#~ msgid "Renvoie"
+#~ msgstr ""
+
+#~ msgid "Type renvoyé"
+#~ msgstr ""
+

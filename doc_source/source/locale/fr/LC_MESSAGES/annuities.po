@@ -28,12 +28,19 @@ msgid ""
 "One of the functions calls the annuity factor built using the Life "
 "module."
 msgstr ""
+"Ce module contient les fonctions requises pour convertir tous les actifs "
+"financiers en rentes au moment de la retraite (du premier et/ou du "
+"deuxième conjoint). Une des fonctions appelle le facteur de rente "
+"construit à l'aide du module Life."
 
 #: CPR.annuities.compute_partial_annuities:1 of
 msgid ""
 "Function that partially converts assets into annuities when the first "
 "spouse retires, using the other functions below."
 msgstr ""
+"Fonction qui convertit partiellement les actifs en rentes au moment de la"
+" retraite du premier conjoint, en utilisant les autres fonctions ci-"
+"dessous."
 
 #: CPR.annuities.compute_annuities CPR.annuities.compute_factors
 #: CPR.annuities.compute_partial_annuities
@@ -45,44 +52,48 @@ msgstr ""
 #: CPR.annuities.compute_annuities:3 CPR.annuities.compute_factors:5
 #: CPR.annuities.compute_partial_annuities:3 of
 msgid "household"
-msgstr ""
+msgstr "ménage"
 
 #: CPR.annuities.compute_annuities:5 CPR.annuities.compute_partial_annuities:5
 #: of
 msgid "dictionary of returns"
-msgstr ""
+msgstr "dictionnaire de rendements"
 
 #: CPR.annuities.compute_annuities:7 CPR.annuities.compute_partial_annuities:7
 #: CPR.annuities.convert_to_real_annuities:5 of
 msgid "year"
-msgstr ""
+msgstr "année"
 
 #: CPR.annuities.compute_annuities:9 CPR.annuities.compute_factors:11
 #: CPR.annuities.compute_partial_annuities:9
 #: CPR.annuities.convert_to_real_annuities:7 of
 msgid "instance of the class Prices"
-msgstr ""
+msgstr "instance de la classe Prices"
 
 #: CPR.annuities.compute_annuities:1 of
 msgid ""
 "Function that fully converts assets into annuities when the last spouse "
 "retires, using the other functions below."
 msgstr ""
+"Fonction qui convertit entièrement les actifs en rentes au moment de la "
+"retraite du dernier conjoint, à l'aide des autres fonctions ci-dessous."
 
 #: CPR.annuities.liquidate_fin_assets:1 of
 msgid "Function to liquidate financial assets."
-msgstr ""
+msgstr "Fonction qui liquide les actifs financiers."
 
 #: CPR.annuities.compute_factors:7 CPR.annuities.convert_to_real_annuities:3
 #: CPR.annuities.liquidate_fin_assets:3 of
 msgid "instance of the class Person"
-msgstr ""
+msgstr "instance de la classe Person"
 
 #: CPR.annuities.compute_factors:1 of
 msgid ""
 "Function to compute an individual factor for annuities constant in real "
 "terms."
 msgstr ""
+"Fonction calculant un facteur individuel pour les rentes constant en "
+"termes réels."
 
 #: CPR.annuities.compute_factors:3 of
 msgid ""
@@ -91,12 +102,20 @@ msgid ""
 " purchased. Ideally, the whole interest structure should be used instead,"
 " such that mean reversion would smooth out annuity prices."
 msgstr ""
+"Nous utilisons un taux ajusté pour amenuiser toute volatilité "
+"excédentaire du facteur, car nous prenons le rendement total sur les "
+"obligations de LT dans l'année d'achat de la rente. Idéalement, la "
+"structure complète des taux d'intérêt devrait plutôt être utilisée, de "
+"telle sorte que le retour à la moyenne lisserait le prix des rentes."
 
 #: CPR.annuities.compute_factors:9 of
 msgid "interest rate"
-msgstr ""
+msgstr "taux d'intérêt"
 
 #: CPR.annuities.convert_to_real_annuities:1 of
 msgid "Function that converts assets to annuities in real terms."
-msgstr ""
+msgstr "Fonction qui convertit les actifs en rentes en termes réels."
+
+#~ msgid "Paramètres"
+#~ msgstr ""
 

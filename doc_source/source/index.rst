@@ -8,7 +8,7 @@ Canadians' Preparation for Retirement (CPR)
 
 The Canadians' Preparation for Retirement (CPR) tool was developed by a team at HEC Montréal's `Retirement and Savings Institute (RSI) <https://ire.hec.ca>`_, with financial support from the National Pension Hub at the `Global Risk Institute (GRI) <https://globalriskinstitute.org>`_. It allows to compute retirement preparation for any household or group of households for which the user has the required input (personal and financial information) at any given point in time. It has been used with 2018 proprietary data to prepare `a report published by in June 2020 <https://ire.hec.ca/en/canadians-preparation-retirement-cpr/>`_.
 
-As mentioned elsewhere, the CPR is provided "as is" under `an MIT license <https://rsi-models.github.io/CPR/credits.html#licence>`_.
+As mentioned elsewhere, the CPR is provided "as is" under :ref:`an MIT license <license>`.
 
 The CPR simulates the years between the base year and retirement, then converts all financial wealth into actuarially fair annuities upon retirement and compares post- and pre-retirement situations. Compared to other available tools, the CPR offers complete flexibility and transparency, in that its code is fully and freely available online and it can be modified and adapted at will. Importantly and distinctively, the CPR also allows to perform stochastic simulations, letting several dimensions vary over time according to cutting-edge processes and assumptions. All those can be modified by the sophisticated user, as can the number of replications that the tool uses to average outcomes and determine retirement preparation (or the probability thereof). The current version of the CPR takes 2018 as base year and the tax systems of Quebec and Ontario are currently modelled (other provinces can be approximated using one of these 2 provinces, preferably Ontario).
 
@@ -16,13 +16,14 @@ The CPR outputs a level of “consumption replacement” for each household that
 
 The CPR and the other tools it uses (SRD and SRPP) are written in Python, a modern, simple and fast language. In order to use it, it is essential to ensure first that an up-to-date Python distribution is installed, for example using Anaconda. Although not essential, it will also be useful to have a minimal understanding of Python environments and, if possible, vocabulary (e.g. function, class, instance, profile).
 
-.. image:: CPR_flow5.png
+.. image:: images/CPR_flow.png
 
 .. toctree::
    :hidden:
    :maxdepth: 1
 
    VERSION FRANÇAISE <https://rsi-models.github.io/CPR/fr>
+   ENGLISH VERSION <https://rsi-models.github.io/CPR/en>
 
    overview.rst
    main.rst
@@ -44,4 +45,4 @@ The CPR and the other tools it uses (SRD and SRPP) are written in Python, a mode
 PDF Documentation
 =================
 
-Documentation :download:`pdf <../build/pdf/en/latex/CPR.pdf>`
+Documentation :download:`pdf <../build/pdf/en/latex/cpr.pdf>`

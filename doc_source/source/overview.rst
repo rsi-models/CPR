@@ -2,8 +2,6 @@
 Getting Started With the CPR
 ****************************
 
-this is a new text!
-
 The CPR and the other tools it uses (SRD and SRPP) are written in Python, a modern, simple and fast language. In order to use it, it is essential to ensure first that an up-to-date Python distribution is installed, for example using Anaconda. In all cases, the minimum requirements to use the CPR are Python 3.6+ with *numpy*, *pandas* and *xlrd*. Although not essential, it will also be useful to have a minimal understanding of Python environments and, if possible, vocabulary (e.g. function, class, instance, profile).
 
 Installing the CPR
@@ -35,6 +33,6 @@ If one does not want the CPR anymore, the *cpr*, *srd* and *srpp* folders can si
 
 For further details on how to use the CPR, please consult the :ref:`tutorial` section.
 
-As mentioned elsewhere, note the CPR is provided "as is" under `an MIT license <https://rsi-models.github.io/CPR/credits.html#licence>`_.
+As mentioned elsewhere, note the CPR is provided "as is" under :ref:`an MIT license <license>`.
 
 If you have questions, comments or suggestions, do not hesitate to :ref:`contact us <nous_contacter>`.

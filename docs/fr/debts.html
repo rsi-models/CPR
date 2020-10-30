@@ -85,6 +85,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference external" href="https://rsi-models.github.io/CPR/fr">VERSION FRANÇAISE</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rsi-models.github.io/CPR/en">ENGLISH VERSION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Premiers pas avec le CPR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="main.html">Main</a></li>
 <li class="toctree-l1"><a class="reference internal" href="simulator.html">Simulator</a></li>
@@ -168,34 +169,34 @@
             
   <div class="section" id="debts">
 <h1>Debts<a class="headerlink" href="#debts" title="Lien permanent vers ce titre">¶</a></h1>
-<p>The Debts module manages debts (payments and balances) in the simulation.</p>
+<p>Le module Debts gère les dettes (paiements et soldes) dans la simulation.</p>
 <dl class="class">
 <dt id="CPR.debts.Debt">
 <em class="property">class </em><code class="sig-prename descclassname">CPR.debts.</code><code class="sig-name descname">Debt</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">d_hh</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.debts.Debt" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>This class manages all debts. All amounts are nominal.</p>
+<dd><p>Cette classe gère toutes les dettes. Tous les montants sont nominaux.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> (<em>str</em>) – name of the debt</p></li>
-<li><p><strong>d_hh</strong> (<em>dict</em>) – dictionary containing debt initial balances and monthly payments</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – nom de la dette</p></li>
+<li><p><strong>d_hh</strong> (<em>dict</em>) – dictionnaire contenant les soldes initiaux des dettes et les paiements mensuels</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance de la classe Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance de la classe Prices</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="method">
 <dt id="CPR.debts.Debt.estimate_init_term">
 <code class="sig-name descname">estimate_init_term</code><span class="sig-paren">(</span><em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.debts.Debt.estimate_init_term" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Estimate the term of the debt.</p>
+<dd><p>Estime le terme de la dette.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance de la classe Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance de la classe Prices</p></li>
 </ul>
 </dd>
 <dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p>term of the debt</p>
+<dd class="field-even"><p>durée de la dette</p>
 </dd>
 <dt class="field-odd">Type renvoyé</dt>
 <dd class="field-odd"><p>int</p>
@@ -206,13 +207,13 @@
 <dl class="method">
 <dt id="CPR.debts.Debt.update">
 <code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">year</em>, <em class="sig-param">rate</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.debts.Debt.update" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Updates yearly payment and balance.</p>
+<dd><p>Met à jour le paiement annuel et le solde.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
-<li><p><strong>rate</strong> (<em>float</em>) – interest rate</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
+<li><p><strong>rate</strong> (<em>float</em>) – taux d’intérêt</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance de la classe Prices</p></li>
 </ul>
 </dd>
 </dl>
@@ -221,7 +222,7 @@
 <dl class="method">
 <dt id="CPR.debts.Debt.reset">
 <code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.debts.Debt.reset" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Reset balance and term to initial values.</p>
+<dd><p>Remet le solde et la durée à leur valeur initiale.</p>
 </dd></dl>
 
 </dd></dl>
@@ -248,7 +249,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, RSI Team at HEC Montréal
+        &copy; Copyright 2020, RSI Team / Équipe IRE, HEC Montréal
 
     </p>
   </div>

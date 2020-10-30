@@ -85,6 +85,7 @@
             
               <ul class="current">
 <li class="toctree-l1"><a class="reference external" href="https://rsi-models.github.io/CPR/fr">VERSION FRANÇAISE</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://rsi-models.github.io/CPR/en">ENGLISH VERSION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Premiers pas avec le CPR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="main.html">Main</a></li>
 <li class="toctree-l1"><a class="reference internal" href="simulator.html">Simulator</a></li>
@@ -168,19 +169,18 @@
             
   <div class="section" id="taxes">
 <h1>Taxes<a class="headerlink" href="#taxes" title="Lien permanent vers ce titre">¶</a></h1>
-<p>The Taxes module uses the SRD to compute taxes and benefits for each household.</p>
+<p>Le module Taxes utilise le SRD pour calculer les impôts et les prestations pour chaque ménage.</p>
 <span class="target" id="module-CPR.taxes"></span><dl class="function">
 <dt id="CPR.taxes.compute_after_tax_amount">
 <code class="sig-prename descclassname">CPR.taxes.</code><code class="sig-name descname">compute_after_tax_amount</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.taxes.compute_after_tax_amount" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Compute net nominal return and net amount from withdrawal
-for unregistered assets.</p>
+<dd><p>Calcule le rendement nominal net et le montant de retrait net pour les actifs non enregistrés.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – ménage</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance de la classe Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance de la classe Prices</p></li>
 </ul>
 </dd>
 </dl>
@@ -189,18 +189,18 @@ for unregistered assets.</p>
 <dl class="function">
 <dt id="CPR.taxes.file_household">
 <code class="sig-prename descclassname">CPR.taxes.</code><code class="sig-name descname">file_household</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.taxes.file_household" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Files household using SRD.</p>
+<dd><p>Remplit la déclaration de revenus du ménage à l’aide du SRD.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – ménage</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance de la classe Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance de la classe Prices</p></li>
 </ul>
 </dd>
 <dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p>instance of class Hhold after tax</p>
+<dd class="field-even"><p>instance de la classe Hhold après impôt</p>
 </dd>
 <dt class="field-odd">Type renvoyé</dt>
 <dd class="field-odd"><p><a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold">Hhold</a></p>
@@ -211,19 +211,18 @@ for unregistered assets.</p>
 <dl class="function">
 <dt id="CPR.taxes.file_household_inc_to_tax">
 <code class="sig-prename descclassname">CPR.taxes.</code><code class="sig-name descname">file_household_inc_to_tax</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.taxes.file_household_inc_to_tax" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Files household with taxable income (interests and dividends)
-from unregistered assets.</p>
+<dd><p>Déclare les revenus imposables (intérêts et dividendes) provenant d’actifs non enregistrés du ménage ayant de tels revenus.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
-<li><p><strong>common</strong> (<em>Common</em>) – instance of the class Common</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – ménage</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
+<li><p><strong>common</strong> (<em>Common</em>) – instance de la classe Common</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance de la classe Prices</p></li>
 </ul>
 </dd>
 <dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p>instance of class Hhold after tax</p>
+<dd class="field-even"><p>instance de la classe Hhold après impôt</p>
 </dd>
 <dt class="field-odd">Type renvoyé</dt>
 <dd class="field-odd"><p><a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold">Hhold</a></p>
@@ -234,14 +233,14 @@ from unregistered assets.</p>
 <dl class="function">
 <dt id="CPR.taxes.get_gis_oas">
 <code class="sig-prename descclassname">CPR.taxes.</code><code class="sig-name descname">get_gis_oas</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">hh_tax</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.taxes.get_gis_oas" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Computes nominal GIS and OAS benefits</p>
+<dd><p>Calcule les prestations nominales de PSV et de SRG</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
-<li><p><strong>hh_tax</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – household</p></li>
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>hh</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – ménage</p></li>
+<li><p><strong>hh_tax</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Hhold" title="CPR.initialisation.Hhold"><em>Hhold</em></a>) – ménage</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance de la classe Prices</p></li>
 </ul>
 </dd>
 </dl>
@@ -269,7 +268,7 @@ from unregistered assets.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, RSI Team at HEC Montréal
+        &copy; Copyright 2020, RSI Team / Équipe IRE, HEC Montréal
 
     </p>
   </div>
