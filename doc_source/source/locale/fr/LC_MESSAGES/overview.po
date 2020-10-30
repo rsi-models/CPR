@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CPR \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-29 12:31-0400\n"
+"POT-Creation-Date: 2020-10-28 14:13-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,10 +22,6 @@ msgid "Getting Started With the CPR"
 msgstr "Premiers pas avec le CPR"
 
 #: ../../source/overview.rst:5
-msgid "This is even a harder test. good luck!"
-msgstr ""
-
-#: ../../source/overview.rst:7
 msgid ""
 "The CPR and the other tools it uses (SRD and SRPP) are written in Python,"
 " a modern, simple and fast language. In order to use it, it is essential "
@@ -36,34 +32,23 @@ msgid ""
 "Python environments and, if possible, vocabulary (e.g. function, class, "
 "instance, profile)."
 msgstr ""
-"Le CPR et les autres outils qu'il utilise (le SRD et le SRPP) sont écrits"
-" en Python, un langage simple, rapide et moderne. Afin de pouvoir "
-"l’utiliser, il faut s’assurer d’avoir au préalable installé une "
-"distribution à jour de Python, par exemple à l’aide d’Anaconda. Dans tous"
-" les cas, les exigences minimales pour utiliser le CPR sont Python 3.6+ "
-"avec *numpy*, *pandas* et *xlrd*. Bien que ce ne soit pas essentiel, il "
-"sera également utile de se familiariser un minimum, au préalable, avec "
-"les environnements et le vocabulaire Python (p.ex. fonction, classe, "
-"instance, profil)."
+"Le CPR et les autres outils qu'il utilise (le SRD et le SRPP) sont écrits en Python, un langage simple, rapide et moderne. Afin de pouvoir l’utiliser, il faut s’assurer d’avoir au préalable installé une distribution à jour de Python, par exemple à l’aide d’Anaconda. Dans tous les cas, les exigences minimales pour utiliser le CPR sont Python 3.6+ avec *numpy*, *pandas* et *xlrd*. Bien que ce ne soit pas essentiel, il sera également utile de se familiariser un minimum, au préalable, avec les environnements et, si possible, le vocabulaire Python (p.ex. fonction, classe, instance, profil)."
 
-#: ../../source/overview.rst:10
+#: ../../source/overview.rst:8
 msgid "Installing the CPR"
 msgstr "Installation du CPR"
 
-#: ../../source/overview.rst:12
+#: ../../source/overview.rst:10
 msgid "The CPR can be easily installed using pip::"
 msgstr "On peut installer facilement le CPR en utilisant pip::"
 
-#: ../../source/overview.rst:16
+#: ../../source/overview.rst:14
 msgid ""
 "Please read the `terms of use <https://pypi.org/policy/terms-of-use/>`_ "
 "for *pypi*, the website hosting the package."
-msgstr ""
-"Veuillez lire les `conditions d'utilisation (en anglais) "
-"<https://pypi.org/policy/terms-of-use/>`_ de *pypi*, le site Web qui "
-"héberge le package."
+msgstr "Veuillez lire les `conditions d'utilisation (en anglais) <https://pypi.org/policy/terms-of-use/>`_ de *pypi*, le site Web qui héberge le package."
 
-#: ../../source/overview.rst:18
+#: ../../source/overview.rst:16
 msgid ""
 "The CPR uses two other packages that are produced by the RSI and the "
 "Research Chair on Intergenerational Economics (CREEi), which is supported"
@@ -75,32 +60,24 @@ msgid ""
 " which simulates QPP and CPP contributions and benefits. Both the SRD and"
 " the SRPP are automatically installed along with the CPR."
 msgstr ""
-"Le CPR utilise deux autres packages produits par l'IRE et la Chaire de "
-"recherche sur les enjeux économiques intergénérationnels (CRREi), "
-"soutenue par l'IRE: le `Simulateur de revenu disponible (SRD) <https"
-"://creei-models.github.io/srd/>`_, qui calcule les impôts et les "
-"principales prestations; et le `Simulateur de régimes de pensions "
-"publiques <https://creei-models.github.io/srpp/>`_, qui simule les "
-"cotisations et les prestations de RRQ et de RPC. Tant le SRD que le SRPP "
-"sont installés automatiquement en même temps que le CPR."
+"Le CPR utilise deux autres packages produits par l'IRE et la Chaire de recherche sur les enjeux économiques intergénérationnels (CRREi), soutenue par l'IRE: le `Simulateur de revenu disponible (SRD) <https://creei-models.github.io/srd/>`_, qui calcule les impôts et les principales prestations; et le `Simulateur de régimes de pensions publiques <https://creei-models.github.io/srpp/>`_, qui simule les cotisations et les prestations de RRQ et de RPC. Tant le SRD que le SRPP sont installés automatiquement en même temps que le CPR."
 
-#: ../../source/overview.rst:20
+#: ../../source/overview.rst:18
 msgid ""
 "In a notebook or a project, the CPR is called by adding the following "
 "command:"
 msgstr ""
-"Dans un notebook ou un projet, on invoque le CPR en ajoutant la commande "
-"suivante:"
+"Dans un notebook ou un projet, on invoque le CPR en ajoutant la commande suivante:"
 
-#: ../../source/overview.rst:26
+#: ../../source/overview.rst:24
 msgid "To uninstall the CPR, the SRD and the SRPP, pip can be used::"
 msgstr "Pour désinstaller le CPR, le SRD et le SRPP, il suffit d’utiliser pip::"
 
-#: ../../source/overview.rst:31
+#: ../../source/overview.rst:29
 msgid "Alternative Install"
 msgstr "Installation alternative"
 
-#: ../../source/overview.rst:33
+#: ../../source/overview.rst:31
 msgid ""
 "If one is unable to install the CPR, a zip file containing CPR and its "
 "dependencies, SRD and SRPP, can be downloaded from `Github "
@@ -113,41 +90,25 @@ msgid ""
 "the CPR anymore, the *cpr*, *srd* and *srpp* folders can simply be "
 "deleted."
 msgstr ""
-"Si l’on est dans l'impossibilité d'installer le CPR, un fichier zip "
-"contenant le CPR et ses dépendances, le SRD et le SRPP, peut être "
-"téléchargé de `Github <https://github.com/rsi-models/CPR/releases>`_ "
-"(choisir le fichier CPR_with_dep.zip dans le plus récent « release »). "
-"Pour utiliser le CPR, il suffit d’extraire les fichiers du zip dans le "
-"répertoire de son choix et de travailler de ce dernier ou d’ajouter ce "
-"répertoire au chemin d’accès (par exemple en utilisant le module *sys*). "
-"Un notebook jupyter qui explique le fonctionnement du CPR, *Tutorial "
-"CPR*, est également inclus dans le fichier zip. Si l’on ne veut plus le "
-"CPR, il suffit d’effacer les répertoires *cpr*, *srd* et *srpp*."
+"Si l’on est dans l'impossibilité d'installer le CPR, un fichier zip contenant le CPR et ses dépendances, le SRD et le SRPP, peut être téléchargé de `Github <https://github.com/rsi-models/CPR/releases>`_ (choisir le fichier CPR_with_dep.zip dans le plus récent « release »). Pour utiliser le CPR, il suffit d’extraire les fichiers du zip dans le répertoire de son choix et de travailler de ce dernier ou d’ajouter ce répertoire au chemin d’accès (par exemple en utilisant le module *sys*). Un notebook jupyter qui explique le fonctionnement du CPR, *Tutorial CPR*, est également inclus dans le fichier zip. Si l’on ne veut plus le CPR, il suffit d’effacer les répertoires *cpr*, *srd* et *srpp*."
 
-#: ../../source/overview.rst:36
+#: ../../source/overview.rst:34
 msgid ""
 "For further details on how to use the CPR, please consult the "
 ":ref:`tutorial` section."
 msgstr ""
-"Pour plus de détails la manière d'utiliser le CPR, veuillez consulter la "
-"section :ref:`tutoriel <tutorial>`."
+"Pour plus de détails concernant la manière d'utiliser le CPR, veuillez consulter la section :ref:`tutoriel <tutorial>`."
 
-#: ../../source/overview.rst:38
+#: ../../source/overview.rst:36
 msgid ""
 "As mentioned elsewhere, note the CPR is provided \"as is\" under `an MIT "
 "license <https://rsi-models.github.io/CPR/credits.html#licence>`_."
 msgstr ""
-"Tel que mentionné ailleurs, le CPR est fourni « tel quel », sous une "
-"`licence MIT <https://rsi-models.github.io/CPR/credits.html#licence>`_."
+"Tel que mentionné ailleurs, le CPR est fourni « tel quel », sous une `licence MIT <https://rsi-models.github.io/CPR/credits.html#licence>`_."
 
-#: ../../source/overview.rst:40
+#: ../../source/overview.rst:38
 msgid ""
 "If you have questions, comments or suggestions, do not hesitate to "
 ":ref:`contact us <nous_contacter>`."
 msgstr ""
-"En cas de questions, commentaires ou suggestions, n’hésitez pas à "
-":ref:`nous_contacter`."
-
-#~ msgid "This is a test. I repeat: testing! testing!"
-#~ msgstr ""
-
+"En cas de questions, commentaires ou suggestions, n’hésitez pas à :ref:`nous_contacter`."

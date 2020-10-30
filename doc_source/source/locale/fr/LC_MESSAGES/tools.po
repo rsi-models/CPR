@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CPR \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-28 18:20-0400\n"
+"POT-Creation-Date: 2020-10-28 15:37-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/tools.rst:2
 msgid "Tools"
-msgstr ""
+msgstr "Outils"
 
 #: ../../source/tools.rst:4
 msgid ""
@@ -30,103 +30,108 @@ msgstr ""
 
 #: CPR.tools.get_params:1 of
 msgid "Function to create a dictionary from a .csv file."
-msgstr ""
+msgstr "Fonction pour créer un dictionnaire à partir d'un fichier .csv."
 
 #: CPR.tools.add_params_as_attr CPR.tools.change_params CPR.tools.create_nom
 #: CPR.tools.create_nom_real CPR.tools.create_real CPR.tools.get_params of
-msgid "Parameters"
+msgid "Paramètres"
 msgstr ""
 
 #: CPR.tools.add_params_as_attr:5 CPR.tools.get_params:3 of
 msgid "csv file"
-msgstr ""
+msgstr "fichier csv"
 
 #: CPR.tools.get_params:5 of
 msgid "numerical key, by default False"
-msgstr ""
+msgstr "clé numérique, par défaut à Faux"
 
 #: CPR.tools.create_nom CPR.tools.create_nom_real CPR.tools.create_real
 #: CPR.tools.get_params of
-msgid "Returns"
+msgid "Renvoie"
 msgstr ""
 
 #: CPR.tools.get_params:8 of
 msgid "Dictionary of parameters."
-msgstr ""
+msgstr "Dictionnaire de paramètres."
 
 #: CPR.tools.create_nom CPR.tools.create_real CPR.tools.get_params of
-msgid "Return type"
+msgid "Type renvoyé"
 msgstr ""
 
 #: CPR.tools.add_params_as_attr:1 of
 msgid "Function to add parameters to a class instance."
-msgstr ""
+msgstr "Fonction pour ajouter des paramètres à une instance de la classe."
 
 #: CPR.tools.add_params_as_attr:3 of
 msgid "class instance"
-msgstr ""
+msgstr "instance de classe"
 
 #: CPR.tools.change_params:1 of
 msgid ""
 "Function to update the value of some parameters in inst with values form "
 "*extra_params*."
 msgstr ""
+"Fonction qui met à jour la valeur de certains paramètres dans inst avec des valeurs prises dans *extra_params*."
 
 #: CPR.tools.change_params:3 of
 msgid "parameters"
-msgstr ""
+msgstr "paramètres"
 
 #: CPR.tools.change_params:5 of
 msgid "parameters to be updated and their new values"
-msgstr ""
+msgstr "paramètres à mettre à jour ainsi que leurs nouvelles valeurs"
 
 #: CPR.tools.create_nom_real:1 of
 msgid ""
 "Creation of a function to convert prices from real to nominal and from "
 "nominal to real, with base year 2018."
 msgstr ""
+"Création d'une fonction convertissant les prix de réels à nominaux et de nominaux à réels, avec 2018 comme année de base."
 
 #: CPR.tools.create_nom:3 CPR.tools.create_nom_real:3 CPR.tools.create_real:3
 #: of
 msgid "year"
-msgstr ""
+msgstr "année"
 
 #: CPR.tools.create_nom:5 CPR.tools.create_nom_real:5 CPR.tools.create_real:5
 #: of
 msgid "instance of the class Prices"
-msgstr ""
+msgstr "instance de la classe Prices"
 
 #: CPR.tools.create_nom_real:8 of
 msgid ""
 "* *function* -- Function converting nominal to real. * *function* -- "
 "Function converting real to nominal."
 msgstr ""
+"* *function* -- Fonction convertissant le nominal en réel. * *function* -- "
+"Fonction convertissant le réel en nominal."
 
 #: CPR.tools.create_nom_real:8 of
 msgid "*function* -- Function converting nominal to real."
-msgstr ""
+msgstr "*function* -- Fonction convertissant le nominal en réel."
 
 #: CPR.tools.create_nom_real:9 of
 msgid "*function* -- Function converting real to nominal."
-msgstr ""
+msgstr "*function* -- Fonction convertissant le réel en nominal."
 
 #: CPR.tools.create_nom:1 of
 msgid ""
 "Creation of a function that converts prices from real to nominal, with "
 "base year 2018. Used for some specific purposes elsewhere in the code."
 msgstr ""
+"Création d'une fonction convertissant les prix de réels à nominaux, avec 2018 comme année de base, utilisée à certaines fins spécifiques ailleurs dans le code."
 
 #: CPR.tools.create_nom:8 of
 msgid "Function converting real to nominal."
-msgstr ""
+msgstr "Fonction convertissant le réel en nominal."
 
 #: CPR.tools.create_real:1 of
 msgid ""
 "Creation of a function that converts prices from nominal to real, with "
 "base year 2018."
 msgstr ""
+"Création d'une fonction convertissant les prix de nominaux à réels, avec 2018 comme année de base."
 
 #: CPR.tools.create_real:8 of
 msgid "function converting nominal to real"
-msgstr ""
-
+msgstr "fonction convertissant le nominal en réel"

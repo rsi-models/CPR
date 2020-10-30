@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CPR \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-28 18:20-0400\n"
+"POT-Creation-Date: 2020-10-28 14:13-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../source/index.rst:7
 msgid "Canadians' Preparation for Retirement (CPR)"
-msgstr ""
+msgstr "Préparation à la retraite des Canadiens (CPR)"
 
 #: ../../source/index.rst:9
 msgid ""
@@ -34,12 +34,14 @@ msgid ""
 "report published by in June 2020 <https://ire.hec.ca/en/canadians-"
 "preparation-retirement-cpr/>`_."
 msgstr ""
+"L'outil de Préparation à la retraite des Canadiens (Canadians' Preparation for Retirement, ou CPR) a été développé par une équipe à `l'Institut sur la retraite et l'épargne (IRE) de HEC Montréal <https://ire.hec.ca>`_, avec du soutien financier du National Pension Hub de l'Institut du risque mondial `<https://globalriskinstitute.org>`_. Il permet de calculer la préparation pour la retraite de tout ménage ou groupe de ménages pour le(s)quel(s) l'utilisateur dispose des intrants requis (informations personnelles et financières) à tout moment donné dans le temps. Il a été utilisé avec des données confidentielles de 2018 pour préparer `un rapport de recherche <https://ire.hec.ca/preparation-retraite-canadiens/>`_."
 
 #: ../../source/index.rst:11
 msgid ""
 "As mentioned elsewhere, the CPR is provided \"as is\" under `an MIT "
 "license <https://rsi-models.github.io/CPR/credits.html#licence>`_."
 msgstr ""
+"Tel que mentionné ailleurs, le CPR est fourni « tel quel », sous une `licence MIT <https://rsi-models.github.io/CPR/credits.html#licence>`_."
 
 #: ../../source/index.rst:13
 msgid ""
@@ -58,6 +60,7 @@ msgid ""
 " Quebec and Ontario are currently modelled (other provinces can be "
 "approximated using one of these 2 provinces, preferably Ontario)."
 msgstr ""
+"Le CPR simule les années entre l'année de base et la retraite, puis convertit tout le patrimoine financier en rentes actuariellement équitables. Il compare ensuite les situations avant et après la retraite. Comparé aux autres outils disponibles, le CPR offre une flexibilité et une transparence complètes puisque son code est entièrement disponible en ligne sans frais, et qu'il peut être modifié et adapté à volonté. De manière importante et distinctive, le CPR permet également de réaliser des simulations stochastiques, qui permettent à plusieurs dimensions de varier dans le temps selon des hypothèses et des processus de pointe. Tout cela peut être modifié par l'utilisateur sophistiqué, tout comme le nombre de réplications que l'outil utilise pour calculer des résultats moyens et déterminer la (probabilité de) préparation pour la retraite. La version actuelle du CPR utilise 2018 comme année de base; les systèmes fiscaux du Québec et de l'Ontario sont présentement modélisés (on peut approximer les autres provinces en utilisant l'une des ces 2 provinces, de préférence l'Ontario)."
 
 #: ../../source/index.rst:15
 #, python-format
@@ -76,6 +79,7 @@ msgid ""
 " computed and visualized, for one or several households. The figure below"
 "  illustrates conceptually the parts and flows of the CPR."
 msgstr ""
+"Le CPR produit comme extrant un niveau de «&nbsp;remplacement de la consommation&nbsp;» pour chaque ménage passant dans le simulateur, et il classe chaque ménage comme étant «&nbsp;préparé&nbsp;» ou «&nbsp;non préparé&nbsp;» pour la retraite sur la base du critère fixé au préalable. Comme dans les rapports produits par d'autres groupes au cours des années 2010, la préparation pour la retraite peut être évaluée en calculant le ratio entre la consommation après la retraite et la consommation avant la retraite et en comparant ce ratio à un seuil, fixé à 65% pour les 4 quintiles de revenu supérieurs et à 80% pour le quintile inférieur. Ces mesures peuvent ensuite être agrégées sur l'ensemble des ménages analysés afin d'obtenir a) la moyenne du taux de remplacement, ou sa distribution; et b) la proportion de ménages qui sont classés «&nbsp;préparés&nbsp;». Lorsque la version stochastique de l'outil est utilisée, des probabilités d'être préparé peuvent également être calculées et visualisées, pour un ou plusieurs ménage(s). La figure ci-dessous illustre de manière conceptuelle les différentes parties et les flux du CPR."
 
 #: ../../source/index.rst:17
 msgid ""
@@ -86,12 +90,12 @@ msgid ""
 " have a minimal understanding of Python environments and, if possible, "
 "vocabulary (e.g. function, class, instance, profile)."
 msgstr ""
+"Le CPR et les autres outils qu'il utilise (le SRD et le SRPP) sont écrits en Python, un langage simple, rapide et moderne. Afin de pouvoir l’utiliser, il faut s’assurer d’avoir au préalable installé une distribution à jour de Python, par exemple à l’aide d’Anaconda. Bien que ce ne soit pas essentiel, il sera également utile de se familiariser un minimum, au préalable, avec les environnements et, si possible, le vocabulaire Python (p.ex. fonction, classe, instance, profil)."
 
 #: ../../source/index.rst:43
 msgid "PDF Documentation"
-msgstr ""
+msgstr "Documentation en PDF"
 
 #: ../../source/index.rst:45
 msgid "Documentation :download:`pdf <../build/latex/CPR.pdf>`"
 msgstr ""
-

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CPR \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-28 18:20-0400\n"
+"POT-Creation-Date: 2020-10-28 15:37-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,6 +27,7 @@ msgid ""
 " table below shows all the individual inputs to the CPR (some of them are"
 " entered in other modules)."
 msgstr ""
+"Ce module configure des ménages et leur attache des actifs et des dettes. Le tableau ci-dessous montre tous les intrants individuels au CPR (certains sont entrés dans d'autres modules)."
 
 #: ../../source/initialisation.rst:8
 msgid ""
@@ -37,117 +38,120 @@ msgid ""
 "numerous -- inputs is incorrectly specified (i.e. contains a mistake or "
 "is highly implausible)."
 msgstr ""
+"Bien qu'un fichier exemple d'intrants soit fourni avec le package, un tutoriel est également offert afin de montrer aux utilisateurs comment modifier ces intrants afin d'utiliser ceux de leur choix. NOTE: il faut être prudent lorsque l'on utilise ses propres intrants, car un message d'erreur général sera généré si l'un des -- nombreux -- intrants est spécifié de manière incorrecte (c.-à-d. qu'il contient une erreur ou est très peu plausible)."
 
 #: CPR.initialisation.create_hh:1 of
 msgid ""
 "Function that creates a household with one or two persons and attaches "
 "assets and debts."
 msgstr ""
+"Fonction qui crée un ménage avec une ou deux personnes et y attache des actifs et des dettes."
 
 #: CPR.initialisation.Hhold CPR.initialisation.Hhold.set_other_years
 #: CPR.initialisation.Person CPR.initialisation.Person.create_shocks
 #: CPR.initialisation.Person.create_wage_profile CPR.initialisation.create_hh
 #: of
-msgid "Parameters"
+msgid "Paramètres"
 msgstr ""
 
 #: CPR.initialisation.Hhold:7 CPR.initialisation.create_hh:4 of
 msgid "household index"
-msgstr ""
+msgstr "indice du ménage"
 
 #: CPR.initialisation.create_hh:6 of
 msgid "dictionary of household features"
-msgstr ""
+msgstr "dictionnaire de caractéristiques des ménages"
 
 #: CPR.initialisation.Hhold:9 CPR.initialisation.Hhold.set_other_years:3
 #: CPR.initialisation.Person:7 CPR.initialisation.Person.create_wage_profile:3
 #: CPR.initialisation.create_hh:8 of
 msgid "instance of the class Common"
-msgstr ""
+msgstr "instance de la classe Common"
 
 #: CPR.initialisation.Person:9 CPR.initialisation.Person.create_shocks:7
 #: CPR.initialisation.Person.create_wage_profile:5
 #: CPR.initialisation.create_hh:10 of
 msgid "instance of the class Prices"
-msgstr ""
+msgstr "innstance de la classe Prices"
 
 #: CPR.initialisation.Person.create_shocks
 #: CPR.initialisation.Person.create_wage_profile CPR.initialisation.create_hh
 #: of
-msgid "Returns"
+msgid "Renvoie"
 msgstr ""
 
 #: CPR.initialisation.create_hh:13 of
 msgid "Instance of the class Hhold."
-msgstr ""
+msgstr "Instance de la classe Hhold."
 
 #: CPR.initialisation.Person.create_shocks
 #: CPR.initialisation.Person.create_wage_profile CPR.initialisation.create_hh
 #: of
-msgid "Return type"
+msgid "Type renvoyé"
 msgstr ""
 
 #: CPR.initialisation.Person:1 of
 msgid "This class creates a person."
-msgstr ""
+msgstr "Cette classe crée une personne."
 
 #: CPR.initialisation.Hhold:3 CPR.initialisation.Person:3 of
 msgid "dictionary containing all informations about households"
-msgstr ""
+msgstr "dictionnaire contenant toutes les informations à propos des ménages"
 
 #: CPR.initialisation.Person:5 of
 msgid "list of features attached to spouses"
-msgstr ""
+msgstr "liste des caractéristiques attachées aux conjoints"
 
 #: CPR.initialisation.Person:11 of
 msgid "False for head of household, True otherwise"
-msgstr ""
+msgstr "Faux pour le chef de ménage, Vrai sinon"
 
 #: CPR.initialisation.Person.create_wage_profile:1 of
 msgid ""
 "Function that creates wage profiles for each realisation of uncertainty, "
 "to be used when the stochastic version of the tool is selected."
 msgstr ""
+"Fonction qui crée des profils de salaires pour chaque réalisation de l'incertitude, utilisée lorsque la version stochastique de l'outil est sélectionnée."
 
 #: CPR.initialisation.Person.create_wage_profile:8 of
 msgid "Wage profiles."
-msgstr ""
+msgstr "Profils de salaires."
 
 #: CPR.initialisation.Person.create_shocks:1 of
 msgid "Function that creats a time series of shocks to the wage."
-msgstr ""
+msgstr "Fonction qui crée une série temporelle de chocs sur le salaire."
 
 #: CPR.initialisation.Person.create_shocks:3 of
 msgid "length of the time series"
-msgstr ""
+msgstr "longueur de la série temporelle"
 
 #: CPR.initialisation.Person.create_shocks:5 of
 msgid "number of realisations"
-msgstr ""
+msgstr "nombre de réalisations"
 
 #: CPR.initialisation.Person.create_shocks:10 of
 msgid "Time series of shocks to the wage."
-msgstr ""
+msgstr "Série temporelle de chocs sur le salaire."
 
 #: CPR.initialisation.Hhold:1 of
 msgid "This class creates a household."
-msgstr ""
+msgstr "Cette classe crée un ménage."
 
 #: CPR.initialisation.Hhold:5 of
 msgid "list of features attached to the household"
-msgstr ""
+msgstr "liste de caractéristiques attachées au ménage"
 
 #: CPR.initialisation.Hhold:11 of
 msgid "first spouse"
-msgstr ""
+msgstr "premier conjoint"
 
 #: CPR.initialisation.Hhold:13 of
 msgid "second spouse (in the case of a couple)"
-msgstr ""
+msgstr "deuxième conjoint (pour les couples)"
 
 #: CPR.initialisation.Hhold.set_other_years:1 of
 msgid ""
 "Function that sets years of partial and full retirement as well as years "
 "in which pre-retirement and post-retirement consumptions are assessed."
 msgstr ""
-
+"Fonction qui fixe les années de retraite partielle et complète (pour les couples) ainsi que les années dans lesquelles la consommation avant et après la retraite sont évaluées."

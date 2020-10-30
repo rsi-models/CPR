@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CPR \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-28 18:20-0400\n"
+"POT-Creation-Date: 2020-10-28 14:13-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,15 +19,15 @@ msgstr ""
 
 #: ../../source/tutorial.rst:4
 msgid "Tutorials"
-msgstr ""
+msgstr "Tutoriels"
 
 #: ../../source/tutorial.rst:7
 msgid "Basic use of CPR"
-msgstr ""
+msgstr "Utilisation de base du CPR (vidéo en anglais)"
 
 #: ../../source/tutorial.rst:16
 msgid "Experiments with CPR"
-msgstr ""
+msgstr "Expériences avec le CPR (vidéo en anglais)"
 
 #: ../../source/tutorial.rst:24
 msgid ""
@@ -35,4 +35,4 @@ msgid ""
 "models/CPR/blob/master/Notebooks/Tutorial_CPR_collab.ipynb>`_ to access "
 "the notebook."
 msgstr ""
-
+"Cliquer `ici <https://colab.research.google.com/github/rsi-models/CPR/blob/master/Notebooks/Tutorial_CPR_collab.ipynb>`_ pour accéder au notebook."

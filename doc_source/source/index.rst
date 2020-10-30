@@ -22,6 +22,8 @@ The CPR and the other tools it uses (SRD and SRPP) are written in Python, a mode
    :hidden:
    :maxdepth: 1
 
+   VERSION FRANÇAISE <https://rsi-models.github.io/CPR/fr>
+
    overview.rst
    main.rst
    simulator.rst
@@ -42,4 +44,4 @@ The CPR and the other tools it uses (SRD and SRPP) are written in Python, a mode
 PDF Documentation
 =================
 
-Documentation :download:`pdf <../build/latex/CPR.pdf>`
+Documentation :download:`pdf <../build/pdf/en/latex/CPR.pdf>`

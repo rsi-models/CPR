@@ -84,6 +84,7 @@
             
             
               <ul class="current">
+<li class="toctree-l1"><a class="reference external" href="https://rsi-models.github.io/CPR/fr">VERSION FRANÇAISE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Premiers pas avec le CPR</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Main</a></li>
 <li class="toctree-l1"><a class="reference internal" href="simulator.html">Simulator</a></li>
@@ -96,9 +97,9 @@
 <li class="toctree-l1"><a class="reference internal" href="life.html">Life</a></li>
 <li class="toctree-l1"><a class="reference internal" href="balance_sheets.html">Balance Sheets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="credits.html">Contributors and Rights of Use</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Outils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutoriels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Contributeurs et droits d’utilisation</a></li>
 </ul>
 
             
@@ -167,26 +168,22 @@
             
   <div class="section" id="main">
 <h1>Main<a class="headerlink" href="#main" title="Lien permanent vers ce titre">¶</a></h1>
-<p>This module calls the simulator.</p>
-<p>The function <em>run_simulations</em> runs the simulations. Its arguments are used to select
-whether the stochastic version of the tool is to be used, as well as the number of simulations
-(replications) that should be carried out. Any parameter value can also be changed here,
-to use values other than the default ones provided.</p>
+<p>Ce module appelle le simulateur.</p>
+<p>La fonction <em>run_simulations</em> fait tourner les simulations. Ses arguments sont utilisés pour choisir si la version stochastique de l’outil doit être utilisée, ainsi que le nombre de simulations (réplications) qui doivent être effectuées. N’importe quelle valeur de paramètre peut également être modifiée ici, afin d’utiliser des valeurs autres que celles fournies par défaut.</p>
 <dl class="function">
 <dt id="CPR.main.run_simulations">
 <code class="sig-prename descclassname">CPR.main.</code><code class="sig-name descname">run_simulations</code><span class="sig-paren">(</span><em class="sig-param">inputs</em>, <em class="sig-param">nsim=1</em>, <em class="sig-param">non_stochastic=False</em>, <em class="sig-param">**extra_params</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.main.run_simulations" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>This function launches the simulations. Any parameter can be changed
-using extra_params.</p>
+<dd><p>Cette fonction lance les simulations. N’importe quel paramètre peut être modifié à l’aide de extra_params.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>inputs</strong> (<em>_io.TextIOWrapper</em>) – csv file</p></li>
-<li><p><strong>nsim</strong> (<em>int</em><em>, </em><em>optional</em>) – number of simulations, by default 1</p></li>
-<li><p><strong>non_stochastic</strong> (<em>bool</em><em>, </em><em>optional</em>) – deterministic prices and price-rent ratio, by default False</p></li>
+<li><p><strong>inputs</strong> (<em>_io.TextIOWrapper</em>) – fichier csv</p></li>
+<li><p><strong>nsim</strong> (<em>int</em><em>, </em><em>optional</em>) – nombre de simulations, par défaut 1</p></li>
+<li><p><strong>non_stochastic</strong> (<em>bool</em><em>, </em><em>optional</em>) – prix et ratio prix-loyers déterministes, par défaut à Faux</p></li>
 </ul>
 </dd>
 <dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p>instance of the class Results</p>
+<dd class="field-even"><p>instance de la classe Results</p>
 </dd>
 <dt class="field-odd">Type renvoyé</dt>
 <dd class="field-odd"><p><a class="reference internal" href="analysis.html#CPR.analysis.Results" title="CPR.analysis.Results">Results</a></p>

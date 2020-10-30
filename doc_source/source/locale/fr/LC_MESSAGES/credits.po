@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CPR \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-28 18:20-0400\n"
+"POT-Creation-Date: 2020-10-28 14:13-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,11 +19,11 @@ msgstr ""
 
 #: ../../source/credits.rst:2
 msgid "Contributors and Rights of Use"
-msgstr ""
+msgstr "Contributeurs et droits d’utilisation"
 
 #: ../../source/credits.rst:5
 msgid "Contributors"
-msgstr ""
+msgstr "Contributeurs"
 
 #: ../../source/credits.rst:6
 msgid ""
@@ -33,7 +33,7 @@ msgstr ""
 
 #: ../../source/credits.rst:9
 msgid "Contact Person"
-msgstr ""
+msgstr "Personne-contact"
 
 #: ../../source/credits.rst:13
 msgid "`Pierre-Yves Yanni <pierre-yves.yanni@hec.ca>`_"
@@ -41,7 +41,7 @@ msgstr ""
 
 #: ../../source/credits.rst:16
 msgid "Licence"
-msgstr ""
+msgstr "Droits d'utilisation"
 
 #: ../../source/credits.rst:17
 msgid ""
@@ -49,6 +49,7 @@ msgid ""
 "<https://opensource.org/licenses/MIT>`_ (\"MIT License\"). The conditions"
 " of the licence are as follows:"
 msgstr ""
+"Le CPR est fourni sous `licence MIT <https://opensource.org/licenses/MIT>`_ (\"MIT License\"). Les conditions de la licence sont les suivantes:"
 
 #: ../../source/credits.rst:19
 msgid ""
@@ -77,4 +78,3 @@ msgid ""
 " OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR"
 " THE USE OR OTHER DEALINGS IN THE SOFTWARE."
 msgstr ""
-

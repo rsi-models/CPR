@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CPR \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-28 18:20-0400\n"
+"POT-Creation-Date: 2020-10-28 15:37-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,63 +27,64 @@ msgid ""
 "dataset. The class *Results* offers a few functions to summarize and "
 "merge the data, as well as assess preparedness for retirement."
 msgstr ""
+"Dans ce module, la fonction *get_dataset* récupère un jeu de données (simulé). La classe *Results* offre quelques fonctions pour résumer et fusionner les données et pour évaluer la préparation pour la retraite."
 
 #: CPR.analysis.get_dataset:1 of
 msgid "Function that returns a dataframe of synthetic data."
-msgstr ""
+msgstr "Fonction qui renvoie un dataframe de données synthétiques."
 
 #: CPR.analysis.get_dataset of
-msgid "Returns"
+msgid "Renvoie"
 msgstr ""
 
 #: CPR.analysis.get_dataset:3 of
 msgid "Dataframe of synthetic data."
-msgstr ""
+msgstr "Dataframe de données synthétiques."
 
 #: CPR.analysis.get_dataset of
-msgid "Return type"
+msgid "Type renvoyé"
 msgstr ""
 
 #: CPR.analysis.Results:1 of
 msgid "This class prepares the results."
-msgstr ""
+msgstr "Cette classe prépare les résultats."
 
 #: CPR.analysis.Results CPR.analysis.Results.check_preparedness
 #: CPR.analysis.Results.merge of
-msgid "Parameters"
+msgid "Paramètres"
 msgstr ""
 
 #: CPR.analysis.Results:3 of
 msgid "dataframe of inputs"
-msgstr ""
+msgstr "dataframe d'intrants"
 
 #: CPR.analysis.Results:5 of
 msgid "dataframe of outputs"
-msgstr ""
+msgstr "dataframe d'extrants"
 
 #: CPR.analysis.Results:7 of
 msgid "instance of the class Common"
-msgstr ""
+msgstr "instance de la classe Common"
 
 #: CPR.analysis.Results:9 of
 msgid "instance of the class Prices"
-msgstr ""
+msgstr "instance de la classe Prices"
 
 #: CPR.analysis.Results:11 of
 msgid "dictionary of extra parameters"
-msgstr ""
+msgstr "dictionnaire de paramètres supplémentaires"
 
 #: CPR.analysis.Results.summarize:1 of
 msgid "Function to summarize the simulation."
-msgstr ""
+msgstr "Fonction pour résumer la simulation."
 
 #: CPR.analysis.Results.merge:1 of
 msgid "Function to merge input and output variables to create a database."
-msgstr ""
+msgstr "Fonction pour fusionner les variables d'entrée et de sortie pour créer une base de données."
 
 #: CPR.analysis.Results.merge:3 of
 msgid "add index to database, True by default"
-msgstr ""
+msgstr "ajouter l'indice à la base de données, True (Vrai) par défaut"
 
 #: CPR.analysis.Results.check_preparedness:1 of
 msgid ""
@@ -91,16 +92,16 @@ msgid ""
 "consumption before and after retirement below cons_floor), and checks "
 "preparedness for retirement."
 msgstr ""
+"Fonction qui introduit un plancher de consommation, calcule l'IPR (NaN si la consommation avant et après la retraite sont en deçà de cons_floor), et vérifie la préparation pour la retraite."
 
 #: CPR.analysis.Results.check_preparedness:3 of
 msgid "factor to normalize income for couple, by default 2"
-msgstr ""
+msgstr "facteur de normalisation du revenu pour les couples, par défaut 2"
 
 #: CPR.analysis.Results.check_preparedness:5 of
 msgid "consumption floor, by default 100"
-msgstr ""
+msgstr "plancher de consommation, par défaut 100"
 
 #: CPR.analysis.Results.check_preparedness:7 of
 msgid "cutoffs, by default {20: 80, 100: 65}"
-msgstr ""
-
+msgstr "seuils, par défaut {20: 80, 100: 65}"

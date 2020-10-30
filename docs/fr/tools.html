@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Tools &mdash; Documentation CPR 0.0.1</title>
+  <title>Outils &mdash; Documentation CPR 0.0.1</title>
   
 
   
@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Tutorials" href="tutorial.html" />
+    <link rel="next" title="Tutoriels" href="tutorial.html" />
     <link rel="prev" title="Analysis" href="analysis.html" /> 
 </head>
 
@@ -84,6 +84,7 @@
             
             
               <ul class="current">
+<li class="toctree-l1"><a class="reference external" href="https://rsi-models.github.io/CPR/fr">VERSION FRANÇAISE</a></li>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Premiers pas avec le CPR</a></li>
 <li class="toctree-l1"><a class="reference internal" href="main.html">Main</a></li>
 <li class="toctree-l1"><a class="reference internal" href="simulator.html">Simulator</a></li>
@@ -96,9 +97,9 @@
 <li class="toctree-l1"><a class="reference internal" href="life.html">Life</a></li>
 <li class="toctree-l1"><a class="reference internal" href="balance_sheets.html">Balance Sheets</a></li>
 <li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorials</a></li>
-<li class="toctree-l1"><a class="reference internal" href="credits.html">Contributors and Rights of Use</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Outils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutoriels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="credits.html">Contributeurs et droits d’utilisation</a></li>
 </ul>
 
             
@@ -146,7 +147,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Tools</li>
+      <li>Outils</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -166,23 +167,23 @@
            <div itemprop="articleBody">
             
   <div class="section" id="tools">
-<h1>Tools<a class="headerlink" href="#tools" title="Lien permanent vers ce titre">¶</a></h1>
+<h1>Outils<a class="headerlink" href="#tools" title="Lien permanent vers ce titre">¶</a></h1>
 <p>In this module, several functions, used in the rest of the code,
 are available to create dictionaries,
 modify parameters, or convert prices, among other aspects.</p>
 <span class="target" id="module-CPR.tools"></span><dl class="function">
 <dt id="CPR.tools.get_params">
 <code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">file</em>, <em class="sig-param">numerical_key=False</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.get_params" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to create a dictionary from a .csv file.</p>
+<dd><p>Fonction pour créer un dictionnaire à partir d’un fichier .csv.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>file</strong> (<em>_io.TextIOWrapper</em>) – csv file</p></li>
-<li><p><strong>numerical_key</strong> (<em>bool</em><em>, </em><em>optional</em>) – numerical key, by default False</p></li>
+<li><p><strong>file</strong> (<em>_io.TextIOWrapper</em>) – fichier csv</p></li>
+<li><p><strong>numerical_key</strong> (<em>bool</em><em>, </em><em>optional</em>) – clé numérique, par défaut à Faux</p></li>
 </ul>
 </dd>
 <dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p>Dictionary of parameters.</p>
+<dd class="field-even"><p>Dictionnaire de paramètres.</p>
 </dd>
 <dt class="field-odd">Type renvoyé</dt>
 <dd class="field-odd"><p>dict</p>
@@ -193,12 +194,12 @@ modify parameters, or convert prices, among other aspects.</p>
 <dl class="function">
 <dt id="CPR.tools.add_params_as_attr">
 <code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">add_params_as_attr</code><span class="sig-paren">(</span><em class="sig-param">inst</em>, <em class="sig-param">file</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.add_params_as_attr" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to add parameters to a class instance.</p>
+<dd><p>Fonction pour ajouter des paramètres à une instance de la classe.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>inst</strong> (<em>object</em>) – class instance</p></li>
-<li><p><strong>file</strong> (<em>_io.TextIOWrapper</em>) – csv file</p></li>
+<li><p><strong>inst</strong> (<em>object</em>) – instance de classe</p></li>
+<li><p><strong>file</strong> (<em>_io.TextIOWrapper</em>) – fichier csv</p></li>
 </ul>
 </dd>
 </dl>
@@ -207,12 +208,12 @@ modify parameters, or convert prices, among other aspects.</p>
 <dl class="function">
 <dt id="CPR.tools.change_params">
 <code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">change_params</code><span class="sig-paren">(</span><em class="sig-param">inst</em>, <em class="sig-param">extra_params</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.change_params" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to update the value of some parameters in inst with values form <em>extra_params</em>.</p>
+<dd><p>Fonction qui met à jour la valeur de certains paramètres dans inst avec des valeurs prises dans <em>extra_params</em>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>inst</strong> (<em>dict</em>) – parameters</p></li>
-<li><p><strong>extra_params</strong> (<em>dict</em>) – parameters to be updated and their new values</p></li>
+<li><p><strong>inst</strong> (<em>dict</em>) – paramètres</p></li>
+<li><p><strong>extra_params</strong> (<em>dict</em>) – paramètres à mettre à jour ainsi que leurs nouvelles valeurs</p></li>
 </ul>
 </dd>
 </dl>
@@ -221,18 +222,18 @@ modify parameters, or convert prices, among other aspects.</p>
 <dl class="function">
 <dt id="CPR.tools.create_nom_real">
 <code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">create_nom_real</code><span class="sig-paren">(</span><em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.create_nom_real" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Creation of a function to convert prices from real to nominal and from nominal to real, with base year 2018.</p>
+<dd><p>Création d’une fonction convertissant les prix de réels à nominaux et de nominaux à réels, avec 2018 comme année de base.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance de la classe Prices</p></li>
 </ul>
 </dd>
 <dt class="field-even">Renvoie</dt>
 <dd class="field-even"><p><ul class="simple">
-<li><p><em>function</em> – Function converting nominal to real.</p></li>
-<li><p><em>function</em> – Function converting real to nominal.</p></li>
+<li><p><em>function</em> – Fonction convertissant le nominal en réel.</p></li>
+<li><p><em>function</em> – Fonction convertissant le réel en nominal.</p></li>
 </ul>
 </p>
 </dd>
@@ -242,16 +243,16 @@ modify parameters, or convert prices, among other aspects.</p>
 <dl class="function">
 <dt id="CPR.tools.create_nom">
 <code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">create_nom</code><span class="sig-paren">(</span><em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.create_nom" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Creation of a function that converts prices from real to nominal, with base year 2018. Used for some specific purposes elsewhere in the code.</p>
+<dd><p>Création d’une fonction convertissant les prix de réels à nominaux, avec 2018 comme année de base, utilisée à certaines fins spécifiques ailleurs dans le code.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance de la classe Prices</p></li>
 </ul>
 </dd>
 <dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p>Function converting real to nominal.</p>
+<dd class="field-even"><p>Fonction convertissant le réel en nominal.</p>
 </dd>
 <dt class="field-odd">Type renvoyé</dt>
 <dd class="field-odd"><p>function</p>
@@ -262,16 +263,16 @@ modify parameters, or convert prices, among other aspects.</p>
 <dl class="function">
 <dt id="CPR.tools.create_real">
 <code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">create_real</code><span class="sig-paren">(</span><em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.create_real" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Creation of a function that converts prices from nominal to real, with base year 2018.</p>
+<dd><p>Création d’une fonction convertissant les prix de nominaux à réels, avec 2018 comme année de base.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>year</strong> (<em>int</em>) – year</p></li>
-<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance of the class Prices</p></li>
+<li><p><strong>year</strong> (<em>int</em>) – année</p></li>
+<li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – instance de la classe Prices</p></li>
 </ul>
 </dd>
 <dt class="field-even">Renvoie</dt>
-<dd class="field-even"><p>function converting nominal to real</p>
+<dd class="field-even"><p>fonction convertissant le nominal en réel</p>
 </dd>
 <dt class="field-odd">Type renvoyé</dt>
 <dd class="field-odd"><p>function</p>
@@ -289,7 +290,7 @@ modify parameters, or convert prices, among other aspects.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tutorial.html" class="btn btn-neutral float-right" title="Tutorials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tutorial.html" class="btn btn-neutral float-right" title="Tutoriels" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="analysis.html" class="btn btn-neutral float-left" title="Analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

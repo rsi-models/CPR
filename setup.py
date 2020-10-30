@@ -10,11 +10,11 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setuptools.setup(
     name="cpr-rsi",
-    version="1.0.0",
+    version="1.0.1",
     description="Assessing Canadians' Preparation for Retirement",
     long_description=README,
     long_description_content_type="text/markdown",
-    url="https://rsi-models.github.io/CPR/",
+    url="https://rsi-models.github.io/CPR/en",
     author="Team RSI",
     author_email="pyanni@gmail.com",
     license="MIT",

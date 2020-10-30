@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CPR \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-28 18:20-0400\n"
+"POT-Creation-Date: 2020-10-28 15:37-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,45 +27,46 @@ msgid ""
 "households, generate stochastic processes for returns and wages and other"
 " prices."
 msgstr ""
+"Le module Macro contient des classes qui contiennent des paramètres communs à tous les ménages; et qui génèrent des processus stochastiques pour les rendements, les salaires et les autres prix."
 
 #: CPR.macro.CommonParameters:1 of
 msgid "This class sets and contains the parameters common to all households."
-msgstr ""
+msgstr "Cette classe fixe et contient les paramètres communs à tous les ménages."
 
 #: CPR.macro.CommonParameters CPR.macro.CommonParameters.set_limits
 #: CPR.macro.Prices CPR.macro.Prices.compute_params_process
 #: CPR.macro.Prices.prepare_inflation_factors CPR.macro.Prices.simulate_housing
 #: CPR.macro.Prices.simulate_ret of
-msgid "Parameters"
+msgid "Paramètres"
 msgstr ""
 
 #: CPR.macro.CommonParameters:3 of
 msgid "number of simulations"
-msgstr ""
+msgstr "nombre de simulations"
 
 #: CPR.macro.CommonParameters:5 of
 msgid "True if non stochastic simulation, False otherwise"
-msgstr ""
+msgstr "Vrai s'il s'agit d'une simulation stochastique, Faux sinon"
 
 #: CPR.macro.CommonParameters:7 CPR.macro.Prices:7 of
 msgid "dictionary of extra parameters"
-msgstr ""
+msgstr "dictionnaire de paramètres supplémentaires"
 
 #: CPR.macro.CommonParameters.set_limits:1 of
 msgid "Set contributions limits for RRSP and TFSA."
-msgstr ""
+msgstr "Fixer les limites de cotisation pour les REER et les CELI."
 
 #: CPR.macro.CommonParameters.set_limits:3 of
 msgid "RRSP or TFSA"
-msgstr ""
+msgstr "RRSP (REER) ou TFSA (CELI)"
 
 #: CPR.macro.CommonParameters.prepare_ympe:1 of
 msgid "\" Pre-reform ympe used to adjust DB benefits for CPP"
-msgstr ""
+msgstr "MGAP pré-réforme utilisé pour ajuster les prestations de PD pour le RPC"
 
 #: CPR.macro.CommonParameters.prepare_cpp:1 of
 msgid "Set percentages for cpp/qpp benefits."
-msgstr ""
+msgstr "Fixer des pourcentages pour les prestations de RPC/RRQ."
 
 #: CPR.macro.Prices:1 of
 msgid ""
@@ -73,37 +74,39 @@ msgid ""
 " debt, deterministic wage profiles, housing price growth rate and "
 "price/rent ratio."
 msgstr ""
+"Cette classe calcule la série temporelle pour les rendements sur actifs, les taux d'intérêt sur les dettes, les profils de salaires déterministes, la croissance des prix immobiliers et le ratio prix-loyers."
 
 #: CPR.macro.Prices:5 CPR.macro.Prices.prepare_inflation_factors:3
 #: CPR.macro.Prices.simulate_housing:4 CPR.macro.Prices.simulate_ret:6 of
 msgid "instance of the class Common"
-msgstr ""
+msgstr "instance de la classe Common"
 
 #: CPR.macro.Prices.simulate_ret:1 of
 msgid ""
 "Simulate N series of length T nominal returns distributed lognormally "
 "with autocorrelation rho."
 msgstr ""
+"Simuler N séries de longueur T de rendements nominaux distribués de façon log-normale, avec une autocorrélation rho."
 
 #: CPR.macro.Prices.simulate_ret:4 of
 msgid "type of asset"
-msgstr ""
+msgstr "type d'actif"
 
 #: CPR.macro.Prices.attach_diff_log_wages
 #: CPR.macro.Prices.compute_params_process CPR.macro.Prices.initialize_factors
 #: CPR.macro.Prices.prepare_inflation_factors CPR.macro.Prices.simulate_housing
 #: CPR.macro.Prices.simulate_interest_debt CPR.macro.Prices.simulate_ret of
-msgid "Returns"
+msgid "Renvoie"
 msgstr ""
 
 #: CPR.macro.Prices.simulate_ret:9 of
 msgid "Array of nominal returns"
-msgstr ""
+msgstr "Tableau de rendements nominaux"
 
 #: CPR.macro.Prices.attach_diff_log_wages CPR.macro.Prices.initialize_factors
 #: CPR.macro.Prices.prepare_inflation_factors
 #: CPR.macro.Prices.simulate_interest_debt CPR.macro.Prices.simulate_ret of
-msgid "Return type"
+msgid "Type renvoyé"
 msgstr ""
 
 #: CPR.macro.Prices.compute_params_process:1 of
@@ -112,90 +115,95 @@ msgid ""
 "autocorrelation rho of the log returns into :math:`\\alpha`, "
 ":math:`\\rho` and :math:`\\sigma_{\\epsilon}` of the process:"
 msgstr ""
+"Convertit la moyenne arithmétique mu et la volatilité sigma des rendements et l'autocorrélation rho du log des rendements en :math:`\\alpha`, :math:`\\rho` and :math:`\\sigma_{\\epsilon}` dans le processus:"
 
 #: CPR.macro.Prices.compute_params_process:5 of
 msgid ""
 ":math:`\\ln(1+r_t) = \\alpha + \\rho * \\ln(1+r_{t-1}) + \\epsilon`, "
 "where :math:`\\epsilon \\sim N(0, \\sigma_{\\epsilon})`."
 msgstr ""
+":math:`\\ln(1+r_t) = \\alpha + \\rho * \\ln(1+r_{t-1}) + \\epsilon`, où :math:`\\epsilon \\sim N(0, \\sigma_{\\epsilon})`."
 
 #: CPR.macro.Prices.compute_params_process:8 of
 msgid "arithmetic mean"
-msgstr ""
+msgstr "moyenne artihmétique"
 
 #: CPR.macro.Prices.compute_params_process:10 of
 msgid "autocorrelation :math:"
-msgstr ""
+msgstr "autocorrélation"
 
 #: CPR.macro.Prices.compute_params_process:12 of
 msgid "standard deviation"
-msgstr ""
+msgstr "écart-type"
 
 #: CPR.macro.Prices.compute_params_process:15 of
 msgid ""
 "* *float* -- AR(1) coefficient (:math:`\\alpha`) * *float* -- Standard "
 "deviation of error term (:math:`\\sigma_{\\epsilon}`)"
 msgstr ""
+"* *float* -- coefficient AR(1) (:math:`\\alpha`) * *float* -- Écart-type du terme d'erreur (:math:`\\sigma_{\\epsilon}`)"
 
 #: CPR.macro.Prices.compute_params_process:15 of
 msgid "*float* -- AR(1) coefficient (:math:`\\alpha`)"
-msgstr ""
+msgstr "*float* -- coefficient AR(1) (:math:`\\alpha`)"
 
 #: CPR.macro.Prices.compute_params_process:16 of
 msgid "*float* -- Standard deviation of error term (:math:`\\sigma_{\\epsilon}`)"
-msgstr ""
+msgstr "*float* -- Écart-type du terme d'erreur (:math:`\\sigma_{\\epsilon}`)"
 
 #: CPR.macro.Prices.simulate_housing:1 of
 msgid ""
 "Simulate series of nominal housing price growth (in :math:`\\ln(1+r)` "
 "form) and price-rent ratio."
 msgstr ""
+"Simule une série de croissance nominale des prix immobiliers (sous la forme :math:`\\ln(1+r)`) et de une série de ratio prix-loyers."
 
 #: CPR.macro.Prices.simulate_housing:7 of
 msgid ""
 "* *numpy.array* -- Array of nominal housing price growth * *numpy.array* "
 "-- Array of price-rent ratios"
 msgstr ""
+"* *numpy.array* -- Tableau (array) de croissance nominale des prix immobiliers * *numpy.array* -- Tableau (array) de ratios prix-loyers"
 
 #: CPR.macro.Prices.simulate_housing:7 of
 msgid "*numpy.array* -- Array of nominal housing price growth"
-msgstr ""
+msgstr "*numpy.array* -- Tableau (array) de croissance nominale des prix immobiliers"
 
 #: CPR.macro.Prices.simulate_housing:8 of
 msgid "*numpy.array* -- Array of price-rent ratios"
-msgstr ""
+msgstr "*numpy.array* -- Tableau (array) de ratios prix-loyers"
 
 #: CPR.macro.Prices.prepare_inflation_factors:1 of
 msgid "Compute inflation factors with base year 2018."
-msgstr ""
+msgstr " Calcule les facteurs d'inflation, avec 2018 comme année de base."
 
 #: CPR.macro.Prices.prepare_inflation_factors:6 of
 msgid "Dictionary of inflation factors for each year"
-msgstr ""
+msgstr "Dictionnaire de facteurs d'inflation pour chaque année"
 
 #: CPR.macro.Prices.simulate_interest_debt:1 of
 msgid ""
 "Creates N series of yearly nominal interest rate of length T for each "
 "type of debt"
 msgstr ""
+"Crée N séries de longueur T de taux d'intérêt annuel nominal pour chaque type de dette"
 
 #: CPR.macro.Prices.simulate_interest_debt:4 of
 msgid "Dictionary of interest rates by type of debt and year"
-msgstr ""
+msgstr "Dictionnaire de taux d'intérêt par type de dette et par année"
 
 #: CPR.macro.Prices.attach_diff_log_wages:1 of
 msgid "Creates a dictionary of differences in log wages by education and age."
-msgstr ""
+msgstr "Crée un dictionnaire de différences dans le log des salaires par scolarité et par âge."
 
 #: CPR.macro.Prices.attach_diff_log_wages:3 of
 msgid "Dictionary of difference in log wages by education and age"
-msgstr ""
+msgstr "Dictionnaire de différences dans le log des salaires par scolarité et par âge"
 
 #: CPR.macro.Prices.initialize_factors:1 of
 msgid "This function creates an instance of life.table by gender and province."
-msgstr ""
+msgstr "Cette fonction crée une instance de life.table par genre et par province."
 
 #: CPR.macro.Prices.initialize_factors:4 of
 msgid "dictionary of annuity factors by gender and provinces"
-msgstr ""
-
+msgstr "dictionnaire de facteurs de rentes par genre et par province"
