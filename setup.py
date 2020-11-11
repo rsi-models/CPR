@@ -22,6 +22,6 @@ setuptools.setup(
                  "License :: OSI Approved :: MIT License",
                  "Operating System :: OS Independent"],
     packages=setuptools.find_packages(),
-    include_package_data=True,
+    include_package_data=True, #probably useless
     install_requires=["pandas", "numpy", "srpp", "srd"],
     python_requires=">=3.6")

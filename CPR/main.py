@@ -1,7 +1,6 @@
 import os
 from functools import partial
 import multiprocessing as mp
-import time
 import pandas as pd
 from CPR import initialisation
 from CPR import macro
@@ -31,7 +30,6 @@ def run_simulations(inputs, nsim=1, non_stochastic=False, **extra_params):
     Results
         instance of the class Results
     """
-    start = time.time()
     # check extra_params in common_params or prices:
     l_params = []
     for file_csv in ['prices.csv', 'common_params.csv', 'user_options.csv']:
@@ -60,6 +58,5 @@ def run_simulations(inputs, nsim=1, non_stochastic=False, **extra_params):
         l_outputs = [simulator.simulate(job, common, prices) for job in jobs]
 
     output = pd.DataFrame.from_dict(l_outputs)
-    print(f'\ntotal time: {time.time() -  start}')
     results = analysis.Results(inputs, output, common, prices, extra_params)
     return results
