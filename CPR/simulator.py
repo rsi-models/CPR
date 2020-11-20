@@ -294,7 +294,7 @@ def manage_liquidations(hh, year, common, prices):
 
         if common.sell_first_resid & ('first_residence' in hh.residences):
             first_res = hh.residences['first_residence']
-            first_res.impute_rent(hh, year, prices)
+            first_res.impute_rent(hh, year, common, prices)
             first_res.liquidate()
             liquidation_value = (first_res.liquidation_non_taxable
                                  + first_res.liquidation_cap_gains)

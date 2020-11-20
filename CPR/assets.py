@@ -732,7 +732,7 @@ class RealAsset:
         self.balance = self.init_balance
         self.cap_gains = 0
 
-    def impute_rent(self, hh, year, prices):
+    def impute_rent(self, hh, year, common, prices):
         """
         Function to compute imputed rent.
 
@@ -745,7 +745,8 @@ class RealAsset:
         prices : Prices
             instance of the class Prices
         """
-        hh.imputed_rent = (hh.residences['first_residence'].balance
+        hh.imputed_rent = ((1 - common.downsize) 
+                           * hh.residences['first_residence'].balance
                            / prices.d_price_rent_ratio[year])
 
 

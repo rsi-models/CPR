@@ -11,7 +11,8 @@ from CPR import analysis
 module_dir = os.path.dirname(os.path.dirname(__file__))
 path = '/CPR/data/params/'
 
-def run_simulations(inputs, nsim=1, non_stochastic=False, **extra_params):
+def run_simulations(inputs, nsim=1, non_stochastic=False, n_jobs=None,
+                    **extra_params):
     """
     This function launches the simulations. Any parameter can be changed
     using extra_params.
@@ -50,8 +51,11 @@ def run_simulations(inputs, nsim=1, non_stochastic=False, **extra_params):
            for index, d_hh in d_input.items()]
     jobs = [(hh, sim) for hh in hhs for sim in range(nsim)]
 
-    if common.multiprocessing:
-        with mp.Pool(processes=mp.cpu_count()) as pool:
+    if n_jobs is None:
+            n_jobs = mp.cpu_count()
+    
+    if n_jobs > 1:
+        with mp.Pool(processes=n_jobs) as pool:
             l_outputs = pool.map(partial(simulator.simulate,
                                  common=common, prices=prices), jobs)
     else:
