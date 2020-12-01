@@ -476,8 +476,9 @@ def compute_rpp(p, nom, common):
     if p.pension > 0:
         p.rpp += p.pension
     if hasattr(p, 'rpp_db') & p.retired & (p.age > common.db_minimum_age):
-        p.rpp_db.compute_benefits(p, common)
-        p.rpp += p.rpp_db.benefits
+        if p.rpp_db.benefits == 0: # avoid multiple counting if spouses retire in different years (and have unregistered assets)
+            p.rpp_db.compute_benefits(p, common)
+            p.rpp += p.rpp_db.benefits
 
 
 def get_benefits_cpp(p, year, common):

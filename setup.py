@@ -23,5 +23,6 @@ setuptools.setup(
                  "Operating System :: OS Independent"],
     packages=setuptools.find_packages(),
     include_package_data=True, #probably useless
-    install_requires=["pandas", "numpy", "srpp", "srd"],
+    install_requires=["pandas", "numpy", "requests", "statsmodels", "srpp",
+                      "srd"],
     python_requires=">=3.6")
