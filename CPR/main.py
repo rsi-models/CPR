@@ -44,8 +44,11 @@ def run_simulations(inputs, nsim=1, non_stochastic=False, n_jobs=None,
 
     common = macro.CommonParameters(nsim, non_stochastic, extra_params)
     prices = macro.Prices(common, extra_params)
-
-    d_input = inputs.to_dict('index')
+    
+    if type(inputs) is pd.Series:
+        d_input = inputs.to_frame().to_dict()
+    else:
+        d_input = inputs.to_dict('index')
 
     hhs = [initialisation.create_hh(index, d_hh, common, prices)
            for index, d_hh in d_input.items()]

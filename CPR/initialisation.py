@@ -236,7 +236,7 @@ class Hhold():
             self.sp[0].byear + common.age_cons_bef_ret,
             common.base_year, self.sp[0].ret_year - 1)
 
-        if self.couple is False:
+        if self.couple == False:
             self.ret_year = self.sp[0].ret_year
             self.cons_after_ret_year = max(
                 self.sp[0].byear + common.official_ret_age, self.ret_year)
