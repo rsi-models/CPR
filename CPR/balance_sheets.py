@@ -65,11 +65,13 @@ def compute_bs_after_ret(hh, year, common, prices):
     nom, real = tools.create_nom_real(year, prices)
 
     hh_tax = taxes.file_household(hh, year, common, prices)
-    hh.disp_inc_after_ret = nom(hh_tax.fam_disp_inc)
+    for inc in ['fam_inc_tot', 'fam_after_tax_inc', 'fam_disp_inc']:
+        val = nom(getattr(hh_tax, inc))
+        setattr(hh, f'{inc}_after_ret', val)
     taxes.get_gis_oas(hh, hh_tax, year, prices)
 
     hh.debt_payments = sum([hh.debts[debt].payment for debt in hh.debts])
-    hh.cons_after_ret_real = real(hh.disp_inc_after_ret - hh.debt_payments)
+    hh.cons_after_ret_real = real(hh.fam_disp_inc_after_ret - hh.debt_payments)
     hh.cons_after_ret_real -= real(getattr(hh, 'imputed_rent', 0))
 
 
@@ -97,9 +99,10 @@ def add_output(hh, year, prices, key):
 
     for residence in hh.residences:
         hh.d_output[f'{residence}_{key}'] = \
-            real(hh.residences[residence].balance)
-    if hasattr(hh, 'business'):
-        hh.d_output[f'business_{key}'] = real(hh.business.balance)
+            real(hh.residences[residence].balance)    
+    business = real(hh.business.balance) if hasattr(hh, 'business') else 0
+    hh.d_output[f'business_{key}'] = business
+        
     if 'first_mortgage' in hh.debts:
         hh.d_output[f'first_mortgage_balance_{key}'] = \
             real(hh.debts['first_mortgage'].balance)
@@ -109,8 +112,8 @@ def add_output(hh, year, prices, key):
 
     if key in ['bef', 'part']:
         for p in hh.sp:
-            if hasattr(p, 'rpp_dc'):
-                hh.d_output[f'{p.who}rpp_dc_{key}'] = real(p.rpp_dc.balance)
+            rpp_dc = real(p.rpp_dc.balance) if hasattr(p, 'rpp_dc') else 0
+            hh.d_output[f'{p.who}rpp_dc_{key}'] = rpp_dc
             for acc in p.fin_assets:
                 hh.d_output[f'{p.who}{acc}_balance_{key}'] = \
                     real(p.fin_assets[acc].balance)
@@ -124,11 +127,13 @@ def add_output(hh, year, prices, key):
 
     if key == 'after':
         hh.d_output[f'cons_{key}'] = hh.cons_after_ret_real
+        hh.d_output[f'debt_payments_{key}'] = real(hh.debt_payments)
+        hh.d_output[f'fam_net_tax_liability_{key}'] = real(
+            hh.fam_inc_tot_after_ret - hh.fam_after_tax_inc_after_ret)
 
         for p in hh.sp:
             hh.d_output[f'{p.who}cpp_{key}'] = real(p.cpp)
             hh.d_output[f'{p.who}gis_{key}'] = real(p.inc_gis)
-            hh.d_output[f'{p.who}oas_{key}'] = real(p.inc_oas)
-            if hasattr(p, 'rpp_db'):
-                hh.d_output[f'{p.who}rpp_db_benefits_{key}'] = \
-                    real(p.rpp_db.benefits)
+            hh.d_output[f'{p.who}oas_{key}'] = real(p.inc_oas)            
+            db_benefits = real(p.rpp_db.benefits) if hasattr(p, 'rpp_db') else 0
+            hh.d_output[f'{p.who}rpp_db_benefits_{key}'] = db_benefits

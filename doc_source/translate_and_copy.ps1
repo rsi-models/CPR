@@ -5,7 +5,6 @@ Get-ChildItem build\pdf| Remove-Item -Recurse
 sphinx-build -M latexpdf ./source build/pdf/en -D language='en'
 sphinx-build -M latexpdf ./source build/pdf/fr -D language='fr'
 
-
 <# html documentation #>
 Get-ChildItem build\html| Remove-Item -Recurse
 sphinx-build -b html ./source build/html/en -D language='en'

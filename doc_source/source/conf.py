@@ -24,7 +24,7 @@ author = 'RSI Team / Équipe IRE'
 #author = 'David Boisclair, Ismaël Choinière-Crèvecœur, \n Pierre-Carl Michaud & Pierre-Yves Yanni'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
+release = '1.1.1'
 
 # -- General configuration ---------------------------------------------------
 
