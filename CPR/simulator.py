@@ -91,7 +91,7 @@ def simulate(job, common, prices):
 
 def extract_time_series(sim, common, prices):
     """
-    Function that attaches to households stochastic processes on asset returns.
+    Function that attaches stochastic processes on asset returns to households.
 
     Parameters
     ----------

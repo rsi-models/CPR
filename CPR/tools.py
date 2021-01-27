@@ -53,7 +53,7 @@ def add_params_as_attr(inst, file):
 
 def change_params(inst, extra_params):
     """
-    Function to update the value of some parameters in inst with values form *extra_params*.
+    Function to update the value of some parameters in inst with values from *extra_params*.
 
     Parameters
     ----------
