@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Assets &mdash; CPR 0.0.1 documentation</title>
+  <title>Assets &mdash; CPR 1.1.1 documentation</title>
   
 
   
@@ -24,8 +24,7 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -169,9 +168,9 @@
   <div class="section" id="assets">
 <h1>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h1>
 <p>This module manages all assets using various classes and functions: pension plans, individual savings (registered and unregistered), housing, business assets. It uses the contributions and room used as inputs as well as returns generated in the Macro module, and it updates all asset-related variables as the simulation progresses.</p>
-<dl class="class">
+<dl class="py class">
 <dt id="CPR.assets.ContributionRoom">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">ContributionRoom</code><span class="sig-paren">(</span><em class="sig-param">init_room_rrsp</em>, <em class="sig-param">init_room_tfsa</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">ContributionRoom</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">init_room_rrsp</span></em>, <em class="sig-param"><span class="n">init_room_tfsa</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class manages contribution room for TFSAs and RRSPs.</p>
 <p>All amounts are nominal.</p>
 <dl class="field-list simple">
@@ -182,9 +181,9 @@
 </ul>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.ContributionRoom.compute_contributions">
-<code class="sig-name descname">compute_contributions</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.compute_contributions" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">compute_contributions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.compute_contributions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to update contribution room for RRSPs and TFSAs, using the 2 other functions below (which themselves call the other functions of the class).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -198,9 +197,9 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.ContributionRoom.update_rrsp_room">
-<code class="sig-name descname">update_rrsp_room</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.update_rrsp_room" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update_rrsp_room</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.update_rrsp_room" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to update RRSP contribution room.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -213,9 +212,9 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.ContributionRoom.update_tfsa_room">
-<code class="sig-name descname">update_tfsa_room</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.update_tfsa_room" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update_tfsa_room</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.update_tfsa_room" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to update TFSA contribution room.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -228,9 +227,9 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.ContributionRoom.adjust_db_contributions">
-<code class="sig-name descname">adjust_db_contributions</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_db_contributions" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">adjust_db_contributions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_db_contributions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to adjust RRSP contribution room to DB RPP contributions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -243,9 +242,9 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.ContributionRoom.adjust_dc_contributions">
-<code class="sig-name descname">adjust_dc_contributions</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_dc_contributions" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">adjust_dc_contributions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">year</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_dc_contributions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to adjust RRSP contribution room to DC RPP contributions.</p>
 <p>If contribution room is insufficent for the intended/planned RRSP contributions, the “excess” contributions are channeled to TFSA.</p>
 <dl class="field-list simple">
@@ -258,9 +257,9 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.ContributionRoom.adjust_employees_contributions">
-<code class="sig-name descname">adjust_employees_contributions</code><span class="sig-paren">(</span><em class="sig-param">p</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_employees_contributions" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">adjust_employees_contributions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_employees_contributions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to compute employee contributions to DC RPPs (later used to caculate taxes).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -269,9 +268,9 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.ContributionRoom.adjust_rrsp_contributions">
-<code class="sig-name descname">adjust_rrsp_contributions</code><span class="sig-paren">(</span><em class="sig-param">acc</em>, <em class="sig-param">p</em>, <em class="sig-param">year</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_rrsp_contributions" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">adjust_rrsp_contributions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">acc</span></em>, <em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">year</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_rrsp_contributions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to adjust RRSP contribution for contributions other than to RPPs.</p>
 <p>If contribution room is insufficent for the intended/planned RRSP contributions, the “excess” contributions are channeled to TFSA.</p>
 <dl class="field-list simple">
@@ -285,9 +284,9 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.ContributionRoom.adjust_tfsa_contributions">
-<code class="sig-name descname">adjust_tfsa_contributions</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_tfsa_contributions" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">adjust_tfsa_contributions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_tfsa_contributions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to adjust TFSA contribution room to TFSA contributions (including “excess” DC RPP and RRSP contributions).</p>
 <p>If contribution room is insufficent for the intended/planned TFSA contributions, the “excess” contributions are channeled to unregistered accounts.</p>
 <dl class="field-list simple">
@@ -302,9 +301,9 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.ContributionRoom.adjust_rrif">
-<code class="sig-name descname">adjust_rrif</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_rrif" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">adjust_rrif</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_rrif" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to adjust DC RPP and RRSP accounts to mandatory RRIF withdrawals (RRIFs are not separately modelled in this version).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -324,9 +323,9 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.ContributionRoom.adjust_unreg_contributions">
-<code class="sig-name descname">adjust_unreg_contributions</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_unreg_contributions" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">adjust_unreg_contributions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">year</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_unreg_contributions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to adjust contributions to unregistered accounts for “excess” TFSA contributions channeled to them.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -338,7 +337,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.ContributionRoom.reset">
 <code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.reset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reset RRSP and TFSA contribution rooms to their inital values.</p>
@@ -346,9 +345,9 @@
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="CPR.assets.FinAsset">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">FinAsset</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">hh</em>, <em class="sig-param">acc</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">FinAsset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">acc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class manages registered accounts. All amounts are nominal.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -359,9 +358,9 @@
 </ul>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.FinAsset.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">d_returns</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.update" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d_returns</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to update the balance to account for contributions, withdrawals, and returns.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -375,9 +374,9 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.FinAsset.rate">
-<code class="sig-name descname">rate</code><span class="sig-paren">(</span><em class="sig-param">d_returns</em>, <em class="sig-param">year</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.rate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">rate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d_returns</span></em>, <em class="sig-param"><span class="n">year</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.rate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to compute the rate of return given the mix of assets in the account.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -395,9 +394,9 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.FinAsset.rrif_withdrawal">
-<code class="sig-name descname">rrif_withdrawal</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.rrif_withdrawal" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">rrif_withdrawal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.rrif_withdrawal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to manage mandatory RRIF withdrawals.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -415,7 +414,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.FinAsset.liquidate">
 <code class="sig-name descname">liquidate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.liquidate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to liquidate an account, setting balance, contributions and withdrawals to zero.</p>
@@ -429,7 +428,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.FinAsset.reset">
 <code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.reset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reset the balance and withdrawal to its initial balance.</p>
@@ -437,9 +436,9 @@
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="CPR.assets.UnregAsset">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">UnregAsset</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">hh</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">UnregAsset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class manages unregistered accounts.</p>
 <p>All amounts are nominal.</p>
 <dl class="field-list simple">
@@ -451,9 +450,9 @@
 </ul>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.UnregAsset.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">d_returns</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.update" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d_returns</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to update the balance for contributions, withdrawals and returns.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -467,9 +466,9 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.UnregAsset.compute_income">
-<code class="sig-name descname">compute_income</code><span class="sig-paren">(</span><em class="sig-param">d_returns</em>, <em class="sig-param">year</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.compute_income" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">compute_income</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d_returns</span></em>, <em class="sig-param"><span class="n">year</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.compute_income" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to compute new capital gains and taxable income (dividends and interests).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -481,9 +480,9 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.UnregAsset.rate">
-<code class="sig-name descname">rate</code><span class="sig-paren">(</span><em class="sig-param">d_returns</em>, <em class="sig-param">year</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.rate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">rate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d_returns</span></em>, <em class="sig-param"><span class="n">year</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.rate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function that computes the rate of return given the mix of assets in account.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -501,27 +500,27 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.UnregAsset.update_balance">
 <code class="sig-name descname">update_balance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.update_balance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to update to balance and separate between non-taxable funds (i.e. previous post-tax balance), capital gains, dividends, and interests.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.UnregAsset.prepare_withdrawal">
 <code class="sig-name descname">prepare_withdrawal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.prepare_withdrawal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to separate a withdrawal from the balance at the end of the period, and separately identify non-taxable funds, capital gains, dividends, and interests.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.UnregAsset.adjust_income">
 <code class="sig-name descname">adjust_income</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.adjust_income" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to adjust investment income (dividends and interests) for withdrawals.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.UnregAsset.adjust_cap_losses">
-<code class="sig-name descname">adjust_cap_losses</code><span class="sig-paren">(</span><em class="sig-param">realized_cap_gains</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.adjust_cap_losses" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">adjust_cap_losses</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">realized_cap_gains</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.adjust_cap_losses" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to compute capital losses from previous years used for deduction
 against capital gains, and adjust realized capital losses accordingly.</p>
 <dl class="field-list simple">
@@ -537,19 +536,19 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.UnregAsset.adjust_final_balance">
 <code class="sig-name descname">adjust_final_balance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.adjust_final_balance" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function that adjusts the final balance for withdrawals, dividends and interests.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.UnregAsset.liquidate">
 <code class="sig-name descname">liquidate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.liquidate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to liquidate the account and adjust capital losses.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.UnregAsset.reset">
 <code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.reset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to reset the balance, capital gains, and withdrawals to their initial values.</p>
@@ -557,9 +556,9 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="CPR.assets.RppDC">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">RppDC</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDC" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">RppDC</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDC" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class manages DC RPPs.</p>
 <p>All amounts are nominal.</p>
 <dl class="field-list simple">
@@ -572,9 +571,9 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 </dl>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="CPR.assets.RppDB">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">RppDB</code><span class="sig-paren">(</span><em class="sig-param">p</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">RppDB</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class manages DB RPPs.</p>
 <p>All amounts are nominal.</p>
 <dl class="field-list simple">
@@ -582,9 +581,9 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 <dd class="field-odd"><p><strong>p</strong> (<a class="reference internal" href="initialisation.html#CPR.initialisation.Person" title="CPR.initialisation.Person"><em>Person</em></a>) – instance of the class Person</p>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.RppDB.compute_benefits">
-<code class="sig-name descname">compute_benefits</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.compute_benefits" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">compute_benefits</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.compute_benefits" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function that computes RPP DB benefits and adjusts them for CPP/QPP integration.</p>
 <p>If RPP benefits are smaller than CPP/QPP benefits, RPP benefits are set to zero once the receipt of CPP/QPP retirement benefits begins.</p>
 <dl class="field-list simple">
@@ -597,9 +596,9 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.RppDB.adjust_for_penalty">
-<code class="sig-name descname">adjust_for_penalty</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.adjust_for_penalty" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">adjust_for_penalty</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.adjust_for_penalty" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to compute a penalty for individuals who begin to receive DB RPP benefits “early”, i.e. before they accumulate the maximum number of years of service, if they are younger than the age at which benefits can start without penalty (the “early retirement age”).</p>
 <p>By default, the penalty applies to those who begin RPP benefits receipt before reaching 35 years of service and before age 62. These values can be modified.</p>
 <dl class="field-list simple">
@@ -612,9 +611,9 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.RppDB.compute_cpp_adjustment">
-<code class="sig-name descname">compute_cpp_adjustment</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.compute_cpp_adjustment" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">compute_cpp_adjustment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.compute_cpp_adjustment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to compute an adjustment (reduction) to DB RPP benefits to account for CPP/QPP integration.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -632,7 +631,7 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.RppDB.reset">
 <code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.reset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function that resets the benefits and contribution rates to their initial values.</p>
@@ -640,9 +639,9 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="CPR.assets.RealAsset">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">RealAsset</code><span class="sig-paren">(</span><em class="sig-param">d_hh</em>, <em class="sig-param">resid</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">RealAsset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d_hh</span></em>, <em class="sig-param"><span class="n">resid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class manages housing and residences.</p>
 <p>All amounts are nominal.</p>
 <dl class="field-list simple">
@@ -653,9 +652,9 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 </ul>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.RealAsset.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">growth_rates</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset.update" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">growth_rates</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to update the balance (residence values) for growth in price.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -668,7 +667,7 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.RealAsset.liquidate">
 <code class="sig-name descname">liquidate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset.liquidate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to liquidate the asset, compute capital gains if they apply, and set balance to zero.</p>
@@ -682,15 +681,15 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.RealAsset.reset">
 <code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset.reset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to reset residence value to its initial value and set capital gains to zero.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.RealAsset.impute_rent">
-<code class="sig-name descname">impute_rent</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset.impute_rent" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">impute_rent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset.impute_rent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to compute imputed rent.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -705,9 +704,9 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="CPR.assets.Business">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">Business</code><span class="sig-paren">(</span><em class="sig-param">d_hh</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">Business</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d_hh</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class manages a business (as an asset owned by the houshehold).</p>
 <p>All amounts are nominal.</p>
 <dl class="field-list simple">
@@ -715,9 +714,9 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 <dd class="field-odd"><p><strong>d_hh</strong> (<em>dict of float</em>) – dictionary containing value of business</p>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.Business.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">d_business_returns</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business.update" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d_business_returns</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to update the balance and dividends.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -730,9 +729,9 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.Business.liquidate">
-<code class="sig-name descname">liquidate</code><span class="sig-paren">(</span><em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business.liquidate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">liquidate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business.liquidate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to liquidate account (business assets), compute capital gains, and set balance to zero.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -747,7 +746,7 @@ against capital gains, and adjust realized capital losses accordingly.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.assets.Business.reset">
 <code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business.reset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reset business value and capital gains to their initial values.</p>

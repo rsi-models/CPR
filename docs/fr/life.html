@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Life &mdash; Documentation CPR 0.0.1</title>
+  <title>Life &mdash; Documentation CPR 1.1.1</title>
   
 
   
@@ -24,9 +24,8 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script src="_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -170,9 +169,9 @@
   <div class="section" id="life">
 <h1>Life<a class="headerlink" href="#life" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Le module Life contient la classe qui calcule les facteurs de rente pour tous les individus dans la simulation, à l’aide de tables de mortalité par province et par genre fournies par Statistique Canada.</p>
-<dl class="class">
+<dl class="py class">
 <dt id="CPR.life.life.table">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.life.life.</code><code class="sig-name descname">table</code><span class="sig-paren">(</span><em class="sig-param">prov='qc'</em>, <em class="sig-param">scenario='M'</em>, <em class="sig-param">gender='males'</em>, <em class="sig-param">web=False</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table" title="Lien permanent vers cette définition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">CPR.life.life.</code><code class="sig-name descname">table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prov</span><span class="o">=</span><span class="default_value">'qc'</span></em>, <em class="sig-param"><span class="n">scenario</span><span class="o">=</span><span class="default_value">'M'</span></em>, <em class="sig-param"><span class="n">gender</span><span class="o">=</span><span class="default_value">'males'</span></em>, <em class="sig-param"><span class="n">web</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Classe qui clacule les facteurs de rente par province, genre, âge et année de naissance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -184,9 +183,9 @@
 </ul>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.life.life.table.pull_history">
-<code class="sig-name descname">pull_history</code><span class="sig-paren">(</span><em class="sig-param">prov='qc'</em>, <em class="sig-param">gender='males'</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.pull_history" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-name descname">pull_history</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prov</span><span class="o">=</span><span class="default_value">'qc'</span></em>, <em class="sig-param"><span class="n">gender</span><span class="o">=</span><span class="default_value">'males'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.pull_history" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui obtient les tables de mortalité historiques par province et par genre.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -198,15 +197,15 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.life.life.table.splice">
 <code class="sig-name descname">splice</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.splice" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui ajoute des les probabilités de survie pour l’année de naissance 2012 et les suivantes.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.life.life.table.compute_annuity_factor">
-<code class="sig-name descname">compute_annuity_factor</code><span class="sig-paren">(</span><em class="sig-param">byear</em>, <em class="sig-param">agestart</em>, <em class="sig-param">rate</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.compute_annuity_factor" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-name descname">compute_annuity_factor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">byear</span></em>, <em class="sig-param"><span class="n">agestart</span></em>, <em class="sig-param"><span class="n">rate</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.compute_annuity_factor" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui calcule un facteur de rente.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Annuities &mdash; CPR 0.0.1 documentation</title>
+  <title>Annuities &mdash; CPR 1.1.1 documentation</title>
   
 
   
@@ -24,8 +24,7 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -169,9 +168,9 @@
   <div class="section" id="annuities">
 <h1>Annuities<a class="headerlink" href="#annuities" title="Permalink to this headline">¶</a></h1>
 <p>This module contains the functions needed to convert all financial assets into annuities upon retirement (of the first and/or the second spouse). One of the functions calls the annuity factor built using the Life module.</p>
-<span class="target" id="module-CPR.annuities"></span><dl class="function">
+<span class="target" id="module-CPR.annuities"></span><dl class="py function">
 <dt id="CPR.annuities.compute_partial_annuities">
-<code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">compute_partial_annuities</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">d_returns</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.compute_partial_annuities" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">compute_partial_annuities</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">d_returns</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.compute_partial_annuities" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function that partially converts assets into annuities when the first spouse retires, using the other functions below.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -185,9 +184,9 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="CPR.annuities.compute_annuities">
-<code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">compute_annuities</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">d_returns</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.compute_annuities" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">compute_annuities</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">d_returns</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.compute_annuities" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function that fully converts assets into annuities when the last spouse retires, using the other functions below.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -201,9 +200,9 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="CPR.annuities.liquidate_fin_assets">
-<code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">liquidate_fin_assets</code><span class="sig-paren">(</span><em class="sig-param">p</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.liquidate_fin_assets" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">liquidate_fin_assets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.liquidate_fin_assets" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to liquidate financial assets.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -212,9 +211,9 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="CPR.annuities.compute_factors">
-<code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">compute_factors</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">p</em>, <em class="sig-param">rate</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.compute_factors" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">compute_factors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">rate</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.compute_factors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to compute an individual factor for annuities constant in real terms.</p>
 <p>We use an adjusted rate to dampen excess factor volatility. This is because we take the total return on bonds in the year that the annuity is purchased. Ideally, the whole interest structure should be used instead, such that mean reversion would smooth out annuity prices.</p>
 <dl class="field-list simple">
@@ -229,9 +228,9 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="CPR.annuities.convert_to_real_annuities">
-<code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">convert_to_real_annuities</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.convert_to_real_annuities" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">convert_to_real_annuities</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.convert_to_real_annuities" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function that converts assets to annuities in real terms.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>

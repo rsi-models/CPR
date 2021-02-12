@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Debts &mdash; CPR 0.0.1 documentation</title>
+  <title>Debts &mdash; CPR 1.1.1 documentation</title>
   
 
   
@@ -24,8 +24,7 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -169,9 +168,9 @@
   <div class="section" id="debts">
 <h1>Debts<a class="headerlink" href="#debts" title="Permalink to this headline">¶</a></h1>
 <p>The Debts module manages debts (payments and balances) in the simulation.</p>
-<dl class="class">
+<dl class="py class">
 <dt id="CPR.debts.Debt">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.debts.</code><code class="sig-name descname">Debt</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">d_hh</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.debts.Debt" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">CPR.debts.</code><code class="sig-name descname">Debt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">d_hh</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.debts.Debt" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class manages all debts. All amounts are nominal.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -183,9 +182,9 @@
 </ul>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.debts.Debt.estimate_init_term">
-<code class="sig-name descname">estimate_init_term</code><span class="sig-paren">(</span><em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.debts.Debt.estimate_init_term" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">estimate_init_term</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.debts.Debt.estimate_init_term" title="Permalink to this definition">¶</a></dt>
 <dd><p>Estimate the term of the debt.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -203,9 +202,9 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.debts.Debt.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">year</em>, <em class="sig-param">rate</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.debts.Debt.update" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">rate</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.debts.Debt.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates yearly payment and balance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -218,7 +217,7 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.debts.Debt.reset">
 <code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.debts.Debt.reset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reset balance and term to initial values.</p>

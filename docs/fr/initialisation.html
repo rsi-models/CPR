@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Initialisation &mdash; Documentation CPR 0.0.1</title>
+  <title>Initialisation &mdash; Documentation CPR 1.1.1</title>
   
 
   
@@ -24,9 +24,8 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script src="_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -172,9 +171,9 @@
 <p>Ce module configure des ménages et leur attache des actifs et des dettes. Le tableau ci-dessous montre tous les intrants individuels au CPR (certains sont entrés dans d’autres modules).</p>
 <img alt="_images/table_inputs.fr.png" src="_images/table_inputs.fr.png" />
 <p>Bien qu’un fichier exemple d’intrants soit fourni avec le package, un tutoriel est également offert afin de montrer aux utilisateurs comment modifier ces intrants afin d’utiliser ceux de leur choix. NOTE: il faut être prudent lorsque l’on utilise ses propres intrants, car un message d’erreur général sera généré si l’un des – nombreux – intrants est spécifié de manière incorrecte (c.-à-d. qu’il contient une erreur ou est très peu plausible).</p>
-<dl class="function">
+<dl class="py function">
 <dt id="CPR.initialisation.create_hh">
-<code class="sig-prename descclassname">CPR.initialisation.</code><code class="sig-name descname">create_hh</code><span class="sig-paren">(</span><em class="sig-param">index</em>, <em class="sig-param">d_hh</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.create_hh" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.initialisation.</code><code class="sig-name descname">create_hh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">d_hh</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.create_hh" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui crée un ménage avec une ou deux personnes et y attache des actifs et des dettes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -194,9 +193,9 @@
 </dl>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="CPR.initialisation.Person">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.initialisation.</code><code class="sig-name descname">Person</code><span class="sig-paren">(</span><em class="sig-param">d_hh</em>, <em class="sig-param">l_sp</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em>, <em class="sig-param">s_=False</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Person" title="Lien permanent vers cette définition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">CPR.initialisation.</code><code class="sig-name descname">Person</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d_hh</span></em>, <em class="sig-param"><span class="n">l_sp</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em>, <em class="sig-param"><span class="n">s_</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Person" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Cette classe crée une personne.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -205,13 +204,13 @@
 <li><p><strong>l_sp</strong> (<em>list</em>) – liste des caractéristiques attachées aux conjoints</p></li>
 <li><p><strong>common</strong> (<em>Common</em>) – instance de la classe Common</p></li>
 <li><p><strong>prices</strong> (<a class="reference internal" href="macro.html#CPR.macro.Prices" title="CPR.macro.Prices"><em>Prices</em></a>) – innstance de la classe Prices</p></li>
-<li><p><strong>s_</strong> (<em>bool</em>) – Faux pour le chef de ménage, Vrai sinon</p></li>
+<li><p><strong>s</strong> (<em>bool</em>) – Faux pour le chef de ménage, Vrai sinon</p></li>
 </ul>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.initialisation.Person.create_wage_profile">
-<code class="sig-name descname">create_wage_profile</code><span class="sig-paren">(</span><em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Person.create_wage_profile" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-name descname">create_wage_profile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Person.create_wage_profile" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui crée des profils de salaires pour chaque réalisation de l’incertitude, utilisée lorsque la version stochastique de l’outil est sélectionnée.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -229,9 +228,9 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.initialisation.Person.create_shocks">
-<code class="sig-name descname">create_shocks</code><span class="sig-paren">(</span><em class="sig-param">T</em>, <em class="sig-param">N</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Person.create_shocks" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-name descname">create_shocks</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">T</span></em>, <em class="sig-param"><span class="n">N</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Person.create_shocks" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui crée une série temporelle de chocs sur le salaire.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -252,9 +251,9 @@
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="CPR.initialisation.Hhold">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.initialisation.</code><code class="sig-name descname">Hhold</code><span class="sig-paren">(</span><em class="sig-param">d_hh</em>, <em class="sig-param">l_hhold</em>, <em class="sig-param">index</em>, <em class="sig-param">common</em>, <em class="sig-param">p0</em>, <em class="sig-param">p1=None</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Hhold" title="Lien permanent vers cette définition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">CPR.initialisation.</code><code class="sig-name descname">Hhold</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d_hh</span></em>, <em class="sig-param"><span class="n">l_hhold</span></em>, <em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">p0</span></em>, <em class="sig-param"><span class="n">p1</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Hhold" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Cette classe crée un ménage.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -268,9 +267,9 @@
 </ul>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.initialisation.Hhold.set_other_years">
-<code class="sig-name descname">set_other_years</code><span class="sig-paren">(</span><em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Hhold.set_other_years" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-name descname">set_other_years</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Hhold.set_other_years" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui fixe les années de retraite partielle et complète (pour les couples) ainsi que les années dans lesquelles la consommation avant et après la retraite sont évaluées.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>

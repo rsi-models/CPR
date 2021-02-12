@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Macro &mdash; CPR 0.0.1 documentation</title>
+  <title>Macro &mdash; CPR 1.1.1 documentation</title>
   
 
   
@@ -24,8 +24,7 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -170,9 +169,9 @@
 <h1>Macro<a class="headerlink" href="#macro" title="Permalink to this headline">¶</a></h1>
 <p>The Macro module contains classes that contain parameters common to all households,
 generate stochastic processes for returns and wages and other prices.</p>
-<dl class="class">
+<dl class="py class">
 <dt id="CPR.macro.CommonParameters">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.macro.</code><code class="sig-name descname">CommonParameters</code><span class="sig-paren">(</span><em class="sig-param">nsim</em>, <em class="sig-param">non_stochastic</em>, <em class="sig-param">extra_params</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.CommonParameters" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">CPR.macro.</code><code class="sig-name descname">CommonParameters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nsim</span></em>, <em class="sig-param"><span class="n">non_stochastic</span></em>, <em class="sig-param"><span class="n">extra_params</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.CommonParameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class sets and contains the parameters common to all households.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -183,9 +182,9 @@ generate stochastic processes for returns and wages and other prices.</p>
 </ul>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.macro.CommonParameters.set_limits">
-<code class="sig-name descname">set_limits</code><span class="sig-paren">(</span><em class="sig-param">name</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.CommonParameters.set_limits" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">set_limits</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.CommonParameters.set_limits" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set contributions limits for RRSP and TFSA.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -194,14 +193,14 @@ generate stochastic processes for returns and wages and other prices.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.macro.CommonParameters.prepare_ympe">
 <code class="sig-name descname">prepare_ympe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.CommonParameters.prepare_ympe" title="Permalink to this definition">¶</a></dt>
 <dd><p>”
 Pre-reform ympe used to adjust DB benefits for CPP</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.macro.CommonParameters.prepare_cpp">
 <code class="sig-name descname">prepare_cpp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.CommonParameters.prepare_cpp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set percentages for cpp/qpp benefits.</p>
@@ -209,9 +208,9 @@ Pre-reform ympe used to adjust DB benefits for CPP</p>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="CPR.macro.Prices">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.macro.</code><code class="sig-name descname">Prices</code><span class="sig-paren">(</span><em class="sig-param">common</em>, <em class="sig-param">extra_params</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">CPR.macro.</code><code class="sig-name descname">Prices</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">extra_params</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class computes the times series for asset returns,
 interest rates on debt, deterministic wage profiles,
 housing price growth rate and price/rent ratio.</p>
@@ -223,9 +222,9 @@ housing price growth rate and price/rent ratio.</p>
 </ul>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.macro.Prices.simulate_ret">
-<code class="sig-name descname">simulate_ret</code><span class="sig-paren">(</span><em class="sig-param">asset</em>, <em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.simulate_ret" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">simulate_ret</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">asset</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.simulate_ret" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simulate N series of length T nominal returns distributed lognormally
 with autocorrelation rho.</p>
 <dl class="field-list simple">
@@ -244,9 +243,9 @@ with autocorrelation rho.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.macro.Prices.compute_params_process">
-<code class="sig-name descname">compute_params_process</code><span class="sig-paren">(</span><em class="sig-param">mu</em>, <em class="sig-param">rho</em>, <em class="sig-param">sigma</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.compute_params_process" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">compute_params_process</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mu</span></em>, <em class="sig-param"><span class="n">rho</span></em>, <em class="sig-param"><span class="n">sigma</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.compute_params_process" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert arithmetic mean mu and volatility sigma of the returns
 and autocorrelation rho of the log returns into
 <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\rho\)</span> and <span class="math notranslate nohighlight">\(\sigma_{\epsilon}\)</span> of the process:</p>
@@ -270,9 +269,9 @@ where <span class="math notranslate nohighlight">\(\epsilon \sim N(0, \sigma_{\e
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.macro.Prices.simulate_housing">
-<code class="sig-name descname">simulate_housing</code><span class="sig-paren">(</span><em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.simulate_housing" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">simulate_housing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.simulate_housing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simulate series of nominal housing price growth (in <span class="math notranslate nohighlight">\(\ln(1+r)\)</span> form)
 and price-rent ratio.</p>
 <dl class="field-list simple">
@@ -289,9 +288,9 @@ and price-rent ratio.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.macro.Prices.prepare_inflation_factors">
-<code class="sig-name descname">prepare_inflation_factors</code><span class="sig-paren">(</span><em class="sig-param">common</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.prepare_inflation_factors" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">prepare_inflation_factors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.prepare_inflation_factors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute inflation factors with base year 2018.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -306,7 +305,7 @@ and price-rent ratio.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.macro.Prices.simulate_interest_debt">
 <code class="sig-name descname">simulate_interest_debt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.simulate_interest_debt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates N series of yearly nominal interest rate of length T
@@ -321,7 +320,7 @@ for each type of debt</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.macro.Prices.attach_diff_log_wages">
 <code class="sig-name descname">attach_diff_log_wages</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.attach_diff_log_wages" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a dictionary of differences in log wages by education and age.</p>
@@ -335,7 +334,7 @@ for each type of debt</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.macro.Prices.initialize_factors">
 <code class="sig-name descname">initialize_factors</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.initialize_factors" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function creates an instance of life.table

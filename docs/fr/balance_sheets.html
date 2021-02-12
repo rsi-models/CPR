@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Balance Sheets &mdash; Documentation CPR 0.0.1</title>
+  <title>Balance Sheets &mdash; Documentation CPR 1.1.1</title>
   
 
   
@@ -24,9 +24,8 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script src="_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -173,9 +172,9 @@
 <p>À 55 ans ou dans l’année précédant la retraite, si cette dernière se produit avant 56 ans, les salaires, la consommation, les pensions antérieures et les soldes des comptes (REER, autres comptes enregistrés, CELI et comptes non enregistrés, ainsi que RPA à CD) sont calculés. Ils sont entreposés dans des variables dont le nom se termine par “_bef”.</p>
 <p>À 65 ans ou dans l’année de la retraite, si cette dernière se produit plus tard, la consommation; les pensions antérieures; les rentes achetées avec les (soldes des) actifs financiers; les prestations de RPA à PD, de RPC/RRQ et de PSV/SRG/Allocations; ainsi que les valeurs des résidences et les soldes hypothécaires sont entreposés dans des variables dont le nom se termine par “_aft”.</p>
 <p>Pour les couples qui ne prennent pas leur retraite en même temps, les salaires, les pensions antérieures, les soldes de comptes et les rentes du premier conjoint à prendre sa retraite sont calculés. Ils sont entreposés dans des variables dont le nom se termine par “_part”. Le nom des variables décrivant le conjoint qui prend sa retraite en dernier débute avec “s_”.</p>
-<span class="target" id="module-CPR.balance_sheets"></span><dl class="function">
+<span class="target" id="module-CPR.balance_sheets"></span><dl class="py function">
 <dt id="CPR.balance_sheets.compute_bs_bef_ret">
-<code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">compute_bs_bef_ret</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.compute_bs_bef_ret" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">compute_bs_bef_ret</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.compute_bs_bef_ret" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui calcule le bilan avant la retraite.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -189,9 +188,9 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="CPR.balance_sheets.compute_cons_bef_ret">
-<code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">compute_cons_bef_ret</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.compute_cons_bef_ret" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">compute_cons_bef_ret</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.compute_cons_bef_ret" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui calcule la consommation avant la retraite.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -204,9 +203,9 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="CPR.balance_sheets.compute_bs_after_ret">
-<code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">compute_bs_after_ret</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.compute_bs_after_ret" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">compute_bs_after_ret</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.compute_bs_after_ret" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui calcule le bilan après la retraite.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -220,9 +219,9 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="CPR.balance_sheets.add_output">
-<code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">add_output</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em>, <em class="sig-param">key</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.add_output" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">add_output</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">prices</span></em>, <em class="sig-param"><span class="n">key</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.add_output" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui extrait les variables d’output.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>

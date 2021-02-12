@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Analysis &mdash; Documentation CPR 0.0.1</title>
+  <title>Analysis &mdash; Documentation CPR 1.1.1</title>
   
 
   
@@ -24,9 +24,8 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script src="_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -170,7 +169,7 @@
   <div class="section" id="analysis">
 <h1>Analysis<a class="headerlink" href="#analysis" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Dans ce module, la fonction <em>get_dataset</em> récupère un jeu de données (simulé). La classe <em>Results</em> offre quelques fonctions pour résumer et fusionner les données et pour évaluer la préparation pour la retraite.</p>
-<dl class="function">
+<dl class="py function">
 <dt id="CPR.analysis.get_dataset">
 <code class="sig-prename descclassname">CPR.analysis.</code><code class="sig-name descname">get_dataset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.analysis.get_dataset" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui renvoie un dataframe de données synthétiques.</p>
@@ -184,9 +183,9 @@
 </dl>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="CPR.analysis.Results">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.analysis.</code><code class="sig-name descname">Results</code><span class="sig-paren">(</span><em class="sig-param">input_data</em>, <em class="sig-param">output</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em>, <em class="sig-param">extra_params</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.analysis.Results" title="Lien permanent vers cette définition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">CPR.analysis.</code><code class="sig-name descname">Results</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input_data</span></em>, <em class="sig-param"><span class="n">output</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em>, <em class="sig-param"><span class="n">extra_params</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.analysis.Results" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Cette classe prépare les résultats.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -199,15 +198,15 @@
 </ul>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.analysis.Results.summarize">
 <code class="sig-name descname">summarize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.analysis.Results.summarize" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction pour résumer la simulation.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.analysis.Results.merge">
-<code class="sig-name descname">merge</code><span class="sig-paren">(</span><em class="sig-param">add_index=True</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.analysis.Results.merge" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-name descname">merge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">add_index</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.analysis.Results.merge" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction pour fusionner les variables d’entrée et de sortie pour créer une base de données.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -216,9 +215,9 @@
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.analysis.Results.check_preparedness">
-<code class="sig-name descname">check_preparedness</code><span class="sig-paren">(</span><em class="sig-param">factor_couple=2</em>, <em class="sig-param">cons_floor=100</em>, <em class="sig-param">d_cutoffs={20: 80</em>, <em class="sig-param">100: 65}</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.analysis.Results.check_preparedness" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-name descname">check_preparedness</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">factor_couple</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">cons_floor</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">d_cutoffs</span><span class="o">=</span><span class="default_value">{20: 80, 100: 65}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.analysis.Results.check_preparedness" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui introduit un plancher de consommation, calcule l’IPR (NaN si la consommation avant et après la retraite sont en deçà de cons_floor), et vérifie la préparation pour la retraite.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>

@@ -504,7 +504,7 @@ class UnregAsset:
         """
         if realized_cap_gains > 0:
             used_cap_losses = min(realized_cap_gains, self.realized_losses)
-            self.realized_losses = used_cap_losses
+            self.realized_losses -= used_cap_losses
         else:
             self.realized_losses += -realized_cap_gains
             used_cap_losses = 0

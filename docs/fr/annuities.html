@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Annuities &mdash; Documentation CPR 0.0.1</title>
+  <title>Annuities &mdash; Documentation CPR 1.1.1</title>
   
 
   
@@ -24,9 +24,8 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script src="_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -170,9 +169,9 @@
   <div class="section" id="annuities">
 <h1>Annuities<a class="headerlink" href="#annuities" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Ce module contient les fonctions requises pour convertir tous les actifs financiers en rentes au moment de la retraite (du premier et/ou du deuxième conjoint). Une des fonctions appelle le facteur de rente construit à l’aide du module Life.</p>
-<span class="target" id="module-CPR.annuities"></span><dl class="function">
+<span class="target" id="module-CPR.annuities"></span><dl class="py function">
 <dt id="CPR.annuities.compute_partial_annuities">
-<code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">compute_partial_annuities</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">d_returns</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.compute_partial_annuities" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">compute_partial_annuities</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">d_returns</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.compute_partial_annuities" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui convertit partiellement les actifs en rentes au moment de la retraite du premier conjoint, en utilisant les autres fonctions ci-dessous.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -186,9 +185,9 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="CPR.annuities.compute_annuities">
-<code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">compute_annuities</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">d_returns</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.compute_annuities" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">compute_annuities</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">d_returns</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.compute_annuities" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui convertit entièrement les actifs en rentes au moment de la retraite du dernier conjoint, à l’aide des autres fonctions ci-dessous.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -202,9 +201,9 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="CPR.annuities.liquidate_fin_assets">
-<code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">liquidate_fin_assets</code><span class="sig-paren">(</span><em class="sig-param">p</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.liquidate_fin_assets" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">liquidate_fin_assets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.liquidate_fin_assets" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui liquide les actifs financiers.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -213,9 +212,9 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="CPR.annuities.compute_factors">
-<code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">compute_factors</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">p</em>, <em class="sig-param">rate</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.compute_factors" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">compute_factors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">rate</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.compute_factors" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction calculant un facteur individuel pour les rentes constant en termes réels.</p>
 <p>Nous utilisons un taux ajusté pour amenuiser toute volatilité excédentaire du facteur, car nous prenons le rendement total sur les obligations de LT dans l’année d’achat de la rente. Idéalement, la structure complète des taux d’intérêt devrait plutôt être utilisée, de telle sorte que le retour à la moyenne lisserait le prix des rentes.</p>
 <dl class="field-list simple">
@@ -230,9 +229,9 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="CPR.annuities.convert_to_real_annuities">
-<code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">convert_to_real_annuities</code><span class="sig-paren">(</span><em class="sig-param">p</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.convert_to_real_annuities" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.annuities.</code><code class="sig-name descname">convert_to_real_annuities</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.annuities.convert_to_real_annuities" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui convertit les actifs en rentes en termes réels.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>

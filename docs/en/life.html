@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Life &mdash; CPR 0.0.1 documentation</title>
+  <title>Life &mdash; CPR 1.1.1 documentation</title>
   
 
   
@@ -24,8 +24,7 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -170,9 +169,9 @@
 <h1>Life<a class="headerlink" href="#life" title="Permalink to this headline">¶</a></h1>
 <p>The Life module contains the class that computes annuity factors for all individuals in the simulation,
 using mortality tables by province, gender as provided by Statistics Canada.</p>
-<dl class="class">
+<dl class="py class">
 <dt id="CPR.life.life.table">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.life.life.</code><code class="sig-name descname">table</code><span class="sig-paren">(</span><em class="sig-param">prov='qc'</em>, <em class="sig-param">scenario='M'</em>, <em class="sig-param">gender='males'</em>, <em class="sig-param">web=False</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">CPR.life.life.</code><code class="sig-name descname">table</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prov</span><span class="o">=</span><span class="default_value">'qc'</span></em>, <em class="sig-param"><span class="n">scenario</span><span class="o">=</span><span class="default_value">'M'</span></em>, <em class="sig-param"><span class="n">gender</span><span class="o">=</span><span class="default_value">'males'</span></em>, <em class="sig-param"><span class="n">web</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class computing annuity factors by province, gender, age and birth year.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -184,9 +183,9 @@ using mortality tables by province, gender as provided by Statistics Canada.</p>
 </ul>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.life.life.table.pull_history">
-<code class="sig-name descname">pull_history</code><span class="sig-paren">(</span><em class="sig-param">prov='qc'</em>, <em class="sig-param">gender='males'</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.pull_history" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pull_history</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prov</span><span class="o">=</span><span class="default_value">'qc'</span></em>, <em class="sig-param"><span class="n">gender</span><span class="o">=</span><span class="default_value">'males'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.pull_history" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to get historical mortalilty tables by province and gender.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -198,15 +197,15 @@ using mortality tables by province, gender as provided by Statistics Canada.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.life.life.table.splice">
 <code class="sig-name descname">splice</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.splice" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to add survival probabilities for the 2012 birth year and after.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="CPR.life.life.table.compute_annuity_factor">
-<code class="sig-name descname">compute_annuity_factor</code><span class="sig-paren">(</span><em class="sig-param">byear</em>, <em class="sig-param">agestart</em>, <em class="sig-param">rate</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.compute_annuity_factor" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">compute_annuity_factor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">byear</span></em>, <em class="sig-param"><span class="n">agestart</span></em>, <em class="sig-param"><span class="n">rate</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.life.life.table.compute_annuity_factor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to compute an annuity factor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>

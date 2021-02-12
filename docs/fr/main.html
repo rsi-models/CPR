@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Main &mdash; Documentation CPR 0.0.1</title>
+  <title>Main &mdash; Documentation CPR 1.1.1</title>
   
 
   
@@ -24,9 +24,8 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script src="_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -171,9 +170,9 @@
 <h1>Main<a class="headerlink" href="#main" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Ce module appelle le simulateur.</p>
 <p>La fonction <em>run_simulations</em> fait tourner les simulations. Ses arguments sont utilisés pour choisir si la version stochastique de l’outil doit être utilisée, ainsi que le nombre de simulations (réplications) qui doivent être effectuées. N’importe quelle valeur de paramètre peut également être modifiée ici, afin d’utiliser des valeurs autres que celles fournies par défaut.</p>
-<dl class="function">
+<dl class="py function">
 <dt id="CPR.main.run_simulations">
-<code class="sig-prename descclassname">CPR.main.</code><code class="sig-name descname">run_simulations</code><span class="sig-paren">(</span><em class="sig-param">inputs</em>, <em class="sig-param">nsim=1</em>, <em class="sig-param">non_stochastic=False</em>, <em class="sig-param">**extra_params</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.main.run_simulations" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.main.</code><code class="sig-name descname">run_simulations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inputs</span></em>, <em class="sig-param"><span class="n">nsim</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">non_stochastic</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">n_jobs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">extra_params</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.main.run_simulations" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Cette fonction lance les simulations. N’importe quel paramètre peut être modifié à l’aide de extra_params.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Outils &mdash; Documentation CPR 0.0.1</title>
+  <title>Outils &mdash; Documentation CPR 1.1.1</title>
   
 
   
@@ -24,9 +24,8 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script src="_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -170,9 +169,9 @@
   <div class="section" id="tools">
 <h1>Outils<a class="headerlink" href="#tools" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Dans ce module, plusieurs fonctions utilisées dans le reste du code sont disponibles pour créer des dictionnaires, modifier des paramètres ou convertir des prix, entre autres aspects.</p>
-<span class="target" id="module-CPR.tools"></span><dl class="function">
+<span class="target" id="module-CPR.tools"></span><dl class="py function">
 <dt id="CPR.tools.get_params">
-<code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param">file</em>, <em class="sig-param">numerical_key=False</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.get_params" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">numerical_key</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.get_params" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction pour créer un dictionnaire à partir d’un fichier .csv.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -190,9 +189,9 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="CPR.tools.add_params_as_attr">
-<code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">add_params_as_attr</code><span class="sig-paren">(</span><em class="sig-param">inst</em>, <em class="sig-param">file</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.add_params_as_attr" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">add_params_as_attr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inst</span></em>, <em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.add_params_as_attr" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction pour ajouter des paramètres à une instance de la classe.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -204,10 +203,10 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="CPR.tools.change_params">
-<code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">change_params</code><span class="sig-paren">(</span><em class="sig-param">inst</em>, <em class="sig-param">extra_params</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.change_params" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Fonction qui met à jour la valeur de certains paramètres dans inst avec des valeurs prises dans <em>extra_params</em>.</p>
+<code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">change_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inst</span></em>, <em class="sig-param"><span class="n">extra_params</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.change_params" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Function to update the value of some parameters in inst with values from <em>extra_params</em>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
@@ -218,9 +217,9 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="CPR.tools.create_nom_real">
-<code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">create_nom_real</code><span class="sig-paren">(</span><em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.create_nom_real" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">create_nom_real</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.create_nom_real" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Création d’une fonction convertissant les prix de réels à nominaux et de nominaux à réels, avec 2018 comme année de base.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -239,9 +238,9 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="CPR.tools.create_nom">
-<code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">create_nom</code><span class="sig-paren">(</span><em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.create_nom" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">create_nom</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.create_nom" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Création d’une fonction convertissant les prix de réels à nominaux, avec 2018 comme année de base, utilisée à certaines fins spécifiques ailleurs dans le code.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -259,9 +258,9 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="CPR.tools.create_real">
-<code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">create_real</code><span class="sig-paren">(</span><em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.create_real" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">create_real</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.create_real" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Création d’une fonction convertissant les prix de nominaux à réels, avec 2018 comme année de base.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>

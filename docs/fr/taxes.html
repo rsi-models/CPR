@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Taxes &mdash; Documentation CPR 0.0.1</title>
+  <title>Taxes &mdash; Documentation CPR 1.1.1</title>
   
 
   
@@ -24,9 +24,8 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script src="_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -170,9 +169,9 @@
   <div class="section" id="taxes">
 <h1>Taxes<a class="headerlink" href="#taxes" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Le module Taxes utilise le SRD pour calculer les impôts et les prestations pour chaque ménage.</p>
-<span class="target" id="module-CPR.taxes"></span><dl class="function">
+<span class="target" id="module-CPR.taxes"></span><dl class="py function">
 <dt id="CPR.taxes.compute_after_tax_amount">
-<code class="sig-prename descclassname">CPR.taxes.</code><code class="sig-name descname">compute_after_tax_amount</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.taxes.compute_after_tax_amount" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.taxes.</code><code class="sig-name descname">compute_after_tax_amount</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.taxes.compute_after_tax_amount" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Calcule le rendement nominal net et le montant de retrait net pour les actifs non enregistrés.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -186,9 +185,9 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="CPR.taxes.file_household">
-<code class="sig-prename descclassname">CPR.taxes.</code><code class="sig-name descname">file_household</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.taxes.file_household" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.taxes.</code><code class="sig-name descname">file_household</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.taxes.file_household" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Remplit la déclaration de revenus du ménage à l’aide du SRD.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -208,9 +207,9 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="CPR.taxes.file_household_inc_to_tax">
-<code class="sig-prename descclassname">CPR.taxes.</code><code class="sig-name descname">file_household_inc_to_tax</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">year</em>, <em class="sig-param">common</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.taxes.file_household_inc_to_tax" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.taxes.</code><code class="sig-name descname">file_household_inc_to_tax</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.taxes.file_household_inc_to_tax" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Déclare les revenus imposables (intérêts et dividendes) provenant d’actifs non enregistrés du ménage ayant de tels revenus.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -230,9 +229,9 @@
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="CPR.taxes.get_gis_oas">
-<code class="sig-prename descclassname">CPR.taxes.</code><code class="sig-name descname">get_gis_oas</code><span class="sig-paren">(</span><em class="sig-param">hh</em>, <em class="sig-param">hh_tax</em>, <em class="sig-param">year</em>, <em class="sig-param">prices</em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.taxes.get_gis_oas" title="Lien permanent vers cette définition">¶</a></dt>
+<code class="sig-prename descclassname">CPR.taxes.</code><code class="sig-name descname">get_gis_oas</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">hh_tax</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.taxes.get_gis_oas" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Calcule les prestations nominales de PSV et de SRG</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
