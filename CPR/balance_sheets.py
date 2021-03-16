@@ -126,6 +126,7 @@ def add_output(hh, year, prices, key):
                 p.annuity_non_rrsp_real
 
     if key == 'after':
+        hh.d_output[f'imputed_rent_{key}'] = real(getattr(hh, 'imputed_rent', 0))
         hh.d_output[f'cons_{key}'] = hh.cons_after_ret_real
         hh.d_output[f'debt_payments_{key}'] = real(hh.debt_payments)
         hh.d_output[f'fam_net_tax_liability_{key}'] = real(
@@ -137,3 +138,4 @@ def add_output(hh, year, prices, key):
             hh.d_output[f'{p.who}oas_{key}'] = real(p.inc_oas)            
             db_benefits = real(p.rpp_db.benefits) if hasattr(p, 'rpp_db') else 0
             hh.d_output[f'{p.who}rpp_db_benefits_{key}'] = db_benefits
+            hh.d_output[f'{p.who}business_dividends_{key}'] = real(getattr(p, 'div_other_can', 0))

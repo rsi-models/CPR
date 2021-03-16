@@ -798,7 +798,7 @@ class Business:
         """
         self.liquidation_non_taxable = self.price
         self.liquidation_cap_gains = self.balance - self.price
-        self.balance = 0
+        self.balance = self.dividends_business = 0
 
     def reset(self):
         """
