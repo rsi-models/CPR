@@ -108,6 +108,7 @@ def add_output(hh, year, prices, key):
             real(hh.debts['first_mortgage'].balance)
 
     if key == 'bef':
+        hh.d_output[f'year_cons_bef'] = hh.cons_bef_ret_year
         hh.d_output[f'cons_{key}'] = hh.cons_bef_ret_real
 
     if key in ['bef', 'part']:
@@ -126,6 +127,7 @@ def add_output(hh, year, prices, key):
                 p.annuity_non_rrsp_real
 
     if key == 'after':
+        hh.d_output[f'year_cons_after'] = hh.cons_after_ret_year
         hh.d_output[f'imputed_rent_{key}'] = real(getattr(hh, 'imputed_rent', 0))
         hh.d_output[f'cons_{key}'] = hh.cons_after_ret_real
         hh.d_output[f'debt_payments_{key}'] = real(hh.debt_payments)

@@ -1,3 +1,4 @@
 {
-    "restructuredtext.confPath": "${workspaceFolder}\\doc_source\\source"
+    "restructuredtext.confPath": "${workspaceFolder}\\doc_source\\source",
+    "python.pythonPath": "C:\\Users\\pyy\\miniconda3\\envs\\env_cpr\\python.exe"
 }
