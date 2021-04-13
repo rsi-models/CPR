@@ -14,3 +14,7 @@ version 1.0.3:
 removed time count
 added option downsize first residence at retirement
 added option to choose the number of jobs, by default: None (all cpus)
+
+
+version 1.1.4:
+added year_cons_bef and year_cons_after to output (for interface)
