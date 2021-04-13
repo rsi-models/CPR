@@ -117,8 +117,7 @@ def file_household_inc_to_tax(hh, year, common, prices):
         p_srd = srd.Person(age=p.age, earn=real(p.earn), rpp=real(p.rpp),
                            cpp=real(p.cpp),
                            net_cap_gains=real(p.net_cap_gains + cap_gains),
-                           prev_cap_losses=real(p.prev_cap_losses
-                                                + cap_losses),
+                           prev_cap_losses=real(p.prev_cap_losses + cap_losses),
                            cap_gains_exempt=real(business_exempt),
                            div_elig=real(p.div_elig + inc_div_elig),
                            div_other_can=real(p.div_other_can),
@@ -137,10 +136,9 @@ def file_household_inc_to_tax(hh, year, common, prices):
     common.tax.compute(hh_srd)
     return hh_srd
 
-
-def get_gis_oas(hh, hh_tax, year, prices):
+def get_gis_oas_allowances(hh, hh_tax, year, prices):
     """
-    Computes nominal GIS and OAS benefits
+    Computes nominal GIS, OAS and allowance benefits
 
     Parameters
     ----------
@@ -158,3 +156,5 @@ def get_gis_oas(hh, hh_tax, year, prices):
     for who, p in enumerate(hh.sp):
         p.inc_gis = nom_2018(hh_tax.sp[who].inc_gis)
         p.inc_oas = nom_2018(hh_tax.sp[who].inc_oas)
+        p.allow_surv = nom_2018(hh_tax.sp[who].allow_surv)
+        p.allow_couple = nom_2018(hh_tax.sp[who].allow_couple)

@@ -68,7 +68,7 @@ def compute_bs_after_ret(hh, year, common, prices):
     for inc in ['fam_inc_tot', 'fam_after_tax_inc', 'fam_disp_inc']:
         val = nom(getattr(hh_tax, inc))
         setattr(hh, f'{inc}_after_ret', val)
-    taxes.get_gis_oas(hh, hh_tax, year, prices)
+    taxes.get_gis_oas_allowances(hh, hh_tax, year, prices)
 
     hh.debt_payments = sum([hh.debts[debt].payment for debt in hh.debts])
     hh.cons_after_ret_real = real(hh.fam_disp_inc_after_ret - hh.debt_payments)
@@ -137,7 +137,9 @@ def add_output(hh, year, prices, key):
         for p in hh.sp:
             hh.d_output[f'{p.who}cpp_{key}'] = real(p.cpp)
             hh.d_output[f'{p.who}gis_{key}'] = real(p.inc_gis)
-            hh.d_output[f'{p.who}oas_{key}'] = real(p.inc_oas)            
+            hh.d_output[f'{p.who}oas_{key}'] = real(p.inc_oas)
+            hh.d_output[f'{p.who}allow_surv_{key}'] = real(p.allow_surv)
+            hh.d_output[f'{p.who}allow_couple_{key}'] = real(p.allow_couple)          
             db_benefits = real(p.rpp_db.benefits) if hasattr(p, 'rpp_db') else 0
             hh.d_output[f'{p.who}rpp_db_benefits_{key}'] = db_benefits
             hh.d_output[f'{p.who}business_dividends_{key}'] = real(getattr(p, 'div_other_can', 0))
