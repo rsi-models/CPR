@@ -167,7 +167,7 @@ class Person:
 
     def create_shocks(self, T, N, prices):
         """
-        Function that creats a time series of shocks to the wage.
+        Function that creates a time series of shocks to the wage.
 
         Parameters
         ----------
