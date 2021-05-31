@@ -1,3 +1,13 @@
+version 1.2.2
+corrected error wage profiles: diff_log_wage.csv starts at 18 instead of 25;
+changed create_package.bat to delete build before creating new one
+
+version 1.2.1
+no changes compared to 1.1.5; need to delete build to create new one
+
+version 1.2.0
+no changes compared to 1.1.5; forgot to push changes before new version
+
 version 1.1.5:
 added output: allow_surv and allow_couple
 modified function get_gis_oas() -> get_gis_oas_allowances()

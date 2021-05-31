@@ -1,6 +1,6 @@
 :: change version
 
-del /q /s dist CPR.egg-info
+del /q /s dist build cpr_rsi.egg-info
 python setup.py sdist bdist_wheel 
 
 twine check dist/*
