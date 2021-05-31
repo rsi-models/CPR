@@ -138,7 +138,7 @@ def file_household_inc_to_tax(hh, year, common, prices):
 
 def get_gis_oas_allowances(hh, hh_tax, year, prices):
     """
-    Computes nominal GIS, OAS and allowance benefits
+    Computes nominal GIS, OAS and allowance benefits.
 
     Parameters
     ----------
