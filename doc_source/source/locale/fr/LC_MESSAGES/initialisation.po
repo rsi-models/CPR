@@ -129,7 +129,6 @@ msgid "Wage profiles."
 msgstr "Profils de salaires."
 
 #: CPR.initialisation.Person.create_shocks:1 of
-#, fuzzy
 msgid "Function that creates a time series of shocks to the wage."
 msgstr "Fonction qui crée une série temporelle de chocs sur le salaire."
 

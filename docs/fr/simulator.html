@@ -1,39 +1,45 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Simulator &mdash; Documentation CPR 1.1.1</title>
+  <title>Simulator &mdash; Documentation CPR 1.2.2</title>
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="Initialisation" href="initialisation.html" />
@@ -65,7 +71,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Rechercher docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -74,6 +80,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
     
@@ -107,6 +114,7 @@
     <a href="genindex.html">Index</a>
   
         </div>
+        
       </div>
     </nav>
 
@@ -141,19 +149,21 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Simulator</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="_sources/simulator.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/simulator.rst.txt" rel="nofollow"> Afficher la source de la page</a>
           
         
       </li>
@@ -170,8 +180,8 @@
 <h1>Simulator<a class="headerlink" href="#simulator" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Ce module fait tourner les simulations.</p>
 <span class="target" id="module-CPR.simulator"></span><dl class="py function">
-<dt id="CPR.simulator.simulate">
-<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">simulate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">job</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.simulate" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.simulator.simulate">
+<span class="sig-prename descclassname"><span class="pre">CPR.simulator.</span></span><span class="sig-name descname"><span class="pre">simulate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.simulate" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction projetant les actifs, les RPA et les dettes jusqu’au moment de la retraite.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -191,9 +201,9 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.simulator.extract_time_series">
-<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">extract_time_series</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sim</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.extract_time_series" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function that attaches stochastic processes on asset returns to households.</p>
+<dt class="sig sig-object py" id="CPR.simulator.extract_time_series">
+<span class="sig-prename descclassname"><span class="pre">CPR.simulator.</span></span><span class="sig-name descname"><span class="pre">extract_time_series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.extract_time_series" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Fonction qui rattache aux ménages des processus stochastiques en lien avec les rendements sur les actifs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
@@ -213,8 +223,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.simulator.prepare_wages">
-<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">prepare_wages</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">sim</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.prepare_wages" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.simulator.prepare_wages">
+<span class="sig-prename descclassname"><span class="pre">CPR.simulator.</span></span><span class="sig-name descname"><span class="pre">prepare_wages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.prepare_wages" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui rattache des profils de revenus de travail aux individus.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -229,8 +239,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.simulator.initialize_cpp_account">
-<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">initialize_cpp_account</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.initialize_cpp_account" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.simulator.initialize_cpp_account">
+<span class="sig-prename descclassname"><span class="pre">CPR.simulator.</span></span><span class="sig-name descname"><span class="pre">initialize_cpp_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.initialize_cpp_account" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui crée un compte RPC/RRQ et entre les cotisations passées au RPC/RRQ sur la base des revenus de travail passés.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -244,8 +254,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.simulator.update_ages">
-<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">update_ages</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">year</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.update_ages" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.simulator.update_ages">
+<span class="sig-prename descclassname"><span class="pre">CPR.simulator.</span></span><span class="sig-name descname"><span class="pre">update_ages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.update_ages" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui calcule l’âge pour une année donnée.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -258,8 +268,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.simulator.update_debts">
-<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">update_debts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">sim</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.update_debts" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.simulator.update_debts">
+<span class="sig-prename descclassname"><span class="pre">CPR.simulator.</span></span><span class="sig-name descname"><span class="pre">update_debts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.update_debts" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui met à jour les paiements sur les dettes ainsi que les soldes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -275,8 +285,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.simulator.adjust_contributions">
-<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">adjust_contributions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.adjust_contributions" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.simulator.adjust_contributions">
+<span class="sig-prename descclassname"><span class="pre">CPR.simulator.</span></span><span class="sig-name descname"><span class="pre">adjust_contributions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.adjust_contributions" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui ajuste les cotisations à tous les types de comptes (REER, autres comptes enregistrés, CELI) et aux régimes de retraite (RPA à CD et à PD) de manière à respecter les espaces de cotisation disponibles.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -291,8 +301,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.simulator.update_assets">
-<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">update_assets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">d_returns</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.update_assets" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.simulator.update_assets">
+<span class="sig-prename descclassname"><span class="pre">CPR.simulator.</span></span><span class="sig-name descname"><span class="pre">update_assets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_returns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.update_assets" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui met à jour les actifs chaque année.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -308,8 +318,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.simulator.manage_liquidations">
-<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">manage_liquidations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.manage_liquidations" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.simulator.manage_liquidations">
+<span class="sig-prename descclassname"><span class="pre">CPR.simulator.</span></span><span class="sig-name descname"><span class="pre">manage_liquidations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.manage_liquidations" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction gérant la liquidation des actifs au moment de la retraite.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -324,8 +334,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.simulator.contribute_cpp">
-<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">contribute_cpp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.contribute_cpp" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.simulator.contribute_cpp">
+<span class="sig-prename descclassname"><span class="pre">CPR.simulator.</span></span><span class="sig-name descname"><span class="pre">contribute_cpp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.contribute_cpp" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui enregistre les cotisations au RPC/RRQ.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -339,8 +349,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.simulator.claim_cpp">
-<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">claim_cpp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.claim_cpp" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.simulator.claim_cpp">
+<span class="sig-prename descclassname"><span class="pre">CPR.simulator.</span></span><span class="sig-name descname"><span class="pre">claim_cpp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.claim_cpp" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction pour faire débuter les prestations de RPC/RRQ.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -350,8 +360,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.simulator.check_tax_unreg">
-<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">check_tax_unreg</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.check_tax_unreg" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.simulator.check_tax_unreg">
+<span class="sig-prename descclassname"><span class="pre">CPR.simulator.</span></span><span class="sig-name descname"><span class="pre">check_tax_unreg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hh</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.check_tax_unreg" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui vérifie s’il y a des rendements imposables sur les actifs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -367,8 +377,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.simulator.check_liquidation">
-<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">check_liquidation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.check_liquidation" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.simulator.check_liquidation">
+<span class="sig-prename descclassname"><span class="pre">CPR.simulator.</span></span><span class="sig-name descname"><span class="pre">check_liquidation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hh</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.check_liquidation" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui vérifie s’il y a des actifs liquidés à imposer.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -384,8 +394,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.simulator.prepare_taxes">
-<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">prepare_taxes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.prepare_taxes" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.simulator.prepare_taxes">
+<span class="sig-prename descclassname"><span class="pre">CPR.simulator.</span></span><span class="sig-name descname"><span class="pre">prepare_taxes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.prepare_taxes" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui prépare les variables utilisées dans le SRD (en termes nominaux)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -400,8 +410,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.simulator.get_assets">
-<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">get_assets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.get_assets" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.simulator.get_assets">
+<span class="sig-prename descclassname"><span class="pre">CPR.simulator.</span></span><span class="sig-name descname"><span class="pre">get_assets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.get_assets" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction pour récupérer les actifs aux fins du test d’actifs de l’aide sociale.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -414,8 +424,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.simulator.compute_rpp">
-<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">compute_rpp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">nom</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.compute_rpp" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.simulator.compute_rpp">
+<span class="sig-prename descclassname"><span class="pre">CPR.simulator.</span></span><span class="sig-name descname"><span class="pre">compute_rpp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.compute_rpp" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Calcul des RPA (PD et pension).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -429,8 +439,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.simulator.get_benefits_cpp">
-<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">get_benefits_cpp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.get_benefits_cpp" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.simulator.get_benefits_cpp">
+<span class="sig-prename descclassname"><span class="pre">CPR.simulator.</span></span><span class="sig-name descname"><span class="pre">get_benefits_cpp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.get_benefits_cpp" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui calcule les prestations de retraite annuelles de RPC/RRQ.</p>
 <p>s1 est la portion des prestations supplémentaires liée à un taux de cotisation supérieur dans le cadre de l’expansion 2019-2025; s2 est la portion des prestations supplémentaires liée aux changements dans le MGAP; et PRB est le supplément à la rente de retraite (pour les individus qui continuent à travailler après le début de leur rente – cette aspect n’est pas utilisé dans le CPR, puisque les individus débutent automatiquement leurs prestations dans l’année de leur retraite).</p>
 <dl class="field-list simple">
@@ -445,8 +455,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.simulator.get_inc_rrsp">
-<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">get_inc_rrsp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">nom</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.get_inc_rrsp" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.simulator.get_inc_rrsp">
+<span class="sig-prename descclassname"><span class="pre">CPR.simulator.</span></span><span class="sig-name descname"><span class="pre">get_inc_rrsp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nom</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.get_inc_rrsp" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui calcule le revenu de retrait de REER.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -459,8 +469,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.simulator.get_other_taxable">
-<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">get_other_taxable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">nom</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.get_other_taxable" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.simulator.get_other_taxable">
+<span class="sig-prename descclassname"><span class="pre">CPR.simulator.</span></span><span class="sig-name descname"><span class="pre">get_other_taxable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nom</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.get_other_taxable" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction calculant les autres revenus imposables.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -474,8 +484,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.simulator.get_other_non_taxable">
-<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">get_other_non_taxable</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">nom</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.get_other_non_taxable" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.simulator.get_other_non_taxable">
+<span class="sig-prename descclassname"><span class="pre">CPR.simulator.</span></span><span class="sig-name descname"><span class="pre">get_other_non_taxable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nom</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.get_other_non_taxable" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction calculant les autres revenus non imposables.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -488,8 +498,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.simulator.get_contributions_assets">
-<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">get_contributions_assets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.get_contributions_assets" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.simulator.get_contributions_assets">
+<span class="sig-prename descclassname"><span class="pre">CPR.simulator.</span></span><span class="sig-name descname"><span class="pre">get_contributions_assets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.get_contributions_assets" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction calculant les cotisations aux comptes enregistrés et non enregistrés (incluant les RPA à CD et à PD).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -503,8 +513,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.simulator.reset_accounts">
-<code class="sig-prename descclassname">CPR.simulator.</code><code class="sig-name descname">reset_accounts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.reset_accounts" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.simulator.reset_accounts">
+<span class="sig-prename descclassname"><span class="pre">CPR.simulator.</span></span><span class="sig-name descname"><span class="pre">reset_accounts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hh</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.simulator.reset_accounts" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui rétablit les valeurs initiales de toutes les variables.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -520,29 +530,29 @@
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="initialisation.html" class="btn btn-neutral float-right" title="Initialisation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="main.html" class="btn btn-neutral float-left" title="Main" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="initialisation.html" class="btn btn-neutral float-right" title="Initialisation" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="main.html" class="btn btn-neutral float-left" title="Main" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, RSI Team / Équipe IRE, HEC Montréal
+        &#169; Copyright 2020, RSI Team / Équipe IRE, HEC Montréal.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -550,7 +560,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

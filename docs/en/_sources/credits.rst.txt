@@ -5,12 +5,12 @@ Contributors
 ************
 David Boisclair, Ismaël Choinière-Crèvecœur, Pierre-Carl Michaud, Pierre-Yves Yanni
 
-Contact Person
-**************
+Contact
+*******
 
 .. _nous_contacter:
 
-`Pierre-Yves Yanni <pierre-yves.yanni@hec.ca>`_
+`Retirement and Savings Institute <info.ire@hec.ca>`_
 
 .. _licence:
 

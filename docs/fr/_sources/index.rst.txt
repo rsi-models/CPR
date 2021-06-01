@@ -16,7 +16,7 @@ The CPR outputs a level of “consumption replacement” for each household that
 
 The CPR and the other tools it uses (SRD and SRPP) are written in Python, a modern, simple and fast language. In order to use it, it is essential to ensure first that an up-to-date Python distribution is installed, for example using Anaconda. Although not essential, it will also be useful to have a minimal understanding of Python environments and, if possible, vocabulary (e.g. function, class, instance, profile).
 
-.. image:: images/CPR_flow.png
+.. image:: images/CPR_flow.en.png
 
 .. toctree::
    :hidden:

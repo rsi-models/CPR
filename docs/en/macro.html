@@ -1,38 +1,45 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Macro &mdash; CPR 1.1.1 documentation</title>
+  <title>Macro &mdash; CPR 1.2.2 documentation</title>
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Assets" href="assets.html" />
@@ -73,6 +80,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
     
@@ -106,6 +114,7 @@
     <a href="genindex.html">Index</a>
   
         </div>
+        
       </div>
     </nav>
 
@@ -140,18 +149,20 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Macro</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/macro.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -170,8 +181,8 @@
 <p>The Macro module contains classes that contain parameters common to all households,
 generate stochastic processes for returns and wages and other prices.</p>
 <dl class="py class">
-<dt id="CPR.macro.CommonParameters">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.macro.</code><code class="sig-name descname">CommonParameters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nsim</span></em>, <em class="sig-param"><span class="n">non_stochastic</span></em>, <em class="sig-param"><span class="n">extra_params</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.CommonParameters" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.macro.CommonParameters">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">CPR.macro.</span></span><span class="sig-name descname"><span class="pre">CommonParameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nsim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">non_stochastic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.CommonParameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class sets and contains the parameters common to all households.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -183,8 +194,8 @@ generate stochastic processes for returns and wages and other prices.</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="CPR.macro.CommonParameters.set_limits">
-<code class="sig-name descname">set_limits</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.CommonParameters.set_limits" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.macro.CommonParameters.set_limits">
+<span class="sig-name descname"><span class="pre">set_limits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.CommonParameters.set_limits" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set contributions limits for RRSP and TFSA.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -194,23 +205,23 @@ generate stochastic processes for returns and wages and other prices.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.macro.CommonParameters.prepare_ympe">
-<code class="sig-name descname">prepare_ympe</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.CommonParameters.prepare_ympe" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.macro.CommonParameters.prepare_ympe">
+<span class="sig-name descname"><span class="pre">prepare_ympe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.CommonParameters.prepare_ympe" title="Permalink to this definition">¶</a></dt>
 <dd><p>”
 Pre-reform ympe used to adjust DB benefits for CPP</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.macro.CommonParameters.prepare_cpp">
-<code class="sig-name descname">prepare_cpp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.CommonParameters.prepare_cpp" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.macro.CommonParameters.prepare_cpp">
+<span class="sig-name descname"><span class="pre">prepare_cpp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.CommonParameters.prepare_cpp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set percentages for cpp/qpp benefits.</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt id="CPR.macro.Prices">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.macro.</code><code class="sig-name descname">Prices</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">extra_params</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.macro.Prices">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">CPR.macro.</span></span><span class="sig-name descname"><span class="pre">Prices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">common</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class computes the times series for asset returns,
 interest rates on debt, deterministic wage profiles,
 housing price growth rate and price/rent ratio.</p>
@@ -223,8 +234,8 @@ housing price growth rate and price/rent ratio.</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="CPR.macro.Prices.simulate_ret">
-<code class="sig-name descname">simulate_ret</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">asset</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.simulate_ret" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.macro.Prices.simulate_ret">
+<span class="sig-name descname"><span class="pre">simulate_ret</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">asset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.simulate_ret" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simulate N series of length T nominal returns distributed lognormally
 with autocorrelation rho.</p>
 <dl class="field-list simple">
@@ -244,8 +255,8 @@ with autocorrelation rho.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.macro.Prices.compute_params_process">
-<code class="sig-name descname">compute_params_process</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mu</span></em>, <em class="sig-param"><span class="n">rho</span></em>, <em class="sig-param"><span class="n">sigma</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.compute_params_process" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.macro.Prices.compute_params_process">
+<span class="sig-name descname"><span class="pre">compute_params_process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.compute_params_process" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert arithmetic mean mu and volatility sigma of the returns
 and autocorrelation rho of the log returns into
 <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\rho\)</span> and <span class="math notranslate nohighlight">\(\sigma_{\epsilon}\)</span> of the process:</p>
@@ -270,8 +281,8 @@ where <span class="math notranslate nohighlight">\(\epsilon \sim N(0, \sigma_{\e
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.macro.Prices.simulate_housing">
-<code class="sig-name descname">simulate_housing</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.simulate_housing" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.macro.Prices.simulate_housing">
+<span class="sig-name descname"><span class="pre">simulate_housing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">common</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.simulate_housing" title="Permalink to this definition">¶</a></dt>
 <dd><p>Simulate series of nominal housing price growth (in <span class="math notranslate nohighlight">\(\ln(1+r)\)</span> form)
 and price-rent ratio.</p>
 <dl class="field-list simple">
@@ -289,8 +300,8 @@ and price-rent ratio.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.macro.Prices.prepare_inflation_factors">
-<code class="sig-name descname">prepare_inflation_factors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.prepare_inflation_factors" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.macro.Prices.prepare_inflation_factors">
+<span class="sig-name descname"><span class="pre">prepare_inflation_factors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">common</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.prepare_inflation_factors" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute inflation factors with base year 2018.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -306,8 +317,8 @@ and price-rent ratio.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.macro.Prices.simulate_interest_debt">
-<code class="sig-name descname">simulate_interest_debt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.simulate_interest_debt" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.macro.Prices.simulate_interest_debt">
+<span class="sig-name descname"><span class="pre">simulate_interest_debt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.simulate_interest_debt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates N series of yearly nominal interest rate of length T
 for each type of debt</p>
 <dl class="field-list simple">
@@ -321,8 +332,8 @@ for each type of debt</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.macro.Prices.attach_diff_log_wages">
-<code class="sig-name descname">attach_diff_log_wages</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.attach_diff_log_wages" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.macro.Prices.attach_diff_log_wages">
+<span class="sig-name descname"><span class="pre">attach_diff_log_wages</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.attach_diff_log_wages" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a dictionary of differences in log wages by education and age.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -335,8 +346,8 @@ for each type of debt</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.macro.Prices.initialize_factors">
-<code class="sig-name descname">initialize_factors</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.initialize_factors" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.macro.Prices.initialize_factors">
+<span class="sig-name descname"><span class="pre">initialize_factors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.macro.Prices.initialize_factors" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function creates an instance of life.table
 by gender and province.</p>
 <dl class="field-list simple">
@@ -358,29 +369,29 @@ by gender and province.</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="assets.html" class="btn btn-neutral float-right" title="Assets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="initialisation.html" class="btn btn-neutral float-left" title="Initialisation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="assets.html" class="btn btn-neutral float-right" title="Assets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="initialisation.html" class="btn btn-neutral float-left" title="Initialisation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, RSI Team / Équipe IRE, HEC Montréal
+        &#169; Copyright 2020, RSI Team / Équipe IRE, HEC Montréal.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -388,7 +399,6 @@ by gender and province.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

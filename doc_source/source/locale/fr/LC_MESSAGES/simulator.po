@@ -87,7 +87,6 @@ msgid "Return type"
 msgstr ""
 
 #: CPR.simulator.extract_time_series:1 of
-#, fuzzy
 msgid ""
 "Function that attaches stochastic processes on asset returns to "
 "households."

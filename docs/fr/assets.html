@@ -1,39 +1,45 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Assets &mdash; Documentation CPR 1.1.1</title>
+  <title>Assets &mdash; Documentation CPR 1.2.2</title>
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="Debts" href="debts.html" />
@@ -65,7 +71,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Rechercher docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -74,6 +80,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
     
@@ -107,6 +114,7 @@
     <a href="genindex.html">Index</a>
   
         </div>
+        
       </div>
     </nav>
 
@@ -141,19 +149,21 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Assets</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="_sources/assets.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/assets.rst.txt" rel="nofollow"> Afficher la source de la page</a>
           
         
       </li>
@@ -170,8 +180,8 @@
 <h1>Assets<a class="headerlink" href="#assets" title="Lien permanent vers ce titre">¶</a></h1>
 <p>À l’aide de plusieurs classes et fonctions, ce module gère tous les actifs: régimes de retraite, épargne individuelle (enregistrée et non enregistrée), logement, entreprises. Il utilise les cotisations et l’espace entrés comme inputs ainsi que les rendements générés dans le module Macro. Il met à jour toutes les variables reliées aux actifs à mesure que la simulation progresse.</p>
 <dl class="py class">
-<dt id="CPR.assets.ContributionRoom">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">ContributionRoom</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">init_room_rrsp</span></em>, <em class="sig-param"><span class="n">init_room_tfsa</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.ContributionRoom">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">CPR.assets.</span></span><span class="sig-name descname"><span class="pre">ContributionRoom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">init_room_rrsp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_room_tfsa</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Cette classe gère l’espace de cotisation aux CELI et aux REER.</p>
 <p>Tous les montants sont nominaux.</p>
 <dl class="field-list simple">
@@ -183,8 +193,8 @@
 </dd>
 </dl>
 <dl class="py method">
-<dt id="CPR.assets.ContributionRoom.compute_contributions">
-<code class="sig-name descname">compute_contributions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.compute_contributions" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.ContributionRoom.compute_contributions">
+<span class="sig-name descname"><span class="pre">compute_contributions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.compute_contributions" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui met à jour l’espace de cotisation pour les REER et les CELI, en utilisant les 2 autres fonctions ci-dessous (qui elles-mêmes appellent les autres fonctions de la classe).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -199,8 +209,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.ContributionRoom.update_rrsp_room">
-<code class="sig-name descname">update_rrsp_room</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.update_rrsp_room" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.ContributionRoom.update_rrsp_room">
+<span class="sig-name descname"><span class="pre">update_rrsp_room</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.update_rrsp_room" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui met à jour l’espace de cotisation REER.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -214,8 +224,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.ContributionRoom.update_tfsa_room">
-<code class="sig-name descname">update_tfsa_room</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.update_tfsa_room" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.ContributionRoom.update_tfsa_room">
+<span class="sig-name descname"><span class="pre">update_tfsa_room</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.update_tfsa_room" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui met à jour l’espace de cotisation CELI.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -229,8 +239,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.ContributionRoom.adjust_db_contributions">
-<code class="sig-name descname">adjust_db_contributions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_db_contributions" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.ContributionRoom.adjust_db_contributions">
+<span class="sig-name descname"><span class="pre">adjust_db_contributions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_db_contributions" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui ajuste l’espace de cotisation REER en fonction des cotisations aux RPA à PD.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -244,8 +254,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.ContributionRoom.adjust_dc_contributions">
-<code class="sig-name descname">adjust_dc_contributions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">year</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_dc_contributions" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.ContributionRoom.adjust_dc_contributions">
+<span class="sig-name descname"><span class="pre">adjust_dc_contributions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_dc_contributions" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui ajuste l’espace de cotisation REER en fonction des cotisations aux RPA à CD.</p>
 <p>Si l’espace de cotisation est insuffisant pour les cotisations REER prévues / planifiées, les cotisations « excédentaires » sont dirigées vers le CELI.</p>
 <dl class="field-list simple">
@@ -259,8 +269,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.ContributionRoom.adjust_employees_contributions">
-<code class="sig-name descname">adjust_employees_contributions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_employees_contributions" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.ContributionRoom.adjust_employees_contributions">
+<span class="sig-name descname"><span class="pre">adjust_employees_contributions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_employees_contributions" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui calcule les cotisations d’employé aux RPA à CD (utilisées plus tard afin de calculer les impôts).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -270,8 +280,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.ContributionRoom.adjust_rrsp_contributions">
-<code class="sig-name descname">adjust_rrsp_contributions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">acc</span></em>, <em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">year</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_rrsp_contributions" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.ContributionRoom.adjust_rrsp_contributions">
+<span class="sig-name descname"><span class="pre">adjust_rrsp_contributions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">acc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_rrsp_contributions" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui ajuste l’espace de cotisation REER en fonction des cotisations autres qu’à des RPA.</p>
 <p>Si l’espace de cotisation est insuffisant pour les cotisations REER prévues / planifiées, les cotisations « excédentaires » sont dirigées vers le CELI.</p>
 <dl class="field-list simple">
@@ -286,8 +296,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.ContributionRoom.adjust_tfsa_contributions">
-<code class="sig-name descname">adjust_tfsa_contributions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_tfsa_contributions" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.ContributionRoom.adjust_tfsa_contributions">
+<span class="sig-name descname"><span class="pre">adjust_tfsa_contributions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_tfsa_contributions" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui ajuste l’espace de cotisation CELI en fonction des cotisations CELI (y compris les cotisations « excédentaires » aux REER et aux RPA à CD).</p>
 <p>Si l’espace de cotisation est insuffisant pour les cotisations CELI prévues / planifiées, les cotisations « excédentaires » sont dirigées vers des comptes non enregistrés.</p>
 <dl class="field-list simple">
@@ -303,8 +313,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.ContributionRoom.adjust_rrif">
-<code class="sig-name descname">adjust_rrif</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_rrif" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.ContributionRoom.adjust_rrif">
+<span class="sig-name descname"><span class="pre">adjust_rrif</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_rrif" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui ajuste les comptes REER et RPA à CD en fonction des retraits obligatoires aux FERR (les FERR ne sont pas modélisés séparément dans cette version).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -325,8 +335,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.ContributionRoom.adjust_unreg_contributions">
-<code class="sig-name descname">adjust_unreg_contributions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">year</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_unreg_contributions" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.ContributionRoom.adjust_unreg_contributions">
+<span class="sig-name descname"><span class="pre">adjust_unreg_contributions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.adjust_unreg_contributions" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui ajuste les cotisations aux comptes non enregistrés en fonction des cotisations CELI « excédentaires » qui sont dirigées vers eux.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -339,16 +349,16 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.ContributionRoom.reset">
-<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.reset" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.ContributionRoom.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.ContributionRoom.reset" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Remet les espaces de cotisation REER et CELI à leurs valeurs initiales.</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt id="CPR.assets.FinAsset">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">FinAsset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">acc</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.FinAsset">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">CPR.assets.</span></span><span class="sig-name descname"><span class="pre">FinAsset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Cette classe gère les comptes enregistrés. Tous les montants sont nominaux.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -360,8 +370,8 @@
 </dd>
 </dl>
 <dl class="py method">
-<dt id="CPR.assets.FinAsset.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d_returns</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.update" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.FinAsset.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d_returns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.update" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui met à jour le solde pour tenir compte des cotisations, des retraits et des rendements.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -376,8 +386,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.FinAsset.rate">
-<code class="sig-name descname">rate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d_returns</span></em>, <em class="sig-param"><span class="n">year</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.rate" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.FinAsset.rate">
+<span class="sig-name descname"><span class="pre">rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d_returns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.rate" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui calcule le taux de rendement étant donné la composition des actifs dans le compte.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -396,8 +406,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.FinAsset.rrif_withdrawal">
-<code class="sig-name descname">rrif_withdrawal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.rrif_withdrawal" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.FinAsset.rrif_withdrawal">
+<span class="sig-name descname"><span class="pre">rrif_withdrawal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.rrif_withdrawal" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction gérant les retraits obligatoires aux FERR.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -416,8 +426,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.FinAsset.liquidate">
-<code class="sig-name descname">liquidate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.liquidate" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.FinAsset.liquidate">
+<span class="sig-name descname"><span class="pre">liquidate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.liquidate" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui liquide le compte et met le solde, les cotisations et les retraits à zéro.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Renvoie</dt>
@@ -430,16 +440,16 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.FinAsset.reset">
-<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.reset" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.FinAsset.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.FinAsset.reset" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Remet le solde et les retraits à leur valeur initiale.</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt id="CPR.assets.UnregAsset">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">UnregAsset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.UnregAsset">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">CPR.assets.</span></span><span class="sig-name descname"><span class="pre">UnregAsset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Cette classe gère les comptes non enregistrés.</p>
 <p>Tous les montants sont nominaux.</p>
 <dl class="field-list simple">
@@ -452,8 +462,8 @@
 </dd>
 </dl>
 <dl class="py method">
-<dt id="CPR.assets.UnregAsset.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d_returns</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.update" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.UnregAsset.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d_returns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.update" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui met à jour le solde en fonction des cotisations, retraits et rendements.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -468,8 +478,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.UnregAsset.compute_income">
-<code class="sig-name descname">compute_income</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d_returns</span></em>, <em class="sig-param"><span class="n">year</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.compute_income" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.UnregAsset.compute_income">
+<span class="sig-name descname"><span class="pre">compute_income</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d_returns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.compute_income" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui calcule les nouveaux gains en capital et le revenu imposable de dividendes et d’intérêts.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -482,8 +492,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.UnregAsset.rate">
-<code class="sig-name descname">rate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d_returns</span></em>, <em class="sig-param"><span class="n">year</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.rate" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.UnregAsset.rate">
+<span class="sig-name descname"><span class="pre">rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d_returns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.rate" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui calcule le taux de rendement étant donné la composition d’actifs dans le compte.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -502,26 +512,26 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.UnregAsset.update_balance">
-<code class="sig-name descname">update_balance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.update_balance" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.UnregAsset.update_balance">
+<span class="sig-name descname"><span class="pre">update_balance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.update_balance" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui met à jour le solde et distingue les fonds non imposables (c.-à-d. le solde antérieur après impôts), les gains en capital, les dividendes et les intérêts.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.UnregAsset.prepare_withdrawal">
-<code class="sig-name descname">prepare_withdrawal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.prepare_withdrawal" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.UnregAsset.prepare_withdrawal">
+<span class="sig-name descname"><span class="pre">prepare_withdrawal</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.prepare_withdrawal" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui sépare un retrait du solde à la fin de la période et identifie séparément les fonds non imposables, les gains en capital, les dividendes et les intérêts.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.UnregAsset.adjust_income">
-<code class="sig-name descname">adjust_income</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.adjust_income" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.UnregAsset.adjust_income">
+<span class="sig-name descname"><span class="pre">adjust_income</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.adjust_income" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui ajuste le revenu d’investissement (dividendes et intérêts) en fonction des retraits.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.UnregAsset.adjust_cap_losses">
-<code class="sig-name descname">adjust_cap_losses</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">realized_cap_gains</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.adjust_cap_losses" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.UnregAsset.adjust_cap_losses">
+<span class="sig-name descname"><span class="pre">adjust_cap_losses</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realized_cap_gains</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.adjust_cap_losses" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui calcule les perts en capital d’années antérieures utilisées comme déduction contre des gains en capital, et ajuste en conséquence les pertes en capital réalisées.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -537,28 +547,28 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.UnregAsset.adjust_final_balance">
-<code class="sig-name descname">adjust_final_balance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.adjust_final_balance" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.UnregAsset.adjust_final_balance">
+<span class="sig-name descname"><span class="pre">adjust_final_balance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.adjust_final_balance" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui ajuste le solde final en fonction des retraits, dividendes et intérêts.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.UnregAsset.liquidate">
-<code class="sig-name descname">liquidate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.liquidate" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.UnregAsset.liquidate">
+<span class="sig-name descname"><span class="pre">liquidate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.liquidate" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui liquide le compte et ajuste les pertes en capital.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.UnregAsset.reset">
-<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.reset" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.UnregAsset.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.UnregAsset.reset" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui remet à leur valeur initiale le solde, les gains en capital et les retraits.</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt id="CPR.assets.RppDC">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">RppDC</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDC" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.RppDC">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">CPR.assets.</span></span><span class="sig-name descname"><span class="pre">RppDC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDC" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Cette classe gère les RPA à CD.</p>
 <p>Tous les montants sont nominaux.</p>
 <dl class="field-list simple">
@@ -572,8 +582,8 @@
 </dd></dl>
 
 <dl class="py class">
-<dt id="CPR.assets.RppDB">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">RppDB</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.RppDB">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">CPR.assets.</span></span><span class="sig-name descname"><span class="pre">RppDB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Cette classe gère les RPA à PD.</p>
 <p>Tous les montants sont nominaux.</p>
 <dl class="field-list simple">
@@ -582,8 +592,8 @@
 </dd>
 </dl>
 <dl class="py method">
-<dt id="CPR.assets.RppDB.compute_benefits">
-<code class="sig-name descname">compute_benefits</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.compute_benefits" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.RppDB.compute_benefits">
+<span class="sig-name descname"><span class="pre">compute_benefits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.compute_benefits" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui calcule les prestations de RPA à PD et les ajuste pour tenir compte de l’intégration au RPC/RRQ.</p>
 <p>Si les prestations de RPA sont plus faibles que les prestations de RPC/RRQ, les prestations de RPA sont fixées à zéro une fois que débutent les prestations de retraite du RPC/RRQ.</p>
 <dl class="field-list simple">
@@ -597,8 +607,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.RppDB.adjust_for_penalty">
-<code class="sig-name descname">adjust_for_penalty</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.adjust_for_penalty" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.RppDB.adjust_for_penalty">
+<span class="sig-name descname"><span class="pre">adjust_for_penalty</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.adjust_for_penalty" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui calcule une pénalité pour les individus débutant leurs prestations de RPA à PD de façpn « hâtive », c.-à-d. avant d’avoir accumulé le nombre maximal d’années de service, s’ils sont plus jeunes que l’âge auquel les prestations peuvent débuter sans pénalité (« l’âge de retraite anticipée »).</p>
 <p>Par défaut, la pénalité s’applique aux individus qui débutent leurs prestations avant d’avoir atteint 35 années de service et avant 62 ans. Ces valeurs peuvent être modifiées.</p>
 <dl class="field-list simple">
@@ -612,8 +622,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.RppDB.compute_cpp_adjustment">
-<code class="sig-name descname">compute_cpp_adjustment</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.compute_cpp_adjustment" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.RppDB.compute_cpp_adjustment">
+<span class="sig-name descname"><span class="pre">compute_cpp_adjustment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.compute_cpp_adjustment" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui calcule un ajustement (une réduction) des prestations de RPA à PD pour tenir compte de l’intégration avec le RPC/RRQ.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -632,16 +642,16 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.RppDB.reset">
-<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.reset" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.RppDB.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RppDB.reset" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui remet à leur valeur initiale les prestations et taux de cotisation.</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
-<dt id="CPR.assets.RealAsset">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">RealAsset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d_hh</span></em>, <em class="sig-param"><span class="n">resid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.RealAsset">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">CPR.assets.</span></span><span class="sig-name descname"><span class="pre">RealAsset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d_hh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Cette classe gère le logement et les résidences.</p>
 <p>Tous les montants sont nominaux.</p>
 <dl class="field-list simple">
@@ -653,8 +663,8 @@
 </dd>
 </dl>
 <dl class="py method">
-<dt id="CPR.assets.RealAsset.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">growth_rates</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset.update" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.RealAsset.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">growth_rates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset.update" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui met à jour le solde (les valeurs des résidences) en fonction de la croissance du prix.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -668,8 +678,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.RealAsset.liquidate">
-<code class="sig-name descname">liquidate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset.liquidate" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.RealAsset.liquidate">
+<span class="sig-name descname"><span class="pre">liquidate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset.liquidate" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui liquide l’actif, calcule les gains en capital si applicable, et fixe le solde à zéro.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Renvoie</dt>
@@ -682,14 +692,14 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.RealAsset.reset">
-<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset.reset" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.RealAsset.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset.reset" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui remet la valeur de la résidence à sa valeur initiale et fixe les gains en capital à zéro.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.RealAsset.impute_rent">
-<code class="sig-name descname">impute_rent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset.impute_rent" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.RealAsset.impute_rent">
+<span class="sig-name descname"><span class="pre">impute_rent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.RealAsset.impute_rent" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui calcule le loyer imputé.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -705,8 +715,8 @@
 </dd></dl>
 
 <dl class="py class">
-<dt id="CPR.assets.Business">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.assets.</code><code class="sig-name descname">Business</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d_hh</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.Business">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">CPR.assets.</span></span><span class="sig-name descname"><span class="pre">Business</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d_hh</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Cette classe gère une entreprise (comme un actif détenu par le ménage).</p>
 <p>Tous les montants sont nominaux.</p>
 <dl class="field-list simple">
@@ -715,8 +725,8 @@
 </dd>
 </dl>
 <dl class="py method">
-<dt id="CPR.assets.Business.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d_business_returns</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business.update" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.Business.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d_business_returns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business.update" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui met à jour le solde et les dividendes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -730,8 +740,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.Business.liquidate">
-<code class="sig-name descname">liquidate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business.liquidate" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.Business.liquidate">
+<span class="sig-name descname"><span class="pre">liquidate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">common</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business.liquidate" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui liquide le compte (actifs d’entreprise), calcule les gains en capital et fixe le solde à zéro.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -747,8 +757,8 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.assets.Business.reset">
-<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business.reset" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.assets.Business.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CPR.assets.Business.reset" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Remet à leur valeur initiale la valeur de l’entreprise et les gains en capital.</p>
 </dd></dl>
 
@@ -761,29 +771,29 @@
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="debts.html" class="btn btn-neutral float-right" title="Debts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="macro.html" class="btn btn-neutral float-left" title="Macro" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="debts.html" class="btn btn-neutral float-right" title="Debts" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="macro.html" class="btn btn-neutral float-left" title="Macro" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, RSI Team / Équipe IRE, HEC Montréal
+        &#169; Copyright 2020, RSI Team / Équipe IRE, HEC Montréal.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -791,7 +801,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

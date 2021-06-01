@@ -153,7 +153,6 @@ msgid "PDF Documentation"
 msgstr "Documentation en PDF"
 
 #: ../../source/index.rst:48
-#, fuzzy
 msgid ":download:`pdf <../build/pdf/en/latex/cpr.pdf>`"
 msgstr "Documentation :download:`pdf <../build/pdf/fr/latex/cpr.pdf>`"
 

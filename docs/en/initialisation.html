@@ -1,38 +1,44 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Initialisation &mdash; CPR 1.1.1 documentation</title>
+  <title>Initialisation &mdash; CPR 1.2.2 documentation</title>
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Macro" href="macro.html" />
@@ -73,6 +79,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
     
@@ -106,6 +113,7 @@
     <a href="genindex.html">Index</a>
   
         </div>
+        
       </div>
     </nav>
 
@@ -140,18 +148,20 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Initialisation</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/initialisation.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -171,8 +181,8 @@
 <img alt="_images/table_inputs.en.png" src="_images/table_inputs.en.png" />
 <p>Though an example input file is provided as part of the package, a tutorial is also offered to show users how to modify those inputs to use the ones of their choice. NOTE: users must be careful when using their inputs, as a general error message will be generated if any of the – numerous – inputs is incorrectly specified (i.e. contains a mistake or is highly implausible).</p>
 <dl class="py function">
-<dt id="CPR.initialisation.create_hh">
-<code class="sig-prename descclassname">CPR.initialisation.</code><code class="sig-name descname">create_hh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">d_hh</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.create_hh" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.initialisation.create_hh">
+<span class="sig-prename descclassname"><span class="pre">CPR.initialisation.</span></span><span class="sig-name descname"><span class="pre">create_hh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d_hh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.create_hh" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function that creates a household with one or two persons and attaches
 assets and debts.</p>
 <dl class="field-list simple">
@@ -194,8 +204,8 @@ assets and debts.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="CPR.initialisation.Person">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.initialisation.</code><code class="sig-name descname">Person</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d_hh</span></em>, <em class="sig-param"><span class="n">l_sp</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em>, <em class="sig-param"><span class="n">s_</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Person" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.initialisation.Person">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">CPR.initialisation.</span></span><span class="sig-name descname"><span class="pre">Person</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d_hh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l_sp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s_</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Person" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class creates a person.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -209,8 +219,8 @@ assets and debts.</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="CPR.initialisation.Person.create_wage_profile">
-<code class="sig-name descname">create_wage_profile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Person.create_wage_profile" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.initialisation.Person.create_wage_profile">
+<span class="sig-name descname"><span class="pre">create_wage_profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">common</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Person.create_wage_profile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function that creates wage profiles for each realisation of uncertainty, to be used when the stochastic version of the tool is selected.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -229,9 +239,9 @@ assets and debts.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="CPR.initialisation.Person.create_shocks">
-<code class="sig-name descname">create_shocks</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">T</span></em>, <em class="sig-param"><span class="n">N</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Person.create_shocks" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function that creats a time series of shocks to the wage.</p>
+<dt class="sig sig-object py" id="CPR.initialisation.Person.create_shocks">
+<span class="sig-name descname"><span class="pre">create_shocks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Person.create_shocks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that creates a time series of shocks to the wage.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -252,8 +262,8 @@ assets and debts.</p>
 </dd></dl>
 
 <dl class="py class">
-<dt id="CPR.initialisation.Hhold">
-<em class="property">class </em><code class="sig-prename descclassname">CPR.initialisation.</code><code class="sig-name descname">Hhold</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d_hh</span></em>, <em class="sig-param"><span class="n">l_hhold</span></em>, <em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">p0</span></em>, <em class="sig-param"><span class="n">p1</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Hhold" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.initialisation.Hhold">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">CPR.initialisation.</span></span><span class="sig-name descname"><span class="pre">Hhold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d_hh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l_hhold</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Hhold" title="Permalink to this definition">¶</a></dt>
 <dd><p>This class creates a household.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -268,8 +278,8 @@ assets and debts.</p>
 </dd>
 </dl>
 <dl class="py method">
-<dt id="CPR.initialisation.Hhold.set_other_years">
-<code class="sig-name descname">set_other_years</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">common</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Hhold.set_other_years" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.initialisation.Hhold.set_other_years">
+<span class="sig-name descname"><span class="pre">set_other_years</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">common</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.initialisation.Hhold.set_other_years" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function that sets years of partial and full retirement as well as years in which pre-retirement and post-retirement consumptions are assessed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -287,29 +297,29 @@ assets and debts.</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="macro.html" class="btn btn-neutral float-right" title="Macro" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="simulator.html" class="btn btn-neutral float-left" title="Simulator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="macro.html" class="btn btn-neutral float-right" title="Macro" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="simulator.html" class="btn btn-neutral float-left" title="Simulator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, RSI Team / Équipe IRE, HEC Montréal
+        &#169; Copyright 2020, RSI Team / Équipe IRE, HEC Montréal.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -317,7 +327,6 @@ assets and debts.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

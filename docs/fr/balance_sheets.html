@@ -1,39 +1,45 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Balance Sheets &mdash; Documentation CPR 1.1.1</title>
+  <title>Balance Sheets &mdash; Documentation CPR 1.2.2</title>
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="Analysis" href="analysis.html" />
@@ -65,7 +71,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Rechercher docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -74,6 +80,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
     
@@ -107,6 +114,7 @@
     <a href="genindex.html">Index</a>
   
         </div>
+        
       </div>
     </nav>
 
@@ -141,19 +149,21 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Balance Sheets</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="_sources/balance_sheets.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/balance_sheets.rst.txt" rel="nofollow"> Afficher la source de la page</a>
           
         
       </li>
@@ -173,8 +183,8 @@
 <p>À 65 ans ou dans l’année de la retraite, si cette dernière se produit plus tard, la consommation; les pensions antérieures; les rentes achetées avec les (soldes des) actifs financiers; les prestations de RPA à PD, de RPC/RRQ et de PSV/SRG/Allocations; ainsi que les valeurs des résidences et les soldes hypothécaires sont entreposés dans des variables dont le nom se termine par “_aft”.</p>
 <p>Pour les couples qui ne prennent pas leur retraite en même temps, les salaires, les pensions antérieures, les soldes de comptes et les rentes du premier conjoint à prendre sa retraite sont calculés. Ils sont entreposés dans des variables dont le nom se termine par “_part”. Le nom des variables décrivant le conjoint qui prend sa retraite en dernier débute avec “s_”.</p>
 <span class="target" id="module-CPR.balance_sheets"></span><dl class="py function">
-<dt id="CPR.balance_sheets.compute_bs_bef_ret">
-<code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">compute_bs_bef_ret</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.compute_bs_bef_ret" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.balance_sheets.compute_bs_bef_ret">
+<span class="sig-prename descclassname"><span class="pre">CPR.balance_sheets.</span></span><span class="sig-name descname"><span class="pre">compute_bs_bef_ret</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.compute_bs_bef_ret" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui calcule le bilan avant la retraite.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -189,8 +199,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.balance_sheets.compute_cons_bef_ret">
-<code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">compute_cons_bef_ret</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.compute_cons_bef_ret" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.balance_sheets.compute_cons_bef_ret">
+<span class="sig-prename descclassname"><span class="pre">CPR.balance_sheets.</span></span><span class="sig-name descname"><span class="pre">compute_cons_bef_ret</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.compute_cons_bef_ret" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui calcule la consommation avant la retraite.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -204,8 +214,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.balance_sheets.compute_bs_after_ret">
-<code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">compute_bs_after_ret</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">common</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.compute_bs_after_ret" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.balance_sheets.compute_bs_after_ret">
+<span class="sig-prename descclassname"><span class="pre">CPR.balance_sheets.</span></span><span class="sig-name descname"><span class="pre">compute_bs_after_ret</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.compute_bs_after_ret" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui calcule le bilan après la retraite.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -220,8 +230,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.balance_sheets.add_output">
-<code class="sig-prename descclassname">CPR.balance_sheets.</code><code class="sig-name descname">add_output</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">hh</span></em>, <em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">prices</span></em>, <em class="sig-param"><span class="n">key</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.add_output" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.balance_sheets.add_output">
+<span class="sig-prename descclassname"><span class="pre">CPR.balance_sheets.</span></span><span class="sig-name descname"><span class="pre">add_output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.balance_sheets.add_output" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction qui extrait les variables d’output.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -242,29 +252,29 @@
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="analysis.html" class="btn btn-neutral float-right" title="Analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="life.html" class="btn btn-neutral float-left" title="Life" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="analysis.html" class="btn btn-neutral float-right" title="Analysis" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="life.html" class="btn btn-neutral float-left" title="Life" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, RSI Team / Équipe IRE, HEC Montréal
+        &#169; Copyright 2020, RSI Team / Équipe IRE, HEC Montréal.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -272,7 +282,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

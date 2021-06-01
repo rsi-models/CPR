@@ -1,39 +1,45 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="fr" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="fr" > <!--<![endif]-->
+<html class="writer-html5" lang="fr" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Outils &mdash; Documentation CPR 1.1.1</title>
+  <title>Outils &mdash; Documentation CPR 1.2.2</title>
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="next" title="Tutoriels" href="tutorial.html" />
@@ -65,7 +71,7 @@
           
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Rechercher docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -74,6 +80,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
     
@@ -107,6 +114,7 @@
     <a href="genindex.html">Index</a>
   
         </div>
+        
       </div>
     </nav>
 
@@ -141,19 +149,21 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Outils</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
-            <a href="_sources/tools.rst.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/tools.rst.txt" rel="nofollow"> Afficher la source de la page</a>
           
         
       </li>
@@ -170,8 +180,8 @@
 <h1>Outils<a class="headerlink" href="#tools" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Dans ce module, plusieurs fonctions utilisées dans le reste du code sont disponibles pour créer des dictionnaires, modifier des paramètres ou convertir des prix, entre autres aspects.</p>
 <span class="target" id="module-CPR.tools"></span><dl class="py function">
-<dt id="CPR.tools.get_params">
-<code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">get_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">file</span></em>, <em class="sig-param"><span class="n">numerical_key</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.get_params" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.tools.get_params">
+<span class="sig-prename descclassname"><span class="pre">CPR.tools.</span></span><span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numerical_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.get_params" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction pour créer un dictionnaire à partir d’un fichier .csv.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -190,8 +200,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.tools.add_params_as_attr">
-<code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">add_params_as_attr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inst</span></em>, <em class="sig-param"><span class="n">file</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.add_params_as_attr" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.tools.add_params_as_attr">
+<span class="sig-prename descclassname"><span class="pre">CPR.tools.</span></span><span class="sig-name descname"><span class="pre">add_params_as_attr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.add_params_as_attr" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Fonction pour ajouter des paramètres à une instance de la classe.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -204,9 +214,9 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.tools.change_params">
-<code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">change_params</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inst</span></em>, <em class="sig-param"><span class="n">extra_params</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.change_params" title="Lien permanent vers cette définition">¶</a></dt>
-<dd><p>Function to update the value of some parameters in inst with values from <em>extra_params</em>.</p>
+<dt class="sig sig-object py" id="CPR.tools.change_params">
+<span class="sig-prename descclassname"><span class="pre">CPR.tools.</span></span><span class="sig-name descname"><span class="pre">change_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inst</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.change_params" title="Lien permanent vers cette définition">¶</a></dt>
+<dd><p>Fonction qui met à jour la valeur de certains paramètres dans inst avec des valeurs prises dans <em>extra_params</em>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
 <dd class="field-odd"><ul class="simple">
@@ -218,8 +228,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.tools.create_nom_real">
-<code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">create_nom_real</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.create_nom_real" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.tools.create_nom_real">
+<span class="sig-prename descclassname"><span class="pre">CPR.tools.</span></span><span class="sig-name descname"><span class="pre">create_nom_real</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.create_nom_real" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Création d’une fonction convertissant les prix de réels à nominaux et de nominaux à réels, avec 2018 comme année de base.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -239,8 +249,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.tools.create_nom">
-<code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">create_nom</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.create_nom" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.tools.create_nom">
+<span class="sig-prename descclassname"><span class="pre">CPR.tools.</span></span><span class="sig-name descname"><span class="pre">create_nom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.create_nom" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Création d’une fonction convertissant les prix de réels à nominaux, avec 2018 comme année de base, utilisée à certaines fins spécifiques ailleurs dans le code.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -259,8 +269,8 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="CPR.tools.create_real">
-<code class="sig-prename descclassname">CPR.tools.</code><code class="sig-name descname">create_real</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">year</span></em>, <em class="sig-param"><span class="n">prices</span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.create_real" title="Lien permanent vers cette définition">¶</a></dt>
+<dt class="sig sig-object py" id="CPR.tools.create_real">
+<span class="sig-prename descclassname"><span class="pre">CPR.tools.</span></span><span class="sig-name descname"><span class="pre">create_real</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prices</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CPR.tools.create_real" title="Lien permanent vers cette définition">¶</a></dt>
 <dd><p>Création d’une fonction convertissant les prix de nominaux à réels, avec 2018 comme année de base.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Paramètres</dt>
@@ -285,29 +295,29 @@
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="tutorial.html" class="btn btn-neutral float-right" title="Tutoriels" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="analysis.html" class="btn btn-neutral float-left" title="Analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="tutorial.html" class="btn btn-neutral float-right" title="Tutoriels" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="analysis.html" class="btn btn-neutral float-left" title="Analysis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, RSI Team / Équipe IRE, HEC Montréal
+        &#169; Copyright 2020, RSI Team / Équipe IRE, HEC Montréal.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -315,7 +325,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -37,7 +37,6 @@ msgstr "Fonction pour créer un dictionnaire à partir d'un fichier .csv."
 
 #: CPR.tools.add_params_as_attr CPR.tools.change_params CPR.tools.create_nom
 #: CPR.tools.create_nom_real CPR.tools.create_real CPR.tools.get_params of
-#, fuzzy
 msgid "Parameters"
 msgstr "paramètres"
 
@@ -71,7 +70,6 @@ msgid "class instance"
 msgstr "instance de classe"
 
 #: CPR.tools.change_params:1 of
-#, fuzzy
 msgid ""
 "Function to update the value of some parameters in inst with values from "
 "*extra_params*."
