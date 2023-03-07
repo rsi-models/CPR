@@ -34,7 +34,7 @@ class CommonParameters:
 
         self.nsim = nsim
         self.non_stochastic = non_stochastic
-        for file in ['common_params.csv', 'user_options.csv']:
+        for file in ['common_params.csv', 'user_options.csv', 'prices.csv']:
             tools.add_params_as_attr(self, module_dir + path_params + file)
         tools.change_params(self, extra_params)
 
@@ -42,6 +42,8 @@ class CommonParameters:
 
         self.rules_cpp = srpp.rules()
         self.rules_qpp = srpp.rules(qpp=True)
+        self.gr_rrsp_limit = self.inflation_rate + self.gr_wages
+        self.gr_tfsa_limit = self.inflation_rate
 
         for name in ['rrsp', 'tfsa']:
             self.set_limits(name)
