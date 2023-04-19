@@ -2,14 +2,24 @@ import os
 from functools import partial
 import multiprocessing as mp
 import pandas as pd
-from CPR import initialisation
-from CPR import macro
-from CPR import simulator
-from CPR import tools
-from CPR import analysis
+#from CPR import initialisation
+#from CPR import macro
+#from CPR import simulator
+#from CPR import tools
+#from CPR import analysis
+
+import sys 
+import os 
+os.path.normpath(os.getcwd() + os.sep + os.pardir)
+sys.path.insert(1, '../CPR2022')
+import initialisation
+import macro
+import simulator
+import tools
+import analysis
 
 module_dir = os.path.dirname(os.path.dirname(__file__))
-path = '/CPR/data/params/'
+path = '/CPR2022/data/params/'
 
 def run_simulations(inputs, nsim=1, non_stochastic=False, n_jobs=None,
                     **extra_params):

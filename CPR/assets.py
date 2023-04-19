@@ -1,6 +1,12 @@
 import heapq
 import numpy as np
-from CPR import tools
+#from CPR import tools
+
+import sys
+import os 
+os.path.normpath(os.getcwd() + os.sep + os.pardir)
+sys.path.insert(1, '../CPR2022')
+import tools
 
 
 class ContributionRoom:
@@ -619,7 +625,7 @@ class RppDB:
         """
         Function to compute a penalty for individuals who begin to receive DB RPP benefits "early", i.e. before they accumulate the maximum number of years of service, if they are younger than the age at which benefits can start without penalty (the "early retirement age").
 
-        By default, the penalty applies to those who begin RPP benefits receipt before reaching 35 years of service and before age 62. These values can be modified.
+        By default, the penalty applies to those who begin RPP benefits receipt before reaching 35 years of service and before age 62. These values can be modified.
 
         Parameters
         ----------

@@ -1,6 +1,14 @@
-from CPR import tools
-from CPR import taxes
-from CPR import simulator
+#from CPR import tools
+#from CPR import taxes
+#from CPR import simulator
+
+import sys
+import os 
+os.path.normpath(os.getcwd() + os.sep + os.pardir)
+sys.path.insert(1, '../CPR2022')
+import tools
+import taxes
+import simulator
 
 
 def compute_bs_bef_ret(hh, year, common, prices):

@@ -1,5 +1,11 @@
-from CPR import taxes
-from CPR import tools
+#from CPR import taxes
+#from CPR import tools
+import sys
+import os 
+os.path.normpath(os.getcwd() + os.sep + os.pardir)
+sys.path.insert(1, '../CPR2022')
+import taxes
+import tools
 
 
 def compute_partial_annuities(hh, d_returns, year, prices):

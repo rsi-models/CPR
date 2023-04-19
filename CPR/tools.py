@@ -22,7 +22,7 @@ def get_params(file, numerical_key=False):
         rows = csv.reader(params)
         next(rows)
         for row in rows:
-            var, value, var_type, _ = row
+            var, value, var_type, *_ = row
             if var_type == 'int':
                 d_params[var] = int(value)
             elif var_type == 'float':

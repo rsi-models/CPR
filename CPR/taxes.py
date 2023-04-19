@@ -1,7 +1,14 @@
+#import sys
+#from CPR import tools
+#sys.path.insert(1, 'C:/Users/pyann/Dropbox (CEDIA)/srd/Model')
+#import srd
+
 import sys
-from CPR import tools
-sys.path.insert(1, 'C:/Users/pyann/Dropbox (CEDIA)/srd/Model')
+import os 
+os.path.normpath(os.getcwd() + os.sep + os.pardir)
+sys.path.insert(1, '../CPR2022')
 import srd
+import tools
 
 
 def compute_after_tax_amount(hh, year, common, prices):

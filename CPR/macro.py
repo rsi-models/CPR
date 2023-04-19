@@ -5,16 +5,21 @@ import numpy as np
 
 import srpp
 
-from CPR import life
-from CPR import tools
-
 import sys
-sys.path.insert(1, 'C:/Users/pyann/Dropbox (CEDIA)/srd/Model')
+# sys.path.insert(1, 'C:/Users/pyann/Dropbox (CEDIA)/srd/Model')
+import os 
+os.path.normpath(os.getcwd() + os.sep + os.pardir)
+sys.path.insert(1, '../CPR2022')
 import srd
 
+#from CPR import life
+#from CPR import tools
+import life
+import tools
+
 module_dir = os.path.dirname(os.path.dirname(__file__))
-path_params = '/CPR/data/params/'
-path_factors = '/CPR/data/precomputed/'
+path_params = '/CPR2022/data/params/'
+path_factors = '/CPR2022/data/precomputed/'
 
 
 class CommonParameters:

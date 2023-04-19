@@ -1,6 +1,13 @@
 import numpy as np
-from CPR import assets
-from CPR import debts
+#from CPR import assets
+#from CPR import debts
+
+import sys
+import os 
+os.path.normpath(os.getcwd() + os.sep + os.pardir)
+sys.path.insert(1, '../CPR2022')
+import assets
+import debts
 
 
 def create_hh(index, d_hh, common, prices):
