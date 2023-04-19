@@ -49,4 +49,4 @@ lcge_real,848252,float,lifetime capital gains exemption in 2018
 perc_rrsp,0.18,float,
 share_div_elig,0.6,float,home bias in Canada (Vanguard 2018) - results insensitive to this param
 exempt_soc_ass,5000,float,
-downsize,1,int,"added in 2022 so the model would run, check if this the correct value"
+downsize,0,float,added back in 2022 so the model would run
