@@ -1,7 +1,7 @@
-﻿variable,value,type ,comment
-sell_first_resid,0,bool,0 =False/1=True
-sell_second_resid,0,bool,
-sell_business,0,bool,
-recompute_factors,0,bool,time consuming
-old_cpp,0,bool,pre-reform cpp (if value=1)
-downsize,0,float,downsizing principal residence at retirement (between 0 and 1)
+﻿variable,value,type ,comment,,,,,
+sell_first_resid,0,bool,0 =False/1=True,,,,,?
+sell_second_resid,0,bool,,,,,,
+sell_business,0,bool,,,,,,
+recompute_factors,0,bool,time consuming,,,,,
+old_cpp,0,bool,pre-reform cpp (if value=1),,,,,
+multiprocessing,1,bool,can be set to 0 for debugging or profiling,,,,,
