@@ -5,21 +5,16 @@ import numpy as np
 
 import srpp
 
+from CPR import life
+from CPR import tools
+
 import sys
-# sys.path.insert(1, 'C:/Users/pyann/Dropbox (CEDIA)/srd/Model')
-import os 
-os.path.normpath(os.getcwd() + os.sep + os.pardir)
-sys.path.insert(1, '../CPR2022')
+sys.path.insert(1, 'C:/Users/pyann/Dropbox (CEDIA)/srd/Model')
 import srd
 
-#from CPR import life
-#from CPR import tools
-import life
-import tools
-
 module_dir = os.path.dirname(os.path.dirname(__file__))
-path_params = '/CPR2022/data/params/'
-path_factors = '/CPR2022/data/precomputed/'
+path_params = '/CPR/data/params/'
+path_factors = '/CPR/data/precomputed/'
 
 
 class CommonParameters:
@@ -39,7 +34,7 @@ class CommonParameters:
 
         self.nsim = nsim
         self.non_stochastic = non_stochastic
-        for file in ['common_params.csv', 'user_options.csv']:
+        for file in ['common_params.csv', 'user_options.csv', 'prices.csv']:
             tools.add_params_as_attr(self, module_dir + path_params + file)
         tools.change_params(self, extra_params)
 
@@ -47,6 +42,8 @@ class CommonParameters:
 
         self.rules_cpp = srpp.rules()
         self.rules_qpp = srpp.rules(qpp=True)
+        self.gr_rrsp_limit = self.inflation_rate + self.gr_wages
+        self.gr_tfsa_limit = self.inflation_rate
 
         for name in ['rrsp', 'tfsa']:
             self.set_limits(name)

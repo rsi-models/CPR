@@ -1,35 +1,35 @@
-variable,Value,type,comment,,,
-seed,0,int,,,,
-inflation_rate,0.02,float,BofC target,,,
-ret_equity_2018,-0.085,float,value for TSX 2022,,,
-mu_equity,0.0545,float,from JKKST,,,
-rho_equity,0,float,autocorrelation of log returns; 0.0978 in JST data,,,
-sig_equity,0.1749,float,from JKKST,,,
-ret_dividends,0.043,float,from JKKST table VIII,,,
-ret_bills_2018,-0.0205,float,for Canada,,,
-mu_bills,0.0098,float,from JKKST,,,
-rho_bills,0.5564,float,computed from JST data,,,
-sig_bills,0.0425,float,from JKKST,,,
-ret_bonds_2018,0.0101,float,for Canada,,,
-mu_bonds,0.023,float,from JKKST,,,
-rho_bonds,0.3727,float,computed from JST data for total returns (not bond rate),,,
-sig_bonds,0.079,float,from JKKST,,,
-ret_housing_2018,0.0004,float,for Canada,,,
-mu_housing,0.0161,float,from JKKST table VIII; real capital gains,,,
-rho_housing,0.21,float,computed from JST data,,,
-sig_housing,0.0987,float,from JKKST,,,
-price_rent_2018,20,float,needs to be calibrated more seriously,,,
-mu_price_rent,15,float,computed from JST data,,,
-rho_price_rent,0.95,float,computed from JST data,,,
-sig_price_rent,4,float,computed from JST data,,,
-corr_housing_price_rent,0.6,float,computed from JST data,,,
-ret_business_2018,-0.085,float,"from Canadian equity real capital gains, TBC",,,value for TSX 2022
-mu_business,0.0545,float,"from JKKST data; 0.0614 for Canadian equity real capital gains, TBC",,,
-rho_business,0,float,-0.1557 for Canadian equity real capital gains,,,
-sig_business,0.1749,float,"from JKKST; 0.1584 for Canadian equity real capital gains, TBC",,,
-gr_rate_wage,0.01,float,real growth rate wage,,,
-rho_wage,0.96235919,float,"from Francois, LISA dataset",,,
-sig_pers_wage,0.050739054,float,"from Francois, LISA dataset",,,
-sig_trans_wage,0.018554826,float,"from Francois, LISA dataset",,,
-adj_fact_annuities,0.9,float,needs to be calibrated more seriously,,,
-ret_dividends_tsx,0.028,float,from data but unused in current version,,,
+variable,value,type,comment
+seed,0,int,
+inflation_rate,0.02,float,BofC target
+ret_equity_2018,-0.085,float,value for TSX 2018
+mu_equity,0.0545,float,from JKKST
+rho_equity,0,float,autocorrelation of log returns; 0.0978 in JST data
+sig_equity,0.1749,float,from JKKST
+ret_dividends,0.043,float,from JKKST table VIII
+ret_bills_2018,-0.0205,float,for Canada
+mu_bills,0.0098,float,from JKKST
+rho_bills,0.5564,float,computed from JST data
+sig_bills,0.0425,float,from JKKST
+ret_bonds_2018,0.0101,float,for Canada
+mu_bonds,0.023,float,from JKKST
+rho_bonds,0.3727,float,computed from JST data for total returns (not bond rate)
+sig_bonds,0.079,float,from JKKST
+ret_housing_2018,0.0004,float,for Canada
+mu_housing,0.0161,float,from JKKST table VIII; real capital gains
+rho_housing,0.21,float,computed from JST data
+sig_housing,0.0987,float,from JKKST
+price_rent_2018,20,float,needs to be calibrated more seriously
+mu_price_rent,15,float,computed from JST data
+rho_price_rent,0.95,float,computed from JST data
+sig_price_rent,4,float,computed from JST data
+corr_housing_price_rent,0.6,float,computed from JST data
+ret_business_2018,-0.085,float,"from Canadian equity real capital gains, TBC"
+mu_business,0.0545,float,"from JKKST data; 0.0614 for Canadian equity real capital gains, TBC"
+rho_business,0,float,-0.1557 for Canadian equity real capital gains
+sig_business,0.1749,float,"from JKKST; 0.1584 for Canadian equity real capital gains, TBC"
+gr_rate_wage,0.01,float,real growth rate wage
+rho_wage,0.96235919,float,"from Francois, LISA dataset"
+sig_pers_wage,0.050739054,float,"from Francois, LISA dataset"
+sig_trans_wage,0.018554826,float,"from Francois, LISA dataset"
+adj_fact_annuities,0.9,float,needs to be calibrated more seriously
+ret_dividends_tsx,0.028,float,from data but unused in current version

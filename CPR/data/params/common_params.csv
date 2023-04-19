@@ -1,5 +1,5 @@
 variable,value,type,comment
-base_year,2018,int,
+base_year,2022,int,
 db_penalty_early_ret,0.05,float,
 rrsp_limit_2018,26230,float,
 rrsp_limit_2019,26500,float,
@@ -8,14 +8,13 @@ rrsp_limit_2021,27830,float,
 rrsp_limit_2022,29210,float,
 rrsp_limit_2023,30780,float,
 rrsp_limit_2024,31560,float,
-gr_rrsp_limit,0.03,float,
 tfsa_limit_2018,5500,float,
 tfsa_limit_2019,6000,float,
 tfsa_limit_2020,6000,float,
 tfsa_limit_2021,6000,float,
 tfsa_limit_2022,6000,float,
 tfsa_limit_2023,6500,float,
-gr_tfsa_limit,0.02,float,
+gr_wages,0.01,float, revenu growth
 gr_ympe,0.03,float,
 perc_cpp_2018,0.25,float,
 perc_cpp_2019,0.262,float,
@@ -23,7 +22,7 @@ perc_cpp_2020,0.274,float,
 perc_cpp_2021,0.29,float,
 perc_cpp_2022,0.31,float,
 perc_cpp_2023,0.33,float,
-future_years,110,int,
+future_years,110,int,enough for late retirement and large age difference in couple
 official_ret_age,65,int,
 min_age_cpp,18,int,
 max_ret_age,75,int,
@@ -31,8 +30,8 @@ min_claim_age_cpp,60,int,
 max_claim_age_cpp,70,int,
 max_term_debts,30,int,
 age_cons_bef_ret,55,int,
-past_years,50,int,
-max_years_db,35,int,
+past_years,50,int,calculation cpp starts at 18
+max_years_db,35,int,for rpp
 fee_rpp,0.015,float,
 max_age_no_rrif,71,int,
 frac_cap_gains,0.5,float,fraction taxed
@@ -49,4 +48,3 @@ lcge_real,848252,float,lifetime capital gains exemption in 2018
 perc_rrsp,0.18,float,
 share_div_elig,0.6,float,home bias in Canada (Vanguard 2018) - results insensitive to this param
 exempt_soc_ass,5000,float,
-downsize,0,float,added back in 2022 so the model would run
