@@ -1,16 +1,19 @@
-import os
+import os 
 import pickle
 import pandas as pd
 import numpy as np
 
 import srpp
-
-from CPR import life
-from CPR import tools
-
-import sys
-sys.path.insert(1, 'C:/Users/pyann/Dropbox (CEDIA)/srd/Model')
 import srd
+
+# remove 5 lines below and uncomment next 2 lines when CPR package is updated 
+import sys
+os.path.normpath(os.getcwd() + os.sep + os.pardir)
+sys.path.insert(1, '../CPR')
+import life
+import tools
+#from CPR import life
+#from CPR import tools
 
 module_dir = os.path.dirname(os.path.dirname(__file__))
 path_params = '/CPR/data/params/'

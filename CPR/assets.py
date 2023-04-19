@@ -1,13 +1,13 @@
 import heapq
 import numpy as np
-#from CPR import tools
 
+# remove 5 lines below and uncomment next line when CPR package is updated 
 import sys
 import os 
 os.path.normpath(os.getcwd() + os.sep + os.pardir)
-sys.path.insert(1, '../CPR2022')
+sys.path.insert(1, '../CPR')
 import tools
-
+#from CPR import tools
 
 class ContributionRoom:
     """

@@ -1,18 +1,19 @@
 import numpy as np
 import srpp
-#from CPR import annuities
-#from CPR import taxes
-#from CPR import tools
-#from CPR import balance_sheets
 
+# remove 8 lines below and uncomment next 4 lines when CPR package is updated 
 import sys
 import os 
 os.path.normpath(os.getcwd() + os.sep + os.pardir)
-sys.path.insert(1, '../CPR2022')
+sys.path.insert(1, '../CPR')
 import annuities
 import taxes
 import tools
 import balance_sheets
+#from CPR import annuities
+#from CPR import taxes
+#from CPR import tools
+#from CPR import balance_sheets
 
 
 def simulate(job, common, prices):

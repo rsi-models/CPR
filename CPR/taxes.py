@@ -1,14 +1,12 @@
-#import sys
-#from CPR import tools
-#sys.path.insert(1, 'C:/Users/pyann/Dropbox (CEDIA)/srd/Model')
-#import srd
+import srd
 
+# remove 5 lines below and uncomment next line when CPR package is updated 
 import sys
 import os 
 os.path.normpath(os.getcwd() + os.sep + os.pardir)
-sys.path.insert(1, '../CPR2022')
-import srd
+sys.path.insert(1, '../CPR')
 import tools
+#from CPR import tools
 
 
 def compute_after_tax_amount(hh, year, common, prices):

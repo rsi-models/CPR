@@ -2,12 +2,6 @@ import os
 import pandas as pd
 import numpy as np
 
-#from CPR import macro
-import sys
-import os 
-os.path.normpath(os.getcwd() + os.sep + os.pardir)
-sys.path.insert(1, '../CPR2022')
-import macro
 
 module_dir = os.path.dirname(os.path.dirname(__file__))
 
@@ -21,7 +15,7 @@ def get_dataset():
     pandas.core.frame.DataFrame
         Dataframe of synthetic data.
     """
-    return pd.read_csv(module_dir + '/CPR2022/data/inputs/synth_inputs.csv',
+    return pd.read_csv(module_dir + '/CPR/data/inputs/synth_inputs.csv',
                        index_col=0)
 
 

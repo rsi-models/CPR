@@ -1,12 +1,12 @@
-#from CPR import taxes
-#from CPR import tools
+# remove 6 lines below and uncomment next 2 lines when CPR package is updated 
 import sys
 import os 
 os.path.normpath(os.getcwd() + os.sep + os.pardir)
-sys.path.insert(1, '../CPR2022')
+sys.path.insert(1, '../CPR')
 import taxes
 import tools
-
+#from CPR import taxes
+#from CPR import tools
 
 def compute_partial_annuities(hh, d_returns, year, prices):
     """
