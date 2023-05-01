@@ -3,21 +3,26 @@ import pickle
 import pandas as pd
 import numpy as np
 
-import srpp
-import srd
-
 # remove 5 lines below and uncomment next 2 lines when CPR package is updated 
 import sys
 os.path.normpath(os.getcwd() + os.sep + os.pardir)
-sys.path.insert(1, '../CPR')
+#sys.path.insert(1, '../CPR')
+sys.path.append('/Users/TessaLoRiggio/CEDIA Dropbox/Tessa LoRiggio/RSI/CPR_master_mac2015')
 import life
 import tools
 #from CPR import life
 #from CPR import tools
 
+sys.path.append('/Users/TessaLoRiggio/CEDIA Dropbox/Tessa LoRiggio/RSI/srpp_master')
+import srpp
+
+sys.path.append('/Users/TessaLoRiggio/CEDIA Dropbox/Tessa LoRiggio/RSI/srd_master')
+import srd
+
 module_dir = os.path.dirname(os.path.dirname(__file__))
 path_params = '/CPR/data/params/'
 path_factors = '/CPR/data/precomputed/'
+
 
 
 class CommonParameters:

@@ -1,8 +1,9 @@
 # remove 6 lines below and uncomment next 2 lines when CPR package is updated 
 import sys
 import os 
-os.path.normpath(os.getcwd() + os.sep + os.pardir)
-sys.path.insert(1, '../CPR')
+#os.path.normpath(os.getcwd() + os.sep + os.pardir)
+#sys.path.insert(1, '../CPR')
+sys.path.append('/Users/TessaLoRiggio/CEDIA Dropbox/Tessa LoRiggio/RSI/CPR_master_mac2015')
 import taxes
 import tools
 #from CPR import taxes

@@ -5,8 +5,9 @@ import pandas as pd
 
 # remove 8 lines below and uncomment next 5 lines when CPR package is updated 
 import sys 
-os.path.normpath(os.getcwd() + os.sep + os.pardir)
-sys.path.insert(1, '../CPR')
+#os.path.normpath(os.getcwd() + os.sep + os.pardir)
+#sys.path.insert(1, '../CPR')
+sys.path.append('/Users/TessaLoRiggio/CEDIA Dropbox/Tessa LoRiggio/RSI/CPR_master_mac2015')
 import initialisation
 import macro
 import simulator

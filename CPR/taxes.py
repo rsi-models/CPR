@@ -1,12 +1,14 @@
-import srd
-
 # remove 5 lines below and uncomment next line when CPR package is updated 
 import sys
 import os 
-os.path.normpath(os.getcwd() + os.sep + os.pardir)
-sys.path.insert(1, '../CPR')
+#os.path.normpath(os.getcwd() + os.sep + os.pardir)
+#sys.path.insert(1, '../CPR')
+sys.path.append('/Users/TessaLoRiggio/CEDIA Dropbox/Tessa LoRiggio/RSI/CPR_master_mac2015')
 import tools
 #from CPR import tools
+
+sys.path.append('/Users/TessaLoRiggio/CEDIA Dropbox/Tessa LoRiggio/RSI/srd_master')
+import srd
 
 
 def compute_after_tax_amount(hh, year, common, prices):
