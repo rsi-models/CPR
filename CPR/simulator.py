@@ -1,20 +1,11 @@
 import numpy as np
 
-# remove 8 lines below and uncomment next 4 lines when CPR package is updated 
-import sys
-import os 
-#os.path.normpath(os.getcwd() + os.sep + os.pardir)
-#sys.path.insert(1, '../CPR')
-sys.path.append('/Users/TessaLoRiggio/CEDIA Dropbox/Tessa LoRiggio/RSI/CPR_master_mac2015')
-import annuities
-import taxes
-import tools
-import balance_sheets
-#from CPR import annuities
-#from CPR import taxes
-#from CPR import tools
-#from CPR import balance_sheets
+from CPR import annuities
+from CPR import taxes
+from CPR import tools
+from CPR import balance_sheets
 
+import sys
 sys.path.append('/Users/TessaLoRiggio/CEDIA Dropbox/Tessa LoRiggio/RSI/srpp_master')
 import srpp
 

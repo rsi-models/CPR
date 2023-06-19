@@ -1,16 +1,6 @@
-
-# remove 7 lines below and uncomment next 3 lines when CPR package is updated 
-import sys
-import os 
-#os.path.normpath(os.getcwd() + os.sep + os.pardir)
-#sys.path.insert(1, '../CPR')
-sys.path.append('/Users/TessaLoRiggio/CEDIA Dropbox/Tessa LoRiggio/RSI/CPR_master_mac2015')
-import tools
-import taxes
-import simulator
-#from CPR import tools
-#from CPR import taxes
-#from CPR import simulator
+from CPR import tools
+from CPR import taxes
+from CPR import simulator
 
 
 def compute_bs_bef_ret(hh, year, common, prices):

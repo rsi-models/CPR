@@ -3,16 +3,10 @@ import pickle
 import pandas as pd
 import numpy as np
 
-# remove 5 lines below and uncomment next 2 lines when CPR package is updated 
-import sys
-os.path.normpath(os.getcwd() + os.sep + os.pardir)
-#sys.path.insert(1, '../CPR')
-sys.path.append('/Users/TessaLoRiggio/CEDIA Dropbox/Tessa LoRiggio/RSI/CPR_master_mac2015')
-import life
-import tools
-#from CPR import life
-#from CPR import tools
+from CPR import life
+from CPR import tools
 
+import sys
 sys.path.append('/Users/TessaLoRiggio/CEDIA Dropbox/Tessa LoRiggio/RSI/srpp_master')
 import srpp
 

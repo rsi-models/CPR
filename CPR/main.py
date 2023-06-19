@@ -1,23 +1,14 @@
 import os
+import sys 
 from functools import partial
 import multiprocessing as mp
 import pandas as pd
 
-# remove 8 lines below and uncomment next 5 lines when CPR package is updated 
-import sys 
-#os.path.normpath(os.getcwd() + os.sep + os.pardir)
-#sys.path.insert(1, '../CPR')
-sys.path.append('/Users/TessaLoRiggio/CEDIA Dropbox/Tessa LoRiggio/RSI/CPR_master_mac2015')
-import initialisation
-import macro
-import simulator
-import tools
-import analysis
-#from CPR import initialisation
-#from CPR import macro
-#from CPR import simulator
-#from CPR import tools
-#from CPR import analysis
+from CPR import initialisation
+from CPR import macro
+from CPR import simulator
+from CPR import tools
+from CPR import analysis
 
 module_dir = os.path.dirname(os.path.dirname(__file__))
 path = '/CPR/data/params/'
