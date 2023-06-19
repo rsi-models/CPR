@@ -9,7 +9,7 @@ README = (HERE / "README.md").read_text()
 
 # This call to setup() does all the work
 setuptools.setup(
-    name="cprrsi",
+    name="cpr-rsi",
     version="1.2.2",
     description="Assessing Canadians' Preparation for Retirement",
     long_description=README,
