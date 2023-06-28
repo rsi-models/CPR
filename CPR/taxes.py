@@ -1,7 +1,4 @@
 from CPR import tools
-
-import sys
-sys.path.append('/Users/TessaLoRiggio/CEDIA Dropbox/Tessa LoRiggio/RSI/srd_master')
 import srd
 
 

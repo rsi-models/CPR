@@ -1,7 +1,5 @@
 import numpy as np
 
-import sys
-
 from CPR import assets
 from CPR import debts
 

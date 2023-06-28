@@ -6,11 +6,7 @@ import numpy as np
 from CPR import life
 from CPR import tools
 
-import sys
-sys.path.append('/Users/TessaLoRiggio/CEDIA Dropbox/Tessa LoRiggio/RSI/srpp_master')
 import srpp
-
-sys.path.append('/Users/TessaLoRiggio/CEDIA Dropbox/Tessa LoRiggio/RSI/srd_master')
 import srd
 
 module_dir = os.path.dirname(os.path.dirname(__file__))

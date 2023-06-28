@@ -5,8 +5,6 @@ from CPR import taxes
 from CPR import tools
 from CPR import balance_sheets
 
-import sys
-sys.path.append('/Users/TessaLoRiggio/CEDIA Dropbox/Tessa LoRiggio/RSI/srpp_master')
 import srpp
 
 
